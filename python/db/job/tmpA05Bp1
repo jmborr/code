@@ -1,0 +1,41 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'scriptf'
+p4
+S'/gpfs1/scratch/jose/qsub/2007-02-17/qsub.sh_gui175849'
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'Hellinga: Find best PDB for a structure in linker42sum'
+p9
+sS'args'
+p10
+S'-p 10 -e "-Wx=qos:critical" -n l42 -d 0.2 -k 200 -m "/tmp/jose/pdb_aug06.apr06.CA:/gpfs1/scratch/jose/Hellinga/pdb_aug06.apr06.CA.tbz2" -c scratchdir/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out_filtered/xxxxx -a scratchdir/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out_filtered/fail.list -f "/bin/cp /gpfs1/active/jose/code/f77/TM-align/TMalign /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/filtered/xxxxx ." -g "/library/jose/code/python/TMalign/findBestPDBhitByTMalign.py -a xxxxx -e /tmp/jose/pdb_aug06.apr06.CA/list -d /tmp/jose/pdb_aug06.apr06.CA/yyyyy.pdb -i all > xxxxx.inpdb.dat" -i "/bin/mv xxxxx.inpdb.dat /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out_filtered/xxxxx"'
+p11
+sS'story'
+p12
+S"Submit this job with the 'sub' button. "
+p13
+sS'file'
+p14
+S'/gpfs1/active/jose/code/python/db/job/tmpA05Bp1'
+p15
+sS'time'
+p16
+S'Sat Feb 17 18:00:02 2007'
+p17
+sS'shared'
+p18
+S''
+p19
+sb.

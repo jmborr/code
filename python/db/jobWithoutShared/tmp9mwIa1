@@ -1,0 +1,33 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'genTasserInput_expandedLib'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmp9mwIa1'
+p11
+sS'time'
+p12
+S'Thu Apr 27 15:45:56 2006'
+p13
+sS'args'
+p14
+S'-x gen -d "-Wx=GRES:heavyio" -b /gpfs1/active/jose/projects/updateMkLib/benchmark/output/expanded/xxxxx -a /gpfs1/active/jose/projects/updateMkLib/benchmark/hard.list -e "/bin/cp /gpfs1/active/jose/projects/updateMkLib/benchmark/input/xxxxx/* /gpfs1/active/jose/code/python/tasser/tasser1.0/mkinput/mkpair.py /gpfs1/active/jose/code/perl/tasser/tasser1.0/mkinput/mkdat.pl ." -f "./mkpair.py -b seq.txt -e seq.dat -g /gpfs1/scratch/jose/updateMkLib/PDBexpanded && ./mkdat.pl -v seq.txt -l  /gpfs1/scratch/jose/updateMkLib/PDBexpanded -d . -o ."  -g "/bin/mv *.dat /gpfs1/active/jose/projects/updateMkLib/benchmark/output/expanded/xxxxx"'
+p15
+sb.

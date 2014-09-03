@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'find_attractors'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmp3SOZ4s'
+p11
+sS'time'
+p12
+S'Wed Mar  8 23:35:01 2006'
+p13
+sS'args'
+p14
+S'-x attr -a /gpfs1/active/jose/projects/nonhomol_pdbJul05/all_beta/pdbJul05_beta.list -e "/bin/mv codedir/projects/nonhomol_pdbJul05/find_template_to_centroids.py projectsdir/createInputsTasser/x/xxxxx/abinitio/centroids.pdb ." -f "find_template_to_centroids.py  -a centroids.pdb" -g "/bin/mv attractors.pdb projectsdir/createInputsTasser/x/xxxxx/abinitio" -b projectsdir/createInputsTasser/x/xxxxx/abinitio'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

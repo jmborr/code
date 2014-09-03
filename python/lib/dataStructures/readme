@@ -1,0 +1,59 @@
+==========================================================
+                           tree.py
+==========================================================
+Discussion:
+
+The idea was to present just the bare structure and a minimal API.
+Further enhancements (balancing schemes, mapping syntax, ...) can
+be piled on up by further customization - the recipe, as it stands,
+is already too long. Even so, When I first coded it I needed hashable
+binary trees and that is the reason why, for both flavors, I give
+first an abstract class to avoid code duplication and then mutable
+and immutable implementations of it.
+In the binary tree case, insertion and hashable trees are also
+provided.
+
+Needs Python >2.2 since properties and iterators/generators are heavily
+used.
+==========================================================
+                         metaTree.py
+==========================================================
+Discussion:
+
+In our (looong) recipe
+http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/136529 we gave
+implementations of binary and generalized trees. Looking at
+generalized trees, the implementation relied on a basic protocol
+consisting in two attributes cargo and subtrees (there called childs)
+to present an abstract (or mixin) class with all the generic
+methods. Two concrete implementations were presented, one for mutable
+trees and another for immutable ones. But staring at the code, the
+real difference between the two implementations was that the mutable
+used a list and the immutable used a tuple. In other words, only the
+-type- of the subtrees attribute was different.
+
+So, I started musing on how I could encapsulate and generalize. It
+became clear that what we have here is a -family- of tree
+classes parameterized by another class (list, tuple, etc.) that
+describes the subtrees attribute. Once this is understood it is a
+small step in considering a metaclass governing this family of
+classes.
+
+Notice also, that because we are using a metaclass we don't
+derive from some abstract tree class, we just inject the generic
+methods directly at class creation.
+
+With the functionality in place you can create an immutable tree class
+(that is, you cannot alter the subtrees structure of the tree) in one
+line:
+
+ImmutableTree = MutableTree.clone('ImmutableTree', tuple)
+
+
+
+The recipe is, everything counted, about 220 lines long. The test code
+is just as long. For obvious reasons it was left out - but
+the whole thingy works.
+
+Have yourselves pythonic fun,
+G. Rodrigues

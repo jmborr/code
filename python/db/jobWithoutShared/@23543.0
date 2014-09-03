@@ -1,0 +1,33 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/lib/utilities'
+p3
+sS'story'
+p4
+S'Use run_command.py to submit simple command(s) to run on all nodes'
+p5
+sS'exe'
+p6
+S'run_command.py'
+p7
+sS'name'
+p8
+S'cleans /tmp/jose directory in all nodes'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/@23543.0'
+p11
+sS'time'
+p12
+S'Mon Nov  7 14:39:27 2005'
+p13
+sS'args'
+p14
+S'-c "/bin/rm -rf /tmp/jose/* 2>/dev/null"'
+p15
+sb.

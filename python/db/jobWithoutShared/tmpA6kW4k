@@ -1,0 +1,33 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/secondary/psipred'
+p3
+sS'story'
+p4
+S'run a secondary structure prediction with an input fasta file'
+p5
+sS'exe'
+p6
+S'runpsipred.py'
+p7
+sS'name'
+p8
+S'runpsipred alone'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmpA6kW4k'
+p11
+sS'time'
+p12
+S'Fri Jan 27 08:49:30 2006'
+p13
+sS'args'
+p14
+S'-a /gpfs1/u/jose/tmp/protein.fasta'
+p15
+sb.

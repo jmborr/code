@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'preditc_strutc_list.py'
+p7
+sS'name'
+p8
+S'aplusb abinitio'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/@6072.0'
+p11
+sS'time'
+p12
+S'Tue Jan  3 18:52:57 2006'
+p13
+sS'args'
+p14
+S'-u qsub -q batch -b 500 -x aplusb -l scratchdir/nonhomol_pdbJul05/aplusb/toylist  -t "codedir/python/tasser/tasser1.0/tasser_data_done.py -d codedir/f77/tasser/tasser.1.0/abinitio/in.dd   -t codedir/f77/tasser/tasser.1.0/abinitio/cas_abinitio -f pdbnonhom/seq -b projectsdir/createInputsTasser/x/xxxxx/abinitio  -e projectsdir/createInputsTasser/x/xxxxx -o . -a CA -i xxxxx" -z "codedir/c/spicker/spickerZZ.x -l tra.in -s seq.dat -a CA -o . -b NOTAR -m xxxxx" -m "CA *pdb  in.dd out.d rep* tra.in summary.txt" -o /gpfs1/active/jose/projects/createInputsTasser/x/xxxxx/abinitio'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

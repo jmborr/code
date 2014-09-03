@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/lib/jobs'
+p3
+sS'story'
+p4
+S'this small scirpt will find the log files reporting completion or error (or both) for a job, and will print it to standard output or to a directory'
+p5
+sS'exe'
+p6
+S'errorlog.py'
+p7
+sS'name'
+p8
+S'find log files'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/@3765.0'
+p11
+sS'time'
+p12
+S'Mon Jan  2 11:32:58 2006'
+p13
+sS'args'
+p14
+S'-a /gpfs1/active/jose/projects/NMR_constraints/tasser1.0_NMR/run/out  -b ERROR -c ~/tmp/junk'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

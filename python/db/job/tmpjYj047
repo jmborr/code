@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs/predictor'
+p3
+sS'story'
+p4
+S'run prospector plus tasser plus spicker on the set of homolgous G8 sequences'
+p5
+sS'exe'
+p6
+S'predictor.py'
+p7
+sS'name'
+p8
+S"G8: predictor on Adrian's set"
+p9
+sS'args'
+p10
+S'-a scratchdir/G8/setII/inputs/xxxxx -b scratchdir/G8/setII/out/xxxxx -c scratchdir/G8/setII/inputs/list -e 1.0 -f 14'
+p11
+sS'file'
+p12
+S'/gpfs1/active/jose/code/python/db/job/tmpjYj047'
+p13
+sS'time'
+p14
+S'Thu Nov  9 14:30:55 2006'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

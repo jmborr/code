@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs/predictor'
+p3
+sS'story'
+p4
+S'run prospector plus tasser plus spicker on the splice variants'
+p5
+sS'exe'
+p6
+S'predictor.py'
+p7
+sS'name'
+p8
+S'spliceVariants: predictor run on benchmarkIII'
+p9
+sS'args'
+p10
+S'-a scratchdir/spliceVariants/benchmarkIII/input/xxxxx -b scratchdir/spliceVariants/benchmarkIII/out/xxxxx -c scratchdir/spliceVariants/benchmarkIII/input/list -e 0.80 -f 14 -g 0.83'
+p11
+sS'file'
+p12
+S'/gpfs1/active/jose/code/python/db/job/tmpSqilcW'
+p13
+sS'time'
+p14
+S'Tue Oct 31 19:29:11 2006'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

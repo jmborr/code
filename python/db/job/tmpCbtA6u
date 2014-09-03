@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. Then each header of the list will be submitted with the qsub command. We run tasser abinitio, and also with noe files. After this run spickerZZ filtering only those trajectories with rco > 0.80. The list is such that all noe.dat files have at least one restraint and are not easy targets"
+p5
+sS'exe'
+p6
+S'preditc_strutc_list.py'
+p7
+sS'name'
+p8
+S'abinito plus nmr for noteasy toylist'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmpCbtA6u'
+p11
+sS'time'
+p12
+S'Thu Feb  2 11:08:50 2006'
+p13
+sS'args'
+p14
+S'-u qsub -q batch -b 500 -x a -l /gpfs1/active/jose/projects/NMR_constraints/tasser1.0_NMR_abinitio/out/failed.list  -t "codedir/python/tasser/tasser1.0/tasser_data_done.py -f pdbnonhom/seq -d codedir/f77/tasser/tasser.1.0/tasser_nmr_abinitio/in.dd   -t codedir/f77/tasser/tasser.1.0/tasser_nmr_abinitio/cas_nmr_abinitio -e /gpfs1/active/jose/projects/createInputsTasser/x/xxxxx -b /gpfs1/active/jose/projects/createInputsTasser/x/xxxxx/abinitio -o . -n /gpfs1/active/jose/projects/NMR_constraints/mkinput_NMR/run/input_output/x/xxxxx   -a CA -i" -z "codedir/c/spicker/spickerZZ.x -l tra.in -s seq.dat -r 0.80 -a CA -o . -b NOTAR -m" -m "CA *pdb *dat in.dd out.d rep* tra.in summary.txt" -o /gpfs1/active/jose/projects/NMR_constraints/tasser1.0_NMR_abinitio/out'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

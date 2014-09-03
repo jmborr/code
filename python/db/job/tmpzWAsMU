@@ -1,0 +1,41 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'scriptf'
+p4
+S'/gpfs1/scratch/jose/qsub/2007-02-26/qsub.sh_gui162507'
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'Hellinga: linder42sum'
+p9
+sS'args'
+p10
+S'-e "-Wx=qos:critical" -n l42 -d 5 -k 900 -c scratchdir/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out/xxxxx -a scratchdir/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out/b.list -f "/bin/cp  /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out/xxxxx/rmsinp /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out/xxxxx/seq.dat /gpfs1/active/jose/code/projects/Hellinga/brun/in.dd /gpfs1/active/jose/code/projects/Hellinga/brun/tra.in /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out/xxxxx/chain.dat /gpfs1/active/jose/code/projects/Hellinga/casB_gene2 /gpfs1/active/jose/code/projects/Hellinga/spicker_gene /gpfs1/active/jose/code/projects/Hellinga/dukka_pulchra.py /gpfs1/active/jose/code/cpp/pdb_utils/Rg.x ." -g "tar jxf /gpfs1/active/jose/code/f77/tasser/tasser.1.0/common.tbz2 && ./casB_gene2 && tar jcf xxxxx.B.out.tasser.tbz2 *.tra  && /bin/mv xxxxx.B.out.tasser.tbz2 /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out/xxxxx && for i in \\`ls -1 rep*tra\\`;do ./Rg.x -c \\$i > /dev/null ;done && ./spicker_gene && tar jcf xxxxx.B.out.spicker.tbz2 combo*.pdb closc*.pdb rst.dat && /bin/mv xxxxx.B.out.spicker.tbz2 /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/out/xxxxx && ./dukka_pulchra.py -a xxxxx -b B -c yes" -i "/bin/mv xxxxx.B.closc*.pdb.rebuilt /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/linker42sum/structures"'
+p11
+sS'story'
+p12
+S"Submit this job with the 'sub' button. "
+p13
+sS'file'
+p14
+S'/gpfs1/active/jose/code/python/db/job/tmpzWAsMU'
+p15
+sS'time'
+p16
+S'Thu Feb 22 14:21:37 2007'
+p17
+sS'shared'
+p18
+S''
+p19
+sb.

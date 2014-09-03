@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S'run dukka refinement program, then pulchra on the combo and closc models produced for the spliced variants.'
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'splice variants. Run dukka and pulchra on combo and closc'
+p9
+sS'args'
+p10
+S'-k 10 -n duk -c scratchdir/spliceVariants/tasser/x/xxxxx -a /gpfs1/scratch/jose/spliceVariants/tasser/success_tas.list -f "/bin/cp  /gpfs1/scratch/jose/spliceVariants/tasser/x/xxxxx/comb* /gpfs1/scratch/jose/spliceVariants/tasser/x/xxxxx/closc* ." -g "for i in 1 2 3 4 5 6 7 8 9 10; do  dukka.x combo\\${i}.pdb ; /bin/mv best.pdb combo\\${i}.pdb.refined ; pulchra combo\\${i}.pdb.refined ; dukka.x closc\\${i}.pdb ;  /bin/mv best.pdb closc\\${i}.refined ; pulchra closc\\${i}.pdb.refined; done; /bin/mv combo*refined* closc*refined* /gpfs1/scratch/jose/spliceVariants/tasser/x/xxxxx"'
+p11
+sS'file'
+p12
+S'/gpfs1/active/jose/code/python/db/job/tmpXpUX5-'
+p13
+sS'time'
+p14
+S'Wed Aug 30 20:45:25 2006'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

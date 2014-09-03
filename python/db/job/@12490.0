@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S'Submit this job with the SUB button. Then each header of the list will be submitted as a different job with the QSUB command. We will generate input dat files for tasser for three different situations: abinitio, prospector where we exclude homologous as given by fasta, and prospector where we exclude homologous as given by the previous run of prospector. The database of sequences is the latest compendium of non-homologous sequences in the PDB (pdbnonhom)'
+p5
+sS'exe'
+p6
+S'create_input_for_tasser_list.py'
+p7
+sS'name'
+p8
+S'generate tasser input files for list headers'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/@12490.0'
+p11
+sS'time'
+p12
+S'Fri Nov 11 19:10:27 2005'
+p13
+sS'args'
+p14
+S'-u qsub -q batch -b 850 -l /gpfs1/active/jose/projects/createInputsTasser/pdb_jul05.list  -x creatInp -c "-o /gpfs1/active/jose/projects/createInputsTasser "        '
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

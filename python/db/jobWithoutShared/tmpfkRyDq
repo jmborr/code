@@ -1,0 +1,33 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'preditc_strutc_list.py'
+p7
+sS'name'
+p8
+S'foldsOrigin'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmpfkRyDq'
+p11
+sS'time'
+p12
+S'Tue May 16 15:34:31 2006'
+p13
+sS'args'
+p14
+S'-u qsub -q batch -v "-Wx=qos:casp-bench" -b 500 -x fold -l scratchdir/foldsOrigin/input/a/toylist  -t "codedir/python/tasser/tasser1.0/tasser_data_done.py -d codedir/f77/tasser/tasser.1.0/abinitio/in.dd  -t codedir/projects/foldsOrigin/cas_gene -f scratchdir/foldsOrigin/input/a/xxxxx  -b codedir/projects/foldsOrigin/fake  -o . -i xxxxx"  -m "in.dd out.d rep* tra.in" -o scratchdir/foldsOrigin/input/a/xxxxx'
+p15
+sb.

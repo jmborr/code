@@ -1,0 +1,33 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'genPairSplice'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmpy7_EoK'
+p11
+sS'time'
+p12
+S'Tue May 30 21:50:46 2006'
+p13
+sS'args'
+p14
+S'-k 800 -l 3000 -m pair -c scratchdir/spliceVariants/tasser/x/xxxxx -a scratchdir/spliceVariants/preparing_database/refsVars300.list -f "/bin/cp /gpfs1/scratch/jose/spliceVariants/input/xxxxx  /gpfs1/scratch/jose/spliceVariants/tasser/x/xxxxx/seq.dat  /gpfs1/active/jose/code/python/tasser/tasser1.0/mkinput/mkpair.py ." -g "tar jxf /gpfs1/scratch/jose/updateMkLib/pdbexp.tbz2  &&  mkpair.py -f 0.95 -a xxxxx -g /tmp/jose/PDBexpanded -e seq.dat" -i "/bin/mv pair* /gpfs1/scratch/jose/spliceVariants/tasser/x/xxxxx" '
+p15
+sb.

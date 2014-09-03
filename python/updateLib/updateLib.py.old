@@ -1,0 +1,230 @@
+#!/usr/bin/python
+
+import os,sys,pickle,copy,re
+from time import sleep
+from inputArgs.inputArgs import inpHand
+from utilities.small_utilities import chomp,Bye
+
+nodeLib='/library/jose'
+mydb='/library/jose/code/python/updateLib/revisions' #where to store the revision files
+db_node='/library/jose/code/python/updateLib' #for "busy" file
+busyfile=os.path.join(db_node,'busy')
+frontNodes0=['fec01','fec04','fec03']
+updateNodes0=['b1','b2','b3','b4','b5','b6','b7','b8','b9','b10','b12','b13','b14']
+
+rsyncExitKeys=[0,1,2,3,4,5,10,11,12,13,14,20,21,22,23,24,30]
+rsyncExitValues={0:'Success',1:'Syntax or usage error',2:'Protocol incompatibility',3:'Errors selecting input/output files, dirs',4:'Requested action not supported: an attempt was made to  manipulate 64-bit files on a platform that cannot support them; or an option was specified that is supported by the client and not by the server',5:'Error starting client-server protocol',10:'Error in socket I/O',11:'Error in file I/O',12:'Error in rsync protocol data stream',13:'Errors with program diagnostics',14:'Error in IPC code',20:'Received SIGUSR1 or SIGINT',21:'Some error returned by waitpid()',22:'Error allocating core memory buffers',23:'Partial transfer due to error',24:'Partial transfer due to vanished source files',30:'Timeout in data send/receive',999:'Unidentified rsync exit value'}
+
+#remove duplicates from a list
+def unique(lst):
+    d = {}
+    for item in lst: d[item] = None
+    return d.keys()
+
+def remove_comment_lines(files):
+    culled=[]
+    for file in files:
+        if file[0]!='#': culled.append(file)
+    return unique(culled)
+
+#will gather all files for revisions newer than olldate revision
+def parse_files(files,olddate='last'):
+    if olddate=='last': return remove_comment_lines(files)
+    olddate=int(olddate)
+    culled=[]
+    for file in files:
+        if file[0:2]=='#20': #it's a revision version date
+            if int(file[1:9])<olddate: break #we reached a too old revision
+        if file[0]!='#': culled.append(file)
+        elif file[0:2]=='#/': culled.append(file[1:])
+    return unique(culled) #remove duplicate file names
+    
+#return a revision file name with todays date plus a "library version" of two digits
+def genRevName(db):
+    libversion='00' #initialize
+    date=os.popen('date +%F').readline().strip().replace('-','') #YYYYMMDD
+    #check if there are files with same date. list[-1] is latest libversion
+    cmd='ls -1 '+db+'/'+date+'* 2>/dev/null'
+    list=os.popen(cmd).readlines()    
+    if list: libversion='%02d'%(1+int(list[-1].strip()[-2:])) #last two digits of list[-1]
+    return date+libversion
+    
+class revfile:
+    def __init__(self,files=[],other={}):
+        #pointer to previous (p) and next (n) revisions
+        self.point={'p':'','c':'','n':''}
+        self.files=files
+        #extensions if we need to add other properties later
+        self.ext={}
+        if other:
+            for property in other.keys(): self.ext[property]=other[property]
+
+#    def info(self):
+#        all=[]
+        
+#        return all
+
+#    def __repr__(self):
+#        return self.info()
+             
+    #add revision object to the end of the linked list of revisions
+    def insertAtBack(self,files,db=mydb,other={}):
+        self.files=files
+        self.point['c']=genRevName(db) #give a file name to the revision object
+        #load last revision. Create a new linked list if there is no revision        
+        link=os.path.join(db,'last')
+        if os.path.exists(link):
+            last=pickle.load(open(link,'r'))
+            #update pointers, since self will become new "last"
+            self.point['p']=last.point['c'] #previous of self is last
+            last.point['n']=self.point['c'] #next of last is self
+            #overwrite last with new info
+            fprev=os.path.join(db,last.point['c'])  ;   pickle.dump(last,open(fprev,'w'))
+            #store new revision
+            flast=os.path.join(db,self.point['c'])  ;   pickle.dump(self,open(flast,'w'))
+            #update "current" and "last" symbolic links
+            os.system('/bin/rm '+link+' && /bin/ln -s '+flast+' '+link)
+            link=os.path.join(db,'current')
+            os.system('/bin/rm '+link+' && /bin/ln -s '+flast+' '+link)            
+        else: #create a new linked lists of revisions
+            flast=os.path.join(db,self.point['c'])
+            pickle.dump(self,open(flast,'w'))
+            os.system('/bin/ln -s '+flast+' '+link) #symbolic link "last" point to end of list
+            link=os.path.join(db,'first')
+            os.system('/bin/ln -s '+flast+' '+link) #symbolic link "first" point to start of list
+            link=os.path.join(db,'current')
+            os.system('/bin/ln -s '+flast+' '+link) #symbolic link "current" point to end of list
+        print 'Revision '+self.point['c']+' created'
+
+#copy files from prefix to libdir. Change the root directory from prefix to libdir
+def transferFiles(files,prefix='/gpfs1/active/jose',libdir=nodeLib):
+    frontNodes=frontNodes0[:]
+    updateNodes=updateNodes0[:]
+    host=os.popen('hostname').readline().split('.')[0] #front end node where we'll doing the update
+    frontNodes.remove(host)                     #the other front end nodes
+    localfiles=[]
+    pattern=re.compile(prefix+'/([\S]+)') #retrieve filename withouth the "prefix" part
+    for file in files:
+        if not os.path.exists(file):
+            sys.stderr.write(file+' does not exists!\n')
+            continue
+        match=pattern.match(file)
+        if match:
+            suffix=match.group(1)
+            fname=os.path.basename(suffix) #name of file
+            dir=libdir+'/'+os.path.dirname(suffix) #directory under nodeLib where fname will reside
+            if not os.path.exists(dir): os.system('/bin/mkdir -p '+dir)
+            localfile=dir+'/'+fname
+            cmd='/bin/cp -r '+file+' '+localfile  ;  os.system(cmd)
+            localfiles.append(localfile)
+        else: return [] #failure
+    #copy all new files to local directory of other front end nodes also
+    for other in frontNodes+updateNodes:
+        cmd='/usr/bin/rsync -a -R '+' '.join(localfiles)+' '+other+':/ >/dev/null  2>/dev/null'
+        if os.system(cmd):
+            sys.stderr.write('ERROR from updateLib::transferFiles: could not rsync to '+other+'\n')
+    return localfiles #success Now the list has libdir as root directory
+
+#transfer files from frontNode:libdir to libdir
+#def transferToNode(filesToUpdate,db=mydb,libdir=nodeLib,frontNode='fec01'):
+def transferToNode(filesToUpdate,db=mydb,libdir=nodeLib,updateNode='b1'):
+    for file in filesToUpdate:     #check existence of every local directory. Create them otherwise
+        dirname=os.path.dirname(file)
+        if not os.path.exists(dirname): os.system('/bin/mkdir -p '+dirname)
+    #transfer files in a single rsync connection with -R flag. We assume files are in absolute path
+    #os.system('/usr/bin/rsync -a -R '+frontNode+':\''+' '.join(filesToUpdate)+'\' / >/dev/null')
+    os.system('/usr/bin/rsync -a -R '+updateNode+':\''+' '.join(filesToUpdate)+'\' / >/dev/null')
+
+#create a new revision file with a list of files to update. Bring the
+#files to /library/jose in fec01, then rsync to fec04.
+def add_new_revision(files,db=mydb,other={}):
+    frontNodes=frontNodes0[:]
+    updateNodes=updateNodes0[:]
+    host=os.popen('hostname').readline().split('.')[0] #front end node where we'll doing the update
+    frontNodes.remove(host)                     #the other front end nodes
+    #transfer from /gpfs1/active/jose/python to /library/jose/python
+    files=transferFiles(files)
+    if files: #if files were transferred, then add a new revision file
+        revfile([]).insertAtBack(files,db=db,other=other)
+        #overwrite the whole linked list of revisions in the other nodes
+        for other in frontNodes+updateNodes:
+            cmd='/usr/bin/rsync -az --delete '+db+'/ '+other+':'+db+'/ >/dev/null 2>/dev/null'
+            if os.system(cmd): sys.stderr.write('ERROR from updateLib::add_new_revision: could not transfer revisions from '+host+' to '+other+'\n')
+        return 0 #success (we follow UNIX convention)
+    else: return 1 #failure (we follow UNIX convention)
+
+#update the revision file in the library, and bring whatever files are required
+def updateNodeLib(rev,db_local=mydb,db_remote=mydb):
+    maxlag=600 ; delta=60 ; idle=0
+    while idle<maxlag and os.path.exists(busyfile):
+        sleep(delta) #sleep for one minute if other update is taking place
+        idle+=delta  #we won't waith more than 10 minutes for a node code library update
+    if not os.path.exists(db_node): os.system('/bin/mkdir -p '+db_node)
+    os.system('/bin/touch '+busyfile) #create busy file. It's a mark we are updating
+    current=os.path.join(db_local,'current')     #simbolic link to local revision file
+    if not os.path.exists(current):              #we have not set up the revisions directory
+        if not os.path.exists(db_local): os.system('/bin/mkdir -p '+db_local)
+        localDate=0                              #this will ensure we load all remote revisions
+    else:
+        currNodeRev=pickle.load( open(current,'r') ) #load local revision into object
+        localDate=int(currNodeRev.point['c'])        #name of the local revision file
+    if rev!='last' and localDate>=int(rev):
+        os.system('/bin/rm '+busyfile)  ;  return 0  #nothing to do and exit update as success
+    #bring all revision files to local repository. We don't just bring
+    #"rev" because we may need revisions that are older than "rev",
+    #but newer than "current".
+    revs=[] #list of revision files that are used for the update
+    #I chose to pass the name of a working front node, instead of
+    #running through fec01,fec03, and fec04 looking for a working
+    #node. The reason is that, for instance, fec01 was down for a time
+    #and has non-updated library. If suddenly Bartosz brings the node
+    #back then the computing nodes would probe fec01 and make an
+    #incorrect update    
+    #fn=os.popen('echo $FRONTNODE').readline().strip() #working front node
+    fn=os.popen('echo $UPDATENODE').readline().strip() #working front node
+    #if not os.system('/usr/bin/rsync -az --delete ${FRONTNODE}:'+db_remote+'/ '+db_local+'/ 2>/dev/null >/dev/null'): #overwrite db_local with revisions files from db_remote. Delete other files excepth "busyfile"
+    #overwrite db_local  from db_remote. Delete other files excepth "busyfile"
+    exitVal=os.system('/usr/bin/rsync -az --delete ${UPDATENODE}:'+db_remote+'/ '+db_local+'/ 2>/dev/null >/dev/null')
+    if exitVal not in rsyncExitKeys: exitVal=999 
+    if not exitVal: #rsync transfer was a success
+        sys.stdout.write('updating node code library from '+fn+'\n') #for the log file
+        #load target revision. Will work even if rev=='last', because 'last' is a symbolic link
+        targetRev=pickle.load( open(os.path.join(db_local,rev),'r') )
+        revs.append(targetRev.point['c'])             #initalize list of revisions to update
+        filesToUpdate=targetRev.files[:]                        #initialize
+        prevRevFile=targetRev.point['p']                        #name of previous revision
+        while prevRevFile and localDate < int(prevRevFile):     #earlier revisions are needed
+            revs.append(prevRevFile)
+            prevRev=pickle.load( open(os.path.join(db_local,prevRevFile),'r') )        
+            filesToUpdate+=prevRev.files
+            prevRevFile=prevRev.point['p']                      #name of previous revision
+        filesToUpdate=unique(filesToUpdate)                     #remove list duplicates
+        transferToNode(filesToUpdate,updateNode=fn)              #update files in the local node
+        #the "current" link was brougth from $FRONTNODE and points to the
+        #last revision. Overwrite with link pointing to "rev"
+        if os.path.exists(current): os.system('/bin/rm '+current)     
+        os.system('/bin/ln -s '+os.path.join(db_local,rev)+' '+current) #update link "current
+        sys.stdout.write('updating node code library using revisions: '+' '.join(revs)+' \n')
+        os.system('/bin/rm '+busyfile)                          #mark update is finished
+        return 0 #success (we follow UNIX convention)
+    #else: sys.stderr.write('ERROR from updateLib::updateNodeLib: could not update node code library from '+fn+'. Please update environment variable FRONTNODE\n')
+    else: sys.stderr.write('ERROR from updateLib::updateNodeLib: could not update node code library from '+fn+'. rsync reports '+rsyncExitValues[exitVal]+'\n')
+    os.system('/bin/rm '+busyfile)                          #mark update is finished
+    return 1 #failure (we follow UNIX convention)
+        
+if __name__=='__main__':
+    inpHand('Usage: updateLib.py [options]',
+            ' -a __rev revision file name (def: None (will do nothing))',              
+            ' -b _A_listf filename with list of files to update. Will create new revision',
+            ' -c __olddate Will create a new revision but will add also all files for revisions newer than the YYYYMMDD date, if these revisions are also included in the list of files to update (def:None)',
+            ).parse(locals(),sys.argv)
+
+    if not olddate: olddate='last'
+    
+    if listf: #We want to add a new revision file
+        files=chomp(open(listf,'r').readlines())
+        files=parse_files(files,olddate=olddate)
+        sys.exit( add_new_revision(files) )
+    else:     #We want to update the node library
+        if not rev: sys.exit(0) #nothing to do
+        sys.exit( updateNodeLib(rev) )

@@ -1,0 +1,41 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'scriptf'
+p4
+S'/gpfs1/scratch/jose/qsub/2007-02-17/qsub.sh_gui000353'
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'Hellinga: semiSoftStrands'
+p9
+sS'args'
+p10
+S'-e "-Wx=qos:critical" -n semi -d 2 -k 900 -c scratchdir/Hellinga/distrByLengthDecreasedLoopLoopInteraction/thioredoxin/compare_three_methods/semiSoftStrands/out/xxxxx -a scratchdir/Hellinga/distrByLengthDecreasedLoopLoopInteraction/thioredoxin/compare_three_methods/semiSoftStrands/out/list -f "/bin/cp  /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/thioredoxin/compare_three_methods/semiSoftStrands/out/xxxxx/rmsinp /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/thioredoxin/compare_three_methods/semiSoftStrands/out/xxxxx/seq.dat /gpfs1/active/jose/code/projects/Hellinga/brun/in.dd /gpfs1/active/jose/code/projects/Hellinga/brun/tra.in /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/thioredoxin/compare_three_methods/semiSoftStrands/out/xxxxx/chain.dat /gpfs1/active/jose/code/projects/Hellinga/casB_gene2 /gpfs1/active/jose/code/projects/Hellinga/spicker_gene /gpfs1/active/jose/code/projects/Hellinga/dukka_pulchra.py /gpfs1/active/jose/code/cpp/pdb_utils/Rg.x ." -g "tar jxf /gpfs1/active/jose/code/f77/tasser/tasser.1.0/common.tbz2 && ./casB_gene2 && tar jcf xxxxx.B.out.tasser.tbz2 *.tra  && /bin/mv xxxxx.B.out.tasser.tbz2 /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/thioredoxin/compare_three_methods/semiSoftStrands/out/xxxxx && for i in \\`ls -1 rep*tra\\`;do ./Rg.x -c \\$i > /dev/null ;done && ./spicker_gene && tar jcf xxxxx.B.out.spicker.tbz2 combo*.pdb closc*.pdb rst.dat && /bin/mv xxxxx.B.out.spicker.tbz2 /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/thioredoxin/compare_three_methods/semiSoftStrands/out/xxxxx && ./dukka_pulchra.py -a xxxxx -b B -c yes" -i "/bin/mv xxxxx.B.closc*.pdb.rebuilt /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/thioredoxin/compare_three_methods/semiSoftStrands/structures"'
+p11
+sS'story'
+p12
+S"Submit this job with the 'sub' button. "
+p13
+sS'file'
+p14
+S'/gpfs1/active/jose/code/python/db/job/tmpyLoKD8'
+p15
+sS'time'
+p16
+S'Fri Feb 16 23:56:55 2007'
+p17
+sS'shared'
+p18
+S''
+p19
+sb.

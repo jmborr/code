@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'Hellinga: secondary structure prediction'
+p9
+sS'args'
+p10
+S'-o yes -e "-Wx=qos:critical" -n a2 -d 0.5 -k 850 -c scratchdir/Hellinga/distrByLengthDecreasedLoopLoopInteraction/sequence_checking/a0112/xxxxx -a scratchdir/Hellinga/distrByLengthDecreasedLoopLoopInteraction/sequence_checking/a0112/list -g "/library/jose/code/python/secondary/mkseq.py -a /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/sequence_checking/a0112/xxxxx/xxxxx -o /gpfs1/scratch/jose/Hellinga/distrByLengthDecreasedLoopLoopInteraction/sequence_checking/a0112/xxxxx"'
+p11
+sS'file'
+p12
+S'/gpfs1/active/jose/code/python/db/job/tmpCfGrjB'
+p13
+sS'time'
+p14
+S'Thu Feb 15 17:30:06 2007'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

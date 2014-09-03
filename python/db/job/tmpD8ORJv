@@ -1,0 +1,36 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S''
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'abInitioWeightOptimization generate energy_averages'
+p9
+sS'args'
+p10
+S'-n eav -d 0.99 -k 100 -c scratchdir/abInitioWeightOptimization/100to199/x/xxxxx  -a scratchdir/abInitioWeightOptimization/100to199/success_hardNoGeomViol.list -f "/bin/cp  /gpfs1/active/jose/code/projects/abInitioWeightOptimization/gterms.py /gpfs1/scratch/jose/abInitioWeightOptimization/100to199/x/xxxxx/energy_terms.dat.bz2 ." -g " bunzip2 energy_terms.dat.bz2 && ./gterms.py -a energy_terms.dat -b energy_averages.dat" -i "/bin/mv energy_averages.dat /gpfs1/scratch/jose/abInitioWeightOptimization/100to199/x/xxxxx"'
+p11
+sS'file'
+p12
+S'/gpfs1/active/jose/code/python/db/job/tmpD8ORJv'
+p13
+sS'time'
+p14
+S'Wed Jan 17 14:12:31 2007'
+p15
+sS'shared'
+p16
+g5
+sb.

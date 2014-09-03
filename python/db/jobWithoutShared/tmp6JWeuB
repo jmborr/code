@@ -1,0 +1,33 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'preditc_strutc_list.py'
+p7
+sS'name'
+p8
+S'casp7AbInitio'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmp6JWeuB'
+p11
+sS'time'
+p12
+S'Fri Apr 21 17:28:19 2006'
+p13
+sS'args'
+p14
+S'-u qsub -q batch -v "-Wx=qos:casp-bench" -c 10 -b 500 -x ab -l /gpfs1/scratch/jose/casp7/output/testHardCases/test0/hard.list  -t "codedir/python/tasser/tasser1.0/tasser_data_done.py -d codedir/f77/tasser/tasser.1.0/abinitio/in.dd -t codedir/f77/tasser/tasser.1.0/abinitio/cas_abinitio -f  /gpfs1/scratch/jose/casp7/output/testHardCases/test0/xxxxx  -l /gpfs1/scratch/jose/casp7/output/testHardCases/test0/xxxxx  -b /gpfs1/active/casp7/output/jose/fake -e /gpfs1/scratch/jose/casp7/output/testHardCases/test0/xxxxx -o . -i xxxxx -c NOTAR"  -m "in.dd out.d rep* tra*.in" -o /gpfs1/scratch/jose/casp7/output/testHardCases/test0/xxxxx'
+p15
+sb.

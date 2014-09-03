@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'preditc_strutc_list.py'
+p7
+sS'name'
+p8
+S'independent run abinitio'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmpYHLR39'
+p11
+sS'time'
+p12
+S'Mon Feb 20 09:14:27 2006'
+p13
+sS'args'
+p14
+S'-u qsub -q batch -b 500 -x idp -l /gpfs1/active/jose/projects/nonhomol_pdbJul05/test_sufficient_sampling/independent_runs/list -t "codedir/python/tasser/tasser1.0/tasser_data_done.py -g 10 -d /gpfs1/active/jose/code/f77/tasser/tasser.1.0/original/in.dd   -t codedir/f77/tasser/tasser.1.0/abinitio/cas_abinitio -f pdbnonhom/seq -b /gpfs1/active/jose/projects/createInputsTasser/x/xxxxx/abinitio  -e /gpfs1/active/jose/projects/createInputsTasser/x/xxxxx -o . -a CA -i"  -m "CA  out.d rep* tra*.in seq.dat rmsinp" -o /gpfs1/active/jose/projects/nonhomol_pdbJul05/test_sufficient_sampling/independent_runs/x/xxxxx'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

@@ -1,0 +1,2 @@
+-O -i in -p r.top -c rst -ref ref -o r.out -r r.rst -evbin r.evb -x r.crd -v r.vel
+-O -i in -p p.top -c rst -ref ref -o p.out -r p.rst -evbin p.evb -x p.crd -v p.vel

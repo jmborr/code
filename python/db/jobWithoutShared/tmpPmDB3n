@@ -1,0 +1,33 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'casp7AbInitioSpicker'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmpPmDB3n'
+p11
+sS'time'
+p12
+S'Tue May 16 16:43:49 2006'
+p13
+sS'args'
+p14
+S'-d "-Wx=qos:casp-bench"  -x spick -b scratchdir/casp7/output/testHardCases/test0/xxxxx -a scratchdir/casp7/output/testHardCases/test0/hard.list -e "/bin/cp /gpfs1/active/jose/code/f77/spicker/spicker0.0/spicker /gpfs1/scratch/jose/casp7/output/testHardCases/test0/xxxxx/*tra* /gpfs1/scratch/jose/casp7/output/testHardCases/test0/xxxxx/seq.dat /gpfs1/scratch/jose/casp7/output/testHardCases/test0/xxxxx/rmsinp ." -f "bunzip2 *.bz2 &&  ls -1 rep*tra | wc -l > tra.in && ls -1 rep*.tra >> tra.in && ./spicker" -g "/bin/mv *pdb rst.dat /gpfs1/scratch/jose/casp7/output/testHardCases/test0/xxxxx"'
+p15
+sb.

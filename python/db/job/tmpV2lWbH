@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'spiker on metaserver casp targets'
+p9
+sS'args'
+p10
+S'-e "-Wx=qos:casp-bench" -k 100 -n metaS -a /gpfs1/active/casp7/output/jose/assess/spickeronMetaserver/fail.list -c /gpfs1/active/casp7/output/jose/assess/spickeronMetaserver/xxxxx -f "/bin/cp /gpfs1/active/casp7/output/jose/assess/spickeronMetaserver/xxxxx/xxxxx.bz /gpfs1/active/casp7/input/Metaserver/xxxxx/rmsinp /gpfs1/active/casp7/input/Metaserver/xxxxx/seq.dat /gpfs1/active/jose/code/f77/spicker/spicker0.0/spicker  /gpfs1/u/jose/bin/pulchra  ." -g "tar jxf xxxxx.bz && find ./ -name \\"rep*\\" > junk &&  wc junk | tr -s \' \'|cut -d\' \' -f 2 > tra.in && cat junk >> tra.in && spicker && for i in \\`ls -1 combo* closc*\\`; do pulchra \\$i; done" -i "/bin/mv combo* closc* rst.dat tra.in seq.dat rmsinp /gpfs1/active/casp7/output/jose/assess/spickeronMetaserver/xxxxx"'
+p11
+sS'file'
+p12
+S'/gpfs1/active/jose/code/python/db/job/tmpV2lWbH'
+p13
+sS'time'
+p14
+S'Fri Jul 21 18:51:04 2006'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

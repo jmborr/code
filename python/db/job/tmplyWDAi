@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'updateMkLib'
+p9
+sS'file'
+p10
+S'/gpfs1/active/jose/code/python/db/job/tmplyWDAi'
+p11
+sS'time'
+p12
+S'Fri Apr 14 16:12:22 2006'
+p13
+sS'args'
+p14
+S'-x attr -d "-Wx=qos:casp" -a /gpfs1/scratch/jose/updateMkLib/removeCA/list -e "/bin/cp /gpfs1/scratch/jose/updateMkLib/removeCA/xxxxx.pdb /gpfs1/active/jose/code/projects/updateMkLib/yang/mklib3.pl ." -f "./mklib3.pl xxxxx"  -g "/bin/mv xxxxx.mtx xxxxx.cnt2 /gpfs1/scratch/jose/updateMkLib/out" -b /gpfs1/scratch/jose/updateMkLib/logs'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.

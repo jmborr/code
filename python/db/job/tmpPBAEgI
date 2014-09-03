@@ -1,0 +1,37 @@
+(ijobs.job
+job
+p0
+(dp1
+S'exed'
+p2
+S'/gpfs1/active/jose/code/python/combo_jobs'
+p3
+sS'story'
+p4
+S"Submit this job with the 'sub' button. "
+p5
+sS'exe'
+p6
+S'generic_job_list.py'
+p7
+sS'name'
+p8
+S'genSpickOrigFolds'
+p9
+sS'args'
+p10
+S'-k 600 -l 1000 -n spick -c scratchdir/foldsOrigin/out/c/xxxxx -a scratchdir/foldsOrigin/out/c/fail_spick.list -f "/bin/cp  /gpfs1/scratch/jose/foldsOrigin/input/c/xxxxx/rmsinp /gpfs1/scratch/jose/foldsOrigin/input/c/xxxxx/seq.dat /gpfs1/active/jose/code/projects/foldsOrigin/spicker_gene /gpfs1/u/jose/bin/pulchra  /gpfs1/u/jose/bin/Rg.x ." -g "for tbz2 in \\`ls -1 /gpfs1/scratch/jose/foldsOrigin/out/c/xxxxx/*tbz2\\`; do tar jxf \\$tbz2; done &&  find . -name \\"rep*tra\\" -exec ./Rg.x -c {} >/dev/null \\\\; && find . -name \\"rep*tra.filtered\\" > junk && wc junk | tr -s \' \' |cut -d\' \' -f 2 > tra.in && cat junk >> tra.in && spicker_gene && for closc in \\`ls -1 closc*\\`; do pulchra \\$closc; done" -i "/bin/mv closc* rst.dat str.txt tra.in combc* /gpfs1/scratch/jose/foldsOrigin/out/c/xxxxx"  '
+p11
+sS'file'
+p12
+S'/gpfs1/active/jose/code/python/db/job/tmpPBAEgI'
+p13
+sS'time'
+p14
+S'Tue Jun  6 11:52:24 2006'
+p15
+sS'shared'
+p16
+S''
+p17
+sb.
