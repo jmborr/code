@@ -1,0 +1,118 @@
+We consider two regimes when comparing two structures l(corresponding
+to the structure with the longest amino acid sequence) and
+s(corresponding to the structure with the shorter amino acid
+sequence):
+(remember TM(a,b) is normalized by length of 'b')
+A
+ TM(s,l) < TM_0 (TM_0=0.65) \
+                             >   s contained in l
+ TM(l,s) > TM_0             /   
+
+B
+ TM(s,l) > TM_0 (thus TM(l,s) > TM_0 also)    l and s are similar  (s~l)
+
+Example of A:  102l_ (162 amino acids) , 1k28A (557aa)
+  TM(1k28A,102l_) = 0.26
+  TM(102l_,1k28A) = 0.96 (rmsd=1.03Angstroms)
+  We have superposition /gpfs1/scratch/jose/spliceVariants/benchmarkByTMalign/1k28A_102l_.png
+Example of B:  101m_ (154 aa)  1h97A (147aa)
+ TM(101m_,1h97A) = 0.77  ( and TM(1h97A,101m_)=0.80 )
+
+We are interested in regime B. For (s,l) in regime A, we can decompose
+the long sequence into the short sequence and some remainder "r":
+l=s+r. We assume that the structure of "r" is independent of the
+presence of "s"
+
+#########################################################################
+
+Program checkJeffLists.py does: From the
+/gpfs1/archive/adrian/dat/pdb_aug06.apr06 list of structures, go to
+directory /gpfs1/active/skolnick/struhistaug06 which contains for each
+structure a list of headers with significative TM score. Then, do the
+TM align and store in alignmentsByTM.dat, and alignmentsByTM.idx
+
+We impose no two sequences bigger than 300 residues, and the d0
+parameter is set based on the length of the longest sequence. This
+insure that we are selecting alignments of the previous regime B
+
+#######################################################################
+
+findCommonTemplate.py does:
+
+For every (structural) alignment in alignmentsByTM.dat, find a PDB
+structure in the pdb_aug06.apr06 database that will be template for
+both aligned sequences.
+
+For a structural alignment between aaaaa.pdb and bbbbb.pdb, instead of
+looking all PDB structures, we gather all structures in aaaaa.hist and
+bbbbb.hist in /gpfs1/active/skolnick/struhistaug06 and we will do
+TMalign of these structures to aaaaa.pdb and bbbbb.pdb
+
+For a structural alignment between aaaaa.pdb and bbbbb.pdb, let be L
+the number of aligned residues. Then, for a particular template
+ccccc.pdb in either aaaaa.hist or bbbbb.hist, we do
+TMalign(aaaaa,ccccc) and TMalign(bbbbb,ccccc) with d0 parameter given
+by L, ie., d0(L). Let Na_bc be the number of residues of aaaaa that
+are aligned to both bbbbb and ccccc (similarly Nb_ac). We aim to find
+the template ccccc such that Na_bc*Nb_ac is maximal. This will be the
+common template that we assign to both aaaaa and bbbbb.
+
+Output is /gpfs1/scratch/jose/spliceVariants/benchmarkByTMalign/findCommonTemplate.dat
+
+Some alignments in alignmentsByTM.dat did not have a template. Those
+are not present in findCommonTemplate.dat
+
+#######################################################################
+
+infoOnCommonTemplate.py does:
+
+For every line in findCommonTemplate.dat, calculate several
+quantities, like the number of constitutive residues that are covered
+by the template, and the number of variant residues that are covered
+by the template.
+
+Output is /gpfs1/scratch/jose/spliceVariants/benchmarkByTMalign/infoOnCommonTemplate.dat
+
+#######################################################################
+
+By looking at the output of infoOnCommonTemplate.dat, it seems that
+the template covers most of the variant residues. This maybe because
+the vast majority of variant insertions have only one residue, which
+may easily be covered by the template.
+
+averageOverlapPerInsertionLength.py does:
+
+For every line in findCommonTemplate.dat, obtain for both the short
+and long sequences all the insertions, and look what are the coverages
+of the template to each of these insertions. Do this for all lines in
+findCommonTemplate.dat and then calculate average coverage as a
+function of insertion length.
+
+Output is
+/gpfs1/scratch/jose/spliceVariants/benchmarkByTMalign/averageOverlapPerInsertionLength.dat
+
+As expected, the bigger the insertion the lower the average coverage
+(/gpfs1/scratch/jose/spliceVariants/benchmarkByTMalign/averageOverlapPerInsertionLength.agr)
+
+#######################################################################
+
+filtered.list
+
+List of sequences that participate at least in one alignment of findCommonTemplate.dat
+
+#######################################################################
+
+Gather loop properties, which are:
+ 
+loop length, and its logarithm
+extended loop length, and its logarithm
+exposed surface 0.0(exposed) to 0.85(buried)
+helix (h) extended (e) and coil (c) predicted proportions
+average local rmsd
+average global rmsd
+distance to either N- or C-terminal, calculated as follows:
+    1-n/10 where n=min(nN,nC) if n<=10, and nN(nC) is distance to N-(C-)terminal
+local rmsd to native
+global rmsd to native
+
+We do not gather loop with less than four residues

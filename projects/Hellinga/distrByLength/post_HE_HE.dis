@@ -1,0 +1,61 @@
+#properties of produced sequences
+#E-E posterior distribution
+ -9 0.000
+ -8 0.001
+ -7 0.002
+ -6 0.005
+ -5 0.010
+ -4 0.015
+ -3 0.038
+ -2 0.069
+ -1 0.180
+  0 0.300
+  1 0.169
+  2 0.086
+  3 0.061
+  4 0.033
+  5 0.017
+  6 0.010
+  7 0.002
+  8 0.000
+  9 0.002
+#E-H-E posterior distribution
+ -9 0.000
+ -8 0.002
+ -7 0.000
+ -6 0.002
+ -5 0.005
+ -4 0.021
+ -3 0.047
+ -2 0.090
+ -1 0.127
+  0 0.215
+  1 0.175
+  2 0.141
+  3 0.080
+  4 0.038
+  5 0.036
+  6 0.010
+  7 0.009
+  8 0.000
+  9 0.000
+singlet probability
+E 0.669
+H 0.331
+beginning singlet probability
+E 0.667
+H 0.333
+beginning doublet probability
+EE 0.270
+HH 0.095
+EH 0.398
+HE 0.237
+triplets  probability
+HEE 0.180
+EHE 0.231
+EEH 0.130
+HHE 0.069
+EEE 0.210
+HHH 0.017
+HEH 0.105
+EHH 0.057

@@ -1,0 +1,2 @@
+packmol < packmol_cions.inp > packmol_cions.out
+packmol < packmol_charges.inp > packmol_charges.o

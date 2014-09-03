@@ -1,0 +1,94 @@
+#!/bin/bash
+# Generic job submission script
+# Adrian K. Arakaki
+# Last modification: 2006_02_20
+# $1 -> input file name, sequences in FASTA format 
+# $2 -> directory name of the genome or set of sequences in $MYPATH
+
+# Set path
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/lib
+export PATH=/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/pgi/linux86/bin:/gpfs1/u/adrian/bin
+
+# Set variables
+CP=/bin/cp
+MKDIR=/bin/mkdir
+SLEEP=/bin/sleep
+TAR=/bin/tar
+DATE=/bin/date
+LN=/bin/ln
+RM=/bin/rm
+HOSTNAME=/bin/hostname
+ECHO=/bin/echo
+MV=/bin/mv
+
+MYPATH=/gpfs1/scratch/jose/spliceVariants/benchmark/preparing_database
+DATABASE=/library/yzhang/nr/nr.filter
+FASTA=/gpfs1/active/jose/code/projects/spliceVariants/benchmark/preparing_database/fasta34
+PARSEFASTA=/gpfs1/active/jose/code/projects/spliceVariants/benchmark/preparing_database/fastaout
+OUT=.out
+CLOSEDIR=3590
+DISTDIR=e10
+
+SI_INTRA=0.99
+SI_MINDIST=0.35
+SI_MINCLOSE=0.35
+SI_MAX=0.99
+
+LOCALDIR=/tmp/jose/MSA-$2-$1-`$DATE +%s`-$RANDOM
+
+# Create clean local directory
+$MKDIR -p  $LOCALDIR
+
+# Copy sequence input file to current directory 
+if test ! -e $MYPATH/$2/input/$1
+then
+ $ECHO       $MYPATH/$2/input/$1 does not exist.
+ exit 0
+fi
+$CP          $MYPATH/$2/input/$1 $LOCALDIR
+$SLEEP 5s
+
+# Link executables
+$LN -sf $FASTA      $LOCALDIR/runfasta
+$LN -sf $PARSEFASTA $LOCALDIR/runfastaout
+
+# Run fasta
+cd $LOCALDIR
+$HOSTNAME   > track_$2$1
+$DATE      >> track_$2$1
+./runfasta $1 $DATABASE -b 500 -E 0.01 -Q -m 10 -p -w 50 -O $1$OUT >/dev/null
+# Generate alignments from fasta search output
+./runfastaout $1 $1$OUT $SI_INTRA $SI_MINDIST $SI_MINCLOSE $SI_MAX
+$DATE      >> track_$INDIR$1
+$SLEEP 5s
+
+# Create directory structure in /nfs
+if test ! -d $MYPATH/$2/out
+then
+ $MKDIR $MYPATH/$2/out
+fi
+if test ! -d $MYPATH/$2/log
+then
+ $MKDIR $MYPATH/$2/log
+fi
+if test ! -d $MYPATH/$2/$CLOSEDIR
+then
+ $MKDIR $MYPATH/$2/$CLOSEDIR
+fi
+if test ! -d $MYPATH/$2/$DISTDIR
+then
+ $MKDIR $MYPATH/$2/$DISTDIR
+fi
+# Copy output to /nfs
+# $CP $1$OUT       $MYPATH/$2/out
+#$CP track_$2$1   $MYPATH/$2/log               #I don't need this file now
+$CP $1.log       $MYPATH/$2/log
+#$CP $1.close.aln $MYPATH/$2/$CLOSEDIR/$1.aln  #I don't need this file now
+#$CP $1.dist.aln  $MYPATH/$2/$DISTDIR/$1.aln   #I don't need this file now
+
+# Remove /tmp directory
+cd $LOCALDIR
+cd ..
+$RM -fr $LOCALDIR
+
+exit 0

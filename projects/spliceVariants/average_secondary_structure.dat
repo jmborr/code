@@ -1,0 +1,9 @@
+#1 bin-number, 2 related-fragment-size, 3 constitutive-number-of-fragments, 4 constitutive-alpha-content, 5 constitutive-beta-content, 6 constitutive-coil-content, 7 variant-number-of-fragments, 8 variant-alpha-content, 9 variant-beta-content, 10 variant-coil-content
+#1   2     3   4     5     6        7   8     9     10
+ 2   6    92  0.32  0.00  0.68    249  0.35  0.00  0.65
+ 3  12    99  0.36  0.00  0.64    373  0.39  0.00  0.61
+ 4  24   187  0.37  0.00  0.63    481  0.36  0.00  0.64
+ 5  48   386  0.34  0.00  0.66    561  0.34  0.00  0.66
+ 6  96   770  0.37  0.00  0.63    381  0.33  0.00  0.67
+ 7 192  1019  0.38  0.00  0.62    123  0.31  0.00  0.69
+ 8 384    75  0.44  0.00  0.56      1  0.08  0.00  0.92

@@ -1,0 +1,23 @@
+Variables:
+native coordinates (double precision 2D-array)
+previous rmsd of each replica (double 1D-array),rmsdprev_rev
+rmsd targets for each replica (double 1D-array),rmsdtarget_rev
+rmsd after move (double), rmsdnew
+minimum rmsd (double), rmsdmin
+maximum rmsd (double), rmsdmax
+
+Subroutines:
+(1)read native file. Input is file file name. Output are native coordinates
+(3)populate rmsdtarget_rev=(rmsdmax/rmsdmin)^( (rev-1)/(nrepf-1) ) * rmsdmin. This ensure that rmsdtarget_1=rmsdmin, and rmsdtarget_nrepf=rmsdmax, and rmsdtarget_nrep>rmsdmax
+(2)accept/reject move if:
+	rmsd < rmsdtarget_rev, or
+	rmsdtarget_rev < rmsd < rmsdprev_rev
+	rmsd < rmsdtarget_{rev+1} and 
+           randon_number > (rmsd - rmsdtarget_rev)/(rmsdtarget_{rev+1} - rsmdtarget_rev)
+
+Fortran reference
+Including Fortran Source Files: INCLUDE "filename"
+INCLUDE files are especially recommended when the same COMMON blocks and the same
+COMMON block data mappings are used in several program units. For example the following
+statement includes the file MYFILE.DEF.
+INCLUDE "MYFILE.DEF"

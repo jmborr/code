@@ -1,0 +1,2 @@
+genE.py will output, for each target, a set of energy averages over a
+subset of the generated decoys for this target.

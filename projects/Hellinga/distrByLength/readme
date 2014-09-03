@@ -1,0 +1,35 @@
+The point of this code is to generate a, b, and c sequences such that:
+
+For class alpha. We first calculate distribution of expected number of
+helixes from helical proteins in between 100 and 200 residues. Then we
+distribute the 400 sequences that we are to output according to the
+previous distribution. For each number of helix, we collect all
+proteins with such number and calculate from then the expected
+distribution of helix lengths. We use this distribution when
+generating the helixes.
+
+For class beta, we proceed same as with the helical protein, but we
+add the expected correlation in strand length between consecutive
+strands.
+
+For alpha protein, we consider only the number of present strands when
+calculating the expected number of secondary elements in a
+protein. For a given number of strands, we collect all proteins with
+such number and derive from them the distribution of helix lengths,
+the distribution of interior loop lenghts, and the distribution of
+strand lengths. In addition, we compute the expected correlation in
+strand length between consecutive strands and the expected correlation
+in strand length between two strands mediated by a helix.  When
+placing the secondary elements on the sequence, we have to decide
+whether we put a helix or a strand. We calculate the probability of
+having a helix or strand provided we know the identity of the two
+previous secondary elements, and use this probabilities when placing
+strands and helixes. We also calculate the probability of having a
+helix or strand at the beginning of the sequence, as well as the
+probability of the four combinations from placing two secondary
+elements at the beginning of the sequence. I noticed that the length
+constraint of 150 residues in combination with the number of strands
+to output results in a bias to place strands in excess. To counter
+this excess, we impose the condition that the ratio of number of
+residues assigned to be in a helix over the total number of residues
+to be in a strand should match that one of real proteins.

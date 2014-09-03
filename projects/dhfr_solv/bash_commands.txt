@@ -1,0 +1,324 @@
+#!/bin/bash
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent
+#  mkdir -p $sdir/solv
+#  cd $sdir/solv
+#  #ln -s ../packmol/${sdir}_premin.pdb
+#  #cp $parent/0.00/solv/tleap.in .
+#  #perl -p -i -e "s/0.00_premin/${sdir}_premin/g" tleap.in
+#  tleap11 -I $out/isopropanol/SystemConfigurationFiles -f tleap.in > tleap.out
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent
+#  mkdir -p $sdir/solv/Equil/srt
+#  cd $sdir/solv/
+#  cp dhp.premin.crd  dhp.premin.pdb  dhp.top Equil/srt/
+#  cd Equil/srt
+#  ln -s dhp.premin.crd crd.srt
+#  ln -s dhp.premin.pdb pdb
+#  ln -s dhp.top top
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent
+#  /bin/cp -r EquilTmpl $sdir/solv/
+#  cd $parent/$sdir/solv
+#  mv EquilTmpl Equil
+#  perl -p -i -e "s/<VOLUME>/${sdir}/g" Equil/sub/gensub.py
+#  ENDSOLVENT=`grep ATOM dhp.premin.pdb|tail -1|tr -s ' '|cut -d ' ' -f 5`
+#  perl -p -i -e "s/<ENDSOLVENT>/$ENDSOLVENT/g" Equil/files/min1.in
+#  perl -p -i -e "s/<ENDSOLVENT>/$ENDSOLVENT/g" Equil/files/min2.in
+#  for file in dhp.premin.crd  dhp.premin.pdb  dhp.top;do
+#    /bin/cp $file Equil/srt/
+#  done
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent/EquilTmpl/files
+#  /bin/cp md15.in md16.in production.in $parent/$sdir/solv/Equil/files/
+#done
+
+#parent=/tmp/work/jmborr/dhfr_solv/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent/$sdir/solv/Equil/md16
+#  /tmp/work/jmborr/bin/ptraj11 top < $parent/PtrajJobs/md16ToPDB.in
+#  /bin/mv crd.md16.pdb.1 crd.md16.pdb
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent/$sdir/solv/Equil/md16
+#  pymol crd.md16.pdb  $parent/PymolScripts/crd.md16.check.pml
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent/$sdir/solv/Equil/md16
+#  pymol crd.md16.check.pse
+#done
+
+#parent=/tmp/work/jmborr/dhfr_solv/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent
+#  /bin/cp -r ProdTmpl $sdir/solv/Prod
+#  cd $sdir/solv
+#  cp dhp.top Prod/
+#  cp Equil/md16/crd.md16 Prod/
+#  cd Prod/
+#  ln -s dhp.top top
+#  ln -s crd.md16 rst.first
+#  cp crd.md16 rst
+#done
+
+#parent=/tmp/work/jmborr/dhfr_solv/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+# /bin/cp ProdTmpl/testing.in $sdir/solv/Prod/
+#done
+
+#parent=/tmp/work/jmborr/dhfr_solv/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#   cd $parent/$sdir/solv/Prod/
+#   ptraj11 top  < $parent/PtrajJobs/testing_last_frame.in
+#  /bin/mv testing_last_frame.pdb.50 testing_last_frame.pdb
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent/$sdir/solv/Prod/
+#  pymol testing_last_frame.pdb  $parent/PymolScripts/testing_last_frame.check.pml
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent/$sdir/solv/Prod/
+#  pymol testing_last_frame.check.pse
+#done
+
+#parent=/tmp/work/jmborr/dhfr_solv/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#   cd $parent/$sdir/solv/Prod/
+#   ptraj11 top  < $parent/PtrajJobs/01_last_frame.in
+#  /bin/mv 01_last_frame.pdb.1 01_last_frame.pdb
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#  cd $parent/$sdir/solv/Prod/
+##  pymol 01_last_frame.pdb  $parent/PymolScripts/01_last_frame.pml
+#  pymol $parent/$sdir/solv/Prod/01_last_frame.pse
+#done
+
+#parent=/tmp/work/jmborr/dhfr_solv/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50  1.00;do
+#   cd $parent/$sdir/solv/Prod/
+#   ptraj11 top  < $parent/PtrajJobs/20_last_frame.in
+#  /bin/mv 20_last_frame.pdb.1 20_last_frame.pdb
+#done
+
+#parent=/tmp/work/jmborr/dhfr_solv/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50 1.00;do
+#  cd $parent/$sdir/solv/Prod
+#  ptraj11 top < $parent/PtrajJobs/25_last_frame.in
+#  /bin/mv 25_last_frame.pdb.1 25_last_frame.pdb
+##  cd $parent/noDHFR/Tsai96b/$sdir
+##  mkdir Prod
+##  cp top Equil/md16/crd.md16 Prod/
+##  cd Prod
+##  ln -s crd.md16 rst.first
+##  cp crd.md16 rst
+##  cp testing.in Tsai96b/$sdir/Prod/
+##  cp in Tsai96b/$sdir/Prod/
+##   grep "NSTEP =" $sdir/Prod/out|tail -1
+#done
+
+#parent=/projects/dhfr_solv/out/isopropanol
+#for sdir in 0.00 0.05  0.10  0.15  0.20  0.25  0.30  0.35  0.40  0.45  0.50 1.00 ;do
+##  cd $parent/$sdir/solv/Prod
+##  pymol 25_last_frame.pdb $parent/PymolScripts/25_last_frame.pml
+##  pymol 25_last_frame.pse
+##  ptraj11 top < $parent/PtrajJobs/08_last_frame.in
+##  /bin/mv junk.pdb.1 junk.pdb
+#done
+ 
+#iso=/projects/dhfr_solv/out/isopropanol
+#for vol in 0.05  0.10  0.15  0.20  0.25  0.30 0.50;do
+#  echo "VOL=$vol"
+#  #sdir=$iso/$vol/solv/Prod
+#  #./workCANs.py ContactMap --kwargs "job=cluster rows by K-means,inFile=$sdir/protIsoCml.hd5,offSet=5000,nCentroids=5,jobName=$sdir/clusterRowsByKmeans"
+#  #./workCANs.py ContactMap --kwargs "job=extract centroid frames,directory=$sdir,offSet=5000"
+# sdir=$iso/$vol/unsolv
+#  for time in 60 70 80 90 100;do
+#    ./workCANs.py Sassena --kwargs "job=generate input files,pdbfile=DHFR_DHP_NPD.pdb,dcdfile=$time.dt100fs.dcd,signalfile=$time.dt100fs.hd5,outfile=$sdir/$time.dt100fs.xml"
+#  done
+#done
+
+#./workCANs.py Sassena --kwargs "job=translate with VMD,dcdheader=junk,outfile=$sdir/junk.tcl"
+
+#mol new dhp.top type parm7 
+#mol addfile junk.dcd type dcd first 0 last -1 step 1
+#animate write dcd junk_vmd.dcd first 0 last -1 step 1
+#
+#mol new dhp.top type parm7 
+#animate read dcd junk.dcd beg 0 end 9
+#animate write dcd junk_vmd.dcd beg 0 end 9 waitfor all
+
+#codedir=/home/jmborr/code/projects/dhfr_solv
+#iso=/projects/dhfr_solv/out/isopropanol
+#for vol in 0.05  0.10  0.15  0.20  0.25  0.30 0.50;do
+#  echo "VOL=$vol"
+#  sdir=$iso/$vol/unsolv
+#  for time in 60 70 80 90 100;do
+#    cd $codedir
+#    ./workCANs.py Sassena  --kwargs "job=translate with VMD,dcdheader=$time.dt100fs,outfile=$sdir/junk.tcl"
+#    cd $sdir
+#    vmd -dispdev none -e junk.tcl
+#    #/bin/mv $time.dt100fs_vmd.dcd $time.dt100fs.dcd
+#  done
+#done
+
+#codedir=/home/jmborr/code/projects/dhfr_solv
+#iso=/projects/dhfr_solv/out/isopropanol
+#for vol in 0.05  0.10  0.15  0.20  0.25  0.30 0.50;do
+#  echo "VOL=$vol"
+#  sdir=$iso/$vol/unsolv
+#  cd $sdir
+#  for time in 60 70 80 90 100;do
+#    ll $time.dt100fs_vmd.dcd $time.dt100fs.dcd
+#    #/bin/mv $time.dt100fs_vmd.dcd $time.dt100fs.dcd
+#  done 
+#done
+
+#for time in 60 70 80 90 100;do
+#  sassena --config=$time.dt100fs.xml &
+#  sleep 5s
+#done
+
+#./workCANs.py ContactMap  --kwargs "job=ISO- ISO+,rootDir=$iso"
+
+#./workCANs.py ContactMap  --kwargs "job=RMSF- RMSF+ %,rootDir=$iso"
+
+#root=/ccs/home/jmborr/bio022/dhfr_solv/isopropanol/noDHFR/Martin06
+#for iso in 0.05  0.15  0.25  0.35  0.45 0.10  0.20  0.30  0.40;do
+#  cd $root/$iso/Prod
+#  tar zcf crd.tar.gz *.crd && /bin/rm *.crd
+#  tar zcf out.tar.gz *.out && /bin/rm *.out
+#  tar zcf rst.tar.gz *.rst && /bin/rm *.rst
+#  echo "#" | mail -s "tar $iso finished" borreguero@gmail.com
+#done
+
+#root=/ccs/home/jmborr/bio022/dhfr_solv/isopropanol
+#for file in `find . -name Equil`;do
+#  prefix=`dirname $file`
+#  cd $root/$prefix
+#  tar zcf Equil.tar.gz Equil && /bin/rm -rf Equil
+#done
+#echo "#" | mail -s "tar Equil directories finished" borreguero@gmail.com
+
+#iso=/projects/dhfr_solv/out/isopropanol
+#for vol in 0.00 0.05  0.10  0.15  0.20  0.25  0.30 0.50 1.00;do
+#  echo "VOL=$vol"
+#  sleep 1s
+#  sdir=$iso/$vol/solv/Prod
+#  ./workCANs.py ContactMap --kwargs "job=extract centroid frames,directory=$sdir,offSet=5000"
+#  #cd $sdir
+#  #ptraj11 dhp.top < $iso/PtrajJobs/centerProtein.in
+#done
+
+#vols=(0.00 0.05  0.10  0.15  0.20  0.25  0.30 0.50 1.00)
+#frames=(7150 6390 8400 7800 9220 9440 8790 9000 9810)
+#for i in 0 1 2 3 4 5 6 7 8;do
+#  vol=${vols[$i]}
+#  frame=${frames[$i]}
+#  echo "VOL=$vol, FRAME=$frame"
+#  sleep 1s
+#  /bin/cp $iso/PtrajJobs/centroid.in $iso/$vol/solv/Prod/
+#  sdir=$iso/$vol/solv/Prod
+#  cd $sdir
+#  perl -p -i -e "s/XXX/$frame/g" centroid.in
+#  ptraj11 dhp.top < centroid.in
+#done
+
+#vols=(0.05  0.10  0.15  0.20  0.25  0.30 0.50)
+#frames=(6946 7929 9201 7486 8828 7904 9879)
+#for i in 0 1 2 3 4 5 6;do
+#  vol=${vols[$i]}
+#  frame=${frames[$i]}
+#  echo "VOL=$vol, FRAME=$frame"
+#  sleep 1s
+#  /bin/cp $iso/PtrajJobs/centroidIsoBinding.in $iso/$vol/solv/Prod/
+#  sdir=$iso/$vol/solv/Prod
+#  cd $sdir
+#  perl -p -i -e "s/XXX/$frame/g" centroidIsoBinding.in
+#  ptraj11 dhp.top < centroidIsoBinding.in
+#  /bin/mv centroidIsoBinding.rep.rst.$frame centroidIsoBinding.rep.rst
+#done
+
+#for vol in 0.00 0.05  0.10  0.15  0.20  0.25  0.30 0.50 1.00;do
+#  sdir=$iso/$vol/unsolv
+#  cd $sdir
+#  ptraj11 dhp.top < $iso/PtrajJobs/rmsdToPrevious.in
+#done
+
+#iso=/ccs/home/jmborr/bio022/dhfr_solv/isopropanol
+#for vol in 0.00 0.05  0.10  0.15  0.20  0.25  0.30 0.50 1.00;do
+#  sdir=$iso/$vol/solv/Prod
+#  cd $sdir
+#  /bin/rm junk.dat
+#  mkdir -p out
+#  /bin/cp out.tar.gz out/
+#  cd out
+#  tar zxf out.tar.gz
+#  for i in `seq 100`;do
+#    echo "$vol $i"
+#    j=`printf %02d $i`
+#    ls $j.out
+#    grep -A 3 "A V E R A G E S   O V E R" $j.out|grep TEMP >> $sdir/temp.dat
+#  done
+#done
+
+#for vol in 0.00 0.05  0.10  0.15  0.20  0.25  0.30 0.50 1.00;do
+#  cd $iso/HoloDHFRv2; mkdir $vol; cd $vol; mkdir packmol unsolv solv
+#done
+
+
+#ISO=/projects/research/dhfr_solv/out/isopropanol
+#for vol in 0.05  0.10 0.15 0.20 0.25 0.30 0.50;do
+#  echo -e "\nVOL=$vol\n"
+#  sdir=$ISO/$vol/solv/Prod/mdprod
+#  # cd $ISO/$vol/solv/Prod/mdprod
+#  # ptraj11 dh0.top < $ISO/PtrajJobs/lastconf.in; mv mdcrd.pdb.20000 mdcrd_frame20000.pdb
+#  # ptraj11 dh0.top < $ISO/PtrajJobs/middleconf.in; mv mdcrd.pdb.10000 mdcrd_frame10000.pdb
+#  # ptraj11 dh0.top < $ISO/PtrajJobs/firstconf.in; mv mdcrd.pdb.1 mdcrd_frame00001.pdb
+#  # pymol mdcrd_frame20000.pdb $ISO/PymolScripts/mdcrd_frame20000.pml; sleep 1s
+#  # pymol mdcrd_frame10000.pdb $ISO/PymolScripts/mdcrd_frame10000.pml; sleep 1s
+#  # pymol mdcrd_frame00001.pdb $ISO/PymolScripts/mdcrd_frame00001.pml; sleep 1s
+#  # ptraj11 dh0.top < $ISO/PtrajJobs/centerProtein.in
+#  # ./workCANs.py ContactMap --kwargs "job=generate residue ContactMaps,rowSelection=resid 1-161 and not name H*,colSelection=resname ISO and not name H*,cutOff=4.0,PSFile=$sdir/dh0.top,trajfile=$sdir/md.dcd,outf=$sdir/protIsoCml.hd5"
+#  # ./workCANs.py ContactMap --kwargs "job=number of atomic contacts,inFile=$sdir/protIsoCml.hd5,outFile=$sdir/isoDhfrContacts.dat"
+#    ./workCANs.py ContactMap --kwargs "job=occupancy,inFile=$sdir/protIsoCml.hd5,outFile=$sdir/isoOccupancy.dat,offSet=2000"
+#done
+#popwindow.py "finished contacts versus time"
+
+#ISO=/projects/research/dhfr_solv/out/isopropanol
+#for vol in 0.05  0.10 0.15 0.20 0.25 0.30 0.50;do
+# echo -e "\nVOL=$vol\n"
+# cd $ISO/$vol/solv/Prod/mdprod
+# ptraj11 dh0.top < $ISO/PtrajJobs/check_frames.in |grep mdcrd|grep frames
+#done
+#popwindow.py "finished checking frames"
+
+PROJD=/projects/research/dhfr_solv/out/isopropanol
+for vol in 0.00 0.05  0.10  0.15  0.20  0.25  0.30 0.50 1.00;do
+  cd $PROJD/$vol/solv/Prod/mdprod/
+  #ptraj dh0.top < $PROJD/PtrajJobs/avg.in
+  ptraj  dh0.top < $PROJD/PtrajJobs/rmsd.in
+done
+popwindow.py "finished bash_commands for dhfr_solv"
+
+

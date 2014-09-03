@@ -1,0 +1,47 @@
+#report of templates with highest Z-scores. Each of the templates has
+#the highest Z-score for one of the g8 sequences. We write the
+#corresponding functions for a few of them.
+#
+#We start by first stating the function of the co-ocurring domains,
+#according to He06, then stating the putative function of G8
+
+Co-ocurring domains to G8 and their functions (according to 
+IPT/TIG	control of cell dissociation and motility
+GG	predicted to be structurally important in long fibers
+PbH1	polysaccharide hydrolysis
+	=> G8 may be involved in  extracellular ligand binding and catalysis processing
+
+prospector Z-score, template name, and function
+
+ 26.24    2cba_	Eukaryotic Type Carbonic Anhydrase/osteopetrosis with renal tubular acidosis
+ 21.89   1mhsa1	Cation Transporter/atpase
+ 21.37   2fn6a1	P-loop containing nucleoside triphosphate hydrolase,flagellar modification
+ 18.78    1g291	P-loop containing nucleoside triphosphate hydrolases
+ 18.02    1g6ha	Abc Transporter (P-loop containing nucleoside triphosphate hydrolase)
+ 17.86    1b2pa	D Mannose Binding Lectin
+ 17.48   2bx2l2 hydrolase
+ 17.14    1wh0a	Ubiquitin Carboxyl Terminal Hydrolase 19
+ 17.13    1yoea	Pyrimidine nucleoside hydrolase
+ 16.55    1b9ha	Aminotransferase Family,3 Amino 5 Hydroxybenzoic Acid Synthase
+ 16.36    1e0ta Pyruvate Kinase
+ 15.87    1vmia	Putative Phosphate Acetyltransferase
+ 15.50    1sq2n	Novel Antigen Receptor
+ 14.75    1h1wa	3 Phosphoinositide Dependent Protein Kinase 1
+ 14.25    1rlja
+ 14.21    1ym3a
+ 14.07    1n02a
+ 13.70   1ozna2
+ 13.51    1wvia
+ 12.90    1mdoa
+ 12.88    2d6ka
+ 12.81    1o61a
+ 12.20    1co7e
+ 11.85    1f97a
+ 11.69    1z9ma
+ 10.28    1hcd_
+  8.60    1pkoa
+  8.42    1b2pa
+  8.07   1e0ta1
+  7.39    1l6pa
+  6.54    1wiu_
+  6.33   1cid_1

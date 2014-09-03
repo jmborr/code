@@ -1,0 +1,35 @@
+#!/bin/bash
+
+WDIR=/projects/research/pni
+
+# ------------------------------------------------------------
+
+# Create the HDF5 file containing the contact maps (file chainA_325.hd5)
+
+python jobs.py ContactMap --kwargs "job=generate residue ContactMaps,rowSelection=bynum 1:572 and not name H*,cutOff=4.0,PSFile=$WDIR/pnip30-dimer-ww-charmm-box.psf,trajfile=$WDIR/2chain_325_short.dcd,outf=$WDIR/chainA_325.hd5"
+
+# Use HDFVIEW to view contents of chainA_325.hd5. Once you open it
+# you'll see 14 folders, each representing the contact map of each frame.
+# Each folder contains sets 'row', 'col', and 'data' (let me know if the contents are not clear)
+
+# -------------------------------------------------------------
+
+# Save one contact map into a format readable by CMVIEW. In the example,
+# we save the last frame (frame 14) into file chainA_325_14.dat
+
+python jobs.py ContactMap --kwargs "job=get contact map,hdfFile=$WDIR/chainA_325.hd5,frameNumber=14,outFileName=$WDIR/chainA_325_14.dat"
+
+# use CMVIEW to look at chainA_325_14.dat (in CMVIEW, do File -> Load From -> Contact Map File)
+
+# -------------------------------------------------------------
+
+# Get number of atomic contacts versus frame number
+
+python jobs.py ContactMap --kwargs "job=number of atomic contacts,inFile=$WDIR/chainA_325.hd5,outFile=$WDIR/chainA_325_nc.dat"
+
+# -------------------------------------------------------------
+
+# Generate an animated GIF of the contact maps
+# To run this, you will need 'convert' executable. If you don't have it, install the imagemagick package.
+
+python jobs.py ContactMap --kwargs "job=contact map movie,hdfFile=$WDIR/chainA_325.hd5,CMVIEW=cmview,gifFile=$WDIR/chainA_325_cm.gif,loop=no"

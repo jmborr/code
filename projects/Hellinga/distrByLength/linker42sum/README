@@ -1,0 +1,9 @@
+ss_pdb_aug06.apr06.CA.txt was derived with Jeff's program
+secondary structure types:
+a: alpha with content above 43%
+b: beta with content above 43%
+c: alpha/beta with content above 20% and beta with content above 20
+d: alpha with content less than 43% OR beta with content less than 43%
+e: alpha/beta with alpha content less than 20%
+f: alpha/beta with beta conent less than 20%
+

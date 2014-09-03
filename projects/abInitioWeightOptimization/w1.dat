@@ -1,0 +1,13 @@
+#Initial weights
+#
+# eh1*EHB1 eh1a*EHB1a eh1b*EHB1b eh1c*EHB1c eh2*EHB2 eh3*EHB3 eh4*EHB4
+0.241  -0.404  -16.876  -1.546  0.433  -0.031  6.789
+#
+# eh5a*EHB5a eh5b*EHB5b es2*ESHORT2 es3*ESHORT5 es3a*ESHORT5a
+2.865  5.164  0.159  -2.025  -4.810
+#
+# es3b*ESHORT5b es3c*ESHORT5c es4*ESHORT6 es5*ESHORT7 es6*ESHORT8
+-4.836  0.876  0.644  1.629  0.020
+#
+# en1*eprofo en2*E_cord en3*E_cnum
+ 1.150  -2.472  -0.011

@@ -1,0 +1,18 @@
+  unfilter.pl
+
+Obtain proteins with less than 100 amino acids from the list of homology
+files in /net/dell/01/users/skolnick/pdbhomoljul05, and output them to
+'unfiltered.list'
+
+  filter.pl
+
+Read unfiltered.list, which is the set of proteins with less than 100 amino
+acids in pdbJul05. Then selects a subset such that no pair of proteins in
+this subset are homologous. Protein A is homologous to protein B is B shows
+up in file A.homol, located in
+'/net/dell/01/users/skolnick/pdbhomoljul05'. After the process we obtain
+'filtered.list'
+
+  cas_rd.f
+
+Tasser1.0 with initial random conformation, not template.

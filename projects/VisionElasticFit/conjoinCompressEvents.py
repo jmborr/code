@@ -1,0 +1,5 @@
+Load(Filename='/projects/development/VisionElasticFit/variationL1/VIS_1085_event.nxscompress0.1us.nxs',OutputWorkspace='VIS_1085_event')
+ConjoinWorkspaces(InputWorkspace1='VIS_1085_event_1',InputWorkspace2='VIS_1085_event_2')
+ConjoinWorkspaces(InputWorkspace1='VIS_1085_event_1',InputWorkspace2='VIS_1085_event')
+RenameWorkspace(InputWorkspace='VIS_1085_event_1',OutputWorkspace='VIS_1085_event')
+SaveNexus(InputWorkspace='VIS_1076_event',Filename='/projects/development/VisionElasticFit/variationL1/junk.nxs')

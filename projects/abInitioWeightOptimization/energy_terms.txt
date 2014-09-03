@@ -1,0 +1,28 @@
+#initial expected TASSER        description
+#weight  TM-corr   term 
+ 8.0122     0     eh1*EHB1      !+1/r of Ca-SC
+ 1.8252     0     eh1a*EHB1a    !+1/r for non-parallel of Ca-Ca
+ 9.925      0     eh1b*EHB1b    !excluded volumn of SC-SC
+ 1.0        1     eh1c*EHB1c    !pair-wise potential of SC-SC
+ 4.1010     1     eh2*EHB2      !quarsi3 for SC-SC
+ 0.01      0.5    eh3*EHB3      !enhance good piece
+ 2.011      0     eh4*EHB4      !-1/r for parallel contact of Ca-Ca
+ 4.1025     0     eh5a*EHB5a    !H-bond energy (alpha)
+ 4.6538     0     eh5b*EHB5b    !H-bond energy (beta)
+ 0.6314    0.5    es2*ESHORT2   !bury potential for SG
+ 3.0197    0.5    es3*ESHORT5   !bias2,3: v(i)-v(i+4) anti/parallel; c(i)-c(i+2) anit/paralel
+ 1.5078     0     es3a*ESHORT5a !crumpling 
+ 1.7847    0.5    es3b*ESHORT5b !bias4 to predicted alpha/beta structure.
+ 0.6052    0.5    es3c*ESHORT5c !bias1 to possible alpha/beta structure. 
+ 1.3309    0.5    es4*ESHORT6   !correlation of E13 of Ca
+ 1.013     0.5    es5*ESHORT7   !correlation of E14, from both common and 2th specific data
+ 2.1750    0.5    es6*ESHORT8   !correlation of E15, from both common and 2th specific data
+ 0.6143    0.5    en1*eprofo      !environment potential
+ 0.6014     0    en2*E_cord     !deviation from predicted contact order
+ 0.1        0    en3*E_cnum     !deviation from predicted contact number
+#
+#
+#NOTE: in "expected TM-correlation:
+# 0 means no correlation expected
+# 0.5 means very very mild correlation expected
+# 1 means these should be terms with highest correlation
