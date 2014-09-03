@@ -1,0 +1,50 @@
+<h2><a href="variables.html">List of Variables</a></h2>
+
+<h2>Input Files</h2>
+For a detailed description of energetics, read <a href="Zhang03.pdf">Zhang03.pdf</a>.
+<ul>
+ <li><a href="contact.comm">contact.comm</a> contains cut-off distances and standar deviations between pairs of SG's, then same but between pairs of C<sub>&alpha;</sub>'s.</li>
+ <li><a href="profile3.comm">profile3.comm</a> Contains potential between two amino acids interacting at a particular orientiation. See also explanation of variable <b>envir</b> in <a href="variables.html">variables.html</a>.</li>
+ <li><a href="quasi3.comm">quasi3.comm</a>  contains pairwise energies for contacting SG's, as well as their average contact distances. The energies depend whether the two particles are in a "parallel", "antiparallel" or "mid" position.</li>
+ <li><a href="sidechain.comm">sidechain.comm</a> contains the position of the SG with respect to its C<sub>&alpha;</sub>. We allow for two possible positions (one rotamer that takes only two discrete values).</li>
+ <li><a href="r13.comm">r13.comm</a> contains energies due to local correlations between C<sub>&alpha;i</sub> and C<sub>&alpha;i+2</sub>. There are two possible values of the energie, corresponding to extended and compact conformations, respectively. Note that the C<sub>&alpha;</sub> correlation is not conmutative, ie, corr(ALA at position i,GLY at position j) is not equal than corr(GLY at position i,ALA at position j). File <a href="r14e.comm">r15e.comm</a> has same format but favours long distances (typical of &beta;-strands), while <a href="r15h.comm">r14h.comm</a> favours shorter distances (typical of helical conformations).</li>
+ <li><a href="r14.comm">r14.comm</a> contains energies due to local correlations between C<sub>&alpha;i</sub> and C<sub>&alpha;i+3</sub>. There are 24 possible values of the energies, corresponding to 12 different distance bins and 2 possible chiralities of three consecutive C<sub>&alpha;i</sub>-C<sub>&alpha;i</sub> vectors. The first 12 distances are for chirality=-1 (left-hand).</li>
+ <li><a href="r15.comm">r15.comm</a> contains energies due to local correlations between C<sub>&alpha;i</sub> and C<sub>&alpha;i+3</sub>. There are 16 possible values of the energies, corresponding to 16 different distance bins. File <a href="r15e.comm">r15e.comm</a> has same format but favours long distances (typical of &beta;-strands), while <a href="r15h.comm">r15h.comm</a> favours shorter distances (typical of helical conformations).</li>
+ <li><a href="seq.dat">seq.dat</a> contains the 3 letter sequence and more. The third column indicates secondary structure prediction (1:coil, 2:helix, 4:&beta;-strand). The fourth column indicates the confidence level of the prediction, from 0(worse) to 9(best).</li> 
+ <li><a href="par.dat">par.dat</a> contains energies for interactions between two SG's &agrave; la Go-model, ie, a set of N*(N-1)/2 numbers.</li>
+ <li><a href="comb.dat">comb.dat</a>  contains the pair of SG's that are most probably in contact. The third column indicates the confidence level of the existence of the contact, from 0(worse) to 1(best). Yangs says not to worry now about the fourth and fith columns.</li>
+ <li><a href="dist.dat">dist.dat</a> contains the long-range distance constraints of C<sub>&alpha;</sub>'s. Yangs says not to worry now about the third column. The fourth column indicates  average contact distance, and the fith column indicates standar deviation of the observed distances.</li>
+ <li><a href="combCA.dat">combCA.dat</a> contains the pair of C<sub>&alpha;</sub>'s that are most probably in contact. The third column indicates the confidence level of the existence of the contact, from 0(worse) to 1(best).</li>
+ <li><a href="rmsinp">rmsinp</a> file with chain length and pdb ID.</li>
+ <li><a href="distL.dat">distL.dat</a> contains the long range distance restraints between C<sub>&alpha;</sub>'s (the first line is the number of restraints). </li> <li><a href="pair3.dat">pair3.dat</a> <font size="0" color="#FF0000"><strong>?</strong></font></li>
+ <li><a href="pair1.dat">pair1.dat</a> <font size="0" color="#FF0000"><strong>?</strong></font></li>
+ <li><a href="in.dd">in.dd</a> <font size="0" color="#FF0000"><strong>?</strong></font></li>
+ <li><a href="init.dat">init.dat</a>
+  File with coordinates of the templates. First number is number of templates included in the file. Remember that the templates usually have gaps, that is, the chain is broken because the <b>coverage</b> of the template usually is smaller than the whole target sequence.
+ </li>
+</ul>
+
+<h2>Questions</h2>
+<ol>
+	<li><a href="#1">Are there any readme file with list of variable names?</a></li>
+	<li><a href="#2">In the code, are there any data structures like linked-lists of trees?</a></li>
+	<li><a href="#">What happens when you move a rigid fragment?</a></li>
+	<li><a href="#">Keeping track of neighbors (C&alpha;'s and SG's) for a given particle</a></li>
+	<li><a href="#">Why not include backbone N's and C's? (this way you can implement changes in (&Phi;, &Psi;) instead of discretized lattice vectors)</a></li>
+	<li><a href="#"></a></li>
+	<li><a href="#"></a></li>
+</ol>
+
+<a name="1"><font size="0" color="#FF0000">Are there any readme file with list of variable names?</font><br>
+No.
+<br><a name="1"><font size="0" color="#FF0000">In the code, are there any data structures like linked-lists of trees?</font><br>
+No.
+<br><a name="1"><font size="0" color="#FF0000">What happens when you move a rigid fragment?</font><br>
+<ul>
+	<li>Do you compute all changes in interactions between the fragment and the rest of the protein?</li>
+	<li>How do you rotate rigid fragments?</li>
+</ul>
+<br><a name="1"><font size="0" color="#FF0000">Keeping track of neighbors (C&alpha;'s and SG's) for a given particle</font><br>
+<br><a name="1"><font size="0" color="#FF0000"></font><br>
+<br><a name="1"><font size="0" color="#FF0000"></font><br>
+<br><a name="1"><font size="0" color="#FF0000"></font><br>

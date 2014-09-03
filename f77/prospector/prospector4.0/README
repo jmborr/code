@@ -1,0 +1,25 @@
+these are the sequence file, secondary structure files and list of templaes
+3590  
+3590aln  
+e10  	 
+e10aln	 
+secon    
+seconend 
+homolog
+direct 
+namesize size of the target name
+LIST.jan2005good35 : list of templates
+homedir: location of the home directory
+templatedir:location of the secondary structure prediction and *.mtx files from psiblast
+input: name of the set of output directories : 4 characters
+input2: first 3 of 4 characters of input
+LIST: list of all the files to run
+procedure
+1. run direct
+2. run list3
+3. run pairpsi   (create potential based on sequence info)
+4. run pairorpsi  (orientational dep. sequ. potential)
+5. run raorienrev
+6. run rap2orienrev
+7. run rap3orienrev
+8. run summary

@@ -1,0 +1,53 @@
+#!/bin/csh
+alias rm rm
+touch finish_best
+set nfiles = `head -1 nruns`
+echo $nfiles
+set pdbn = `head -1 input`
+set pdb = `head -1 input2`
+./summaryrap3orienrev
+echo 'preparing STRUCTURE_rap3orienrev'
+sleep 20
+echo 'number of files in STRUCTURE_rap3orienrev'
+head -1 STRUCTURE_rap3orienrev
+
+# prepare the "best" files
+
+foreach i(best verygood fair bad)
+touch finish_$i
+rm  finish_$i
+echo '-1'>finish_$i
+end 
+echo 'now running analysis'
+foreach i(best verygood fair bad)
+./$i &
+ set o = `head -1 finish_$i`
+12:
+echo $i
+head -1 finish_$i
+ set o = `head -1 finish_$i`
+if("$o" == "-1")then
+echo 'working on '$i
+set o = `head -1 finish_$i`
+sleep 10
+goto 12
+endif
+echo $i' is finished'
+echo ' '
+end 
+#
+echo 'NOW ANALYZING RESULTS'
+echo 'listbest'
+head -1 listbest
+mv listbad s1
+cat s1|wc
+cat s1|wc>o1
+cp o1 listbad
+cat s1>>listbad
+foreach i(verygood fair)
+echo $i
+head -1 list_$i
+end
+echo bad
+head -1 listbad
+echo 'analysis finished'

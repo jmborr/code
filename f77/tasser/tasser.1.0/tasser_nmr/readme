@@ -1,0 +1,7 @@
+contact strength depends on sequence separation as follows:
+   E = Emin * ( 1 + ( SE - SEmin)/( SEmax - SEmin) )
+   where SE is sequence separation (or contact order CO) between CA's
+   where SEmin is the sequence separation of the restraint with the minimum SE
+   where SEmax is the sequence separation of the restraint with the maximum SE
+
+contact strength increase in time to double their original values

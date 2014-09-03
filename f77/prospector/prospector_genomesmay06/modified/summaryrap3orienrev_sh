@@ -1,0 +1,11 @@
+#!/bin/csh
+alias rm rm
+rm STRUCTURE_rap3orienrev
+touch STRUCTURE_rap3orienrev
+set pdbq = `head -1 input`
+cat STRUCTURE_selectedrap3orienrev$pdbq'_'1 >>STRUCTURE_rap3orienrev
+
+mv STRUCTURE_rap3orienrev s1
+cat s1|wc>o1
+cp o1 STRUCTURE_rap3orienrev
+cat s1>>STRUCTURE_rap3orienrev

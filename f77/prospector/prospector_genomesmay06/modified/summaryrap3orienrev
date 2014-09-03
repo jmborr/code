@@ -1,0 +1,23 @@
+#!/bin/csh
+/bin/rm STRUCTURE_rap3orienrev
+touch STRUCTURE_rap3orienrev
+set pdbq = `head -1 input`
+set nfiles = `head -1 nruns`
+set f = 1
+while ($f <= "$nfiles")
+if($f <= 9)then
+cat STRUCTURE_selectedrap3orienrev$pdbq'_'$f >>STRUCTURE_rap3orienrev
+else 
+if($f <= 99)then
+cat STRUCTURE_selectedrap3orienrev$pdbq$f >>STRUCTURE_rap3orienrev
+else
+cat STRUCTURE_selectedrap3orienrevpdb$f >>STRUCTURE_rap3orienrev
+endif	
+endif
+@ f ++
+end
+
+mv STRUCTURE_rap3orienrev s1
+cat s1|wc>o1
+cp o1 STRUCTURE_rap3orienrev
+cat s1>>STRUCTURE_rap3orienrev

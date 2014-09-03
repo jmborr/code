@@ -1,0 +1,3 @@
+@echo off
+g77 BessJ.for splt_pg_gl.for fun.for lspec.for -o BessJ.exe -s -W -Wall -fno-backslash -O -Wl,--subsystem,console -lfit -lcpgplot -lpgplot -lGrWin -mwindows
+

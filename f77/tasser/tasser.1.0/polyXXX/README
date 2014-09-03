@@ -1,0 +1,17 @@
+cas.f:
+  * Simulations for poly-ala only. Some energy terms are modified             *
+  * hydrogen bond energy for beta is stronger if long range                   *
+  * hydrogen bonds only between alpha-alpha and beta-beta                     *
+  * new hydrogen bond list prevents a residue making more than two bonds      *
+  * quarsi3 potential modified such that two amino acids have no interactions *
+  * if both are in coils, 1/4 if one is in coil and not the other             *
+in.dd:
+  contains semi-optimized parameters
+
+second_int/:
+  cas.f:
+    As cas.f in parent directory, but we add:
+    * new energy term for second neighbors in the beta-type HB                  *
+  in.dd:
+    contains semi-optimized parameters
+

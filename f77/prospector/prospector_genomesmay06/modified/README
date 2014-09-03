@@ -1,0 +1,18 @@
+Files from /gpfs1/u/skolnick/prospector_genomesmay06
+
+Contains profiles from structural alignments
+
+compilation instructions
+
+(1)Open a terminal, then issue statement to change to 32bit
+   'module switch apps/PGI64/6.1 apps/PGI32/6.1'
+(3)compile statically each file (option Bstatic)
+   'pgf77 -Mextend -Bstatic file.f -o file'
+   Because we compiled with static libraries, the executables
+   will not call 64bit libraries.
+
+list of files to be put in exec.tbz2
+LIST.may2006good35
+direct
+list3
+pairorpsigly3

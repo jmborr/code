@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#'input' is a one-line file with a four-character word. Just do 'echo
+#"pdbb" > input'. Thus, $dirs provides the prefix for the temporary
+#directories to be used by PROSPECTOR
+dirs=`head -1 input`
+
+#otherdirs are the suffixes. Thus the name of the directories is the
+#composite.
+otherdirs="PAIR PAIROR zpot4a pdborienrev4 pdborienrev goodraorienrev qzmediumsummary qzmediumtemplates qzmediumcontacts goodr1aorienrev"
+for f in $dirs; do
+    for g in $otherdirs; do
+	/bin/mkdir -p ../${f}$g
+    done
+done
+
+
+

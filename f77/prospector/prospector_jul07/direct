@@ -1,0 +1,13 @@
+#!/bin/csh
+set directory = `head -1 input`
+	foreach f("$directory")
+	mkdir ../$f'PAIROR'
+	mkdir ../$f'zpot4a'
+	mkdir ../$f'pdborienrev4/'
+	mkdir ../$f'pdborienrev/'
+	mkdir ../$f'goodr1aorienrev'
+	mkdir ../$f'qzmediumcontacts'
+	mkdir ../$f'qzmediumtemplates'
+	mkdir ../$f'qzmediumsummary'
+end 
+

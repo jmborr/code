@@ -1,0 +1,7 @@
+some changes to do:
+
+in subroutine read_distantrestrain, limit Ndis to 10000 so as not to overflow r1()
+
+in subroutine read_longdistantrestrain, limit NdisL to 10000 so as not to overflow r1()
+
+insert global variable "no" for seed for random number generator.

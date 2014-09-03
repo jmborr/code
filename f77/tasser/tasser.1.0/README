@@ -1,0 +1,1 @@
+pgf77 -Mextend -O -s -fast -Wl,-static -o cas cas.f
