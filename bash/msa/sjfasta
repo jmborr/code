@@ -1,0 +1,51 @@
+#!/bin/bash
+# Generic job submission script
+# Adrian K. Arakaki
+# Last modification: 2005_03_15
+# $1 -> absolute path to fasta file. Mandatory "xxxxx.fasta" file name format
+# Output will be xxxxx.close.aln and xxxxx.dist.aln
+
+# Set path
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/lib:/lib
+export PATH=/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/pgi/linux86/bin
+
+# Set variables
+CP=/bin/cp
+MKDIR=/bin/mkdir
+SLEEP=/bin/sleep
+TAR=/bin/tar
+DATE=/bin/date
+LN=/bin/ln
+RM=/bin/rm
+HOSTNAME=/bin/hostname
+ECHO=/bin/echo
+MV=/bin/mv
+
+#set up the temporary working directory
+TMPD="./tmp_sjfasta$RANDOM"
+$MKDIR $TMPD
+$CP $1 $CODEDIR/bin/msa/fasta $CODEDIR/bin/msa/fastaout $TMPD
+cd $TMPD
+
+# Run fasta
+SEQFILE=`basename $1`
+DATABASE=$NRLIB
+HEADER=`basename $1 .fasta`
+#echo "./fasta $SEQFILE $DATABASE -b 2000 -E 10.0 -Q -m 10 -p -w 50 -O $HEADER.out >/dev/null"
+./fasta $SEQFILE $DATABASE -b 2000 -E 10.0 -Q -m 10 -p -w 50 -O $HEADER.out >/dev/null
+
+# Generate alignments from fasta search output
+SI_INTRA=0.95
+SI_MINDIST=0.10
+SI_MINCLOSE=0.35
+SI_MAX=0.90
+#echo "./fastaout $SEQFILE $HEADER.out $SI_INTRA $SI_MINDIST $SI_MINCLOSE $SI_MAX"
+./fastaout $SEQFILE $HEADER.out $SI_INTRA $SI_MINDIST $SI_MINCLOSE $SI_MAX
+
+# move output and remove temporary directory
+$MV $HEADER.close.aln ../
+$MV $HEADER.dist.aln  ../
+cd ..
+#$RM -fr $TMPD
+
+exit 0

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+echo "deleting *~ files..."
+find . -name "*~" -exec rm {} \;
+
+echo "deleting .*~ files..."
+find . -name ".*~" -exec rm {} \;
+
+echo "deleting #* files..."
+find . -name "#*" -exec rm {} \;
+
+echo "deleting .#* files..."
+find . -name ".#*" -exec rm {} \;
+
+echo "bzip2-ing rep*.tra files..."
+find . -name "rep*.tra" -exec bzip2 -f {} \;
+
+
