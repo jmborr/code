@@ -1,0 +1,27 @@
+#Variables
+CC = g++ 
+CFLAGS = -Wno-deprecated -c
+CODE = /users/seldon/jmborr/Code
+VPATH = $(CODE)/Heavy_atom_code $(CODE)/PDBClasses
+LFLAG = -L $(CODE)/Heavy_atom_code -L $(CODE)/PDBClasses
+lFLAG = -lheavy_atom -lpdbClasses
+OBJS = pdb2txt_relax.o amino_acid_param.o atom_param.o miscellanea.o \
+       bibliography.o pdbClasses2.o
+HDRS = amino_acid_param.h atom_param.h miscellanea.h random.h
+INCLUDES= -I $(CODE)/Heavy_atom_code -I $(CODE)/PDBClasses
+
+#Default target
+pdb2txt_relax.x: heavy_atom pdb2txt_relax.o
+	echo BUILDING EXECUTABLE pdb2txt_relax.x
+	$(CC) $(LFLAG) -o $@ pdb2txt_relax.o $(lFLAG)
+
+#Auxiliary targets
+heavy_atom:
+	cd $(CODE)/Heavy_atom_code ; make all
+
+pdb2txt_relax.o: pdb2txt_relax.cpp $(HDRS)
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+clean:
+	rm -f *.o core 
+	cd $(CODE)/Heavy_atom_code ; make clean

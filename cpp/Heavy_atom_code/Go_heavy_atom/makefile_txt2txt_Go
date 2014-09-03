@@ -1,0 +1,25 @@
+#Variables
+CC = g++ 
+CFLAGS = -Wno-deprecated -c
+CODE = /users/seldon/jmborr/Code
+VPATH = $(CODE)/Heavy_atom_code $(CODE)/PDBClasses
+LFLAG = -L $(CODE)/Heavy_atom_code -L $(CODE)/PDBClasses
+lFLAG = -lheavy_atom -lpdbClasses
+HDRS = amino_acid_param.h atom_param.h miscellanea.h random.h
+INCLUDES= -I $(CODE)/Heavy_atom_code -I $(CODE)/PDBClasses
+
+#Default target
+txt2txt_Go.x: heavy_atom txt2txt_Go.o
+	echo BUILDING EXECUTABLE txt2txt_Go.x
+	$(CC) $(LFLAG) -o $@ txt2txt_Go.o $(lFLAG)
+
+#Auxiliary targets
+heavy_atom:
+	cd $(CODE)/Heavy_atom_code ; make all
+
+txt2txt_Go.o: txt2txt_Go.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+clean:
+	rm -f *.o core 
+	cd $(CODE)/Heavy_atom_code ; make clean

@@ -1,0 +1,3 @@
+MnStrategy.lo MnStrategy.o: MnStrategy.cpp ../Minuit/MnStrategy.h
+
+../Minuit/MnStrategy.h:

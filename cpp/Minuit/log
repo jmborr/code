@@ -1,0 +1,128 @@
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for gcc... gcc
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ANSI C... none needed
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking dependency style of g++... gcc3
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a sed that does not truncate output... /bin/sed
+checking for egrep... grep -E
+checking for ld used by g++... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking for BSD-compatible nm... /usr/bin/nm -B
+checking whether ln -s works... yes
+checking how to recognise dependent libraries... pass_all
+checking how to run the C preprocessor... g++ -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking dlfcn.h usability... yes
+checking dlfcn.h presence... yes
+checking for dlfcn.h... yes
+checking how to run the C++ preprocessor... g++ -E
+checking for g77... g77
+checking whether we are using the GNU Fortran 77 compiler... yes
+checking whether g77 accepts -g... yes
+checking the maximum length of command line arguments... 32768
+checking command to parse /usr/bin/nm -B output from g++ object... ok
+checking for objdir... .libs
+checking for ar... /gpfs1/archive/jose
+checking for ranlib... ranlib
+checking for strip... strip
+checking if g++ static flag  works... yes
+checking if g++ supports -fno-rtti -fno-exceptions... yes
+checking for g++ option to produce PIC... -fPIC
+checking if g++ PIC flag -fPIC works... yes
+checking if g++ supports -c -o file.o... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+configure: creating libtool
+appending configuration tag "CXX" to libtool
+checking for ld used by g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for g++ option to produce PIC... -fPIC
+checking if g++ PIC flag -fPIC works... yes
+checking if g++ supports -c -o file.o... yes
+checking whether the g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+appending configuration tag "F77" to libtool
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for g77 option to produce PIC... -fPIC
+checking if g77 PIC flag -fPIC works... yes
+checking if g77 supports -c -o file.o... yes
+checking whether the g77 linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking for g++... /usr/bin/g++
+checking standard C++ library path... /usr/lib 
+checking for main in -lstdc++... yes
+checking maximum warning verbosity option... -Wall for C++ -Wall for C
+checking for gmake... gmake
+checking for ranlib... (cached) ranlib
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating Minuit/Makefile
+config.status: creating src/Makefile
+config.status: creating msvc7.1/Makefile
+config.status: creating msvc7.1/Minuit/Makefile
+config.status: creating doc/Doxyfile
+config.status: creating doc/Makefile
+config.status: creating tests/Makefile
+config.status: creating tests/MnSim/Makefile
+config.status: creating tests/MnTutorial/Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+
+    Minuit project now configured.
+
+make  all-recursive
+make[1]: Entering directory `/gpfs1/active/jose/code/cpp/Minuit-1_7_9'
+Making all in Minuit
+make[2]: Entering directory `/gpfs1/active/jose/code/cpp/Minuit-1_7_9/Minuit'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/gpfs1/active/jose/code/cpp/Minuit-1_7_9/Minuit'
+Making all in src
+make[2]: Entering directory `/gpfs1/active/jose/code/cpp/Minuit-1_7_9/src'
+/bin/sh ../libtool --tag=CXX --mode=link g++  -g -O2 -Wall   -o liblcg_Minuit.la -rpath /usr/local/lib  AnalyticalGradientCalculator.lo BasicMinimumError.lo CombinedMinimumBuilder.lo DavidonErrorUpdator.lo FumiliBuilder.lo FumiliErrorUpdator.lo FumiliGradientCalculator.lo FumiliMinimizer.lo FumiliStandardChi2FCN.lo FumiliStandardMaximumLikelihoodFCN.lo HessianGradientCalculator.lo InitialGradientCalculator.lo LaEigenValues.lo LaInnerProduct.lo LaInverse.lo LaOuterProduct.lo LaSumOfElements.lo LaVtMVSimilarity.lo MnApplication.lo MnContours.lo MnCovarianceSqueeze.lo MnEigen.lo MnFcn.lo MnFunctionCross.lo MnFumiliMinimize.lo MnGlobalCorrelationCoeff.lo MnHesse.lo MnLineSearch.lo MnMachinePrecision.lo MnMinos.lo MnParabolaFactory.lo MnParameterScan.lo MnPlot.lo MnPosDef.lo MnPrint.lo MnScan.lo MnSeedGenerator.lo MnStrategy.lo MnTiny.lo MnUserFcn.lo MnUserParameterState.lo MnUserParameters.lo MnUserTransformation.lo ModularFunctionMinimizer.lo NegativeG2LineSearch.lo Numerical2PGradientCalculator.lo ParametricFunction.lo ScanBuilder.lo SimplexBuilder.lo SimplexParameters.lo SimplexSeedGenerator.lo SinParameterTransformation.lo SqrtLowParameterTransformation.lo SqrtUpParameterTransformation.lo VariableMetricBuilder.lo VariableMetricEDMEstimator.lo mnbins.lo mndasum.lo mndaxpy.lo mnddot.lo mndscal.lo mndspmv.lo mndspr.lo mnteigen.lo mnlsame.lo mntplot.lo mnvert.lo mnxerbla.lo  
+rm -fr  .libs/liblcg_Minuit.so .libs/liblcg_Minuit.so.0 .libs/liblcg_Minuit.so.0.0.0
+g++ -shared -nostdlib /usr/lib/gcc/x86_64-redhat-linux/3.4.4/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/3.4.4/crtbeginS.o  .libs/AnalyticalGradientCalculator.o .libs/BasicMinimumError.o .libs/CombinedMinimumBuilder.o .libs/DavidonErrorUpdator.o .libs/FumiliBuilder.o .libs/FumiliErrorUpdator.o .libs/FumiliGradientCalculator.o .libs/FumiliMinimizer.o .libs/FumiliStandardChi2FCN.o .libs/FumiliStandardMaximumLikelihoodFCN.o .libs/HessianGradientCalculator.o .libs/InitialGradientCalculator.o .libs/LaEigenValues.o .libs/LaInnerProduct.o .libs/LaInverse.o .libs/LaOuterProduct.o .libs/LaSumOfElements.o .libs/LaVtMVSimilarity.o .libs/MnApplication.o .libs/MnContours.o .libs/MnCovarianceSqueeze.o .libs/MnEigen.o .libs/MnFcn.o .libs/MnFunctionCross.o .libs/MnFumiliMinimize.o .libs/MnGlobalCorrelationCoeff.o .libs/MnHesse.o .libs/MnLineSearch.o .libs/MnMachinePrecision.o .libs/MnMinos.o .libs/MnParabolaFactory.o .libs/MnParameterScan.o .libs/MnPlot.o .libs/MnPosDef.o .libs/MnPrint.o .libs/MnScan.o .libs/MnSeedGenerator.o .libs/MnStrategy.o .libs/MnTiny.o .libs/MnUserFcn.o .libs/MnUserParameterState.o .libs/MnUserParameters.o .libs/MnUserTransformation.o .libs/ModularFunctionMinimizer.o .libs/NegativeG2LineSearch.o .libs/Numerical2PGradientCalculator.o .libs/ParametricFunction.o .libs/ScanBuilder.o .libs/SimplexBuilder.o .libs/SimplexParameters.o .libs/SimplexSeedGenerator.o .libs/SinParameterTransformation.o .libs/SqrtLowParameterTransformation.o .libs/SqrtUpParameterTransformation.o .libs/VariableMetricBuilder.o .libs/VariableMetricEDMEstimator.o .libs/mnbins.o .libs/mndasum.o .libs/mndaxpy.o .libs/mnddot.o .libs/mndscal.o .libs/mndspmv.o .libs/mndspr.o .libs/mnteigen.o .libs/mnlsame.o .libs/mntplot.o .libs/mnvert.o .libs/mnxerbla.o  -L/usr/lib/gcc/x86_64-redhat-linux/3.4.4 -L/usr/lib/gcc/x86_64-redhat-linux/3.4.4/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/3.4.4/../../.. -L/lib/../lib64 -L/usr/lib/../lib64 -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-redhat-linux/3.4.4/crtendS.o /usr/lib/gcc/x86_64-redhat-linux/3.4.4/../../../../lib64/crtn.o  -Wl,-soname -Wl,liblcg_Minuit.so.0 -o .libs/liblcg_Minuit.so.0.0.0
+(cd .libs && rm -f liblcg_Minuit.so.0 && ln -s liblcg_Minuit.so.0.0.0 liblcg_Minuit.so.0)
+(cd .libs && rm -f liblcg_Minuit.so && ln -s liblcg_Minuit.so.0.0.0 liblcg_Minuit.so)
+/gpfs1/archive/jose cru .libs/liblcg_Minuit.a  AnalyticalGradientCalculator.o BasicMinimumError.o CombinedMinimumBuilder.o DavidonErrorUpdator.o FumiliBuilder.o FumiliErrorUpdator.o FumiliGradientCalculator.o FumiliMinimizer.o FumiliStandardChi2FCN.o FumiliStandardMaximumLikelihoodFCN.o HessianGradientCalculator.o InitialGradientCalculator.o LaEigenValues.o LaInnerProduct.o LaInverse.o LaOuterProduct.o LaSumOfElements.o LaVtMVSimilarity.o MnApplication.o MnContours.o MnCovarianceSqueeze.o MnEigen.o MnFcn.o MnFunctionCross.o MnFumiliMinimize.o MnGlobalCorrelationCoeff.o MnHesse.o MnLineSearch.o MnMachinePrecision.o MnMinos.o MnParabolaFactory.o MnParameterScan.o MnPlot.o MnPosDef.o MnPrint.o MnScan.o MnSeedGenerator.o MnStrategy.o MnTiny.o MnUserFcn.o MnUserParameterState.o MnUserParameters.o MnUserTransformation.o ModularFunctionMinimizer.o NegativeG2LineSearch.o Numerical2PGradientCalculator.o ParametricFunction.o ScanBuilder.o SimplexBuilder.o SimplexParameters.o SimplexSeedGenerator.o SinParameterTransformation.o SqrtLowParameterTransformation.o SqrtUpParameterTransformation.o VariableMetricBuilder.o VariableMetricEDMEstimator.o mnbins.o mndasum.o mndaxpy.o mnddot.o mndscal.o mndspmv.o mndspr.o mnteigen.o mnlsame.o mntplot.o mnvert.o mnxerbla.o
+make[2]: Leaving directory `/gpfs1/active/jose/code/cpp/Minuit-1_7_9/src'
+make[1]: Leaving directory `/gpfs1/active/jose/code/cpp/Minuit-1_7_9'

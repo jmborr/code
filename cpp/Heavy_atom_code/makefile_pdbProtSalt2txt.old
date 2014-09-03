@@ -1,0 +1,26 @@
+pdbProtSalt2txt.x: pdbProtSalt2txt.o amino_acid_param.o salt.o atom_param.o miscellanea.o bibliography.o pdbClasses2.o
+	g++ -o pdbProtSalt2txt.x pdbProtSalt2txt.o amino_acid_param.o salt.o atom_param.o miscellanea.o bibliography.o pdbClasses2.o
+
+pdbProtSalt2txt.o: pdbProtSalt2txt.cpp amino_acid_param.h salt.h atom_param.h miscellanea.h random.h
+	g++ -Wno-deprecated -c pdbProtSalt2txt.cpp
+
+amino_acid_param.o: amino_acid_param.cpp amino_acid_param.h miscellanea.h
+	g++ -Wno-deprecated -c amino_acid_param.cpp
+
+salt.o: salt.cpp salt.h
+	g++ -Wno-deprecated -c salt.cpp
+
+atom_param.o: atom_param.cpp atom_param.h miscellanea.h bibliography.h
+	g++ -Wno-deprecated -c atom_param.cpp
+
+miscellanea.o: miscellanea.cpp miscellanea.h bibliography.h pdbClasses2.h
+	g++ -Wno-deprecated -c miscellanea.cpp
+
+bibliography.o: bibliography.cpp bibliography.h
+	g++ -Wno-deprecated -c bibliography.cpp
+
+pdbClasses2.o: pdbClasses2.cpp pdbClasses2.h
+	g++ -Wno-deprecated -c pdbClasses2.cpp
+
+clean:
+	rm -rf *.o core 

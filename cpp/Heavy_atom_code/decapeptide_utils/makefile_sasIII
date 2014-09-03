@@ -1,0 +1,29 @@
+CC = g++
+CFLAGS = -Wno-deprecated -c
+CODE = /users/seldon/jmborr/Code
+VPATH = $(CODE)/PDBClasses
+LFLAG = -L $(CODE)/PDBClasses
+lFLAG =  -lpdbClasses
+INCLUDES = -I$(CODE)/PDBClasses
+HDRS = pdbClasses2.h
+
+#default target
+all: message sasIII.x
+
+#auxiliary targets
+message:
+	echo BUILDING sasIII.x
+
+sasIII.x: pdbClasses sasIII.o
+	$(CC) $(LFLAG) -o $@ sasIII.o $(lFLAG)
+
+sasIII.o: sasIII.cpp
+
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+pdbClasses: 
+	cd $(CODE)/PDBClasses ; make all ;
+
+clean:
+	rm -f *.o core
+	cd $(CODE)/PDBClasses ; make clean ;

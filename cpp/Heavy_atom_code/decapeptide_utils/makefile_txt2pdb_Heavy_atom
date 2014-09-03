@@ -1,0 +1,29 @@
+CC = g++
+CFLAGS = -Wno-deprecated -c
+CODE = /users/seldon/jmborr/Code
+VPATH = $(CODE)/PDBClasses
+LFLAG = -L $(CODE)/PDBClasses
+lFLAG =  -lpdbClasses
+INCLUDES = -I$(CODE)/PDBClasses
+HDRS = pdbClasses2.h
+
+#default target
+all: message txt2pdb_Heavy_Atom.x
+
+#auxiliary targets
+message:
+	echo BUILDING txt2pdb_Heavy_Atom.x
+
+txt2pdb_Heavy_Atom.x: pdbClasses txt2pdb_Heavy_Atom.o
+	$(CC) $(LFLAG) -o $@ txt2pdb_Heavy_Atom.o $(lFLAG)
+
+txt2pdb_Heavy_Atom.o: txt2pdb_Heavy_Atom.cpp
+
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+pdbClasses: 
+	cd $(CODE)/PDBClasses ; make all ;
+
+clean:
+	rm -f *.o core
+	cd $(CODE)/PDBClasses ; make clean ;

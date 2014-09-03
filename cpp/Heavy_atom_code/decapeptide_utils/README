@@ -1,0 +1,42 @@
+to compile, just:
+
+g++ -o stretched_chain.x stretched_chain.cpp pdbClasses2.cpp
+
+g++ -o pdb2txt_relax.x pdb2txt_relax.cpp amino_acid_param.cpp atom_param.cpp bibliography.cpp miscellanea.cpp pdbClasses2.cpp
+
+and
+
+g++ -o txt2txt.x txt2txt.cpp amino_acid_param.cpp atom_param.cpp bibliography.cpp miscellanea.cpp pdbClasses2.cpp
+
+
+I have only implemented to generate a chain from a sequence file, not from a
+PDB file.  Thus if you have file "seq" with the amino acid sequence, you do:
+
+./stretched_chain.x seq pre-relaxed.pdb
+
+The output file pre-relaxed.pdb is a stretched chain of amino acids ( I have
+ a bug that does not allow to generate chain in othe Phi-Psi angle
+ conformations). You will see that pre-relaxed.pdb has some steric clashes
+ that will have to be relaxed with the DMD that implements the hydrogen
+ bonds. For this, you do
+
+./pdb2txt_relax.x pre-relaxed.pdb box_size atom_param.dat pre-relaxed.txt
+
+box_size is one of the sides of the cube that will contain the peptide.
+atom_param.dat is the "force field" file, that list constrains and interactions
+pre-relaxed.txt is the output file, suitable to run DMD
+
+Now you run DMD with pre-relaxed.txt for some time (like 1000 time steps) a
+low temperature (like 0.1), and a high thermal coefficient (like 0.15). Save the last conformation as relaxed.txt
+
+Now you put the physical interactions plus hydrogen bonds like this
+
+./txt2txt.x relaxed.txt pre-relaxed.pdb atom_param.dat init.txt
+
+The output file is init.txt, to be run with DMD.
+
+
+I have not implemented many of the features that you had, specially
+manipulation of Phy-Psi angles.
+
+

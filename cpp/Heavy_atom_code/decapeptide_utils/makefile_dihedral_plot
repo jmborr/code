@@ -1,0 +1,29 @@
+CC = g++
+CFLAGS = -Wno-deprecated -c
+CODE = /users/seldon/jmborr/Code
+VPATH = $(CODE)/PDBClasses
+LFLAG = -L $(CODE)/PDBClasses
+lFLAG =  -lpdbClasses
+INCLUDES = -I$(CODE)/PDBClasses
+HDRS = pdbClasses2.h
+
+#default target
+all: message dihedral_plot.x
+
+#auxiliary targets
+message:
+	echo BUILDING dihedral_plot.x
+
+dihedral_plot.x: pdbClasses dihedral_plot.o
+	$(CC) $(LFLAG) -o $@ dihedral_plot.o $(lFLAG)
+
+dihedral_plot.o: dihedral_plot.cpp
+
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+pdbClasses: 
+	cd $(CODE)/PDBClasses ; make all ;
+
+clean:
+	rm -f *.o core
+	cd $(CODE)/PDBClasses ; make clean ;

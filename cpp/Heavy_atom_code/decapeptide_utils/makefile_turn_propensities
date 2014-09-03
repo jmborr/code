@@ -1,0 +1,29 @@
+CC = g++
+CFLAGS = -Wno-deprecated -c
+CODE = /users/seldon/jmborr/Code
+VPATH = $(CODE)/PDBClasses
+LFLAG = -L $(CODE)/PDBClasses
+lFLAG =  -lpdbClasses
+INCLUDES = -I$(CODE)/PDBClasses
+HDRS = pdbClasses2.h
+
+#default target
+all: message turn_propensities.x
+
+#auxiliary targets
+message:
+	echo BUILDING turn_propensities.x
+
+turn_propensities.x: pdbClasses turn_propensities.o
+	$(CC) $(LFLAG) -o $@ turn_propensities.o $(lFLAG)
+
+turn_propensities.o: turn_propensities.cpp
+
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+pdbClasses: 
+	cd $(CODE)/PDBClasses ; make all ;
+
+clean:
+	rm -f *.o core
+	cd $(CODE)/PDBClasses ; make clean ;

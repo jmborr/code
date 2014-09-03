@@ -1,0 +1,1405 @@
+# ACE/gr parameter file
+#
+@version 40102
+@page layout free
+@ps linewidth begin 1
+@ps linewidth increment 2
+@hardcopy device 1
+@page 5
+@page inout 5
+@link page off
+@default linestyle 1
+@default linewidth 1
+@default color 1
+@default char size 1.000000
+@default font 4
+@default font source 0
+@default symbol size 1.000000
+@timestamp off
+@timestamp 0.03, 0.03
+@timestamp linewidth 1
+@timestamp color 1
+@timestamp rot 0
+@timestamp font 4
+@timestamp char size 1.000000
+@timestamp def "Fri Jun 18 18:22:58 2004"
+@with g0
+@g0 on
+@g0 label off
+@g0 hidden false
+@g0 type xy
+@g0 autoscale type AUTO
+@g0 fixedpoint off
+@g0 fixedpoint type 0
+@g0 fixedpoint xy 0.000000, 0.000000
+@g0 fixedpoint format general general
+@g0 fixedpoint prec 6, 6
+@    world xmin 0
+@    world xmax 5000
+@    world ymin 0
+@    world ymax 0.8
+@    stack world 0, 0, 0, 0 tick 0, 0, 0, 0
+@    view xmin 0.150000
+@    view xmax 0.850000
+@    view ymin 0.150000
+@    view ymax 0.850000
+@    title ""
+@    title font 4
+@    title size 1.500000
+@    title color 1
+@    title linewidth 1
+@    subtitle ""
+@    subtitle font 4
+@    subtitle size 1.000000
+@    subtitle color 1
+@    subtitle linewidth 1
+@    s0 symbol 0
+@    s0 symbol size 1.000000
+@    s0 symbol fill 0
+@    s0 symbol color 1
+@    s0 symbol linewidth 1
+@    s0 symbol linestyle 1
+@    s0 symbol center false
+@    s0 symbol char 0
+@    s0 skip 0
+@    s0 linestyle 1
+@    s0 linewidth 1
+@    s0 color 1
+@    s0 fill 0
+@    s0 fill with color
+@    s0 fill color 1
+@    s0 fill pattern 0
+@    s0 errorbar type BOTH
+@    s0 errorbar length 1.000000
+@    s0 errorbar linewidth 1
+@    s0 errorbar linestyle 1
+@    s0 errorbar riser on
+@    s0 errorbar riser linewidth 1
+@    s0 errorbar riser linestyle 1
+@    s0 xyz 0.000000, 0.000000
+@    s0 comment "4-pt. avg. on set 0 "
+@    s1 symbol 0
+@    s1 symbol size 1.000000
+@    s1 symbol fill 0
+@    s1 symbol color 2
+@    s1 symbol linewidth 1
+@    s1 symbol linestyle 1
+@    s1 symbol center false
+@    s1 symbol char 0
+@    s1 skip 0
+@    s1 linestyle 1
+@    s1 linewidth 1
+@    s1 color 2
+@    s1 fill 0
+@    s1 fill with color
+@    s1 fill color 1
+@    s1 fill pattern 0
+@    s1 errorbar type BOTH
+@    s1 errorbar length 1.000000
+@    s1 errorbar linewidth 1
+@    s1 errorbar linestyle 1
+@    s1 errorbar riser on
+@    s1 errorbar riser linewidth 1
+@    s1 errorbar riser linestyle 1
+@    s1 xyz 0.000000, 0.000000
+@    s1 comment "4-pt. avg. on set 1 "
+@    s2 symbol 0
+@    s2 symbol size 1.000000
+@    s2 symbol fill 0
+@    s2 symbol color 3
+@    s2 symbol linewidth 1
+@    s2 symbol linestyle 1
+@    s2 symbol center false
+@    s2 symbol char 0
+@    s2 skip 0
+@    s2 linestyle 1
+@    s2 linewidth 1
+@    s2 color 3
+@    s2 fill 0
+@    s2 fill with color
+@    s2 fill color 1
+@    s2 fill pattern 0
+@    s2 errorbar type BOTH
+@    s2 errorbar length 1.000000
+@    s2 errorbar linewidth 1
+@    s2 errorbar linestyle 1
+@    s2 errorbar riser on
+@    s2 errorbar riser linewidth 1
+@    s2 errorbar riser linestyle 1
+@    s2 xyz 0.000000, 0.000000
+@    s2 comment "4-pt. avg. on set 2 "
+@    s3 symbol 0
+@    s3 symbol size 1.000000
+@    s3 symbol fill 0
+@    s3 symbol color 8
+@    s3 symbol linewidth 1
+@    s3 symbol linestyle 1
+@    s3 symbol center false
+@    s3 symbol char 0
+@    s3 skip 0
+@    s3 linestyle 1
+@    s3 linewidth 1
+@    s3 color 8
+@    s3 fill 0
+@    s3 fill with color
+@    s3 fill color 1
+@    s3 fill pattern 0
+@    s3 errorbar type BOTH
+@    s3 errorbar length 1.000000
+@    s3 errorbar linewidth 1
+@    s3 errorbar linestyle 1
+@    s3 errorbar riser on
+@    s3 errorbar riser linewidth 1
+@    s3 errorbar riser linestyle 1
+@    s3 xyz 0.000000, 0.000000
+@    s3 comment "4-pt. avg. on set 3 "
+@    xaxis  tick on
+@    xaxis  tick major 1000
+@    xaxis  tick minor 500
+@    xaxis  tick offsetx 0.000000
+@    xaxis  tick offsety 0.000000
+@    xaxis  label "time"
+@    xaxis  label layout para
+@    xaxis  label place auto
+@    xaxis  label char size 1.400000
+@    xaxis  label font 3
+@    xaxis  label color 1
+@    xaxis  label linewidth 1
+@    xaxis  ticklabel on
+@    xaxis  ticklabel type auto
+@    xaxis  ticklabel prec 5
+@    xaxis  ticklabel format general
+@    xaxis  ticklabel append ""
+@    xaxis  ticklabel prepend ""
+@    xaxis  ticklabel layout horizontal
+@    xaxis  ticklabel place on ticks
+@    xaxis  ticklabel skip 0
+@    xaxis  ticklabel stagger 0
+@    xaxis  ticklabel op bottom
+@    xaxis  ticklabel sign normal
+@    xaxis  ticklabel start type auto
+@    xaxis  ticklabel start 0.000000
+@    xaxis  ticklabel stop type auto
+@    xaxis  ticklabel stop 0.000000
+@    xaxis  ticklabel char size 1.200000
+@    xaxis  ticklabel font 5
+@    xaxis  ticklabel color 1
+@    xaxis  ticklabel linewidth 1
+@    xaxis  tick major on
+@    xaxis  tick minor on
+@    xaxis  tick default 6
+@    xaxis  tick in
+@    xaxis  tick major color 1
+@    xaxis  tick major linewidth 1
+@    xaxis  tick major linestyle 1
+@    xaxis  tick minor color 1
+@    xaxis  tick minor linewidth 1
+@    xaxis  tick minor linestyle 1
+@    xaxis  tick log off
+@    xaxis  tick size 1.000000
+@    xaxis  tick minor size 0.500000
+@    xaxis  bar off
+@    xaxis  bar color 1
+@    xaxis  bar linestyle 1
+@    xaxis  bar linewidth 1
+@    xaxis  tick major grid off
+@    xaxis  tick minor grid off
+@    xaxis  tick op both
+@    xaxis  tick type auto
+@    xaxis  tick spec 0
+@    yaxis  tick on
+@    yaxis  tick major 0.2
+@    yaxis  tick minor 0.1
+@    yaxis  tick offsetx 0.000000
+@    yaxis  tick offsety 0.000000
+@    yaxis  label "fraction of native contacts"
+@    yaxis  label layout para
+@    yaxis  label place auto
+@    yaxis  label char size 1.400000
+@    yaxis  label font 3
+@    yaxis  label color 1
+@    yaxis  label linewidth 1
+@    yaxis  ticklabel on
+@    yaxis  ticklabel type auto
+@    yaxis  ticklabel prec 5
+@    yaxis  ticklabel format general
+@    yaxis  ticklabel append ""
+@    yaxis  ticklabel prepend ""
+@    yaxis  ticklabel layout horizontal
+@    yaxis  ticklabel place on ticks
+@    yaxis  ticklabel skip 0
+@    yaxis  ticklabel stagger 0
+@    yaxis  ticklabel op left
+@    yaxis  ticklabel sign normal
+@    yaxis  ticklabel start type auto
+@    yaxis  ticklabel start 0.000000
+@    yaxis  ticklabel stop type auto
+@    yaxis  ticklabel stop 0.000000
+@    yaxis  ticklabel char size 1.200000
+@    yaxis  ticklabel font 5
+@    yaxis  ticklabel color 1
+@    yaxis  ticklabel linewidth 1
+@    yaxis  tick major on
+@    yaxis  tick minor on
+@    yaxis  tick default 6
+@    yaxis  tick in
+@    yaxis  tick major color 1
+@    yaxis  tick major linewidth 1
+@    yaxis  tick major linestyle 1
+@    yaxis  tick minor color 1
+@    yaxis  tick minor linewidth 1
+@    yaxis  tick minor linestyle 1
+@    yaxis  tick log off
+@    yaxis  tick size 1.000000
+@    yaxis  tick minor size 0.500000
+@    yaxis  bar off
+@    yaxis  bar color 1
+@    yaxis  bar linestyle 1
+@    yaxis  bar linewidth 1
+@    yaxis  tick major grid off
+@    yaxis  tick minor grid off
+@    yaxis  tick op both
+@    yaxis  tick type auto
+@    yaxis  tick spec 0
+@    zeroxaxis  tick on
+@    zeroxaxis  tick major 1000
+@    zeroxaxis  tick minor 500
+@    zeroxaxis  tick offsetx 0.000000
+@    zeroxaxis  tick offsety 0.000000
+@    zeroxaxis  label ""
+@    zeroxaxis  label layout para
+@    zeroxaxis  label place auto
+@    zeroxaxis  label char size 1.000000
+@    zeroxaxis  label font 4
+@    zeroxaxis  label color 1
+@    zeroxaxis  label linewidth 1
+@    zeroxaxis  ticklabel off
+@    zeroxaxis  ticklabel type auto
+@    zeroxaxis  ticklabel prec 5
+@    zeroxaxis  ticklabel format general
+@    zeroxaxis  ticklabel append ""
+@    zeroxaxis  ticklabel prepend ""
+@    zeroxaxis  ticklabel layout horizontal
+@    zeroxaxis  ticklabel place on ticks
+@    zeroxaxis  ticklabel skip 0
+@    zeroxaxis  ticklabel stagger 0
+@    zeroxaxis  ticklabel op bottom
+@    zeroxaxis  ticklabel sign normal
+@    zeroxaxis  ticklabel start type auto
+@    zeroxaxis  ticklabel start 0.000000
+@    zeroxaxis  ticklabel stop type auto
+@    zeroxaxis  ticklabel stop 0.000000
+@    zeroxaxis  ticklabel char size 1.000000
+@    zeroxaxis  ticklabel font 4
+@    zeroxaxis  ticklabel color 1
+@    zeroxaxis  ticklabel linewidth 1
+@    zeroxaxis  tick major off
+@    zeroxaxis  tick minor on
+@    zeroxaxis  tick default 6
+@    zeroxaxis  tick in
+@    zeroxaxis  tick major color 1
+@    zeroxaxis  tick major linewidth 1
+@    zeroxaxis  tick major linestyle 1
+@    zeroxaxis  tick minor color 1
+@    zeroxaxis  tick minor linewidth 1
+@    zeroxaxis  tick minor linestyle 1
+@    zeroxaxis  tick log off
+@    zeroxaxis  tick size 1.000000
+@    zeroxaxis  tick minor size 0.500000
+@    zeroxaxis  bar off
+@    zeroxaxis  bar color 1
+@    zeroxaxis  bar linestyle 1
+@    zeroxaxis  bar linewidth 1
+@    zeroxaxis  tick major grid off
+@    zeroxaxis  tick minor grid off
+@    zeroxaxis  tick op both
+@    zeroxaxis  tick type auto
+@    zeroxaxis  tick spec 0
+@    zeroyaxis  tick on
+@    zeroyaxis  tick major 0.2
+@    zeroyaxis  tick minor 0.1
+@    zeroyaxis  tick offsetx 0.000000
+@    zeroyaxis  tick offsety 0.000000
+@    zeroyaxis  label ""
+@    zeroyaxis  label layout para
+@    zeroyaxis  label place auto
+@    zeroyaxis  label char size 1.000000
+@    zeroyaxis  label font 4
+@    zeroyaxis  label color 1
+@    zeroyaxis  label linewidth 1
+@    zeroyaxis  ticklabel off
+@    zeroyaxis  ticklabel type auto
+@    zeroyaxis  ticklabel prec 5
+@    zeroyaxis  ticklabel format general
+@    zeroyaxis  ticklabel append ""
+@    zeroyaxis  ticklabel prepend ""
+@    zeroyaxis  ticklabel layout horizontal
+@    zeroyaxis  ticklabel place on ticks
+@    zeroyaxis  ticklabel skip 0
+@    zeroyaxis  ticklabel stagger 0
+@    zeroyaxis  ticklabel op left
+@    zeroyaxis  ticklabel sign normal
+@    zeroyaxis  ticklabel start type auto
+@    zeroyaxis  ticklabel start 0.000000
+@    zeroyaxis  ticklabel stop type auto
+@    zeroyaxis  ticklabel stop 0.000000
+@    zeroyaxis  ticklabel char size 1.000000
+@    zeroyaxis  ticklabel font 4
+@    zeroyaxis  ticklabel color 1
+@    zeroyaxis  ticklabel linewidth 1
+@    zeroyaxis  tick major off
+@    zeroyaxis  tick minor on
+@    zeroyaxis  tick default 6
+@    zeroyaxis  tick in
+@    zeroyaxis  tick major color 1
+@    zeroyaxis  tick major linewidth 1
+@    zeroyaxis  tick major linestyle 1
+@    zeroyaxis  tick minor color 1
+@    zeroyaxis  tick minor linewidth 1
+@    zeroyaxis  tick minor linestyle 1
+@    zeroyaxis  tick log off
+@    zeroyaxis  tick size 1.000000
+@    zeroyaxis  tick minor size 0.500000
+@    zeroyaxis  bar off
+@    zeroyaxis  bar color 1
+@    zeroyaxis  bar linestyle 1
+@    zeroyaxis  bar linewidth 1
+@    zeroyaxis  tick major grid off
+@    zeroyaxis  tick minor grid off
+@    zeroyaxis  tick op both
+@    zeroyaxis  tick type auto
+@    zeroyaxis  tick spec 0
+@    legend on
+@    legend loctype view
+@    legend layout 0
+@    legend vgap 2
+@    legend hgap 1
+@    legend length 4
+@    legend box on
+@    legend box fill on
+@    legend box fill with color
+@    legend box fill color 0
+@    legend box fill pattern 1
+@    legend box color 1
+@    legend box linewidth 1
+@    legend box linestyle 1
+@    legend x1 0.2
+@    legend y1 0.81
+@    legend font 4
+@    legend char size 0.720000
+@    legend linestyle 1
+@    legend linewidth 1
+@    legend color 1
+@    legend string 0 "\4hairpin1"
+@    legend string 1 "helix"
+@    legend string 2 "hairpin2"
+@    legend string 3 "\8b\N1-\8b\44 sheet"
+@    frame on
+@    frame type 0
+@    frame linestyle 1
+@    frame linewidth 1
+@    frame color 1
+@    frame fill off
+@    frame background color 0
+@WITH G0
+@G0 ON
+@TARGET S0
+@TYPE xy
+              50            0.135
+              70           0.1425
+              90           0.1375
+             110           0.1375
+             130           0.1525
+             150            0.155
+             170            0.185
+             190            0.185
+             210            0.175
+             230           0.1675
+             250           0.1525
+             270           0.1725
+             290           0.1775
+             310           0.2075
+             330           0.2075
+             350           0.2025
+             370           0.1925
+             390             0.18
+             410           0.1725
+             430             0.18
+             450             0.19
+             470           0.2025
+             490           0.2325
+             510            0.225
+             530            0.215
+             550           0.2075
+             570             0.19
+             590           0.1825
+             610           0.1925
+             630           0.1925
+             650            0.185
+             670           0.1675
+             690             0.14
+             710            0.125
+             730           0.1075
+             750           0.1375
+             770             0.14
+             790            0.145
+             810           0.1625
+             830           0.1675
+             850           0.1725
+             870            0.165
+             890             0.16
+             910           0.1675
+             930           0.1775
+             950             0.16
+             970            0.165
+             990             0.14
+            1010            0.145
+            1030           0.1625
+            1050           0.1625
+            1070             0.17
+            1090           0.1625
+            1110           0.1625
+            1130           0.1875
+            1150           0.1875
+            1170            0.195
+            1190           0.2025
+            1210            0.195
+            1230           0.2025
+            1250             0.19
+            1270           0.1825
+            1290           0.1825
+            1310           0.1825
+            1330             0.23
+            1350             0.25
+            1370            0.245
+            1390           0.2525
+            1410            0.235
+            1430           0.2325
+            1450           0.2225
+            1470           0.2225
+            1490            0.185
+            1510            0.175
+            1530            0.175
+            1550           0.1825
+            1570             0.22
+            1590            0.245
+            1610           0.2625
+            1630            0.255
+            1650           0.2425
+            1670           0.2225
+            1690           0.2125
+            1710           0.2275
+            1730           0.2425
+            1750             0.23
+            1770             0.23
+            1790            0.215
+            1810           0.1975
+            1830           0.2075
+            1850            0.225
+            1870             0.22
+            1890            0.235
+            1910           0.2675
+            1930           0.2475
+            1950            0.245
+            1970           0.2375
+            1990           0.1975
+            2010           0.2225
+            2030           0.2225
+            2050            0.215
+            2070            0.215
+            2090             0.19
+            2110           0.1975
+            2130           0.1975
+            2150             0.22
+            2170             0.23
+            2190             0.24
+            2210           0.2475
+            2230             0.23
+            2250           0.2225
+            2270           0.2075
+            2290           0.2025
+            2310             0.22
+            2330           0.2425
+            2350            0.255
+            2370           0.2425
+            2390             0.22
+            2410            0.205
+            2430           0.1925
+            2450           0.2175
+            2470            0.225
+            2490             0.21
+            2510            0.205
+            2530           0.1975
+            2550           0.1975
+            2570           0.2075
+            2590              0.2
+            2610             0.19
+            2630           0.1925
+            2650            0.205
+            2670           0.2075
+            2690           0.2325
+            2710           0.2575
+            2730           0.2525
+            2750             0.26
+            2770             0.24
+            2790             0.23
+            2810           0.2375
+            2830             0.26
+            2850            0.275
+            2870            0.275
+            2890           0.2825
+            2910           0.2625
+            2930           0.2425
+            2950            0.225
+            2970              0.2
+            2990             0.22
+            3010            0.215
+            3030            0.205
+            3050           0.1875
+            3070             0.19
+            3090           0.1975
+            3110             0.23
+            3130           0.2625
+            3150           0.2525
+            3170           0.2375
+            3190           0.2225
+            3210            0.215
+            3230             0.19
+            3250           0.2025
+            3270           0.2175
+            3290           0.2175
+            3310           0.2625
+            3330           0.3225
+            3350            0.365
+            3370            0.425
+            3390           0.4225
+            3410           0.4075
+            3430            0.375
+            3450            0.335
+            3470           0.3525
+            3490           0.3525
+            3510             0.36
+            3530             0.39
+            3550            0.365
+            3570            0.375
+            3590           0.3775
+            3610           0.3625
+            3630             0.38
+            3650             0.37
+            3670             0.37
+            3690            0.355
+            3710            0.335
+            3730           0.3325
+            3750             0.34
+            3770             0.36
+            3790           0.3725
+            3810           0.3825
+            3830              0.4
+            3850             0.41
+            3870            0.415
+            3890           0.3875
+            3910            0.355
+            3930            0.355
+            3950           0.3575
+            3970             0.37
+            3990           0.3525
+            4010           0.3175
+            4030           0.3225
+            4050             0.33
+            4070            0.345
+            4090            0.375
+            4110             0.37
+            4130            0.375
+            4150            0.385
+            4170              0.4
+            4190            0.375
+            4210            0.355
+            4230             0.37
+            4250           0.3425
+            4270            0.385
+            4290             0.43
+            4310             0.45
+            4330           0.4825
+            4350             0.47
+            4370           0.4975
+            4390            0.505
+            4410           0.5425
+            4430            0.555
+            4450           0.5475
+            4470           0.5375
+            4490           0.5125
+            4510             0.56
+            4530             0.57
+            4550             0.56
+            4570           0.5775
+            4590             0.56
+            4610           0.5175
+            4630             0.53
+            4650           0.5025
+            4670           0.4975
+            4690             0.51
+            4710           0.5175
+            4730           0.5275
+            4750           0.5325
+            4770           0.5575
+            4790             0.57
+            4810           0.5825
+            4830             0.59
+            4850           0.5825
+            4870             0.56
+            4890             0.56
+            4910           0.5775
+            4930             0.58
+            4950             0.59
+            4970           0.5825
+&
+@TARGET S1
+@TYPE xy
+              50            0.025
+              70              0.1
+              90            0.175
+             110           0.2375
+             130           0.3375
+             150              0.3
+             170           0.2875
+             190            0.275
+             210            0.275
+             230           0.3125
+             250           0.2875
+             270             0.25
+             290             0.15
+             310             0.15
+             330             0.15
+             350             0.15
+             370             0.15
+             390           0.1125
+             410           0.1625
+             430           0.1625
+             450           0.1875
+             470            0.175
+             490            0.125
+             510           0.1375
+             530           0.1625
+             550            0.175
+             570           0.2125
+             590              0.3
+             610            0.375
+             630           0.4625
+             650           0.4875
+             670           0.4875
+             690           0.5125
+             710           0.5375
+             730            0.525
+             750           0.5625
+             770           0.5375
+             790           0.5125
+             810             0.55
+             830           0.4625
+             850            0.475
+             870           0.4625
+             890           0.4875
+             910           0.5625
+             930            0.525
+             950              0.5
+             970            0.475
+             990           0.4625
+            1010            0.475
+            1030           0.5625
+            1050              0.6
+            1070           0.5625
+            1090            0.575
+            1110           0.5375
+            1130              0.5
+            1150            0.475
+            1170            0.475
+            1190           0.4625
+            1210            0.425
+            1230           0.4875
+            1250            0.525
+            1270           0.4625
+            1290           0.5625
+            1310           0.5375
+            1330           0.4375
+            1350           0.4875
+            1370             0.45
+            1390           0.4375
+            1410            0.475
+            1430           0.5375
+            1450            0.575
+            1470              0.6
+            1490            0.575
+            1510            0.525
+            1530           0.4375
+            1550           0.4375
+            1570             0.45
+            1590            0.475
+            1610              0.5
+            1630            0.475
+            1650             0.55
+            1670              0.5
+            1690             0.55
+            1710           0.5625
+            1730            0.475
+            1750              0.5
+            1770           0.4625
+            1790           0.5125
+            1810            0.575
+            1830           0.5625
+            1850           0.5375
+            1870           0.5125
+            1890            0.475
+            1910           0.4625
+            1930              0.5
+            1950           0.5125
+            1970           0.4875
+            1990           0.5125
+            2010           0.4625
+            2030             0.45
+            2050           0.4625
+            2070           0.4875
+            2090           0.5625
+            2110           0.5375
+            2130             0.55
+            2150           0.5375
+            2170            0.425
+            2190           0.4125
+            2210           0.3875
+            2230           0.4125
+            2250            0.475
+            2270              0.5
+            2290            0.525
+            2310           0.4875
+            2330           0.5125
+            2350           0.4625
+            2370            0.475
+            2390            0.475
+            2410           0.4125
+            2430           0.4125
+            2450            0.425
+            2470           0.4125
+            2490           0.4625
+            2510           0.5125
+            2530              0.5
+            2550              0.5
+            2570           0.4625
+            2590              0.4
+            2610           0.4125
+            2630              0.4
+            2650           0.4625
+            2670           0.4625
+            2690           0.4875
+            2710           0.5625
+            2730             0.55
+            2750              0.6
+            2770              0.6
+            2790           0.5875
+            2810            0.525
+            2830              0.5
+            2850           0.4375
+            2870              0.4
+            2890             0.45
+            2910           0.4875
+            2930              0.5
+            2950              0.5
+            2970            0.475
+            2990            0.475
+            3010            0.475
+            3030           0.4375
+            3050           0.4875
+            3070           0.4625
+            3090           0.4875
+            3110             0.55
+            3130           0.5125
+            3150           0.5125
+            3170            0.575
+            3190           0.5625
+            3210           0.6125
+            3230            0.625
+            3250              0.6
+            3270              0.6
+            3290             0.55
+            3310           0.5125
+            3330             0.45
+            3350            0.475
+            3370              0.5
+            3390           0.5375
+            3410            0.575
+            3430            0.525
+            3450              0.5
+            3470           0.5375
+            3490           0.4625
+            3510              0.4
+            3530            0.425
+            3550           0.3625
+            3570            0.475
+            3590           0.5625
+            3610             0.55
+            3630              0.6
+            3650             0.55
+            3670            0.525
+            3690           0.4875
+            3710           0.4625
+            3730             0.45
+            3750           0.4375
+            3770           0.4375
+            3790            0.475
+            3810              0.5
+            3830           0.5625
+            3850            0.625
+            3870           0.6125
+            3890            0.625
+            3910              0.6
+            3930            0.575
+            3950           0.5875
+            3970           0.5375
+            3990            0.575
+            4010              0.6
+            4030           0.5875
+            4050           0.5875
+            4070           0.5375
+            4090           0.4625
+            4110           0.3875
+            4130            0.425
+            4150           0.4375
+            4170             0.45
+            4190            0.475
+            4210           0.4375
+            4230            0.425
+            4250            0.425
+            4270           0.4625
+            4290           0.5375
+            4310            0.525
+            4330            0.525
+            4350           0.5625
+            4370            0.475
+            4390             0.55
+            4410            0.575
+            4430           0.5125
+            4450            0.525
+            4470           0.4375
+            4490           0.4125
+            4510           0.4125
+            4530           0.4625
+            4550           0.4375
+            4570            0.475
+            4590           0.4875
+            4610            0.475
+            4630           0.5125
+            4650           0.4625
+            4670           0.4375
+            4690             0.45
+            4710             0.45
+            4730           0.5125
+            4750             0.55
+            4770           0.4375
+            4790           0.4625
+            4810           0.3875
+            4830           0.3625
+            4850             0.45
+            4870           0.4375
+            4890              0.5
+            4910             0.45
+            4930              0.4
+            4950            0.425
+            4970            0.475
+&
+@TARGET S2
+@TYPE xy
+              50           0.0925
+              70             0.09
+              90            0.095
+             110            0.095
+             130            0.095
+             150             0.11
+             170           0.1175
+             190           0.1275
+             210            0.125
+             230           0.1325
+             250             0.14
+             270            0.135
+             290             0.13
+             310           0.1075
+             330            0.105
+             350           0.1125
+             370             0.11
+             390            0.125
+             410            0.125
+             430           0.1225
+             450           0.1225
+             470           0.1275
+             490           0.1175
+             510           0.1075
+             530           0.1225
+             550            0.125
+             570           0.1275
+             590           0.1325
+             610           0.1125
+             630           0.0975
+             650           0.1075
+             670           0.1025
+             690             0.12
+             710            0.125
+             730            0.125
+             750            0.115
+             770            0.105
+             790           0.1125
+             810           0.1175
+             830           0.1225
+             850             0.13
+             870            0.135
+             890           0.1175
+             910            0.135
+             930            0.135
+             950             0.13
+             970            0.145
+             990           0.1225
+            1010             0.11
+            1030           0.1025
+            1050             0.09
+            1070              0.1
+            1090             0.11
+            1110             0.12
+            1130            0.135
+            1150           0.1425
+            1170            0.135
+            1190             0.14
+            1210             0.14
+            1230             0.14
+            1250             0.16
+            1270           0.1425
+            1290             0.13
+            1310           0.1225
+            1330             0.11
+            1350             0.12
+            1370            0.125
+            1390            0.135
+            1410           0.1375
+            1430           0.1375
+            1450           0.1275
+            1470            0.115
+            1490            0.105
+            1510            0.105
+            1530             0.11
+            1550             0.11
+            1570             0.12
+            1590            0.115
+            1610            0.125
+            1630           0.1375
+            1650             0.13
+            1670             0.13
+            1690           0.1275
+            1710           0.1275
+            1730           0.1375
+            1750           0.1375
+            1770           0.1225
+            1790             0.12
+            1810             0.12
+            1830           0.1075
+            1850            0.115
+            1870            0.105
+            1890           0.0925
+            1910            0.105
+            1930            0.115
+            1950           0.1075
+            1970           0.1175
+            1990           0.1175
+            2010            0.105
+            2030            0.115
+            2050           0.1125
+            2070           0.1175
+            2090            0.125
+            2110             0.13
+            2130            0.125
+            2150           0.1175
+            2170            0.125
+            2190             0.12
+            2210             0.12
+            2230             0.13
+            2250           0.1225
+            2270           0.1175
+            2290            0.115
+            2310           0.1125
+            2330            0.105
+            2350            0.115
+            2370            0.125
+            2390           0.1125
+            2410             0.12
+            2430             0.12
+            2450           0.1175
+            2470           0.1375
+            2490            0.145
+            2510             0.15
+            2530           0.1575
+            2550             0.14
+            2570           0.1275
+            2590           0.1075
+            2610             0.09
+            2630              0.1
+            2650            0.105
+            2670           0.1075
+            2690             0.11
+            2710            0.115
+            2730           0.1075
+            2750           0.1125
+            2770             0.11
+            2790             0.11
+            2810             0.12
+            2830           0.1325
+            2850            0.145
+            2870             0.13
+            2890           0.1275
+            2910            0.115
+            2930            0.105
+            2950           0.1075
+            2970             0.11
+            2990           0.1125
+            3010           0.1075
+            3030           0.1175
+            3050             0.12
+            3070           0.1375
+            3090           0.1575
+            3110            0.155
+            3130            0.155
+            3150            0.155
+            3170           0.1525
+            3190           0.1625
+            3210           0.1625
+            3230             0.16
+            3250             0.16
+            3270           0.1525
+            3290             0.14
+            3310            0.135
+            3330           0.1325
+            3350           0.1375
+            3370             0.15
+            3390           0.1475
+            3410            0.155
+            3430           0.1575
+            3450            0.155
+            3470           0.1525
+            3490           0.1425
+            3510           0.1275
+            3530           0.1175
+            3550             0.13
+            3570           0.1425
+            3590           0.1525
+            3610           0.1775
+            3630           0.1725
+            3650           0.1625
+            3670             0.17
+            3690           0.1625
+            3710            0.175
+            3730             0.19
+            3750           0.1825
+            3770           0.1675
+            3790           0.1575
+            3810             0.14
+            3830             0.12
+            3850           0.1325
+            3870           0.1275
+            3890           0.1225
+            3910             0.14
+            3930           0.1325
+            3950           0.1175
+            3970           0.1225
+            3990             0.14
+            4010           0.1425
+            4030            0.145
+            4050           0.1525
+            4070           0.1325
+            4090           0.1325
+            4110           0.1475
+            4130             0.15
+            4150             0.15
+            4170             0.15
+            4190            0.145
+            4210             0.14
+            4230           0.1425
+            4250             0.13
+            4270           0.1325
+            4290           0.1325
+            4310           0.1375
+            4330           0.1575
+            4350           0.1475
+            4370            0.145
+            4390           0.1425
+            4410           0.1325
+            4430             0.14
+            4450           0.1325
+            4470            0.165
+            4490           0.1975
+            4510            0.215
+            4530             0.26
+            4550           0.2425
+            4570             0.25
+            4590           0.2675
+            4610            0.245
+            4630           0.2525
+            4650            0.255
+            4670           0.2475
+            4690             0.26
+            4710            0.255
+            4730             0.24
+            4750           0.2375
+            4770             0.24
+            4790           0.2625
+            4810            0.265
+            4830             0.27
+            4850             0.29
+            4870            0.295
+            4890            0.315
+            4910            0.325
+            4930           0.3225
+            4950            0.315
+            4970            0.305
+&
+@TARGET S3
+@TYPE xy
+              50                0
+              70                0
+              90                0
+             110                0
+             130                0
+             150                0
+             170                0
+             190                0
+             210                0
+             230                0
+             250                0
+             270                0
+             290                0
+             310                0
+             330                0
+             350                0
+             370                0
+             390                0
+             410                0
+             430                0
+             450                0
+             470                0
+             490                0
+             510                0
+             530                0
+             550                0
+             570                0
+             590                0
+             610                0
+             630                0
+             650                0
+             670                0
+             690                0
+             710                0
+             730                0
+             750                0
+             770                0
+             790                0
+             810                0
+             830                0
+             850                0
+             870                0
+             890                0
+             910                0
+             930                0
+             950                0
+             970                0
+             990                0
+            1010                0
+            1030                0
+            1050                0
+            1070                0
+            1090                0
+            1110                0
+            1130                0
+            1150                0
+            1170                0
+            1190                0
+            1210                0
+            1230                0
+            1250                0
+            1270                0
+            1290                0
+            1310                0
+            1330                0
+            1350                0
+            1370                0
+            1390                0
+            1410                0
+            1430                0
+            1450                0
+            1470                0
+            1490                0
+            1510                0
+            1530                0
+            1550                0
+            1570                0
+            1590                0
+            1610                0
+            1630                0
+            1650                0
+            1670                0
+            1690                0
+            1710                0
+            1730                0
+            1750                0
+            1770                0
+            1790                0
+            1810                0
+            1830                0
+            1850                0
+            1870                0
+            1890                0
+            1910                0
+            1930                0
+            1950                0
+            1970                0
+            1990                0
+            2010                0
+            2030                0
+            2050                0
+            2070                0
+            2090                0
+            2110                0
+            2130                0
+            2150                0
+            2170                0
+            2190            0.025
+            2210             0.05
+            2230           0.0825
+            2250           0.0825
+            2270           0.0575
+            2290           0.0325
+            2310                0
+            2330                0
+            2350                0
+            2370                0
+            2390                0
+            2410                0
+            2430                0
+            2450                0
+            2470                0
+            2490                0
+            2510                0
+            2530                0
+            2550                0
+            2570                0
+            2590                0
+            2610                0
+            2630                0
+            2650                0
+            2670                0
+            2690                0
+            2710                0
+            2730                0
+            2750                0
+            2770                0
+            2790                0
+            2810                0
+            2830                0
+            2850                0
+            2870            0.015
+            2890             0.03
+            2910           0.0375
+            2930             0.07
+            2950            0.095
+            2970            0.105
+            2990             0.13
+            3010             0.13
+            3030            0.105
+            3050            0.105
+            3070            0.105
+            3090            0.105
+            3110             0.13
+            3130            0.145
+            3150           0.1525
+            3170            0.145
+            3190             0.17
+            3210            0.195
+            3230           0.2025
+            3250           0.2425
+            3270           0.2575
+            3290             0.28
+            3310            0.305
+            3330             0.32
+            3350           0.3275
+            3370            0.305
+            3390           0.2975
+            3410           0.2975
+            3430            0.315
+            3450           0.3225
+            3470            0.355
+            3490             0.38
+            3510           0.3325
+            3530             0.34
+            3550           0.3225
+            3570           0.2975
+            3590           0.3275
+            3610           0.3275
+            3630             0.32
+            3650           0.2975
+            3670            0.315
+            3690           0.3225
+            3710             0.33
+            3730           0.3525
+            3750           0.3125
+            3770           0.2975
+            3790            0.305
+            3810           0.3225
+            3830             0.33
+            3850            0.355
+            3870           0.3325
+            3890            0.315
+            3910            0.275
+            3930            0.225
+            3950             0.24
+            3970           0.2575
+            3990           0.2825
+            4010            0.315
+            4030           0.3225
+            4050             0.29
+            4070             0.29
+            4090           0.2575
+            4110            0.235
+            4130            0.235
+            4150           0.2425
+            4170           0.2675
+            4190             0.29
+            4210           0.2975
+            4230           0.2975
+            4250           0.2725
+            4270           0.2575
+            4290            0.265
+            4310           0.2875
+            4330             0.32
+            4350           0.3275
+            4370           0.3125
+            4390             0.29
+            4410           0.2825
+            4430             0.26
+            4450           0.2525
+            4470            0.245
+            4490            0.245
+            4510            0.285
+            4530              0.3
+            4550             0.34
+            4570            0.365
+            4590            0.365
+            4610            0.365
+            4630           0.3725
+            4650            0.355
+            4670             0.33
+            4690           0.3375
+            4710           0.3125
+            4730             0.33
+            4750            0.345
+            4770           0.3625
+            4790             0.37
+            4810             0.37
+            4830             0.37
+            4850           0.3525
+            4870             0.33
+            4890             0.33
+            4910           0.3475
+            4930            0.355
+            4950           0.3625
+            4970           0.3375
+&

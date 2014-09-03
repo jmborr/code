@@ -1,0 +1,29 @@
+CC = g++
+CFLAGS = -Wno-deprecated -c
+CODE = /users/seldon/jmborr/Code
+VPATH = $(CODE)/PDBClasses
+LFLAG = -L $(CODE)/PDBClasses
+lFLAG =  -lpdbClasses
+INCLUDES = -I$(CODE)/PDBClasses
+HDRS = pdbClasses2.h
+
+#default target
+all: message select_by_ses.x
+
+#auxiliary targets
+message:
+	echo BUILDING select_by_ses.x
+
+select_by_ses.x: pdbClasses select_by_ses.o
+	$(CC) $(LFLAG) -o $@ select_by_ses.o $(lFLAG)
+
+select_by_ses.o: select_by_ses.cpp
+
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+pdbClasses: 
+	cd $(CODE)/PDBClasses ; make all ;
+
+clean:
+	rm -f *.o core
+	cd $(CODE)/PDBClasses ; make clean ;

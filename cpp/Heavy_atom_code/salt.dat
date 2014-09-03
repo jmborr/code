@@ -1,0 +1,51 @@
+#C.TYPES OF ATOMS
+#RES, name, mass, Van der Waals radius, charge, hydrophobicity
+#ACT, acetate anion
+ACT  CA   12.000  1.870   0.000  -0.300
+ACT  CB   13.000  1.870   0.000  -0.300
+ACT  OG1  16.000  1.400  -1.000   0.300
+ACT BOG1  16.000  1.400   0.000   0.000
+ACT  OG2  16.000  1.400  -1.000   0.300
+ACT BOG2  16.000  1.400   0.000   0.000
+#END C.TYPES OF ATOMS
+#
+#F.LINKED PAIRS
+#ACT, acetate anion
+#covalent
+ACT  CA  ACT  CB  1.5021 1.5406
+ACT  CB  ACT  OG1 1.2102 1.2574
+ACT  CB  ACT  OG2 1.2133 1.2577
+#angle
+ACT  CA  ACT  OG1 2.3344 2.4194
+ACT  CA  ACT  OG2 2.3235 2.4161
+ACT  OG1 ACT  OG2 2.1275 2.2164
+#END ACT
+#END F.LINKED PAIRS
+#IJ.LIST OF PERMANENT BONDS
+#ACT, acetate anion
+#covalent
+ACT  CA  ACT  CB  S
+ACT  CB  ACT  OG1 S
+ACT  CB  ACT  OG2 S
+#angle
+ACT  CA  ACT  OG1 S
+ACT  CA  ACT  OG2 S
+ACT  OG1 ACT  OG2 S
+#END ACT
+#END IJ.LIST OF PERMANENT BONDS
+#
+#VAN DER WAALS
+#inner-barrier-factor sum-of-radii energy-depth external-barrier-factor
+0.850 0.920 0.200 1.000 0.100 #default Van der Waals line
+#END VAN DER WAALS
+#
+#ELECTROSTATICS
+#inner-barrier-factor external-inner-factor effective-permitivity
+0.850 1.050  -2.0  1.333 1.0  1.800 0.3 #default electrostatic line
+#END ELECTROSTATICS
+#
+#HYDROPHOBICITY
+#inner-barrier-factor external-inner-factor strength factor
+0.850 1.000 -2.000 1.200  1.0  1.400 0.5 #default Hydrophobicity line
+#END HYDROPHOBICITY
+#

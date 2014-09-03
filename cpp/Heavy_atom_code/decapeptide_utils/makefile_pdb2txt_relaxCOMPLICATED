@@ -1,0 +1,22 @@
+CFLAGS = -Wno-deprecated
+HOME = /users/seldon/jmborr
+CODE = $(HOME)/Code
+VPATH_PDBR = $(CODE)/Heavy_atom_code:$(CODE)/PDBClasses
+
+vpath %.h $(VPATH_PDBR)
+vpath %.o $(VPATH_PDBR)
+vpath %.cpp $(VPATH_PDBR)
+
+pdb2txt_relax.x: pdb2txt_relax.o amino_acid_param.o atom_param.o  miscellanea.o bibliography.o pdbClasses2.o
+	g++ -o pdb2txt_relax.x $^
+
+pdb2txt_relax.o: pdb2txt_relax.cpp amino_acid_param.h atom_param.h miscellanea.h random.h
+	g++ $(CFLAGS) -c pdb2txt_relax.cpp
+	echo pdb2txt_relax has been compiled
+
+include $(CODE)/Heavy_atom_code/makefile_Heavy_atom_code
+
+.PHONY : clean
+
+clean :
+	rm -rf *.o core

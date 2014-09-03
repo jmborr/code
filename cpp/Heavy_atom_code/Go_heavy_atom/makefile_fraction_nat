@@ -1,0 +1,31 @@
+#Variables
+CC = g++ 
+CFLAGS = -Wno-deprecated -c
+CODE = /users/seldon/jmborr/Code
+VPATH = $(CODE)/Heavy_atom_code $(CODE)/PDBClasses
+LFLAG = -L $(CODE)/Heavy_atom_code -L $(CODE)/PDBClasses
+lFLAG = -lheavy_atom -lpdbClasses
+HDRS = amino_acid_param.h atom_param.h miscellanea.h random.h
+INCLUDES= -I $(CODE)/Heavy_atom_code -I $(CODE)/PDBClasses
+
+#Default target
+fraction_nat.x: go movie heavy_atom fraction_nat.o
+	echo BUILDING EXECUTABLE fraction_nat.x
+	$(CC) $(LFLAG) -o $@ fraction_nat.o movie.o go.o $(lFLAG)
+
+#Auxiliary targets
+go: go.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+movie: movie.cpp
+	$(CC) $(CFLAGS) $<
+
+heavy_atom:
+	cd $(CODE)/Heavy_atom_code ; make all
+
+fraction_nat.o: fraction_nat.cpp
+	$(CC) $(CFLAGS) $(INCLUDES) $<
+
+clean:
+	rm -f *.o core 
+	cd $(CODE)/Heavy_atom_code ; make clean
