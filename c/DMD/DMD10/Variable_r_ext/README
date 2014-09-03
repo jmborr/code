@@ -1,0 +1,4 @@
+Allow possibility of no external radius, thus simplifying the interaction
+potentials.
+
+In addition, we output the repulsions between amino acids of the same chage.

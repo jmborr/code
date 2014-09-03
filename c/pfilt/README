@@ -1,0 +1,8 @@
+http://bioinf.cs.ucl.ac.uk/downloads/pfilt/
+
+pfilt [-t] [-c] [-b] [-x] fasta-file
+ every option we pass means we DEACTIVATE a particular masking
+-t : deactivate masking of transmembrane regions
+-c : deactivate masking of coiled-coil regions
+-b : deactivate masking of bias composition regions
+-x : deactivate masking of  low-complexity regions

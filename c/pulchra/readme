@@ -1,0 +1,1 @@
+cc -O3 p2.c p2_data.c -lm -o p2

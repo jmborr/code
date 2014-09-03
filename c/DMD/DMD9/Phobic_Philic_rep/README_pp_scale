@@ -1,0 +1,13 @@
+By using the Kyte & Doolite hydrophobicity scale, we modify files 
+pseudoTXT.h (to pseudoTXT_hp_scale.h )and txtGene.cpp (to
+ txtGene_hp_scale.cpp).
+
+Most important: introduction of the scale in pseudoTXT_hp_scale.h via the 
+array "const static double dmd_atom_hp_scale[]"
+
+Also the hydrophobic--hydrophobic atraction and the hydrophobic-hydrophilic
+repulsion are given by formula
+                 
+                     U_{ij} = - h_i * h_j
+
+For hydrophobic (hydrophilic) residues, h_i is negative (positive).

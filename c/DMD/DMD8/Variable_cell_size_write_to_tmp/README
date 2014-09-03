@@ -1,0 +1,52 @@
+variable cell size
+variable safe limit
+
+lists of collision types:
+  hot
+  warm
+  cold
+  wall
+
+when to update the lists:
+         safe-limit   cell       interparticle
+          crossing    crossing      collision
+  hot                    X             X
+  warm       X           X             X
+  cold       X
+  wall                   X             X
+
+list of first times types:
+  hot (for the hot list)
+  warm (for the warm list)
+  wall (for the wall collision)
+  first (the champion of the previous times)
+
+search for champion collision with a tree scheme. tree is by atoms,
+not by cells.
+
+=====================================================================
+Table of collision events and types of updates for lists
+                    |   WALL  |   HOT  |  WARM  |  COLD  |  SAFE |
+------------------------------------------------------------------
+wall collision      |    T    |    N   |    N   |    N   |       |
+                    |         |        |        |        |       |
+particle collision  |    T    |    T <===>  T   |        |   T   |
+                    |         |        |        |        |       |
+safe limit crossing |         |        |    N <===>  N   |   T   |
+------------------------------------------------------------------
+  Legend:   T    update list due to collision time changes
+            N    update list to add and/or remove neighbors
+          <===>  transitions between lists'
+=====================================================================
+
+Write the following files to /tmp/, then write from time to time these
+files to the "working directory"
+
+  echo (data)
+  rms
+  contact
+  movie
+
+The code saves all these files to the "working directory" every time
+it saves a new configuration (.txt file). However, the .txt files are
+saved to the working directory, not the /tmp/

@@ -1,0 +1,6 @@
+Output file junk_count where we store histogram of collisions for each pair
+of atoms.
+
+Only modified file bcp.c (-->bcp.c.count).
+
+ In bcp.c.count, added global variables my_i,my_j,my_count.

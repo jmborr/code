@@ -1,0 +1,17 @@
+bcp.h:	add the field "mij" in the CollisioinData
+	which is the sum of mi and mj;
+
+make_system.c: define a cutoff of mass to define static atoms:1E8
+	if the atom's mass is bigger than this value, the type of atom
+	is assumed as static and the velocity is always assumed as 0.
+	if the collision evolves this kind of static atom:
+	dm = 0;
+	edm= 2*e*d^2/m; m is mass of the moving atom
+	mij = DBL1;
+
+bcp.c:	ab is orignial propotional to dm; now propotional to 1/dd
+	then the velocity change is devided by mij. The corresponding
+	changed is applied when one of the atom is of the static type.
+	the change is in function newvel and reaction.
+
+movie.c: using the old movie.c format.

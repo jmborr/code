@@ -1,0 +1,29 @@
+A.SYSTEM SIZE
+400.0000000 400.0000000 400.0000000
+B.NUMBER OF ATOMS
+2
+C.TYPES OF ATOMS
+//type,mass,ellastic radius,interaction radius
+1 1.000000 0.500000 1.00000
+2 1.000000 0.500000 1.00000
+3 1.000000 0.500000 1.00000
+4 1.000000 0.500000 1.00000
+D.NON-ELASTIC COLLISIONS
+//pair types, repulsive dist, interaction distance, energy
+1 2 3.5 3.9 -1.0
+3 4 1.0
+E.ELASTIC COLLISIONS
+//pair types, repulsive dist
+F.LINKED PAIRS
+//pair types, repulsive dist, attractive distance
+3 4 3.5 3.8 -1 4.0 1.0
+G.REACTIONS
+//old1,old2,new1,new2,bond,radius energy
+1 2 3 4 1
+H.LIST OF ATOMS
+//number, type, x, y, z, Vx, Vy, Vz
+   1    1  0.0	                0.0                0.0                1.0                0.0                0.0	  
+   2    2   5.0	                0.0                0.0                0.0                0.0                0.0	  
+I.LIST OF BONDS
+//number1,number2
+//2 1

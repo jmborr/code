@@ -1,0 +1,8 @@
+<PRE>
+Well width
+1.5
+Well depth
+1.0
+Frequency of energy claculation in *.ener file
+1000
+</PRE>

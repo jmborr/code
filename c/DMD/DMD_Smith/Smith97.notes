@@ -1,0 +1,28 @@
+  Journal of Computational Physics
+Volume 134, Issue 1 , June 1997, Pages 16-30
+
+Molecular Dynamics for Polymeric Fluids Using Discontinuous Potentials
+
+Steven W. Smith, Carol K. Hall and Benny D. Freeman
+
+Department of Chemical Engineering, North Carolina State University, Raleigh, North Carolina, 27695-7905
+
+Received 24 July 1995;  revised 15 April 1996. Available online 7 May 2002.
+
+Molecular dynamics simulation techniques for systems interacting with
+discontinuous potentials are discussed. Optimization and efficiency
+techniques are summarized for performing discontinuous molecular dynamics on
+serial computers with direct application to polymer-like fluids. Comparisons
+are presented for two algorithms: (1) single-event scheduling, and (2)
+multiple-event scheduling. The single-event scheduling algorithm is
+approximately 75% faster than the multiple-event scheduling algorithm for
+molecular fluids but yields equivalent performance for atomic fluids. For the
+single-event scheduling method, a combination of link lists and neighbor
+lists are used when searching for possible particle interactions. The
+combination of efficiency techniques permits multibillion time step
+simulations for relatively large systems on desktop workstations. Both
+discontinuous molecular dynamics codes for single and multiple-event
+scheduling algorithms are available on the Internet. The utility of the
+method is demonstrated for entangled chains, tethered chains, and
+heteronuclear chain mixtures.
+

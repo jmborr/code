@@ -1,0 +1,13 @@
+This version of the code has
+
+4-bead model
+
+Write the following files to /tmp/, then write from time to time these files to the "working directory"
+
+  echo (data)
+  rms
+  contact
+  movie
+
+The code saves all these files to the "working directory" every time it
+saves a new configuration (.txt file). However, the .txt files are saved to the working directory, not the /tmp/

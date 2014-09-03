@@ -1,0 +1,15 @@
+We only modify files:
+ search.c
+ search.h
+ bcp.c
+
+
+We modify function "squeeze1" in file search.c and add function set_search_volume().
+
+We modify function "void set_new_bounds(double *L, double maxrb,int ndim)" in bcp.c by calling "set_search_volume(maxrb);"
+
+The point of this modification is to only compute collisions for atoms that are closer than a distance "maxrb * 1.20" to the atom we're interested in.
+
+NOTE: to calculate the distance of an atom to the "central" atom, we do not synchronize their local time. This way we incurr in some error but computations are faster.
+
+We obtain a speed up of 33%, but the trade-off is some missed collisions!

@@ -1,0 +1,6 @@
+We include a new amino acid, the oxydize methionine, with three letter code
+"MO2" and one-letter code "O".
+
+Now instead of 20 amino acid, we have 21 amino acids. We include
+hydrophobic-hydrophilic repulsions, hydrogen bonds and salt-bridge
+interactions for oxydized methionine.

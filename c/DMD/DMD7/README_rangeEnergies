@@ -1,0 +1,10 @@
+Files included:
+
+bcp.c
+make_system.c
+rangeEnergies.c
+rangeEnergies.h
+makefile
+
+New feature: the simulation stops when potential energies goes out of an
+energy range that is input at the beginning of the simulation.

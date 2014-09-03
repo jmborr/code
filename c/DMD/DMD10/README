@@ -1,0 +1,165 @@
+1. Compilation
+
+The compilation is quit simple, uncompress everything in a directory and comple it by
+
+$>mkdir Fold
+$>cd Fold
+$>make
+
+Then all the excutable is in the subdirectory bin, it also include some
+examples
+
+2. Usage
+
+Since once create the txt file from PBD, there are some clashes that DMD will
+fail since the DMD use a infinitly high potential as hardcore. Therefore, a
+first step will create a input file for DMD to relax these potential clashes.
+NOTES: If you want to know the usages of the executables, you can hit the
+executable and it will list the usage of arguments. For example:
+
+$>./bin/preRelax.linux
+usage: preRelax.linux PDB boxSize [streched]
+[streched]: set to start with streched conformation
+
+Also, if you want to generate a conformation from a sequence file, rather than
+from a PDB file, then do
+$>./bin/preRelax.linux sequence_file boxSize 0
+where boxSize is some number.
+
+I. RELAXATION:
+
+Following is sample steps for AB40.
+
+A) generate a input file for DMD to eliminate the clashes
+
+$>cd sample
+$>../bin/preRelax.linux 1BA4_8.pdb 120 > pre_relax.txt
+
+or, if you want to start from a conformation close to the original PDB conformation use
+
+$>../bin/preRelax.linux 1BA4_8.pdb 120 1 > pre_relax.txt
+
+the last argument tell the program to generate a streched conformation
+
+
+B) from previous step, you can get a file named "pre_relax.txt", in this
+step, you can launch DMD to do the job as to eliminate the clashes
+
+$>../bin/dmd.linux < relax.start
+
+here relax.start is a sample start file for DMD to do the job. You can edit
+it as you want.  Once the simulation is done, you can look at the output file
+to see weather the clashes is resolved by look at the output file. One the
+energy is zero, then it is done.
+
+$>tail relax.echo
+      90.899           0.100         -0.0000    236420.0000000000           -0.0000035358
+      91.948           0.100         -0.0000    238477.0000000000           -0.0000011534
+      92.977           0.100         -0.0000    240534.0000000000           -0.0000168030
+      93.973           0.100         -0.0000    242674.0000000000            0.0000149094
+      94.967           0.100         -0.0000    244791.0000000000           -0.0000015189
+      95.878           0.100         -0.0000    246853.0000000000           -0.0000076108
+      96.910           0.100         -0.0000    248915.0000000000           -0.0000001839
+      97.960           0.100         -0.0000    250953.0000000000           -0.0000006865
+      98.994           0.100         -0.0000    253005.0000000000            0.0000021484
+      99.931           0.100         -0.0000    255033.0000000000            0.0000007144
+$>ls relax.txt000
+
+Therefore, it is done. And now the relaxed conformation is stored in the
+final txt file from DMD. Next, you will generate a input txt file for DMD
+based on this conformation
+
+II. PREPARATION for the simulations:
+
+A) genetate the txt file
+
+$>../bin/pdb2seq.pl 1BA4_8.pdb seq
+
+to get a 3-letter sequence file --- seq
+
+$>../bin/txt2txt.linux
+usage: command seq relaxedTXT E_Para_F [is_ExN]
+ is_ExN -- OPT parameter to exclude neightbouring interaction: 0/1
+
+$>../bin/txt2txt.linux seq relax.txt0000 E_para_sample 1 > init.txt
+
+here, E_para_sample is the parameter files of the model.
+NOW, you have a file which is ready to use for
+DMD
+
+
+In order to run the DMD, you still nead a couple other files for a productive
+simulations for example for the calculation of RMSD, phi and psi.
+
+B) the natvie file
+
+$>../bin/geneNative.linux
+usage: command PDB nat_f
+$>../bin/geneNative.linux 1BA4_8.pdb nat
+
+The native file is stored in file ---- nat, the calculation of RMSD is based
+on CAs.
+
+C) the phi and psi files which is used for generating phi and psi files while
+running DMD
+
+$>../bin/pdb2fyspec.linux 1BA4_8.pdb fy.spec
+
+
+III. SIMULATIONS
+
+NOW, you can start simulation from DMD. In sample directory, there is a
+sample start file for DMD--- T=0.50.start. You can edit the file refer to the
+file to run DMD interactively.
+
+$>../bin/dmd.linux < T=0.50.start
+
+IV. ANALYSIS
+
+There are also a couple of other programs that can do some analysises. 
+
+1. txt2pdb.linux
+
+$>../bin/txt2pdb.linux 
+usage: txt2pdb.linux txt inputMethod inputFile nProt pdb
+
+The program will read the txt file and convert the conformation in the format
+of PDB, which can be displayed by various programs. For the meaning of the
+arguments:
+
+txt --- the txt file saved by DMD
+
+inputMethod: it can be either 0 or 1. If you input 0, thent inputFile is
+seq. If you put 1, then inputFile should be the PDB file.
+
+nProt--- the number of peptides. Actually, the package only simulation 1
+peptide, so you should put 1. Later, the package should be able to deal with
+multiple chains.
+
+pbd -- the output file name
+
+2. movie2pdbs.linux
+
+The file read the binary movie file and convert it into a file with all the
+frames in the format of PDB and seperated by "END". VMD can read it and make
+a movie.
+
+$>../bin/movie2pdbs.linux 
+usage: movie2pdbs.linux movie(bin) inputMethod inputFile startFrame nFrame output [chi_f]
+ inputMethod : 0/1
+    0 --- input seq file only
+    1 --- input PDB file but using SEQ only
+
+3. fy2prop.linux
+
+It read the phi/psi file and calculate the propensity of secondary structures
+for each residue.
+
+$> ../bin/fy2prop.linux 
+usage: fy2prop.linux fy_File nRes out_File [startFrame nFrame]
+
+
+nRes: is the number of residues in the protein.
+out_file: is the output file.
+
+

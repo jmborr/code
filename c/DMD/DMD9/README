@@ -1,0 +1,8 @@
+This code was developed by Feng.
+3 Beads in the backbone, no Oxygen and Hydrogen
+1 Bead in the residue for Alanine
+2 Beads in the residue for others, except for the branched amino acids, which have three beads.
+
+Multibreak hydrogen bond.
+
+Implemented hydrogen bond between side chain and the backbone.
