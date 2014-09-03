@@ -1,0 +1,1265 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="CPython_example" class="org.kepler.moml.CompositeClassEntity">
+    <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:86:485">
+    </property>
+    <property name="class" class="ptolemy.kernel.util.StringAttribute" value="org.kepler.moml.CompositeClassEntity">
+        <property name="id" class="ptolemy.kernel.util.StringAttribute" value="null">
+        </property>
+    </property>
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="9.1.devel">
+    </property>
+    <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org/ns/:44806:68:189">
+    </property>
+    <property name="SDF Director" class="ptolemy.domains.sdf.kernel.SDFDirector">
+        <property name="localClock" class="ptolemy.actor.LocalClock">
+            <property name="globalTimeResolution" class="ptolemy.actor.parameters.SharedParameter" value="1.0E-10">
+            </property>
+            <property name="clockRate" class="ptolemy.data.expr.Parameter" value="1.0">
+            </property>
+        </property>
+        <property name="iterations" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="vectorizationFactor" class="ptolemy.data.expr.Parameter" value="1">
+        </property>
+        <property name="allowDisconnectedGraphs" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="allowRateChanges" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="constrainBufferSizes" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+        <property name="period" class="ptolemy.data.expr.Parameter" value="0.0">
+        </property>
+        <property name="synchronizeToRealTime" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="Scheduler" class="ptolemy.domains.sdf.kernel.SDFScheduler">
+            <property name="constrainBufferSizes" class="ptolemy.data.expr.Parameter" value="constrainBufferSizes">
+            </property>
+        </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Steve Neuendorffer</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;&lt;p&gt;The SDF Director is often used to oversee fairly simple, sequential workflows in which the director can determine the order of actor invocation from the workflow. Types of workflows that would run well under an SDF Director include processing and reformatting tabular data, converting one data type to another, and reading and plotting a series of data points. A workflow in which an image is read, processed (rotated, scaled, clipped, filtered, etc.), and then displayed, is also an example of a sequential workflow that requires a director simply to ensure that each actor fires in the proper order (i.e., that each actor executes only after it receives its required inputs).&lt;/p&gt;&#10;&#10;&lt;p&gt;The SDF Director is very efficient and will not tax system resources with overhead. However, this efficiency requires that certain conditions be met, namely that the data consumption and production rate of each actor in an SDF workflow be constant and declared. If an actor reads one piece of data and calculates and outputs a single result, it must always read and output a single token of data. This data rate cannot change during workflow execution and, in general, workflows that require dynamic scheduling and/or flow control cannot use this director. Additionally, the SDF Director has no understanding of passing time (at least by default), and actors that depend on a notion of time may not work as expected. For example, a TimedPlotter actor will plot all values at time zero when used in SDF. &lt;/p&gt;&#10;&#10;&lt;p&gt;By default, the SDF Director requires that all actors in its workflow be connected. Otherwise, the director cannot account for concurrency between disconnected workflow parts. Usually, a PN Director should be used for workflows that contain disconnected actors; however, the SDF Director's allowDisconnectedGraphs parameter may also be set to true. The SDF Director will then schedule each disconnected &quot;island&quot; independently. The director cannot infer the sequential relationship between disconnected actors (i.e., nothing forces the director to finish executing all actors on one island before firing actors on another). However, the order of execution within each island should be correct. Usually, disconnected graphs in an SDF model indicate an error.&lt;/p&gt;&#10; &#10;&lt;p&gt;Because SDF Directors schedule actors to fire only after they receive their inputs, workflows that require loops (feeding an actor's output back into its input port for further processing) can cause &quot;deadlock&quot; errors. The deadlock errors occur because the actor depends on its own output value as an initial input. To fix this problem, use a SampleDelay actor to generate and inject an initial input value into the workflow.&lt;/p&gt;&#10;&#10;&lt;p&gt;The SDF Director determines the order in which actors execute and how many times each actor needs to be fired to complete a single iteration of the workflow. This schedule is calculated BEFORE the director begins to iterate the workflow. Because the SDF Director calculates a schedule in advance, it is quite efficient. However, SDF workflows must be static. In other words, the same number of tokens must be consumed/produced at every iteration of the workflow. Workflows that require dynamic control structures, such as a BooleanSwitch actor that sends output on one of two ports depending on the value of a 'control', cannot be used with an SDF Director because the number of tokens on each output can change for each execution.&lt;/p&gt;&#10;&#10;&lt;p&gt;Unless otherwise specified, the SDF Director assumes that each actor consumes and produces exactly one token per channel on each firing. Actors that do not follow the one-token-per-channel firing convention (e.g., Repeat or Ramp) must declare the number of tokens they produce or consume via the appropriate parameters. &lt;/p&gt;&#10;&#10;&lt;p&gt;The number of times a workflow is iterated is controlled by the director's iterations parameter. Since Kepler 2.4, this parameter is set to &quot;AUTO&quot; by default. The director will run the workflow once when it is placed in the top level workflow. When it is placed in a composite actor, the director will keep running the sub-workflow inside of the composite actor until the top level director tells it to stop. In other words, &quot;AUTO&quot; means its value will be &quot;1&quot; when it is placed in the top level workflow, and will be &quot;UNBOUNDED&quot; when it is placed in a composite actor. This default value works for most cases. You can also select &quot;UNBOUNDED&quot; or specify &quot;0&quot; for this parameter, which means the workflow will iterate forever. Concrete numbers can be specified here too for the actual number of times the director should execute the workflow. &lt;/p&gt;&#10;&#10;&lt;p&gt;The amount of data processed by an SDF workflow is a function of both the number of times the workflow iterates and the value of the director's vectorizationFactor parameter. The vectorizationFactor is used to increase the efficiency of a workflow by increasing the number of times actors fire each time the workflow iterates. If the parameter is set to a positive integer (other than 1), the director will fire each actor the specified number of times more than normal. The default is 1, indicating that no vectorization should be performed. Keep in mind that changing the vectorizationFactor parameter changes the meaning of a nested SDF workflow and may cause deadlock in a workflow that uses it. &lt;/p&gt;&#10;&#10;&lt;p&gt;The SDF Director has several advanced parameters that are generally only relevant when an SDF workflow contains composite components. In most cases the period, timeResolution, synchronizeToRealTime, allowRateChanges, timeResolution, and constrainBufferSizes parameters can be left at their default values.&lt;/p&gt;&#10;&#10;&lt;p&gt;For more information about the SDF Director, see the Ptolemy documentation (http://ptolemy.eecs.berkeley.edu/papers/05/ptIIdesign3-domains/ptIIdesign3-domains.pdf).&lt;/p&gt;&#10;&#10;</configure></property>
+<property name="prop:allowDisconnectedGraphs" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify whether to allow disconnected actors in the workflow (by default, all actors are required to be connected). If disconnected actors are permitted, the SDF Director will schedule each disconnected 'island' independently. Nothing &quot;forces&quot; the director to finish executing all actors on one island before firing actors on another. However, the order of execution within each island should be correct. Usually, disconnected graphs in an SDF workflow indicate an error.</configure></property>
+<property name="prop:allowRateChanges" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify whether dynamic rate changes are permitted or not. By default, rate changes are not permitted, and the director will perform a check to disallow such workflows. If the parameter is selected, then workflows that require rate parameters to be modified during execution are valid, and the SDF Director will dynamically compute a new schedule at runtime. This is an advanced parameter that can usually be left at its default value.</configure></property>
+<property name="prop:constrainBufferSizes" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify whether buffer sizes are fixed. By default, buffers are fixed, and attempts to write to the buffer that cause the buffer to exceed its scheduled size result in an error. This is an advanced parameter that can usually be left at its default value.</configure></property>
+<property name="prop:timeResolution" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The time precision used by this director. All time values are rounded to the nearest multiple of this number. The value is a double that defaults to &quot;1E-10&quot; (which is 10-10). This is an advanced parameter that can usually be left at its default value.</configure></property>
+<property name="prop:iterations" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify the number of times a workflow is iterated. Since Kepler 2.4, this parameter is set to &quot;AUTO&quot; by default. The director will run the workflow once when it is placed in the top level workflow. When it is placed in a composite actor, the director will keep running the sub-workflow inside of the composite actor until the top level director tells it to stop. In other words, &quot;AUTO&quot; means its value will be &quot;1&quot; when it is placed in the top level workflow, and will be &quot;UNBOUNDED&quot; when it is placed in a composite actor. This default value works for most cases. You can also select &quot;UNBOUNDED&quot; or specify &quot;0&quot; for this parameter, which means the workflow will iterate forever. Concrete numbers can be specified here too for the actual number of times the director should execute the workflow. </configure></property>
+<property name="prop:vectorizationFactor" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The vectorizationFactor is used to increase the efficiency of a workflow by increasing the number of times actors fire each time the workflow iterates. If the parameter is set to a positive integer (other than 1), the director will fire each actor the specified number of times more than normal. The default is 1, indicating that no vectorization should be performed. Keep in mind that changing the vectorizationFactor parameter changes the meaning of a nested SDF workflow and may cause deadlock in a workflow that uses it. </configure></property>
+<property name="prop:synchronizeToRealTime" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify whether the execution should synchronize to real time or not. By default, the director does not synchronize to real time. If synchronize is selected, the director will only process the workflow when elapsed real time matches the product of the period parameter and the iteration count. Note: if the period parameter has a value of 0.0 (the default), then selecting this parameter has no effect. This is an advanced parameter that can usually be left at its default value.</configure></property>
+<property name="prop:period" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The time period of each iteration. The value is a double that defaults to 0.0, which means that the director does not increment workflow time. If the value greater than 0.0, the actor will increment workflow time each time it fires. This is an advanced parameter that can usually be left at its default value. </configure></property>
+</property>        <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:76:1">
+        </property>
+        <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.domains.sdf.kernel.SDFDirector">
+            <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:directorclass:1:2">
+            </property>
+        </property>
+        <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#Director">
+        </property>
+        <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#Director">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{120, 60}">
+        </property>
+        <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:director:1:2">
+        </property>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={923, 237, 1389, 1141}, maximized=false}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1071, 963]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.3291262692903447">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{339.12124482044203, 312.1117489640884}">
+    </property>
+    <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="True">
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Neil Smyth, Edward A. Lee, Xiaojun Liu</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>$Id: Parameter.xml 30507 2012-08-22 23:51:26Z crawl $</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;&lt;p&gt;Parameter extends Variable with additional support for string-valued&#10; variables that makes these friendlier at the user interface level.&#10; In particular, this class supports an annotation that specifies&#10; choices for values.  A user interface can use this to present a&#10; choice dialog that offers the specified values.  This is typically&#10; used when a particular set of choices make sense.  The values can&#10; be any expression, or if used in conjunction with string mode,&#10; any string.&lt;/p&gt;&#10; &lt;p&gt;&#10; By default, an instance of Parameter, unlike Variable, is persistent.&lt;/p&gt;&#10; &lt;p&gt;&#10; By convention, an instance of NamedObj has a set of attributes,&#10; some of which are visible to users and some of which are not.&#10; When a user interface presents these attributes&#10; for editing, it presents only those that are visible.&#10; By default, an instance of Parameter is visible, as indicated by the fact&#10; that it returns FULL in its getVisibility() method.  This can be overridden&#10; by calling setVisibility().&lt;/p&gt;</configure></property>
+</property>        <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:179:1">
+        </property>
+        <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.data.expr.Parameter">
+            <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:1184:1">
+            </property>
+        </property>
+        <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#Parameter">
+        </property>
+        <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#Parameter">
+        </property>
+        <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+        </property>
+        <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{375, 85}">
+        </property>
+        <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:420:1">
+        </property>
+    </property>
+    <property name="ShowTypes" class="ptolemy.vergil.actor.lib.ShowTypes">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Edward A. Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>$Id: ShowTypes.java 63891 2012-07-09 14:20:39Z eal $</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;This attribute, when inserted into a model causes types to be&#10; displayed on all ports at the same level of the hierarchy as&#10; this attribute. Note that this conflicts with other&#10; attributes that display info on ports, such as&#10; {@link MonitorReceiverAttribute}. The two should not be used together.</configure></property>
+</property>        <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org:actor:739:1">
+        </property>
+        <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.vergil.actor.lib.ShowTypes">
+            <property name="id" class="ptolemy.kernel.util.StringAttribute" value="null">
+            </property>
+        </property>
+        <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#WorkflowDevelopment">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.XMLIcon">
+            <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
+            </property>
+        </property>
+        <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+            <configure>
+        <svg>
+          <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
+        </svg>
+      </configure>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[300.0, 120.0]">
+        </property>
+    </property>
+    <entity name="String Constant" class="ptolemy.actor.lib.StringConst">
+        <property name="value" class="ptolemy.data.expr.Parameter" value="Hello, World">
+        </property>
+        <property name="firingCountLimit" class="ptolemy.data.expr.Parameter" value="NONE">
+        </property>
+        <property name="NONE" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Edward Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The StringConstant actor outputs a string specified via the actor's value parameter.&lt;/p&gt;&#10;&#10;&lt;p&gt;Specifying strings with the StringConstant actor is convenient, as the actor does not require that strings be surrounded by quotes. The actor is often used to specify file paths, which can be selected using the Browse button available in the actor's parameters.&lt;/p&gt;&#10;&#10;&lt;p&gt;Specified string values can include references to parameters within scope (i.e., parameters defined at the same level of the hierarchy or higher). &lt;/p&gt;&#10;&#10;&lt;p&gt;NOTE: If using a PN Director, the 'firingCountLimit' parameter is often set to a finite integer (e.g. '1') so that the workflow will terminate. &lt;/p&gt;&#10;&#10;</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts a string constant specified by the value parameter.  </configure></property>
+<property name="port:trigger" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A multiport that has no declared type (in other words, the port can accept any data type: double, int, array, etc.) If the port is connected, the actor will not fire until the trigger port receives an input token. Connecting the port is optional, but useful when scheduling the actor to perform at a certain time. </configure></property>
+<property name="prop:firingCountLimit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The limit on the number of times the actor will fire. The default value is 'NONE', meaning there is no limit on the number of time the constant will be provided to the output port. Any integer can be provided as a value for this parameter.</configure></property>
+<property name="prop:value" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The value produced by the actor. Specified strings do not require enclosing quotes. (To include a '$' sign in the string, enter '$$'.)</configure></property>
+</property>        <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:69:4">
+        </property>
+        <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.StringConst">
+            <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:1052:1">
+            </property>
+        </property>
+        <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#StringFunctionActor">
+        </property>
+        <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#Constant">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[190.0, 315.0]">
+        </property>
+        <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:204:1">
+        </property>
+        <port name="trigger" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="multiport"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="Constant" class="ptolemy.actor.lib.Const">
+        <property name="value" class="ptolemy.data.expr.Parameter" value="1.0">
+        </property>
+        <property name="firingCountLimit" class="ptolemy.data.expr.Parameter" value="NONE">
+        </property>
+        <property name="NONE" class="ptolemy.data.expr.Parameter" value="0">
+        </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The Constant actor outputs a constant, which is specified by the value parameter. By default, the actor outputs the integer 1.&lt;/p&gt;&#10;&#10;&lt;p&gt;The actor can be used to output other types of values, e.g., a string (such as &quot;Hello&quot;) or a double (such as 1.2). The actor'&#10;s output type matches the type of the specified value.&lt;/p&gt;&#10;&#10;&lt;p&gt;The Ptolemy II Expression language defines the syntax&#10;for the &lt;i&gt;value&lt;/i&gt; parameter.  In Kepler, documentation is available&#10;via the Help button in the Edit Parameters window.  Documentation&#10;is also available on-line at&#10;&lt;a href=&quot;http://http://ptolemy.berkeley.edu/ptolemyII/designdoc.htm#in_browser&quot;&gt;http://ptolemy.berkeley.edu/ptolemyII/designdoc.htm&lt;/a&gt;.&lt;/p&gt;&#10;&#10;&lt;p&gt;NOTE: If using a PN Director, the 'firingCountLimit' parameter is often set to a finite integer (e.g. '1') so that the workflow will terminate. &lt;/p&gt;&#10;</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts the specified constant. By default, the output is 1.</configure></property>
+<property name="port:trigger" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A multiport that has no declared type (in other words, the port can accept any data type: double, int, array, etc.) If the port is connected, the actor will not fire until the trigger port receives an input token. Connecting the port is optional, but useful when scheduling the actor to perform at a certain time.</configure></property>
+<property name="prop:firingCountLimit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The limit on the number of times the actor will fire. The default value is 'NONE', meaning there is no limit on the number of time the constant will be provided to the output port. Any integer can be provided as a value for this parameter.</configure></property>
+<property name="prop:value" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The value produced by the Constant actor. By default, the value is the integer token 1. The value can be set to another type, e.g., a string (such as &quot;Hello&quot;) or a double (such as 1.2). The  output type matches the type of the value specified here.</configure></property>
+</property>        <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:75:1">
+        </property>
+        <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.Const">
+            <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:877:1">
+            </property>
+        </property>
+        <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#ConstantActor">
+        </property>
+        <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#Constant">
+        </property>
+        <property name="kar" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:kar:57:1">
+        </property>
+        <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+            <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+            </property>
+            <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="40">
+            </property>
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="{175, 220}">
+        </property>
+        <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:1:1">
+        </property>
+        <port name="trigger" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="multiport"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+    </entity>
+    <entity name="CPython Actor" class="ptolemy.actor.TypedCompositeActor">
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[390.0, 240.0]">
+        </property>
+        <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList">
+        </property>
+        <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:78:445">
+        </property>
+        <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
+        </property>
+        <property name="port3/i3" class="org.kepler.sms.KeplerRefinementIOPort">
+        </property>
+        <property name="port3/i2" class="org.kepler.sms.KeplerRefinementIOPort">
+        </property>
+        <property name="port3/i1" class="org.kepler.sms.KeplerRefinementIOPort">
+        </property>
+        <property name="script" class="ptolemy.data.expr.StringParameter" value="#sample CPython script&#10;&#10;print iports  #print the contents of the input ports&#10;&#10;oports['o1']=3.0        #save content for output port named 'oport1'&#10;oports['o2']=&quot;hello&quot; #save content for output port named 'oport2'">
+            <property name="style" class="ptolemy.actor.gui.style.TextStyle">
+                <property name="height" class="ptolemy.data.expr.Parameter" value="10">
+                </property>
+                <property name="width" class="ptolemy.data.expr.Parameter" value="30">
+                </property>
+            </property>
+        </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Yuhong Xiong, Jose Borreguero</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>1.0</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;A Composite actor that executes a Python script&lt;/p&gt;&#10;&lt;p&gt;The python script can access the contents of the input ports via dictionary &quot;iports&quot;. If you want to pass outupt, then store the output in dictionary &quot;oports&quot;. These names must be reserved, that is, no other variables in the python script should share the same name&lt;/p&gt;&#10;&lt;p&gt;After adding input ports, open the actor and connect the input ports to Actor &quot;Pack Input&quot;. These inputs will be accesible in the python script via dictionary iports. For instance, iports['i1'] should contains the input of port 'i1' of Actor &quot;Pack Input&quot;.&#10;&lt;/p&gt;</configure></property>
+<property name="port:oport1" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>standard output by the CPython script</configure></property>
+<property name="port:error" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>standard error by the CPython script</configure></property>
+<property name="port:exti2" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="port:exti1" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="prop:port3/i3" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="prop:script" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>CPython script</configure></property>
+<property name="prop:port3/i2" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="prop:port3/i1" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="prop:author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="prop:derivedFrom" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+</property>        <property name="author" class="ptolemy.kernel.util.ConfigurableAttribute">
+            <configure>Yuhong Xiong, Jose Borreguero</configure>
+        </property>
+        <property name="" class="ptolemy.vergil.basic.DocAttribute">
+            <property name="description" class="ptolemy.kernel.util.StringAttribute" value="&lt;p&gt;A Composite actor that executes a Python script&lt;/p&gt;&#10;&lt;p&gt;The python script can access the contents of the input ports via dictionary &quot;iports&quot;. If you want to pass outupt, then store the output in dictionary &quot;oports&quot;. These names must be reserved, that is, no other variables in the python script should share the same name&lt;/p&gt;&#10;&lt;p&gt;After adding input ports, open the actor and connect the input ports to Actor &quot;Pack Input&quot;. These inputs will be accesible in the python script via dictionary iports. For instance, iports['i1'] should contains the input of port 'i1' of Actor &quot;Pack Input&quot;.&#10;&lt;/p&gt;">
+            </property>
+            <property name="author" class="ptolemy.kernel.util.StringAttribute" value="Yuhong Xiong, Jose Borreguero">
+            </property>
+            <property name="version" class="ptolemy.kernel.util.StringAttribute" value="1.0">
+            </property>
+            <property name="script (parameter)" class="ptolemy.data.expr.StringParameter" value="CPython script">
+            </property>
+            <property name="oport1 (port)" class="ptolemy.kernel.util.StringAttribute">
+            </property>
+            <property name="output (port)" class="ptolemy.kernel.util.StringAttribute" value="standard output by the CPython script">
+            </property>
+            <property name="error (port)" class="ptolemy.kernel.util.StringAttribute" value="standard error by the CPython script">
+            </property>
+            <property name="exti2 (port)" class="ptolemy.kernel.util.StringAttribute">
+            </property>
+            <property name="exti1 (port)" class="ptolemy.kernel.util.StringAttribute">
+            </property>
+            <property name="port3/i3 (parameter)" class="ptolemy.data.expr.StringParameter" value="">
+            </property>
+            <property name="port3/i2 (parameter)" class="ptolemy.data.expr.StringParameter" value="">
+            </property>
+            <property name="port3/i1 (parameter)" class="ptolemy.data.expr.StringParameter" value="">
+            </property>
+            <property name="author (parameter)" class="ptolemy.data.expr.StringParameter" value="">
+            </property>
+            <property name="derivedFrom (parameter)" class="ptolemy.data.expr.StringParameter" value="">
+            </property>
+        </property>
+        <property name="enableBackwardTypeInference" class="ptolemy.data.expr.Parameter" value="True">
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Neil Smyth, Edward A. Lee, Xiaojun Liu</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>$Id: Parameter.xml 30507 2012-08-22 23:51:26Z crawl $</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;&lt;p&gt;Parameter extends Variable with additional support for string-valued&#10; variables that makes these friendlier at the user interface level.&#10; In particular, this class supports an annotation that specifies&#10; choices for values.  A user interface can use this to present a&#10; choice dialog that offers the specified values.  This is typically&#10; used when a particular set of choices make sense.  The values can&#10; be any expression, or if used in conjunction with string mode,&#10; any string.&lt;/p&gt;&#10; &lt;p&gt;&#10; By default, an instance of Parameter, unlike Variable, is persistent.&lt;/p&gt;&#10; &lt;p&gt;&#10; By convention, an instance of NamedObj has a set of attributes,&#10; some of which are visible to users and some of which are not.&#10; When a user interface presents these attributes&#10; for editing, it presents only those that are visible.&#10; By default, an instance of Parameter is visible, as indicated by the fact&#10; that it returns FULL in its getVisibility() method.  This can be overridden&#10; by calling setVisibility().&lt;/p&gt;</configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:177:1">
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.data.expr.Parameter">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:1184:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#Parameter">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#Parameter">
+            </property>
+            <property name="_hideName" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.ValueIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{0.0, 0.0, 1.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+      <svg>
+        <text x="20" style="font-size:14; font-family:SansSerif; fill:blue" y="20">-P-</text>
+      </svg>
+    </configure>
+            </property>
+            <property name="_editorFactory" class="ptolemy.vergil.toolbox.VisibleParameterEditorFactory">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{785, 590}">
+            </property>
+            <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:420:1">
+            </property>
+        </property>
+        <property name="ShowTypes" class="ptolemy.vergil.actor.lib.ShowTypes">
+            <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Edward A. Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>$Id: ShowTypes.java 63891 2012-07-09 14:20:39Z eal $</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;This attribute, when inserted into a model causes types to be&#10; displayed on all ports at the same level of the hierarchy as&#10; this attribute. Note that this conflicts with other&#10; attributes that display info on ports, such as&#10; {@link MonitorReceiverAttribute}. The two should not be used together.</configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org:actor:739:1">
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.vergil.actor.lib.ShowTypes">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#WorkflowDevelopment">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.XMLIcon">
+                <property name="_color" class="ptolemy.actor.gui.ColorAttribute" value="{1.0, 0.0, 0.0, 1.0}">
+                </property>
+            </property>
+            <property name="_smallIconDescription" class="ptolemy.kernel.util.SingletonConfigurableAttribute">
+                <configure>
+        <svg>
+          <text x="20" style="font-size:14; font-family:SansSerif; fill:red" y="20">-S-</text>
+        </svg>
+      </configure>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="{875, 645}">
+            </property>
+        </property>
+        <port name="exti1" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[478.30950927734375, 559.1621856689453]">
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="exti2" class="ptolemy.actor.TypedIOPort">
+            <property name="input"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[473.30950927734375, 624.1621856689453]">
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <port name="stdout" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[1140.0, 1025.0]">
+            </property>
+        </port>
+        <port name="error" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="multiport"/>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[1115.0, 1070.0]">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="prop:author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+</property>            <property name="author" class="ptolemy.kernel.util.ConfigurableAttribute">
+                <configure></configure>
+            </property>
+        </port>
+        <port name="oport1" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[1130.0, 1110.0]">
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="double">
+            </property>
+        </port>
+        <port name="oport2" class="ptolemy.actor.TypedIOPort">
+            <property name="output"/>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[1115.0, 1165.0]">
+            </property>
+            <property name="_type" class="ptolemy.actor.TypeAttribute" value="string">
+            </property>
+            <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+            </property>
+        </port>
+        <entity name="Pack Input" class="ptolemy.actor.lib.RecordAssembler">
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Yuhong Xiong</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;&lt;p&gt;The RecordAssembler actor receives tokens of various types on user-defined input ports and assembles those tokens into a record, which it outputs. The actor reads and converts one token from each port every time it fires.&lt;/p&gt;&#10;&#10;&lt;p&gt;A record is a composite data type consisting of one or more elements. Each element is named and can have a distinct type. For example, {number=1, name=&quot;dog&quot;} is a record containing two elements. The first element, named &quot;number&quot;, contains an integer value. The second element, named &quot;name&quot;, contains a string value. &lt;/p&gt;&#10;&#10;&lt;p&gt;The name of each record element generated by the actor is the name of the input port from which the value was received. An actor customized to use three input ports named &quot;day&quot;, &quot;week&quot;, &quot;month&quot; could output the following record {day=&quot;Monday&quot;, week=5, month=12}.&lt;/p&gt;&#10;&#10;</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts the generated records. </configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:74:70">
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.RecordAssembler">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:923:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#RecordActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#DataStructureOperation">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[534.1382751464844, 568.4314270019531]">
+            </property>
+            <property name="" class="ptolemy.vergil.basic.DocAttribute">
+                <property name="description" class="ptolemy.kernel.util.StringAttribute" value="&#10;&lt;p&gt;The RecordAssembler actor receives tokens of various types on user-defined input ports and assembles those tokens into a record, which it outputs. The actor reads and converts one token from each port every time it fires.&lt;/p&gt;&#10;&#10;&lt;p&gt;A record is a composite data type consisting of one or more elements. Each element is named and can have a distinct type. For example, {number=1, name=&quot;dog&quot;} is a record containing two elements. The first element, named &quot;number&quot;, contains an integer value. The second element, named &quot;name&quot;, contains a string value. &lt;/p&gt;&#10;&#10;&lt;p&gt;The name of each record element generated by the actor is the name of the input port from which the value was received. An actor customized to use three input ports named &quot;day&quot;, &quot;week&quot;, &quot;month&quot; could output the following record {day=&quot;Monday&quot;, week=5, month=12}.&lt;/p&gt;&#10;&#10;">
+                </property>
+                <property name="author" class="ptolemy.kernel.util.StringAttribute" value="Yuhong Xiong">
+                </property>
+                <property name="version" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+                <property name="output (port)" class="ptolemy.kernel.util.StringAttribute" value="An output port that broadcasts the generated records. ">
+                </property>
+            </property>
+            <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:47:1">
+            </property>
+            <port name="i1" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="i2" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <entity name="TokenToJSON" class="ptolemy.actor.lib.conversions.json.TokenToJSON">
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Marten Lohstroh</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>$Id: TokenToJSON.java $</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;An actor that converts a Token into a StringToken containing JSON-formatted &#10;data. Nested structures in ArrayToken or RecordToken translate into &#10;correspondingly nested JSON output. If the input Token is not a structured &#10;type, the value of the Token is wrapped into an array of size one.&#10;&#10;&lt;p&gt;&lt;a href=&quot;http://www.json.org/&quot;&gt;http://www.json.org/&lt;/a&gt;&#10;- a description of the JSON format.&lt;/p&gt;</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The output port. By default, the type of this output is constrained  to be at least that of the input.</configure></property>
+<property name="port:input" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The input port.  This base class imposes no type constraints except  that the type of the input cannot be greater than the type of the  output.</configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org:actor:669:1">
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.conversions.json.TokenToJSON">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#DataStructureOperation">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[466.75, 688.5]">
+            </property>
+        </entity>
+        <entity name="template header" class="ptolemy.actor.lib.string.StringReplace">
+            <property name="pattern" class="ptolemy.actor.parameters.PortParameter" value="__IPORTS__">
+            </property>
+            <property name="replacement" class="ptolemy.actor.parameters.PortParameter" value="{&quot;i2&quot;:&quot;Hello, World&quot;,&quot;i1&quot;:1}">
+            </property>
+            <property name="stringToEdit" class="ptolemy.actor.parameters.PortParameter" value="import json&#10;iports=json.loads('__IPORTS__')&#10;oports={}">
+                <property name="style" class="ptolemy.actor.gui.style.TextStyle">
+                    <property name="height" class="ptolemy.data.expr.Parameter" value="10">
+                    </property>
+                    <property name="width" class="ptolemy.data.expr.Parameter" value="30">
+                    </property>
+                </property>
+            </property>
+            <property name="replaceAll" class="ptolemy.data.expr.Parameter" value="true">
+            </property>
+            <property name="regularExpression" class="ptolemy.data.expr.Parameter" value="true">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure> Antonio Yordan-Nones, Neil E. Turner, Edward A. Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The StringReplace actor reads a string and searches it for a specified pattern. The actor replaces either the first instance of the pattern or all occurrences of the pattern with a specified replacement string. The actor outputs the edited string.&lt;/p&gt;&#10;&#10;&lt;p&gt;The actor accepts a source string, a replacement string, and a pattern to search for via either its input ports or its parameters. The pattern is specified as a regular expression. For more information about regular expressions, see http://java.sun.com/docs/books/tutorial/extra/regex/index.html.&lt;/p&gt;&#10;&#10;&lt;p&gt;If  the replaceAll parameter is specified, the actor will replace all instances of the string that match the specified pattern. Otherwise, the actor will replace only the first instance that matches. &lt;/p&gt;&#10;&#10;&lt;p&gt;If the actor finds no match, then the actor outputs the original source string, unchanged.&lt;/p&gt; &#10;</configure></property>
+<property name="port:stringToEdit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A port that accepts a source string. The actor will edit the string according to the settings specified by the pattern, replacement, and replaceAll parameters.The source string may also be specified with the stringToEdit parameter</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts the edited string. </configure></property>
+<property name="port:replacement" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A port accepts a replacement string that replaces any matched instance of the specified pattern. The default is an empty string. The replacement string may also be specified via the replacement parameter.</configure></property>
+<property name="port:pattern" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A port that accepts a regular expression, which is compared to the input string. The default is an empty string. The regular expression may also be specified via the pattern parameter.</configure></property>
+<property name="prop:replaceAll" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify whether or not to replace all instances that match the pattern. By default, the actor will replace all instances. Deselect the parameter to replace only the first instance.</configure></property>
+<property name="prop:stringToEdit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A source string. The actor will edit the string based on the settings specified by the pattern, replacement, and replaceAll parameters. The source string may  be specified via either the stringToEdit port or parameter.</configure></property>
+<property name="prop:replacement" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A replacement string that replaces any matched instance of the specified pattern. The default is an empty string. The replacement string may  be specified via either the replacement port or parameter.</configure></property>
+<property name="prop:pattern" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A regular expression, which is compared to the input string. The default is an empty string. The regular expression may  be specified via either the pattern port or parameter.</configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:93:12">
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.string.StringReplace">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:972:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#StringFunctionActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#DataStringOperation">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[596.75, 688.5]">
+            </property>
+            <property name="" class="ptolemy.vergil.basic.DocAttribute">
+                <property name="description" class="ptolemy.kernel.util.StringAttribute" value="&lt;p&gt;The StringReplace actor reads a string and searches it for a specified pattern. The actor replaces either the first instance of the pattern or all occurrences of the pattern with a specified replacement string. The actor outputs the edited string.&lt;/p&gt;&#10;&#10;&lt;p&gt;The actor accepts a source string, a replacement string, and a pattern to search for via either its input ports or its parameters. The pattern is specified as a regular expression. For more information about regular expressions, see http://java.sun.com/docs/books/tutorial/extra/regex/index.html.&lt;/p&gt;&#10;&#10;&lt;p&gt;If  the replaceAll parameter is specified, the actor will replace all instances of the string that match the specified pattern. Otherwise, the actor will replace only the first instance that matches. &lt;/p&gt;&#10;&#10;&lt;p&gt;If the actor finds no match, then the actor outputs the original source string, unchanged.&lt;/p&gt; &#10;">
+                </property>
+                <property name="author" class="ptolemy.kernel.util.StringAttribute" value=" Antonio Yordan-Nones, Neil E. Turner, Edward A. Lee">
+                </property>
+                <property name="version" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+                <property name="replaceAll (parameter)" class="ptolemy.data.expr.StringParameter" value="Specify whether or not to replace all instances that match the pattern. By default, the actor will replace all instances. Deselect the parameter to replace only the first instance.">
+                </property>
+                <property name="output (port)" class="ptolemy.kernel.util.StringAttribute" value="An output port that broadcasts the edited string. ">
+                </property>
+                <property name="stringToEdit (port)" class="ptolemy.kernel.util.StringAttribute" value="A port that accepts a source string. The actor will edit the string according to the settings specified by the pattern, replacement, and replaceAll parameters.The source string may also be specified with the stringToEdit parameter">
+                </property>
+                <property name="replacement (port)" class="ptolemy.kernel.util.StringAttribute" value="A port accepts a replacement string that replaces any matched instance of the specified pattern. The default is an empty string. The replacement string may also be specified via the replacement parameter.">
+                </property>
+                <property name="pattern (port)" class="ptolemy.kernel.util.StringAttribute" value="A port that accepts a regular expression, which is compared to the input string. The default is an empty string. The regular expression may also be specified via the pattern parameter.">
+                </property>
+                <property name="stringToEdit (parameter)" class="ptolemy.data.expr.StringParameter" value="A source string. The actor will edit the string based on the settings specified by the pattern, replacement, and replaceAll parameters. The source string may  be specified via either the stringToEdit port or parameter.">
+                </property>
+                <property name="replacement (parameter)" class="ptolemy.data.expr.StringParameter" value="A replacement string that replaces any matched instance of the specified pattern. The default is an empty string. The replacement string may  be specified via either the replacement port or parameter.">
+                </property>
+                <property name="pattern (parameter)" class="ptolemy.data.expr.StringParameter" value="A regular expression, which is compared to the input string. The default is an empty string. The regular expression may  be specified via either the pattern port or parameter.">
+                </property>
+            </property>
+            <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:98:1">
+            </property>
+            <port name="pattern" class="ptolemy.actor.parameters.ParameterPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="replacement" class="ptolemy.actor.parameters.ParameterPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="stringToEdit" class="ptolemy.actor.parameters.ParameterPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <entity name="CPython script string" class="org.resurgence.actor.StringAccumulator">
+            <property name="Substring separator" class="ptolemy.data.expr.Parameter" value="&quot;\n&quot;">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Wibke Sudholt</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;&#10;The StringAccumulator actor reads multiple strings via its input port and outputs a string containing all of the input values. The characters separating the substrings in the output string can be specified with the substringSeparator parameter.&lt;/p&gt;</configure></property>
+<property name="port:whole" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts the full string.</configure></property>
+<property name="port:parts" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A multiport that accepts substrings.</configure></property>
+<property name="prop:Substring separator" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The characters used to separate the elements in the output string. By default, the value is &quot;&quot;.</configure></property>
+</property>            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="org.resurgence.actor.StringAccumulator">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:1117:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#StringFunctionActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#IterativeOperation">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[806.75, 778.5]">
+            </property>
+            <property name="_expertMode" class="ptolemy.kernel.util.SingletonAttribute">
+            </property>
+        </entity>
+        <entity name="parent CPython script" class="ptolemy.actor.lib.StringConst">
+            <property name="value" class="ptolemy.data.expr.Parameter" value="$script">
+            </property>
+            <property name="firingCountLimit" class="ptolemy.data.expr.Parameter" value="NONE">
+            </property>
+            <property name="NONE" class="ptolemy.data.expr.Parameter" value="0">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Edward Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The StringConstant actor outputs a string specified via the actor's value parameter.&lt;/p&gt;&#10;&#10;&lt;p&gt;Specifying strings with the StringConstant actor is convenient, as the actor does not require that strings be surrounded by quotes. The actor is often used to specify file paths, which can be selected using the Browse button available in the actor's parameters.&lt;/p&gt;&#10;&#10;&lt;p&gt;Specified string values can include references to parameters within scope (i.e., parameters defined at the same level of the hierarchy or higher). &lt;/p&gt;&#10;&#10;&lt;p&gt;NOTE: If using a PN Director, the 'firingCountLimit' parameter is often set to a finite integer (e.g. '1') so that the workflow will terminate. &lt;/p&gt;&#10;&#10;</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts a string constant specified by the value parameter.  </configure></property>
+<property name="port:trigger" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A multiport that has no declared type (in other words, the port can accept any data type: double, int, array, etc.) If the port is connected, the actor will not fire until the trigger port receives an input token. Connecting the port is optional, but useful when scheduling the actor to perform at a certain time. </configure></property>
+<property name="prop:firingCountLimit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The limit on the number of times the actor will fire. The default value is 'NONE', meaning there is no limit on the number of time the constant will be provided to the output port. Any integer can be provided as a value for this parameter.</configure></property>
+<property name="prop:value" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The value produced by the actor. Specified strings do not require enclosing quotes. (To include a '$' sign in the string, enter '$$'.)</configure></property>
+</property>            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.StringConst">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:1052:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#StringFunctionActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#Constant">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[511.75, 803.5]">
+            </property>
+            <port name="trigger" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="multiport"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <entity name="CPython interpreter" class="ptolemy.actor.lib.Exec">
+            <property name="NONE" class="ptolemy.data.expr.Parameter" value="0">
+            </property>
+            <property name="command" class="ptolemy.actor.parameters.PortParameter" value="python">
+            </property>
+            <property name="directory" class="ptolemy.data.expr.FileParameter" value="$CWD">
+                <property name="allowFiles" class="ptolemy.data.expr.Parameter" value="false">
+                </property>
+                <property name="allowDirectories" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+            </property>
+            <property name="environment" class="ptolemy.data.expr.Parameter" value="{{name = &quot;&quot;, value = &quot;&quot;}}">
+            </property>
+            <property name="ignoreIOExceptionReadErrors" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="prependPlatformDependentShellCommand" class="ptolemy.data.expr.Parameter" value="false">
+            </property>
+            <property name="throwExceptionOnNonZeroReturn" class="ptolemy.data.expr.Parameter" value="true">
+            </property>
+            <property name="waitForProcess" class="ptolemy.data.expr.Parameter" value="true">
+            </property>
+            <property name="firingCountLimit" class="ptolemy.data.expr.Parameter" value="NONE">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Xiaojun Liu, Edward A. Lee, Steve Neuendorffer</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;&lt;p&gt;The External Execution actor executes a system command from a workflow. The actor accepts a command, a directory and environment in which to execute the command, and a command input string. Once the command has finished executing, the actor will output the execution results along with any errors. If no results are generated, the actor will output an empty string.&lt;/p&gt;&#10;&#10;&lt;p&gt;The External Execution actor depends on system-specific executables and is operating-system specific.&lt;/p&gt;&#10;&#10;&lt;p&gt;To mimic the effect of executing a command in a shell interpreter, set the command parameter to &quot;cmd&quot; (Windows) or &quot;sh&quot; (Windows with Cygwin or Linux), and then provide commands, as a string, via the input port. Note that each passed command must be terminated with a newline. For example, to open a workflow in vergil and run it, set command to &quot;sh&quot; and use a StringConstant actor to pass the  input port the string: &#10; &quot;vergil -run model.xml\n exit\n&quot;&lt;/p&gt;&#10;</configure></property>
+<property name="port:input" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An input port that accepts strings to pass to the standard input of the subprocess. Note that a newline is not appended to the string. If you require a newline, add one using the AddSubtract actor. This port is an input port of type String.</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts data generated by the executed command, output as a string after the command has finished executing. If the command generates no data on standard out, then the empty string (a string of length zero) is generated. </configure></property>
+<property name="port:trigger" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>If connected, a token must be available on this port before actor will execute.</configure></property>
+<property name="port:error" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts any errors generated by the command execution. Errors are output as a string after the command has finished executing. If the execution generates no errors, an empty string is output. </configure></property>
+<property name="port:exitCode" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts the command's exit code. A non-zero value signifies an error.</configure></property>
+<property name="prop:environment" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An array of records that name an environment variable and a value:&#10; &#10;  {{name = &quot;NAME1&quot;, value = &quot;value1&quot;}...}&#10;  &#10;Where NAME1 is the name of the environment variable, and value1 is the value. &#10;For example, {{name = &quot;PTII&quot;, value = &quot;c:/ptII&quot;}} would set the value of the PTII to c:/ptII. &#10;If the parameter is set to {{name=&quot;&quot;, value = &quot;&quot;}}, then the environment from the parent process is used. If environmental variables are set with the parameter, the parent values may not be passed to the process. To view the current environment, use the &quot;env&quot; command.&#10;</configure></property>
+<property name="prop:directory" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The directory in which to execute the command. The default value of this parameter $CWD, which represents the user's current working or home directory. </configure></property>
+<property name="prop:throwExceptionOnNonZeroReturn" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>If true, then throw an exception if the subprocess returns non-zero.</configure></property>
+<property name="prop:firingCountLimit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>If a positive integer, then it is the maximum number of times to execute the actor.</configure></property>
+<property name="prop:prependPlatformDependentShellCommand" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;If true, then prepend the platform dependent shell command to the&#10;parsed value of the command parameter.  By setting this argument&#10;to true, it is possible to invoke commands in a platform neutral&#10;method.&#10;&lt;p&gt;Under Windows NT or XP, the arguments &quot;cmd.exe&quot; and &quot;/C&quot; are&#10;prepended.  Under Windows 95, the arguments &quot;command.com&quot; and &quot;/C&quot;&#10;are prepended.  Under all other platforms, the arguments &quot;/bin/sh&quot;&#10;and &quot;-c&quot; are prepended. &lt;/p&gt;&#10;&lt;p&gt;The default value of this parameter is a boolean of value false,&#10;which allows the user to arbitrarily invoke /bin/sh scripts on all&#10;platforms. &lt;/p&gt;&#10;&lt;p&gt;&lt;b&gt;NOTE:&lt;/b&gt; This must be true if file redirection is used in &lt;i&gt;command&lt;/i&gt;.&lt;/p&gt;&#10;&lt;p&gt;&lt;b&gt;NOTE:&lt;/b&gt; Under Cygwin, if true, the path environment of the subprocess is not&#10;identical to the path of the calling process. In this case the full path to the program&#10;must be specified.&lt;/p&gt;&#10;</configure></property>
+<property name="prop:waitForProcess" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>If true, then actor will wait until subprocess completes.</configure></property>
+<property name="prop:command" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The command to be executed (e.g., echo &quot;Hello, world.&quot;). The command can be specified via either the command port or parameter.</configure></property>
+</property>            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.Exec">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:976:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#ExternalExecutionEnvironmentActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#UnixCommand">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[987.75, 767.625]">
+            </property>
+            <property name="" class="ptolemy.vergil.basic.DocAttribute">
+                <property name="description" class="ptolemy.kernel.util.StringAttribute" value="&#10;&lt;p&gt;The External Execution actor executes a system command from a workflow. The actor accepts a command, a directory and environment in which to execute the command, and a command input string. Once the command has finished executing, the actor will output the execution results along with any errors. If no results are generated, the actor will output an empty string.&lt;/p&gt;&#10;&#10;&lt;p&gt;The External Execution actor depends on system-specific executables and is operating-system specific.&lt;/p&gt;&#10;&#10;&lt;p&gt;To mimic the effect of executing a command in a shell interpreter, set the command parameter to &quot;cmd&quot; (Windows) or &quot;sh&quot; (Windows with Cygwin or Linux), and then provide commands, as a string, via the input port. Note that each passed command must be terminated with a newline. For example, to open a workflow in vergil and run it, set command to &quot;sh&quot; and use a StringConstant actor to pass the  input port the string: &#10; &quot;vergil -run model.xml\n exit\n&quot;&lt;/p&gt;&#10;">
+                </property>
+                <property name="author" class="ptolemy.kernel.util.StringAttribute" value="Xiaojun Liu, Edward A. Lee, Steve Neuendorffer">
+                </property>
+                <property name="version" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+                <property name="directory (parameter)" class="ptolemy.data.expr.StringParameter" value="The directory in which to execute the command. The default value of this parameter $CWD, which represents the user's current working or home directory. ">
+                </property>
+                <property name="environment (parameter)" class="ptolemy.data.expr.StringParameter" value="An array of records that name an environment variable and a value:&#10; &#10;  {{name = &quot;NAME1&quot;, value = &quot;value1&quot;}...}&#10;  &#10;Where NAME1 is the name of the environment variable, and value1 is the value. &#10;For example, {{name = &quot;PTII&quot;, value = &quot;c:/ptII&quot;}} would set the value of the PTII to c:/ptII. &#10;If the parameter is set to {{name=&quot;&quot;, value = &quot;&quot;}}, then the environment from the parent process is used. If environmental variables are set with the parameter, the parent values may not be passed to the process. To view the current environment, use the &quot;env&quot; command.&#10;">
+                </property>
+                <property name="prependPlatformDependentShellCommand (parameter)" class="ptolemy.data.expr.StringParameter" value="&#10;If true, then prepend the platform dependent shell command to the&#10;parsed value of the command parameter.  By setting this argument&#10;to true, it is possible to invoke commands in a platform neutral&#10;method.&#10;&lt;p&gt;Under Windows NT or XP, the arguments &quot;cmd.exe&quot; and &quot;/C&quot; are&#10;prepended.  Under Windows 95, the arguments &quot;command.com&quot; and &quot;/C&quot;&#10;are prepended.  Under all other platforms, the arguments &quot;/bin/sh&quot;&#10;and &quot;-c&quot; are prepended. &lt;/p&gt;&#10;&lt;p&gt;The default value of this parameter is a boolean of value false,&#10;which allows the user to arbitrarily invoke /bin/sh scripts on all&#10;platforms. &lt;/p&gt;&#10;&lt;p&gt;&lt;b&gt;NOTE:&lt;/b&gt; This must be true if file redirection is used in &lt;i&gt;command&lt;/i&gt;.&lt;/p&gt;&#10;&lt;p&gt;&lt;b&gt;NOTE:&lt;/b&gt; Under Cygwin, if true, the path environment of the subprocess is not&#10;identical to the path of the calling process. In this case the full path to the program&#10;must be specified.&lt;/p&gt;&#10;">
+                </property>
+                <property name="throwExceptionOnNonZeroReturn (parameter)" class="ptolemy.data.expr.StringParameter" value="If true, then throw an exception if the subprocess returns non-zero.">
+                </property>
+                <property name="waitForProcess (parameter)" class="ptolemy.data.expr.StringParameter" value="If true, then actor will wait until subprocess completes.">
+                </property>
+                <property name="firingCountLimit (parameter)" class="ptolemy.data.expr.StringParameter" value="If a positive integer, then it is the maximum number of times to execute the actor.">
+                </property>
+                <property name="output (port)" class="ptolemy.kernel.util.StringAttribute" value="An output port that broadcasts data generated by the executed command, output as a string after the command has finished executing. If the command generates no data on standard out, then the empty string (a string of length zero) is generated. ">
+                </property>
+                <property name="trigger (port)" class="ptolemy.kernel.util.StringAttribute" value="If connected, a token must be available on this port before actor will execute.">
+                </property>
+                <property name="error (port)" class="ptolemy.kernel.util.StringAttribute" value="An output port that broadcasts any errors generated by the command execution. Errors are output as a string after the command has finished executing. If the execution generates no errors, an empty string is output. ">
+                </property>
+                <property name="input (port)" class="ptolemy.kernel.util.StringAttribute" value="An input port that accepts strings to pass to the standard input of the subprocess. Note that a newline is not appended to the string. If you require a newline, add one using the AddSubtract actor. This port is an input port of type String.">
+                </property>
+                <property name="exitCode (port)" class="ptolemy.kernel.util.StringAttribute" value="An output port that broadcasts the command's exit code. A non-zero value signifies an error.">
+                </property>
+                <property name="command (parameter)" class="ptolemy.data.expr.StringParameter" value="The command to be executed (e.g., echo &quot;Hello, world.&quot;). The command can be specified via either the command port or parameter.">
+                </property>
+            </property>
+            <port name="output" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_showName" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+            </port>
+            <port name="trigger" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="multiport"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="command" class="ptolemy.actor.parameters.ParameterPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+            </port>
+            <port name="error" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_showName" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+            </port>
+            <port name="input" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+            </port>
+            <port name="exitCode" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_showName" class="ptolemy.data.expr.Parameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <entity name="oports file" class="org.resurgence.moml.TemporaryScriptCreator">
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[525.0, 890.0]">
+            </property>
+            <property name="TemporaryScriptDirectory" class="ptolemy.data.expr.StringParameter" value="/tmp">
+            </property>
+            <property name="TemporaryScriptBaseName" class="ptolemy.data.expr.StringParameter" value="kepler_oports">
+            </property>
+            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:182:1">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>unknown</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The TemporaryScriptCreator is a composite actor used in computational chemistry workflows.&lt;/p&gt;&#10;&#10;&lt;p&gt;To use the full suite of computational chemistry actors, GAMESS, Open Babel, Babel, and QMView software must be installed on the local system.&lt;/p&gt;</configure></property>
+</property>            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="org.resurgence.moml.TemporaryScriptCreator">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:1157:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#ProcessingUtilitiesActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:4:1#ProcessUtility">
+            </property>
+            <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org/ns/:44806:96:1">
+            </property>
+            <entity name="External Execution" class="ptolemy.actor.lib.Exec">
+                <property name="command" class="ptolemy.actor.parameters.PortParameter" value="chmod u+x /tmp/kepler_oports_0.4842647515516">
+                </property>
+            </entity>
+        </entity>
+        <entity name="template footer" class="ptolemy.actor.lib.string.StringReplace">
+            <property name="pattern" class="ptolemy.actor.parameters.PortParameter" value="__OUTJSONFILE__">
+            </property>
+            <property name="replacement" class="ptolemy.actor.parameters.PortParameter" value="/tmp/kepler_oports_0.4842647515516">
+            </property>
+            <property name="stringToEdit" class="ptolemy.actor.parameters.PortParameter" value="json.dump( oports, open( '__OUTJSONFILE__','w') )">
+            </property>
+            <property name="replaceAll" class="ptolemy.data.expr.Parameter" value="true">
+            </property>
+            <property name="regularExpression" class="ptolemy.data.expr.Parameter" value="true">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure> Antonio Yordan-Nones, Neil E. Turner, Edward A. Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The StringReplace actor reads a string and searches it for a specified pattern. The actor replaces either the first instance of the pattern or all occurrences of the pattern with a specified replacement string. The actor outputs the edited string.&lt;/p&gt;&#10;&#10;&lt;p&gt;The actor accepts a source string, a replacement string, and a pattern to search for via either its input ports or its parameters. The pattern is specified as a regular expression. For more information about regular expressions, see http://java.sun.com/docs/books/tutorial/extra/regex/index.html.&lt;/p&gt;&#10;&#10;&lt;p&gt;If  the replaceAll parameter is specified, the actor will replace all instances of the string that match the specified pattern. Otherwise, the actor will replace only the first instance that matches. &lt;/p&gt;&#10;&#10;&lt;p&gt;If the actor finds no match, then the actor outputs the original source string, unchanged.&lt;/p&gt; &#10;</configure></property>
+<property name="port:stringToEdit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A port that accepts a source string. The actor will edit the string according to the settings specified by the pattern, replacement, and replaceAll parameters.The source string may also be specified with the stringToEdit parameter</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts the edited string. </configure></property>
+<property name="port:replacement" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A port accepts a replacement string that replaces any matched instance of the specified pattern. The default is an empty string. The replacement string may also be specified via the replacement parameter.</configure></property>
+<property name="port:pattern" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A port that accepts a regular expression, which is compared to the input string. The default is an empty string. The regular expression may also be specified via the pattern parameter.</configure></property>
+<property name="prop:replaceAll" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify whether or not to replace all instances that match the pattern. By default, the actor will replace all instances. Deselect the parameter to replace only the first instance.</configure></property>
+<property name="prop:stringToEdit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A source string. The actor will edit the string based on the settings specified by the pattern, replacement, and replaceAll parameters. The source string may  be specified via either the stringToEdit port or parameter.</configure></property>
+<property name="prop:replacement" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A replacement string that replaces any matched instance of the specified pattern. The default is an empty string. The replacement string may  be specified via either the replacement port or parameter.</configure></property>
+<property name="prop:pattern" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A regular expression, which is compared to the input string. The default is an empty string. The regular expression may  be specified via either the pattern port or parameter.</configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:98:5">
+            </property>
+            <property name="" class="ptolemy.vergil.basic.DocAttribute">
+                <property name="description" class="ptolemy.kernel.util.StringAttribute" value="&lt;p&gt;The StringReplace actor reads a string and searches it for a specified pattern. The actor replaces either the first instance of the pattern or all occurrences of the pattern with a specified replacement string. The actor outputs the edited string.&lt;/p&gt;&#10;&#10;&lt;p&gt;The actor accepts a source string, a replacement string, and a pattern to search for via either its input ports or its parameters. The pattern is specified as a regular expression. For more information about regular expressions, see http://java.sun.com/docs/books/tutorial/extra/regex/index.html.&lt;/p&gt;&#10;&#10;&lt;p&gt;If  the replaceAll parameter is specified, the actor will replace all instances of the string that match the specified pattern. Otherwise, the actor will replace only the first instance that matches. &lt;/p&gt;&#10;&#10;&lt;p&gt;If the actor finds no match, then the actor outputs the original source string, unchanged.&lt;/p&gt; &#10;">
+                </property>
+                <property name="author" class="ptolemy.kernel.util.StringAttribute" value=" Antonio Yordan-Nones, Neil E. Turner, Edward A. Lee">
+                </property>
+                <property name="version" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+                <property name="replaceAll (parameter)" class="ptolemy.data.expr.StringParameter" value="Specify whether or not to replace all instances that match the pattern. By default, the actor will replace all instances. Deselect the parameter to replace only the first instance.">
+                </property>
+                <property name="output (port)" class="ptolemy.kernel.util.StringAttribute" value="An output port that broadcasts the edited string. ">
+                </property>
+                <property name="stringToEdit (port)" class="ptolemy.kernel.util.StringAttribute" value="A port that accepts a source string. The actor will edit the string according to the settings specified by the pattern, replacement, and replaceAll parameters.The source string may also be specified with the stringToEdit parameter">
+                </property>
+                <property name="replacement (port)" class="ptolemy.kernel.util.StringAttribute" value="A port accepts a replacement string that replaces any matched instance of the specified pattern. The default is an empty string. The replacement string may also be specified via the replacement parameter.">
+                </property>
+                <property name="pattern (port)" class="ptolemy.kernel.util.StringAttribute" value="A port that accepts a regular expression, which is compared to the input string. The default is an empty string. The regular expression may also be specified via the pattern parameter.">
+                </property>
+                <property name="stringToEdit (parameter)" class="ptolemy.data.expr.StringParameter" value="A source string. The actor will edit the string based on the settings specified by the pattern, replacement, and replaceAll parameters. The source string may  be specified via either the stringToEdit port or parameter.">
+                </property>
+                <property name="replacement (parameter)" class="ptolemy.data.expr.StringParameter" value="A replacement string that replaces any matched instance of the specified pattern. The default is an empty string. The replacement string may  be specified via either the replacement port or parameter.">
+                </property>
+                <property name="pattern (parameter)" class="ptolemy.data.expr.StringParameter" value="A regular expression, which is compared to the input string. The default is an empty string. The regular expression may  be specified via either the pattern port or parameter.">
+                </property>
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.string.StringReplace">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:972:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#StringFunctionActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#DataStringOperation">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[651.75, 843.5]">
+            </property>
+            <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:98:1">
+            </property>
+            <port name="pattern" class="ptolemy.actor.parameters.ParameterPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="replacement" class="ptolemy.actor.parameters.ParameterPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+            <port name="stringToEdit" class="ptolemy.actor.parameters.ParameterPort">
+                <property name="input"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <entity name="oports file load" class="org.resurgence.actor.SimpleFileReader">
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Wibke Sudholt</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The SimpleFileReader reads and outputs the contents of a file as a single string.&lt;/p&gt; &#10;&#10;&lt;p&gt;The actor is similar to the FileReader, except that the SimpleFileReader can only take its input from another workflow component via an input port, whereas the FileReader actor can use either a port or parameter.&lt;/p&gt;</configure></property>
+<property name="port:file" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An input port that accepts the file name or URL of the file to read and output. The file name is passed as a string from another workflow component. Pass a file name with a StringConstant actor, for example.</configure></property>
+<property name="port:content" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts a string of the specified file contents.</configure></property>
+</property>            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="org.resurgence.actor.SimpleFileReader">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:1127:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#FileSystemActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#LocalInput">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[790.0, 935.0]">
+            </property>
+        </entity>
+        <entity name="JSONToToken" class="ptolemy.actor.lib.conversions.json.JSONToToken">
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Marten Lohstroh, Contributor: Beth Latronico</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>$Id: JSONToToken.java $</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;An actor that converts a string containing JSON-formatted data into a Token.&#10;Depending on the top level structure found in the JSON string, it produces &#10;either a RecordToken or an ArrayToken on its output port. Nested structures&#10;in the JSON data will translate to correspondingly nested structures in the&#10;Token.&#10;&lt;p&gt;The JSONObject parser processes values as follows: &#10;Delimited values are always parsed as a String. Values that are not delimited&#10;are tested in the order noted below. The first test that succeeds determines &#10;the type.&#10;&lt;ul&gt;  &#10;  &lt;li&gt;'true' | 'false' =&gt; Boolean (case insensitive)&lt;/li&gt;&#10;  &lt;li&gt;'null' =&gt; JSONObject.NULL (case insensitive)&lt;/li&gt;&#10;  &lt;li&gt;'0x..' =&gt; Integer (hexadecimal)&lt;/li&gt;&#10;  &lt;li&gt;x'.'y | exponent encoded =&gt; Double&lt;/li&gt;&#10;  &lt;li&gt;x =&gt; Long, or Integer if value remains the same after conversion&lt;/li&gt;&#10;&lt;/ul&gt;&lt;/p&gt;&#10;If non of the above apply, the value is interpreted as a String.&lt;/p&gt;&#10;&lt;p&gt;Note that JSON allows array elements to have different types, whereas the &#10;&lt;code&gt;ArrayToken&lt;/code&gt; does not. Conversion of such mixed array will result&#10;in an &lt;code&gt;ArrayToken&lt;/code&gt; of which the types of all elements are cast to &#10;the least upper bound of the entire collection.&lt;/p&gt;&#10;&#10;&lt;p&gt;&lt;a href=&quot;http://www.json.org/&quot;&gt;http://www.json.org/&lt;/a&gt;&#10;- a description of the JSON format.&lt;/p&gt;</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The output port. By default, the type of this output is constrained  to be at least that of the input.</configure></property>
+<property name="port:input" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The input port.  This base class imposes no type constraints except  that the type of the input cannot be greater than the type of the  output.</configure></property>
+</property>            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.conversions.json.JSONToToken">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#DataStructureOperation">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[877.9296875, 944.66796875]">
+            </property>
+        </entity>
+        <entity name="unpack output" class="ptolemy.actor.lib.RecordDisassembler">
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Yuhong Xiong</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;&lt;p&gt;The RecordDisassembler actor receives a record, which it disassembles and outputs via user-specified output ports. The actor reads and disassembles one record each time it fires.&lt;/p&gt;&#10;&#10;&lt;p&gt;A record is a composite data type consisting of one or more elements. Each element is named and can have a distinct type. For example, {number=1, name=&quot;dog&quot;} is a record containing two elements. The first element, named &quot;number&quot;, contains an integer value. The second element, named &quot;name&quot;, contains a string value. &lt;/p&gt;&#10;&#10;&lt;p&gt;The name of each record element must match the name of a user-specified output port. For example, if the input record is {day=&quot;Monday&quot;, week=5, month=12}, the output ports must be named &quot;day&quot;, &quot;week&quot; and &quot;month&quot;. If the record contains more fields than the actor has output ports, the extra fields are ignored.&lt;/p&gt;&#10;&#10;</configure></property>
+<property name="port:input" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An input port that accepts a record, which the actor will disassemble. </configure></property>
+</property>            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.RecordDisassembler">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:924:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#RecordActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#DataStructureOperation">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[970.0, 1060.0]">
+            </property>
+            <property name="" class="ptolemy.vergil.basic.DocAttribute">
+                <property name="description" class="ptolemy.kernel.util.StringAttribute" value="&#10;&lt;p&gt;The RecordDisassembler actor receives a record, which it disassembles and outputs via user-specified output ports. The actor reads and disassembles one record each time it fires.&lt;/p&gt;&#10;&#10;&lt;p&gt;A record is a composite data type consisting of one or more elements. Each element is named and can have a distinct type. For example, {number=1, name=&quot;dog&quot;} is a record containing two elements. The first element, named &quot;number&quot;, contains an integer value. The second element, named &quot;name&quot;, contains a string value. &lt;/p&gt;&#10;&#10;&lt;p&gt;The name of each record element must match the name of a user-specified output port. For example, if the input record is {day=&quot;Monday&quot;, week=5, month=12}, the output ports must be named &quot;day&quot;, &quot;week&quot; and &quot;month&quot;. If the record contains more fields than the actor has output ports, the extra fields are ignored.&lt;/p&gt;&#10;&#10;">
+                </property>
+                <property name="author" class="ptolemy.kernel.util.StringAttribute" value="Yuhong Xiong">
+                </property>
+                <property name="version" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+                <property name="input (port)" class="ptolemy.kernel.util.StringAttribute" value="An input port that accepts a record, which the actor will disassemble. ">
+                </property>
+            </property>
+            <port name="input" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="unknown">
+                </property>
+            </port>
+            <port name="o1" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="unknown">
+                </property>
+            </port>
+            <port name="o2" class="ptolemy.actor.TypedIOPort">
+                <property name="output"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+                <property name="_type" class="ptolemy.actor.TypeAttribute" value="unknown">
+                </property>
+            </port>
+        </entity>
+        <entity name="IntToBits" class="ptolemy.domains.sdf.lib.IntToBits">
+            <property name="numberOfBits" class="ptolemy.data.expr.Parameter" value="1">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Michael Leung</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>$Id: IntToBits.java 61462 2011-07-11 22:22:34Z cxh $</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;This actor converts an IntToken into a sequence of Boolean tokens.&#10; The number of Boolean tokens is specified by the &lt;i&gt;numberOfBits&lt;/i&gt;&#10; parameter. It should be a positive integer not bigger than 32.&#10; The most significant bit (the sign bit) is the first boolean&#10; token send out. It is &quot;false&quot; if the input integer is non-negative,&#10; otherwise it is &quot;true&quot;. The least significant bit is the last boolean&#10; token send out.&#10;&#10; Let &lt;i&gt;k&lt;/i&gt; denotes the value of the &lt;i&gt;numberOfBits&lt;/i&gt; parameter.&#10; An exception is thrown if the input integer is smaller than&#10; -2&lt;sup&gt;&lt;i&gt;k&lt;/i&gt;&lt;/sup&gt; or greater 2&lt;sup&gt;&lt;i&gt;k&lt;/i&gt;&lt;/sup&gt; - 1.</configure></property>
+<property name="port:input" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The input port.  This base class imposes no type constraints except  that the type of the input cannot be greater than the type of the  output.</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The output port. By default, the type of this output is constrained  to be at least that of the input.</configure></property>
+<property name="prop:numberOfBits" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The number of Boolean tokens that the input integer is converted to.</configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:111:1">
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.domains.sdf.lib.IntToBits">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#DataStructureOperation">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[990.0, 850.0]">
+            </property>
+            <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:684:1">
+            </property>
+        </entity>
+        <entity name="if" class="ptolemy.actor.lib.BooleanSwitch">
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Steve Neuendorffer</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The BooleanSwitch actor reads a value of any type, as well as a Boolean token that is used as a control. If the Boolean token is true, the actor outputs the received value to the trueOutput port; if the Boolean token is false, the actor outputs the received value to the falseOutput port.&#10;If the actor has never received a value on the control port, then the actor will output to the falseOutput port.&lt;/p&gt;&#10;&#10;&lt;p&gt;The actor only works under certain directors. It will not work under an SDF Director, but it will under a PN Director, for example.&lt;/p&gt;</configure></property>
+<property name="port:input" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An input port that accepts tokens of any type.</configure></property>
+<property name="port:falseOutput" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts the input token when the control is false.</configure></property>
+<property name="port:trueOutput" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts the input token when the control is true.</configure></property>
+<property name="port:control" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An input port that accepts a Boolean token used to select which output port (trueOutput or falseOutput) to broadcast.</configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:112:1">
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.BooleanSwitch">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:930:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#BooleanControlActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#BooleanControl">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[698.4765625, 941.23046875]">
+            </property>
+            <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:54:1">
+            </property>
+            <port name="control" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="_cardinal" class="ptolemy.kernel.util.StringAttribute" value="SOUTH">
+                </property>
+            </port>
+        </entity>
+        <entity name="delete file" class="org.kepler.actor.io.FileDeleter">
+            <property name="firingCountLimit" class="ptolemy.data.expr.Parameter" value="NONE">
+            </property>
+            <property name="NONE" class="ptolemy.data.expr.Parameter" value="0">
+            </property>
+            <property name="File Path" class="ptolemy.actor.parameters.PortParameter" value="/tmp/kepler_oports_0.4842647515516">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>tao</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&#10;Delete a file or directory. If this actor deletes a directory, then the directory&#10; must be empty in order to be deleted.&#10; The output is a  BooleanToken. true if and only if the file or directory is &#10; successfully deleted; false otherwise &#10; If the trigger port is connected, then this actor fires only if a token is&#10; provided on any channel of the trigger port. The value of that token&#10; does not matter. Specifically, if there is no such token, the prefire()&#10; method returns false.</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="port:trigger" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="port:filePathInputParameter" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The file or directory path which will be deleted.</configure></property>
+<property name="port:File Path" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="prop:firingCountLimit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="prop:derivedFrom" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+<property name="prop:File Path" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The file or directory path which will be deleted.</configure></property>
+<property name="prop:NONE" class="ptolemy.kernel.util.ConfigurableAttribute"><configure></configure></property>
+</property>            <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org/ns/:44806:118:1">
+            </property>
+            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="org.kepler.actor.io.FileDeleter">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#FileSystem">
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[825.0, 850.0]">
+            </property>
+            <property name="derivedFrom" class="org.kepler.moml.NamedObjIdReferralList" value="urn:lsid:kepler-project.org:actor:572:1">
+            </property>
+            <property name="" class="ptolemy.vergil.basic.DocAttribute">
+                <property name="description" class="ptolemy.kernel.util.StringAttribute" value="&#10;Delete a file or directory. If this actor deletes a directory, then the directory&#10; must be empty in order to be deleted.&#10; The output is a  BooleanToken. true if and only if the file or directory is &#10; successfully deleted; false otherwise &#10; If the trigger port is connected, then this actor fires only if a token is&#10; provided on any channel of the trigger port. The value of that token&#10; does not matter. Specifically, if there is no such token, the prefire()&#10; method returns false.">
+                </property>
+                <property name="author" class="ptolemy.kernel.util.StringAttribute" value="tao">
+                </property>
+                <property name="version" class="ptolemy.kernel.util.StringAttribute" value="null">
+                </property>
+                <property name="firingCountLimit (parameter)" class="ptolemy.data.expr.StringParameter" value="">
+                </property>
+                <property name="filePathInputParameter (port)" class="ptolemy.kernel.util.StringAttribute" value="The file or directory path which will be deleted.">
+                </property>
+                <property name="File Path (port)" class="ptolemy.kernel.util.StringAttribute">
+                </property>
+                <property name="derivedFrom (parameter)" class="ptolemy.data.expr.StringParameter" value="">
+                </property>
+                <property name="File Path (parameter)" class="ptolemy.data.expr.StringParameter" value="The file or directory path which will be deleted.">
+                </property>
+                <property name="NONE (parameter)" class="ptolemy.data.expr.StringParameter" value="">
+                </property>
+            </property>
+            <port name="trigger" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="multiport"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <entity name="file prefix" class="ptolemy.actor.lib.StringConst">
+            <property name="value" class="ptolemy.data.expr.Parameter" value="junk">
+            </property>
+            <property name="firingCountLimit" class="ptolemy.data.expr.Parameter" value="NONE">
+            </property>
+            <property name="NONE" class="ptolemy.data.expr.Parameter" value="0">
+            </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Edward Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The StringConstant actor outputs a string specified via the actor's value parameter.&lt;/p&gt;&#10;&#10;&lt;p&gt;Specifying strings with the StringConstant actor is convenient, as the actor does not require that strings be surrounded by quotes. The actor is often used to specify file paths, which can be selected using the Browse button available in the actor's parameters.&lt;/p&gt;&#10;&#10;&lt;p&gt;Specified string values can include references to parameters within scope (i.e., parameters defined at the same level of the hierarchy or higher). &lt;/p&gt;&#10;&#10;&lt;p&gt;NOTE: If using a PN Director, the 'firingCountLimit' parameter is often set to a finite integer (e.g. '1') so that the workflow will terminate. &lt;/p&gt;&#10;&#10;</configure></property>
+<property name="port:output" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>An output port that broadcasts a string constant specified by the value parameter.  </configure></property>
+<property name="port:trigger" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A multiport that has no declared type (in other words, the port can accept any data type: double, int, array, etc.) If the port is connected, the actor will not fire until the trigger port receives an input token. Connecting the port is optional, but useful when scheduling the actor to perform at a certain time. </configure></property>
+<property name="prop:firingCountLimit" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The limit on the number of times the actor will fire. The default value is 'NONE', meaning there is no limit on the number of time the constant will be provided to the output port. Any integer can be provided as a value for this parameter.</configure></property>
+<property name="prop:value" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The value produced by the actor. Specified strings do not require enclosing quotes. (To include a '$' sign in the string, enter '$$'.)</configure></property>
+</property>            <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.StringConst">
+                <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:1052:1">
+                </property>
+            </property>
+            <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#StringFunctionActor">
+            </property>
+            <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#Constant">
+            </property>
+            <property name="_icon" class="ptolemy.vergil.icon.BoxedValueIcon">
+                <property name="attributeName" class="ptolemy.kernel.util.StringAttribute" value="value">
+                </property>
+                <property name="displayWidth" class="ptolemy.data.expr.Parameter" value="60">
+                </property>
+            </property>
+            <property name="_location" class="ptolemy.kernel.util.Location" value="[476.15625, 873.296875]">
+            </property>
+            <port name="trigger" class="ptolemy.actor.TypedIOPort">
+                <property name="input"/>
+                <property name="multiport"/>
+                <property name="_showName" class="ptolemy.data.expr.SingletonParameter" value="true">
+                </property>
+            </port>
+        </entity>
+        <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation5" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation6" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation10" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation13" class="ptolemy.actor.TypedIORelation">
+            <vertex name="vertex1" value="[631.75, 913.5]">
+            </vertex>
+        </relation>
+        <relation name="relation15" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation7" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation11" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation17" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation14" class="ptolemy.actor.TypedIORelation">
+            <vertex name="vertex1" value="[850.0, 965.0]">
+            </vertex>
+        </relation>
+        <relation name="relation8" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation16" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation18" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation12" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation19" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation20" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <relation name="relation9" class="ptolemy.actor.TypedIORelation">
+        </relation>
+        <link port="exti1" relation="relation"/>
+        <link port="exti2" relation="relation2"/>
+        <link port="stdout" relation="relation8"/>
+        <link port="error" relation="relation16"/>
+        <link port="oport1" relation="relation18"/>
+        <link port="oport2" relation="relation20"/>
+        <link port="Pack Input.output" relation="relation3"/>
+        <link port="Pack Input.i1" relation="relation"/>
+        <link port="Pack Input.i2" relation="relation2"/>
+        <link port="TokenToJSON.input" relation="relation3"/>
+        <link port="TokenToJSON.output" relation="relation4"/>
+        <link port="template header.replacement" relation="relation4"/>
+        <link port="template header.output" relation="relation5"/>
+        <link port="CPython script string.parts" relation="relation5"/>
+        <link port="CPython script string.parts" relation="relation6"/>
+        <link port="CPython script string.parts" relation="relation10"/>
+        <link port="CPython script string.whole" relation="relation12"/>
+        <link port="parent CPython script.output" relation="relation6"/>
+        <link port="CPython interpreter.output" relation="relation8"/>
+        <link port="CPython interpreter.error" relation="relation16"/>
+        <link port="CPython interpreter.input" relation="relation12"/>
+        <link port="CPython interpreter.exitCode" relation="relation7"/>
+        <link port="oports file.scriptString" relation="relation9"/>
+        <link port="oports file.temporaryScriptHandle" relation="relation13"/>
+        <link port="template footer.replacement" relation="relation13"/>
+        <link port="template footer.output" relation="relation10"/>
+        <link port="oports file load.file" relation="relation11"/>
+        <link port="oports file load.content" relation="relation14"/>
+        <link port="JSONToToken.input" relation="relation14"/>
+        <link port="JSONToToken.output" relation="relation15"/>
+        <link port="unpack output.input" relation="relation15"/>
+        <link port="unpack output.o1" relation="relation18"/>
+        <link port="unpack output.o2" relation="relation20"/>
+        <link port="IntToBits.input" relation="relation7"/>
+        <link port="IntToBits.output" relation="relation17"/>
+        <link port="if.input" relation="relation13"/>
+        <link port="if.control" relation="relation17"/>
+        <link port="if.trueOutput" relation="relation19"/>
+        <link port="if.falseOutput" relation="relation11"/>
+        <link port="delete file.trigger" relation="relation14"/>
+        <link port="delete file.trigger" relation="relation19"/>
+        <link port="delete file.File Path" relation="relation13"/>
+        <link port="file prefix.output" relation="relation9"/>
+    </entity>
+    <entity name="Display" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1061, 810, 490, 237}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[482, 182]">
+        </property>
+        <property name="rowsDisplayed" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="columnsDisplayed" class="ptolemy.data.expr.Parameter" value="40">
+        </property>
+        <property name="suppressBlankLines" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="title" class="ptolemy.data.expr.StringParameter" value="">
+        </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Yuhong Xiong, Edward A. Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The Display actor reads tokens of any type via its input multiport, and displays each token on a separate line in a text display window.&lt;/p&gt;&#10;&#10;&lt;p&gt;Specify the size of the text display window with the rowsDisplayed and columnsDisplayed parameters. Simply resizing the window onscreen does not persistently change the size when the workflow is saved, closed, and then re-opened. &lt;/p&gt;&#10;&#10;&lt;p&gt;If the input is a string token, then the actor strips the surrounding quotation marks before displaying the value.&lt;/p&gt; &#10;&#10;&lt;p&gt;Select the suppressBlankLines parameter to specify that the actor not add blank lines to the display. By default, the actor will add blank lines.&lt;/p&gt;&#10;&#10;&lt;p&gt;Note: this actor can consume large amounts of memory. It is not advisable to use it to display large output streams.&lt;/p&gt;</configure></property>
+<property name="port:input" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A multiport that accepts tokens of any type.</configure></property>
+<property name="prop:suppressBlankLines" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify whether the actor should display blank lines (the default) or suppress them.</configure></property>
+<property name="prop:rowsDisplayed" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The vertical size of the display, in rows. The value is an integer that defaults to 10.</configure></property>
+<property name="prop:columnsDisplayed" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The horizontal size of the display, in columns. The value is an integer that defaults to 40.</configure></property>
+<property name="prop:title" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The title of the text display window. If specified, the value will appear in the title bar of the text display window.</configure></property>
+</property>        <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org:actor:7:1">
+        </property>
+        <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.gui.Display">
+            <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:883:1">
+            </property>
+        </property>
+        <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#TextualOutputActor">
+        </property>
+        <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#TextualOutput">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 255.0]">
+        </property>
+    </entity>
+    <entity name="Display2" class="ptolemy.actor.lib.gui.Display">
+        <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={1034, 682, 490, 237}, maximized=false}">
+        </property>
+        <property name="_paneSize" class="ptolemy.actor.gui.SizeAttribute" value="[482, 182]">
+        </property>
+        <property name="rowsDisplayed" class="ptolemy.data.expr.Parameter" value="10">
+        </property>
+        <property name="columnsDisplayed" class="ptolemy.data.expr.Parameter" value="40">
+        </property>
+        <property name="suppressBlankLines" class="ptolemy.data.expr.Parameter" value="false">
+        </property>
+        <property name="title" class="ptolemy.data.expr.StringParameter" value="">
+        </property>
+<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
+<property name="description" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="author" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Yuhong Xiong, Edward A. Lee</configure></property>
+<property name="version" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>null</configure></property>
+<property name="userLevelDocumentation" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>&lt;p&gt;The Display actor reads tokens of any type via its input multiport, and displays each token on a separate line in a text display window.&lt;/p&gt;&#10;&#10;&lt;p&gt;Specify the size of the text display window with the rowsDisplayed and columnsDisplayed parameters. Simply resizing the window onscreen does not persistently change the size when the workflow is saved, closed, and then re-opened. &lt;/p&gt;&#10;&#10;&lt;p&gt;If the input is a string token, then the actor strips the surrounding quotation marks before displaying the value.&lt;/p&gt; &#10;&#10;&lt;p&gt;Select the suppressBlankLines parameter to specify that the actor not add blank lines to the display. By default, the actor will add blank lines.&lt;/p&gt;&#10;&#10;&lt;p&gt;Note: this actor can consume large amounts of memory. It is not advisable to use it to display large output streams.&lt;/p&gt;</configure></property>
+<property name="port:input" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>A multiport that accepts tokens of any type.</configure></property>
+<property name="prop:suppressBlankLines" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>Specify whether the actor should display blank lines (the default) or suppress them.</configure></property>
+<property name="prop:rowsDisplayed" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The vertical size of the display, in rows. The value is an integer that defaults to 10.</configure></property>
+<property name="prop:columnsDisplayed" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The horizontal size of the display, in columns. The value is an integer that defaults to 40.</configure></property>
+<property name="prop:title" class="ptolemy.kernel.util.ConfigurableAttribute"><configure>The title of the text display window. If specified, the value will appear in the title bar of the text display window.</configure></property>
+</property>        <property name="entityId" class="org.kepler.moml.NamedObjId" value="urn:lsid:kepler-project.org:actor:7:1">
+        </property>
+        <property name="class" class="ptolemy.kernel.util.StringAttribute" value="ptolemy.actor.lib.gui.Display">
+            <property name="id" class="ptolemy.kernel.util.StringAttribute" value="urn:lsid:kepler-project.org:class:883:1">
+            </property>
+        </property>
+        <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:1:1#TextualOutputActor">
+        </property>
+        <property name="semanticType11" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#TextualOutput">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[515.0, 345.0]">
+        </property>
+    </entity>
+    <relation name="relation" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation2" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation3" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <relation name="relation4" class="ptolemy.actor.TypedIORelation">
+    </relation>
+    <link port="String Constant.output" relation="relation2"/>
+    <link port="Constant.output" relation="relation"/>
+    <link port="CPython Actor.exti1" relation="relation"/>
+    <link port="CPython Actor.exti2" relation="relation2"/>
+    <link port="CPython Actor.oport1" relation="relation3"/>
+    <link port="CPython Actor.oport2" relation="relation4"/>
+    <link port="Display.input" relation="relation3"/>
+    <link port="Display2.input" relation="relation4"/>
+</entity>

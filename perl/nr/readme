@@ -1,0 +1,5 @@
+how to update nr library?
+
+1, download ftp://ftp.ncbi.nlm.nih.gov/blast/db/nr.tar.gz
+2, "./filter.pl" to generate 'nr.filter' and etc
+3, copy nr.filter.* to /library/yzhang/nr
