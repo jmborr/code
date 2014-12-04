@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#rsync options:
+# u(update only) l(copy symlinks as symlinks) p(preserve permisions) r(recursive)
+# --inplace (update destination files in-place)
+echo "backup /projects /home"
+#sudo rsync -ulpr --inplace /projects /home jmborr@sammy:/home/jmborr/backbups/desktop/
+sudo rsync -ulpr --inplace /home/jbo "/media/New Volume/home/jbo"
+sudo rsync -ulpr --inplace /home/software "/media/New Volume/home/software"
+sudo rsync -ulpr --inplace /projects "/media/New Volume/projects"
+popwindow.py finished backup

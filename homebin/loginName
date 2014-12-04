@@ -1,0 +1,2 @@
+# !/bin/bash
+finger $1 | grep Login

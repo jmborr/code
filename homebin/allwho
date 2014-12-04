@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if test "$#" -ne 1 ; then
+  echo "Usage: $0 username"
+  exit
+fi  
+
+echo "...running...it'll take a minute..."
+username=$1
+#log_flag=""
+
+for machine in yanko thalia water riskit jhilad urania luna melete vesta pan rushmore hypate clio erato malcolm miranda caliban ariel fuji logan rainier everest ; do
+    if rsh $machine uptime 1> /dev/null 2> /dev/null 
+	then
+	if rsh $machine who | grep $username 1> /dev/null
+	    then
+	    echo "...you are log in \"$machine\""
+	    log_flag="true"
+	fi
+    fi
+done
+
+if [ -z "$log_flag" ] 
+    then
+    echo "$username is not log in CPS !"
+fi
