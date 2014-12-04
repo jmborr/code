@@ -35,7 +35,6 @@ install_manifest.txt
 *.pydevproject
 .project
 .metadata
-bin/**
 tmp/**
 tmp/**/*
 *.tmp
