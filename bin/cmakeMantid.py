@@ -13,7 +13,7 @@ parser.add_argument('--target', default='all', help='either of "all", "doc", "do
 parser.add_argument('--doctest', default=None, help='doctest a particular algorithm or fitfuncion')
 args=parser.parse_args()
 
-rootd='/home/jbq/repositories/mantidproject/build'
+rootd=os.environ['HOME']+'/repositories/mantidproject/build'
 
 script='''#!/bin/bash
 
