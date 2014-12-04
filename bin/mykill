@@ -1,0 +1,7 @@
+#!/bin/bash
+#$1: any string that shows up in the command you want to kill
+/bin/ps -fu $USER | /bin/egrep $1 | /bin/egrep -v "mykill|egrep" |while read line; do
+    pid=`/bin/echo $line | awk '{ print $2 }'` #grab second word (the PID)
+    /bin/kill -9 $pid 2> /dev/null
+done
+

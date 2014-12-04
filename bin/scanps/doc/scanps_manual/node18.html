@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.47)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Iterative Searching</TITLE>
+<META NAME="description" CONTENT="Iterative Searching">
+<META NAME="keywords" CONTENT="scanps_manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="scanps_manual.css">
+
+<LINK REL="previous" HREF="node17.html">
+<LINK REL="up" HREF="node9.html">
+<LINK REL="next" HREF="node19.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html223"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html221"
+  HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html217"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html224"
+  HREF="node19.html">Getting more from SCANPS</A>
+<B> Up:</B> <A NAME="tex2html222"
+  HREF="node9.html">Running SCANPS</A>
+<B> Previous:</B> <A NAME="tex2html218"
+  HREF="node17.html">SCANS with Affine Gaps</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00074000000000000000">
+Iterative Searching</A>
+</H2>
+
+<P>
+Iterative searching will normally be able to find more remote
+similarities to the query sequence than a single sequence search.
+This is illustrated in an example below.
+
+<P>
+Iterative searching is enabled by adding the -niter command on the
+command line.  For example:
+
+<P>
+<PRE>
+scanps -s hahu.fa -mode 200 -niter 5 -bdb sprot &gt; niter_test.log
+</PRE>
+
+<P>
+will run SCANPS with 5 iterations.  Examples of scans with 5
+iterations, that use the human alpha haemoglobin sequence as a query
+are shown in the files with ``niter5'' in their name.
+
+<P>
+An iterative search starts just the same as a non-iterative search,
+the query sequence is compared to the database and the score list,
+pairwise and multiple alignment outputs are reported.  The multiple
+alignment is then used to create a query ``profile'' that contains
+information about the types of amino acid seen at each position in the
+alignment.  This profile is then searched against the database, a score
+list, pairwise and multiple alignments are output and the process is
+then repeated.  The iterations will stop either when the number of
+iterations has been reached, or if two successive iterations find
+exactly the same sequences.
+
+<P>
+The key parameter that controls iterative searching is <B>probcut2</B>.
+This controls which sequences from a search will be included in the
+profile with which the next search is done
+
+<P>
+The file: hahu_202_probcut30_niter5.log shows an iterative search
+with human alpha haemoglobin.  This file includes pairwise output, but
+normally one would switch this off with -aptt 0 -max_aout 0 on the
+command line in order to minimise the output file.  In the scan,
+probcut2 was set to 0.1 by default and in Iteration 0, there are 695
+sequences that score above the probcut2 value:
+
+<P>
+<PRE>
+ deleted lines
+
+ 674  144 22.25  2.4e-05  MYG_PHOSI        (P30562) Myoglobin            
+ 675  143 22.05  2.94e-05 MYG_MOUSE        (P04247) Myoglobin            
+ 676  142 21.85  3.6e-05  MYG_ELEMA        (P02186) Myoglobin            
+ 677  141 21.76  3.94e-05 GLB3_MYXGL       (P02209) Globin III           
+ 678  140 21.53  4.93e-05 GLBA_SCAIN       (P14821) Globin II, A chain (H
+ 679  135 20.56  0.00013  GLP2_GLYDI       (P21659) Globin, polymeric com
+ 680  136 20.53  0.000135 GLBC_CAUAR       (P80018) Globin C, coelomic   
+ 681  117 19.79  0.000281 HBE_MACEU        (P81042) Hemoglobin epsilon ch
+ 682  129 19.35  0.00044  GLB_NASMU        (P31331) Globin (Myoglobin)   
+ 683  128 19.06  0.000586 GLB_CERRH        (P02215) Globin (Myoglobin)   
+ 684  124 18.33  0.00121  GLP1_GLYDI       (P23216) Globin, major polymer
+ 685  121 17.72  0.00223  GLB_BUSCA        (P02214) Globin (Myoglobin)   
+ 686  120 17.69  0.00231  Y211_AQUAE       (O66586) Hypothetical globin-l
+ 687  121 17.66  0.00237  GLBA_ANATR       (P14395) Globin I alpha chain 
+ 688  100 16.52  0.00742  HBB_PAPAN        (Q9TSP1) Hemoglobin beta chain
+ 689  100 16.52  0.00742  HBB_COLGU        (Q9TT33) Hemoglobin beta chain
+ 690   98 15.70  0.0168   HBO_MACEU        (P81041) Hemoglobin omega chai
+ 691  111 15.29  0.0254   GLB3_LUMTE       (P11069) Globin III, extracell
+ 692  107 14.79  0.0419   GLBP_CHITH       (P11582) Globin CTT-E/E' precu
+ 693  106 14.73  0.0443   GLBB_RIFPA       (P80592) Giant hemoglobins B c
+ 694   90 14.47  0.0578   HBB_PONPY        (Q9TT34) Hemoglobin beta chain
+ 695  105 14.40  0.0617   GLBB_SCAIN       (P14822) Globin II, B chain (H
+ 696  102 13.64  0.132    GLBY_CHITP       (P18968) Globin CTT-Y precurso
+ 697   99 13.31  0.184    GLB_APLJU        (P14393) Globin (Myoglobin)   
+
+ more deleted lines
+</PRE>
+
+<P>
+the next iteration (Iteration 1) reports 777 sequences to be above the
+probcut2 threshold.  At the end of the score list, is a report on
+which new sequences are found, and which (if any) sequences now fall
+below the threshold.  As shown here:
+
+<P>
+<PRE>
+# End_Scores: ------------------------------------------------------
+#
+# Reported in iteration 0 but below the threshold in this iteration (1)
+#
+# Reported in this iteration (1) but not in the previous iteration (0)
+#
+ 689  133 30.75  4.9e-09  GLBB_ANATR (P04251) Globin I beta chain                      
+ 690  128 29.35  1.99e-08 GLB1_SCAIN (P02213) Globin I (Dimeric hemoglobin) (HBI)      
+ 692  127 29.02  2.75e-08 GLB4_LUMTE (P13579) Globin IV, extracellular (Erythrocruori  
+ 693  124 28.21  6.18e-08 GLB_APLKU (P02211) Globin (Myoglobin)                       
+ 694  124 28.20  6.28e-08 GLB1_ANABR (P02212) Globin I                                 
+ 695  122 27.62  1.12e-07 GLB2_ANATR (P14394) Globin IIB                               
+ 696  122 27.62  1.12e-07 GLB1_ARTSX (P19363) Globin E1, extracellular                 
+ 698  120 27.01  2.06e-07 GLBM_ANATR (P25165) Globin, minor                            
+ 699  119 26.78  2.6e-07  GLB_APLJU (P14393) Globin (Myoglobin)                       
+ 700  119 26.75  2.69e-07 GLB3_TYLHE (P13578) Globin IIB, extracellular (Erythrocruor  
+ 701  119 26.64  2.97e-07 GLBH_CHITP (P29242) Globin CTT-VIIB-7 precursor              
+ 702  129 26.51  3.41e-07 HMPA_ALCEU (P39662) Flavohemoprotein (Hemoglobin-like prote  
+ 703  118 26.44  3.63e-07 GLB2_LUCPE (P41261) Hemoglobin II (Hb II)                    
+ 704  118 26.36  3.96e-07 GLBH_CHITH (P12550) Globin CTT-VIIB-7 precursor              
+ 706  117 26.19  4.7e-07  GLB_DOLAU (P09965) Globin (Myoglobin)                       
+ 707  116 25.77  7.09e-07 GLBV_CHITP (P29243) Globin CTT-V precursor (HBV)             
+ 708  114 25.32  1.12e-06 GLP3_GLYDI (P21660) Globin, polymeric component P3           
+ 711  111 24.46  2.64e-06 GLB_APLLI (P02210) Globin (Myoglobin)                       
+ 712  111 24.34  2.99e-06 GLBZ_CHITH (Q23761) Globin CTT-Z precursor (HBZ)             
+ 714  109 23.76  5.31e-06 GLBZ_CHITP (P29245) Globin CTT-Z precursor (HBZ)             
+ 715  118 23.64  6.02e-06 HMPA_VIBCH (Q9KMY3) Flavohemoprotein (Hemoglobin-like prote  
+ 716  118 23.60  6.27e-06 HMPA_BACSU (P49852) Flavohemoprotein (Hemoglobin-like prote  
+
+ lines deleted...
+</PRE>
+
+<P>
+The next iteration (2) finds 801 sequences above the probcut2
+threshold, the third iteration pushes this up to 802, but Iteration 4
+does not change the output.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html223"
+  HREF="node19.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html221"
+  HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html217"
+  HREF="node17.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html224"
+  HREF="node19.html">Getting more from SCANPS</A>
+<B> Up:</B> <A NAME="tex2html222"
+  HREF="node9.html">Running SCANPS</A>
+<B> Previous:</B> <A NAME="tex2html218"
+  HREF="node17.html">SCANS with Affine Gaps</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Geoff Barton (GJB)
+2002-07-23
+</ADDRESS>
+</BODY>
+</HTML>

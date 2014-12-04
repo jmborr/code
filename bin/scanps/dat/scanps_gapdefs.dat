@@ -1,0 +1,97 @@
+# Gap penalty default combinations for different 
+# gap penalty and matrix combinations
+# These override settings in the scanps_defaults.dat file,
+# but not those set on the command line.
+# 
+# Each line specifies a MODE number a matrix name (no directory)
+# and the appropriate starting penalties
+# Any line starting with a hash symbol is taken as a comment.
+#
+# Note:  there is an annoying bug which causes a crash if there are 
+# blank lines at the end of this file.  So you have been warned.
+#
+#Format is:
+# mode:matrix_name:ld_pen:li_pen:fs_pen:fse_pen
+#
+0:nmd.mat:8:0:0:0
+2:nmd.mat:4:12:0:0
+0:md.mat:8:0:0:0
+2:md.mat:4:12:0:0
+0:BLOSUM30:7:0:0:0
+2:BLOSUM30:2:7:0:0
+0:BLOSUM35:5:0:0:0
+2:BLOSUM35:2:5:0:0
+0:BLOSUM40:6:0:0:0
+2:BLOSUM40:2:6:0:0
+0:BLOSUM45:5:0:0:0
+2:BLOSUM45:1:5:0:0
+0:BLOSUM50:6:0:0:0
+2:BLOSUM50:2:12:0:0
+200:BLOSUM50:6:0:0:0
+202:BLOSUM50:2:12:0:0
+210:BLOSUM50:6:0:0:0
+212:BLOSUM50:2:12:0:0
+0:BLOSUM55:5:0:0:0
+2:BLOSUM55:1:5:0:0
+0:BLOSUM60:4:0:0:0
+2:BLOSUM60:0.5:4:0:0
+0:BLOSUM62:6:0:0:0
+2:BLOSUM62:2:12:0:0
+0:BLOSUM65:5:0:0:0
+2:BLOSUM65:1:5:0:0
+0:BLOSUM70:5:0:0:0
+2:BLOSUM70:1:5:0:0
+0:BLOSUM75:5:0:0:0
+2:BLOSUM75:1:5:0:0
+0:BLOSUM80:8:0:0:0
+2:BLOSUM80:2:8:0:0
+0:BLOSUM85:6:0:0:0
+2:BLOSUM85:2:6:0:0
+0:BLOSUM90:6:0:0:0
+2:BLOSUM90:2:6:0:0
+0:BLOSUM100:10:0:0:0
+2:BLOSUM100:4:10:0:0
+0:PAM10:23:0:0:0
+2:PAM10:10:35:0:0
+0:PAM20:19:0:0:0
+2:PAM20:12:38:0:0
+0:PAM30:17:0:0:0
+2:PAM30:8:25:0:0
+0:PAM40:15:0:0:0
+2:PAM40:7:23:0:0
+0:PAM50:13:0:0:0
+2:PAM50:7:19:0:0
+0:PAM60:12:0:0:0
+2:PAM60:6:18:0:0
+0:PAM70:11:0:0:0
+2:PAM70:6:17:0:0
+0:PAM80:11:0:0:0
+2:PAM80:5:16:0:0
+0:PAM90:10:0:0:0
+2:PAM90:5:15:0:0
+0:PAM100:9:0:0:0
+2:PAM100:5:14:0:0
+0:PAM120:8:0:0:0
+2:PAM120:4:12:0:0
+0:PAM140:8:0:0:0
+2:PAM140:4:12:0:0
+0:PAM160:7:0:0:0
+2:PAM160:4:12:0:0
+0:PAM180:10:0:0:0
+2:PAM180:5:15:0:0
+0:PAM200:9:0:0:0
+2:PAM200:4:13:0:0
+0:PAM250:8:0:0:0
+2:PAM250:4:12:0:0
+22:PAM250:4:12:24:24
+0:PAM300:9:0:0:0
+2:PAM300:4:13:0:0
+0:PAM400:8:0:0:0
+2:PAM400:4:12:0:0
+0:PAM500:9:0:0:0
+2:PAM500:4:13:0:0
+#
+#
+#
+
+

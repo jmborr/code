@@ -1,0 +1,32 @@
+#!/usr/bin/wish -f
+
+#if {$argc != 1} {
+#    eval exec <@stdin  >@stdout clear
+#    eval exec >@stdout {echo Usage: bell job}
+#    eval exec >@stdout {echo   job: job to send}
+#    exit
+#}
+
+
+proc my_exit {n_desk} {
+    exec dcop kwin KWinInterface setCurrentDesktop $n_desk
+    exit
+}
+
+set DESKTOPNUMBER [exec dcop kwin KWinInterface currentDesktop]
+eval exec >@stdout $argv #here we submit job
+
+button .b -bitmap warning -command "my_exit $DESKTOPNUMBER"
+.b configure -background orange
+.b flash
+label .message -text " $argv " -padx 2m -pady 2m
+bell
+.message configure -background red
+.message configure -foreground white
+pack .message .b -fill x
+
+#how to record current desktop and come back later
+#!/bin/bash
+#DESKTOPNUMBER=`dcop kwin KWinInterface currentDesktop`
+#dcop kwin KWinInterface setCurrentDesktop $DESKTOPNUMBER
+

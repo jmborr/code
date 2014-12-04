@@ -1,0 +1,1654 @@
+BLASTP 2.0.10 [Aug-26-1999]
+
+
+Reference: Altschul, Stephen F., Thomas L. Madden, Alejandro A. Schaffer, 
+Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), 
+"Gapped BLAST and PSI-BLAST: a new generation of protein database search
+programs",  Nucleic Acids Res. 25:3389-3402.
+
+Query= 0_1a
+         (349 letters)
+
+Database: /ebi/services/idata/blastdb/swall
+           358,428 sequences; 112,757,116 total letters
+
+Searching..................................................done
+Results from round 1
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                        (bits)  Value
+
+SWALL:ADA_MOUSE P03958 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   722  0.0
+SWALL:ADA_BOVIN P56658 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   633  0.0
+SWALL:ADA_HUMAN P00813 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   621  e-177
+SWALL:CAB09782 Cab09782 ADENOSINE DEAMINASE (ADA) (FRAGMENT)...   566  e-160
+SWALL:Q17747 Q17747 SIMILAR TO ADENOSINE DEAMINASE. 11/98         249  2e-65
+SWALL:ADD_ECOLI P22333 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   164  8e-40
+SWALL:CAB42949 Cab42949 PUTATIVE ADENOSINE DEAMINASE. 6/99        137  1e-31
+SWALL:O53365 O53365 ADENOSINE DEAMINASE. 5/99                     129  2e-29
+SWALL:Q49907 Q49907 COSMID L308. 11/98                            116  2e-25
+SWALL:ADA_YEAST P53909 PROBABLE ADENOSINE DEAMINASE (EC 3.5....   114  1e-24
+SWALL:ADD_STRVG P53984 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   111  7e-24
+SWALL:O86737 O86737 PUTATIVE ADENOSINE DEAMINASE. 5/99             99  3e-20
+SWALL:Q18599 Q18599 CODED FOR BY C. ELEGANS CDNA YK20F6.3. 1...    63  3e-09
+SWALL:AAD52850 Aad52850 SALIVARY GLAND GROWTH FACTOR-1 PRECU...    56  4e-07
+SWALL:O83085 O83085 ADENOSINE DEAMINASE, PUTATIVE. 11/98           54  1e-06
+SWALL:Q9ZS86 Q9zs86 T4B21.20 PROTEIN. 5/99                         52  8e-06
+SWALL:Q26642 Q26642 SECRETORY COMPONENT. 1/99                      46  5e-04
+SWALL:O96697 O96697 MOLLUSK-DERIVED GROWTH FACTOR. 5/99            41  0.012
+SWALL:AAD52851 Aad52851 SALIVARY GLAND GROWTH FACTOR-2. 9/99       41  0.016
+SWALL:AAD40577 Aad40577 ADENOSINE DEAMINASE (FRAGMENT). 9/99       40  0.028
+
+QUERY           1   TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIA-LP-AD---TVEEL-RN-IIGMDKPL 53
+ADA_MOUSE       4   TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIA-LP-AD---TVEEL-RN-IIGMDKPL 56
+ADA_BOVIN       3   TPAFDKPKVELHVHLDGAIKPETILYYGKRRGIA-LP-AD---TPEEL-QN-IIGMDKPL 55
+ADA_HUMAN       4   TPAFDKPKVELHVHLDGSIKPETILYYGRRRGIA-LP-AN---TAEGL-LN-VIGMDKPL 56
+CAB09782        1   -----------------------------RRGIA-LP-AN---TAEGL-LN-VIGMDKPL 24
+Q17747          6   ----NFPKVELHLHLDGAVRFDTLIDLSQQKGIP-LAGAK---TVEEL-KK-VLVTHEPA 55
+ADD_ECOLI       7   ------PLTDIHRHLDGNIRPQTILELGRQYNIS-LP-AQ---SLETLIPH-VQVIANEP 54
+CAB42949        15  ------PKAVLHDHLDGGLRPATVVELARSVGHT-LP-TT---DPDEL-AAWYYEAANSG 62
+O53365          14  ------PKALLHDHLDGGLRPATVLDIAGQVGYDDLP-AT---DVDAL-AS-WFRTQSHS 61
+Q49907          13  -----------------------------------LP-AT---DVESL-ET-WFRTASHS 31
+ADA_YEAST       11  ------PKCEHHLHLEGTLEPDLLFPLAKRNDII-LP-EGFPKSVEEL-NE---KYKKFR 58
+ADD_STRVG       11  ------PKAHLHLHFTGSMRPSTLLELADKYGVR-LPDAL---TAGEP-PK-LRATDER- 57
+O86737          56  ------PKAELHVHHVGSASPRIVSELAARHADS-KV-PT---DPEAL-VD-YF------ 96
+Q18599          58  ----NMPKVELHAHLSGSLSPETI-----KLIME-SD-ET---RAEEI-MK-KYKLEKPE 101
+AAD52850            ------------------------------------------------------------
+O83085              ------------------------------------------------------------
+Q9ZS86          8   ------PKIELHAHLNGSIRDSTLL---------------------EL-AR-VLGEK--- 35
+Q26642              ------------------------------------------------------------
+O96697              ------------------------------------------------------------
+AAD52851            ------------------------------------------------------------
+AAD40577            ------------------------------------------------------------
+
+QUERY           54  -SLPGFLAKFDYYMPVIAGCR--EA--IKR-----IAYEFVEMKAKEGVVYVEVRYSPHL 103
+ADA_MOUSE       57  -SLPGFLAKFDYYMPVIAGCR--EA--IKR-----IAYEFVEMKAKEGVVYVEVRYSPHL 106
+ADA_BOVIN       56  -TLPDFLAKFDYYMPAIAGCR--DA--IKR-----IAYEFVEMKAKDGVVYVEVRYSPHL 105
+ADA_HUMAN       57  -TLPDFLAKFDYYMPAIAGCR--EA--IKR-----IAYEFVEMKAKEGVVYVEVRYSPHL 106
+CAB09782        25  -TLPDFLAKFDYYMPAIAGCR--EA--IKR-----IAYEFVEMKAKEGVVYVEVRYSPHL 74
+Q17747          56  -NLSKVLEAFEIFLPVIRGDL--AA--IER-----VAYELCEDQHNNGVVYFEGRYSPHL 105
+ADD_ECOLI       55  -DLVSFLTKLDWGVKVLASL---DA--CRR-----VAFENIEDAARHGLHYVELRFSPGY 103
+CAB42949        63  -DLVRYIATFEHTLAVMQN-R--EG--LLR-----AAEEYVLDLAADGVVYGEVRYAPEL 111
+O53365          62  GSLERYLEPFSHTVAVMQ-TP--EA--LYR-----VAFECAQDLAADSVVYAEVRFAPEL 111
+Q49907          32  GSLERYLEPFSHTVAVMQ-TP--EA--LHR-----VAYECVEDLAADSVVYAEVRFAPEL 81
+ADA_YEAST       59  -DLQDFL---DYYY---IGTN--VL--ISEQDFFDLAWAYFKKVHKQGLVHAEVFYDPQ- 106
+ADD_STRVG       58  ----GWFRFQRLYDAARSCLR--EPDDIRR-----LVREAAEEDVRDGSGWLEIQ----- 101
+O86737          97  -TFTDFAHFIDVYLSVVDLIRTPED--VRL-----LTYEVARDMARQQVRYAELTITP-- 146
+Q18599          102 -NMTGV---FDCFPVIHAILRKPEA--IRI-----AIRQTIKEFEEDNCVYLELRTSP-- 148
+AAD52850        214 --------------------------------------QFLEELYADKVLYTEVRVK--- 232
+O83085              ------------------------------------------------------------
+Q9ZS86          36  ----GVIVFAD----------------VEH-----VVEDF----ALENVVYLELRTTPKR 66
+Q26642              ------------------------------------------------------------
+O96697              ------------------------------------------------------------
+AAD52851            ------------------------------------------------------------
+AAD40577            ------------------------------------------------------------
+
+QUERY           104 LANSKVDPMPWNQ-------TEGDVTPDDVV----DLVNQGLQEG---EQAF-G-----I 143
+ADA_MOUSE       107 LANSKVDPMPWNQ-------TEGDVTPDDVV----DLVNQGLQEG---EQAF-G-----I 146
+ADA_BOVIN       106 LANSKVEPIPWNQ-------AEGDLTPDEVV----SLVNQGLQEG---ERDF-G-----V 145
+ADA_HUMAN       107 LANSKVEPIPWNQ-------AEGDLTPDEVV----ALVGQGLQEG---ERDF-G-----V 146
+CAB09782        75  LANSKVEPIPWNQ-------AEGDLTPDEVV----ALVGQGLQEG---ERDF-G-----V 114
+Q17747          106 LLCNDYP----------------EVTAAHVV----AAVKKGFDRG---EKQF-G-----I 136
+ADD_ECOLI       104 MAMAHQLPVA------------------GVV----EAVIDGVREG---CRTF-G-----V 132
+CAB42949        112 ------------N-------TRGGLSMREVV----ETVQEGLATGMAKAAAA-G-----T 142
+O53365          112 HISC-------------------GLSFDDVV----DTVLTGFAAG---EKAC-AADGQPI 144
+Q49907          82  ------------H-------IDEGLSFDEVL----ASVLAGFADG---ERAC-AAEGNAI 114
+ADA_YEAST       107 -----------SH-------TSRGISIETVT----KGFQRACDKA---FSEF-G-----I 135
+ADD_STRVG       102 -----VDPTSYAP-------LLGGMIP--AV----EIILDAVDAA---SRET-G-----L 134
+O86737          147 ----------FSS-------TRRGIDEGAFM----DAIEDARKAA---EAEF-G-----T 176
+Q18599          149 ---KETDFM----------------TYEDYL----QVCIESFEAA---KHEFPR-----I 177
+AAD52850        233 ------FSEPYDD-------TSKKYSLDDVVKEIENVVNDFKKTH---PDFI-G-----L 270
+O83085              ------------------------------------------------------------
+Q9ZS86          67  SDSIGMSKRSYMEAVIQGLRSVSEVDIDFVT----ASDSQKLHNA---GDGI-GRKK--I 116
+Q26642              ------------------------------------------------------------
+O96697              ------------------------------------------------------------
+AAD52851            ------------------------------------------------------------
+AAD40577            ------------------------------------------------------------
+
+QUERY           144 KVR--SILCCMRH-Q-P-SWS----------LEV-LELCKKY------NQK---T----- 173
+ADA_MOUSE       147 KVR--SILCCMRH-Q-P-SWS----------LEV-LELCKKY------NQK---T----- 176
+ADA_BOVIN       146 KVR--SILCCMRH-Q-P-SWS----------SEV-VELCKKY------REQ---T----- 175
+ADA_HUMAN       147 KAR--SILCCMRH-Q-P-NWS----------PKV-VELCKKY------QQQ---T----- 176
+CAB09782        115 KAR--SILCCMRH-Q-P-NWS----------PKV-VELCKKY------QQQ---T----- 144
+Q17747          137 KAR--SILCCIRGLD-K-KFP----------QLI-LDLATDL------KQL---G----- 167
+ADD_ECOLI       133 QAK--LIGIMSRT-F-G-EAA----------CQQ-ELEAFLA------HRD---Q----- 162
+CAB42949        143 PVRVGTLLCGMRM-F-D-RVR-----------EA-ADLAVAF------RDA---G----- 173
+O53365          145 TVR--CLVTAMRH-A---AMS----------REI-AELAIRF------RDK---G----- 173
+Q49907          115 TVR--CLVTAMRH-A---AMS----------REI-AELAIRF------RDK---G----- 143
+ADA_YEAST       136 TSK--LIMCLLRHIE-P-EEC----------LKT-IEEATPFI-----KDG---T----- 167
+ADD_STRVG       135 GMR--VLIAANRM-KHP-LDA----------RTL-ARLAVRY------ADR---G----- 165
+O86737          177 VLR-----WCFDI-P-G-EAG----------LES-AEETARLATDDRLRPE---G----- 209
+Q18599          178 KTF--LIVSLDRR-M-PFETA----------AHI-LGLIGEA------QQR---TNV--- 210
+AAD52850        271 KI----IFAILRH-G-K-EDE----------IRKNFDLYKNL------RSKFPNT----- 302
+O83085              ------------------------------------------------------------
+Q9ZS86          117 YVR--LLLSIDRR-E-T-TESAMETVSVSKQAKL-LRILKRL------MQK---TFDTLL 161
+Q26642          333 -----------------------------------VEIKEKY------PD----F----- 342
+O96697          312 -----------------------------------MDLHKKY------PD----F----- 321
+AAD52851            ------------------------------------------------------------
+AAD40577            ------------------------------------------------------------
+
+QUERY           174 ---------------VVAMDLAGDETIEGSSLFP--GH--VEAYEGA--VKNGIHRT--- 209
+ADA_MOUSE       177 ---------------VVAMDLAGDETIEGSSLFP--GH--VEAYEGA--VKNGIHRT--- 212
+ADA_BOVIN       176 ---------------VVAIDLAGDETIEGSSLFP--GH--VQAYAEA--VKSGVHRT--- 211
+ADA_HUMAN       177 ---------------VVAIDLAGDETIPGSSLLP--GH--VQAYQEA--VKSGIHRT--- 212
+CAB09782        145 ---------------VVAIDLAGDETIPGSSLLP--GH--VQAYQEA--VKSGIHRT--- 180
+Q17747          168 ---------------VVAIDVAGSAHGADEQYEP--EV--VAAFQEA--HKRGIHRT--- 203
+ADD_ECOLI       163 ---------------ITALDLAGDELGFPGSLFL--SH--FNRARDA-----GWHIT--- 195
+CAB42949        174 ---------------VVGFDIAGAE--DG---FPPADH--LDAFEHL--RRENVPFT--- 206
+O53365          174 ---------------VVGFDIAGAEAGHPPTR-----H--LDAFEYM--RDHNARFT--- 206
+Q49907          144 ---------------VVGFDIAGAEAGHPPTR-----H--LDAFEYM--RSNNARFT--- 176
+ADA_YEAST       168 ---------------ISALGLDSAE-----KPFP--PHLFVECYGKAASLNKDLKLT--- 202
+ADD_STRVG       166 ---------------IVGFGLSNDERRGMARDFD-------RAFAIA--REGGLLAA--- 198
+O86737          210 ---------------LVSFGLGGPEIGVARPQFK--PY-----FDRA--IAAGLHSV--- 242
+Q18599          211 ---------------IVGVELSGDPHLDGRRLLK--LF--VAARR-----FHGLGIT--- 243
+AAD52850        303 ---------------IIGLDFVGWED-KGLALQP---F--ADDFTSA--TRDGSKLF--- 336
+O83085          153 ------------------IDLYGPEISEGIEDF-------IYIFKLA--EKYHLKKK--- 182
+Q9ZS86          162 FSLKVKLALEMRDVGVVGIDLSGNPLVGEWSTF-------LPALQYA--KDNDLHIT--- 209
+Q26642          343 ---------------VAGFDLVGQE--EKGRPLK--DF--IPQLLGM--PEN-IDFY--- 375
+O96697          322 ---------------FLGYDLVGQEDPNFSLLHY--LD--ALLYP-S--IQNPPYRLPYF 359
+AAD52851            ------------------------------------------------------------
+AAD40577            ------------------------------------------------------------
+
+QUERY           210 VHAGE---V---G--SPEVVREAVD--ILKTERVGHGYHTIED-----------EALY-- 246
+ADA_MOUSE       213 VHAGE---V---G--SPEVVREAVD--ILKTERVGHGYHTIED-----------EALY-- 249
+ADA_BOVIN       212 VHAGE---V---G--SANVVKEAVD--TLKTERLGHGYHTLED-----------TTLY-- 248
+ADA_HUMAN       213 VHAGE---V---G--SAEVVKEAVD--ILKTERLGHGYHTLED-----------QALY-- 249
+CAB09782        181 VHAGE---V---G--SAEVVKEAVD--ILKTERLGHGYHTLED-----------QALY-- 217
+Q17747          204 VHAGE---S---G--GPKEVIKAIE--DMYAERIGHGYRVMRD-----------EEMYLE 242
+ADD_ECOLI       196 VHAGE---A---A--GPESIWQAIR--ELGAERIGHGVKAIED-----------RALM-- 232
+CAB42949        207 IHAGE---A---H--GLPSIHQALQ--VCGAQRIGHGVRITDDIPDLAAGKL--GRLA-- 252
+O53365          207 IHAGE---A---F--GLPSIHEAIA--FCGADRLGHGVRIVDDIDVDADGGFQLGRLA-- 254
+Q49907          177 IHAGE---A---F--GLPSIHEAIA--FCGADRLGHGVRIVDDIDVDPGGGIRLGPLA-- 224
+ADA_YEAST       203 AHAGE---E---G--PAQFVSDALD--LLQVTRIDHGINSQYD-----------EELL-- 239
+ADD_STRVG       199 PHGGE---L---T--GPSSVRDCLD--DLHASRIGHGVRAAED-----------PRLL-- 235
+O86737          243 PHAGE---T---T--GPQTVWEALI--DLRAERIGHGTSSAQD-----------PKLL-- 279
+Q18599          244 IHLAE---V---L--QNMADVEDYL--NLRPDRIGHG----------------------- 270
+AAD52850        337 LHAGETNQL---G--STDQNLVDAL--LLNTTRIGHGYALAKH-----------PYLM-- 376
+O83085          183 AHVGE---F---S--DAQSVRHFVE--IFNLDEVQHGIGAATD-----------ENVL-- 219
+Q9ZS86          210 LHCGE---V---P--NPKEIQAMLD---FKPHRIGHACFFKDE-----------D--W-- 243
+Q26642          376 FHAGE---T---NWFGSTVDENLIDAVLLGTKRIGHGFALVKH-----------PLVL-- 416
+O96697          360 FHAAE---T---NWQETEVDYNLADALLLNTTRVGHGFALIK------------HPRF-- 399
+AAD52851        345 -HAGE---TNSYG--GTDLNLVDAI--LLNTTRIGLGYALPKH-----------PVLM-- 383
+AAD40577            ------------------------------------------------------------
+
+QUERY           247 NRLLKEN-MHFEVCPWSSYLTGA----WDPKTTHAVVRFKNDKANYSLNTDDP-LIFK-S 299
+ADA_MOUSE       250 NRLLKEN-MHFEVCPWSSYLTGA----WDPKTTHAVVRFKNDKANYSLNTDDP-LIFK-S 302
+ADA_BOVIN       249 NRLRQEN-MHFEICPWSSYLTGA----WKPDTEHAVIRFKNDQVNYSLNTDDP-LIFK-S 301
+ADA_HUMAN       250 NRLRQEN-MHFEICPWSSYLTGA----WKPDTEHAVIRLKNDQANYSLNTDDP-LIFK-S 302
+CAB09782        218 NRLRQEN-MHFEICPWSSYLTGA----WKPDTEHAVIRLKNDQANYSLNTDDP-LIFK-S 270
+Q17747          243 HFVNSKN-VHLEACPYSSVMTGAVPLDW---KNHPIARWAKDDVNFSVSRDDP-TCFD-N 296
+ADD_ECOLI       233 DFLAEQQ-IGIESCLTSNIQTST----VAELAAHPLKTFLEHGIRASINTDDP-GVQG-V 285
+CAB42949        253 AWVRDRR-IALEMCPTSNLQTGA----ATSIAEHPITALKDLGFRVTLNTDNR-LVSG-T 305
+O53365          255 AILRDKR-IPLELCPSSNVQTGA----VASIAEHPFDLLARARFRVTVNTDNR-LMSD-T 307
+Q49907          225 SILRDKR-IPLELCPSSNLQTGA----VASITEHPFDLLAWARFRVTVNTDNR-LMSD-T 277
+ADA_YEAST       240 DRLSRDQ-TMLTICPLSNVKLQV----VQSVSELPLQKFLDRDVPFSLNSDDP-AYFG-G 292
+ADD_STRVG       236 KRLADRQ-ITCEVCPASNVALGV----YERPEDVPLRTLFEAGVPMALGADDP-LLFG-S 288
+O86737          280 AHLAERR-IPLEVCPTSNIATRA----VRTLDEHPIKEFVRAGVPVTINSDDP-PMFG-T 332
+Q18599          269 ------------------------------------------------------------ 270
+AAD52850        377 RDVKEKD-IAVELCPVSNQVNSF----VEDLRNHPGAILMSENVPVVLGNDSPGFMDF-D 430
+O83085          220 RFLAERK-VRCNVCPTSNVMLNA----VECLEKHPIKKMMDAGVRVGLGTDDL-LFFG-K 272
+Q9ZS86          244 TKLKSFR-IPVEICLTSNIVT--------------------------------------- 263
+Q26642          417 QMLKERN-IAIEVNPISNQVLQL----VADYRNHPCAYFFADNYPVVISSDDP-SFWK-A 469
+O96697          400 TELAKENGVAVEVNPISNQILGL----VRDVRNHALVPLIADDYPIVISSDDP-GAWEAS 454
+AAD52851        384 KIVKARE-IPVEVCPISNQVLHL----VNDLRNHPGAILLANNIPMVISNDAP-AFWGVQ 437
+AAD40577        2   -------------------------------TEHAVVRLKHDQATYSLNTDDP------- 23
+
+QUERY           300 -T-LDTDY-----QMTKKDMGFTE---EE---FKRLNINAAKSSFLPEEEKKE---LLER 343
+ADA_MOUSE       303 -T-LDTDY-----QMTKKDMGFTE---EE---FKRLNINAAKSSFLPEEEKKE---LLER 346
+ADA_BOVIN       302 -T-LDTDY-----QMTKKDMGFTE---EE---FKRLNINAAKSSFLPEDEKKE---LLDL 345
+ADA_HUMAN       303 -T-LDTDY-----QMTKRDMGFTE---EE---FKRLNINAAKSSFLPEDEKRE---LLDL 346
+CAB09782        271 -T-LDTDY-----QMTKRDMGFTE---EE---FKRLNINAAKSSFLPEDEKRE---LLDL 314
+Q17747          297 -S-MLSEL-----TLVHKQIGLDV---HQ---LWKAQLNAARSCFLPEDEKAE---LVKR 340
+ADD_ECOLI       286 -D-IIHEY-----TVAAPAAGLSR---EQ---IRQAQINGLEMAFLSAEEKRA---LREK 329
+CAB42949        306 -T-MTREM-----SLLVEQAGWSV---ED---LRTVTVNALKSAFVPFDERTA---LIE- 348
+O53365          308 -S-MSLEM-----HRLVEAFGYGW---SD---LARFTVNAMKSAFIPFDQRLA---IIDE 351
+Q49907          278 -S-MSLEM-----HRLVEAFGYGW---GD---LERFTINAMKSAFIPFDQRLA---IIDE 321
+ADA_YEAST       293 YI-LDVYT-----QVSKDFPHWDH---ET---WGRIAKNAIKGSWCDDKRKNG---LLSR 337
+ADD_STRVG       289 -R-LAAQY-----EIARRHHAFTD---TE---LAELARQSVRGSAAPDDVQAK---LL-- 330
+O86737          333 -D-LNNEY-----AVAARLLGLDE---RG---LADLAKNGVEASFLDAPGKAR---IADE 376
+Q18599          269 ------------------------------------------------------------ 270
+AAD52850        431 -G-LNPDYYYAIMSLTPYQAGL-----KT---LKRLVENTIKYAQLNSQEKTQAETLLKA 480
+O83085          273 -T---------------------------------------------------------- 273
+Q9ZS86          262 ------------------------------------------------------------ 263
+Q26642          470 -TPLSHDF-----YIAFLGIASAH---SDMRLLKKLALNSINYSSLSPEQKRV---ALAK 517
+O96697          455 -P-LSHDF-----YVALMDLCGRD---TALTFLKQLALNSIRYSAMSDTEK--------- 495
+AAD52851        438 -G-LSYDY-----YYTIMSLASNKAGLST---LKQLVFNSIKYSALPEEEKKT---AEKN 484
+AAD40577        22  ------------------------------------------------------------ 23
+
+QUERY           344 LYREYQ 349
+ADA_MOUSE       347 LYREYQ 352
+ADA_BOVIN       346 LYKAYR 351
+ADA_HUMAN       347 LYKAY- 351
+CAB09782        315 LYKAY- 319
+Q17747          341 V----- 341
+ADD_ECOLI       330 V----- 330
+CAB42949        347 ------ 348
+O53365          352 VIK--- 354
+Q49907          322 VIK--- 324
+ADA_YEAST       338 V----- 338
+ADD_STRVG       329 ------ 330
+O86737          377 I----- 377
+Q18599          269 ------ 270
+AAD52850        481 KWNEF- 485
+O83085          272 ------ 273
+Q9ZS86          262 ------ 263
+Q26642          516 ------ 517
+O96697          494 ------ 495
+AAD52851        485 LEKQW- 489
+AAD40577        22  ------ 23
+Searching..................................................done
+Results from round 2
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                        (bits)  Value
+Sequences used in model and found again:
+
+SWALL:ADA_MOUSE P03958 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   549  e-156
+SWALL:ADA_BOVIN P56658 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   544  e-154
+SWALL:ADA_HUMAN P00813 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   541  e-153
+SWALL:CAB09782 Cab09782 ADENOSINE DEAMINASE (ADA) (FRAGMENT)...   486  e-136
+SWALL:Q17747 Q17747 SIMILAR TO ADENOSINE DEAMINASE. 11/98         409  e-113
+SWALL:O53365 O53365 ADENOSINE DEAMINASE. 5/99                     397  e-110
+SWALL:ADD_ECOLI P22333 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   385  e-106
+SWALL:CAB42949 Cab42949 PUTATIVE ADENOSINE DEAMINASE. 6/99        374  e-103
+SWALL:Q49907 Q49907 COSMID L308. 11/98                            358  3e-98
+SWALL:O86737 O86737 PUTATIVE ADENOSINE DEAMINASE. 5/99            355  2e-97
+SWALL:ADD_STRVG P53984 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   341  3e-93
+SWALL:ADA_YEAST P53909 PROBABLE ADENOSINE DEAMINASE (EC 3.5....   320  1e-86
+SWALL:AAD52850 Aad52850 SALIVARY GLAND GROWTH FACTOR-1 PRECU...   236  2e-61
+SWALL:Q18599 Q18599 CODED FOR BY C. ELEGANS CDNA YK20F6.3. 1...   236  2e-61
+SWALL:Q26642 Q26642 SECRETORY COMPONENT. 1/99                     196  2e-49
+SWALL:Q9ZS86 Q9zs86 T4B21.20 PROTEIN. 5/99                        195  3e-49
+SWALL:O83085 O83085 ADENOSINE DEAMINASE, PUTATIVE. 11/98          156  2e-37
+
+Sequences not found previously or not previously below threshold:
+
+SWALL:AAD52851 Aad52851 SALIVARY GLAND GROWTH FACTOR-2. 9/99      159  2e-38
+SWALL:O96697 O96697 MOLLUSK-DERIVED GROWTH FACTOR. 5/99           126  3e-28
+SWALL:AMD3_HUMAN Q01432 AMP DEAMINASE 3 (EC 3.5.4.6) (AMP DE...    72  7e-12
+SWALL:AMD3_RAT O09178 AMP DEAMINASE 3 (EC 3.5.4.6) (AMP DEAM...    72  7e-12
+SWALL:AAB60408 Aab60408 AMP DEAMINASE (EC 3.5.4.6). 9/99           72  7e-12
+SWALL:AAB60409 Aab60409 AMP DEAMINASE (EC 3.5.4.6). 9/99           72  7e-12
+SWALL:AMD3_MOUSE O08739 AMP DEAMINASE 3 (EC 3.5.4.6) (AMP DE...    71  1e-11
+SWALL:AMD1_RAT P10759 AMP DEAMINASE 1 (EC 3.5.4.6) (MYOADENY...    68  1e-10
+SWALL:AMDM_YEAST P15274 AMP DEAMINASE (EC 3.5.4.6) (MYOADENY...    67  2e-10
+SWALL:AMD1_HUMAN P23109 AMP DEAMINASE 1 (EC 3.5.4.6) (MYOADE...    66  4e-10
+SWALL:O80452 O80452 PUTATIVE AMIDASE. 5/99                         64  1e-09
+SWALL:AMDM_SCHPO P50998 AMP DEAMINASE (EC 3.5.4.6) (MYOADENY...    64  2e-09
+SWALL:CAB53720 Cab53720 AMP DEAMINASE. 9/99                        64  2e-09
+SWALL:Q18463 Q18463 SIMILAR TO AMP DEAMINASE. NCBI GI: 11666...    60  2e-08
+SWALL:AMD2_HUMAN Q01433 AMP DEAMINASE 2 (EC 3.5.4.6) (AMP DE...    57  2e-07
+SWALL:Q16729 Q16729 AMP DEAMINASE ISOFORM L SPLICING VARIANT...    57  2e-07
+SWALL:AAC50308 Aac50308 AMP DEAMINASE (EC 3.5.4.6) (FRAGMENT...    57  2e-07
+SWALL:AAD56303 Aad56303 AMP DEAMINASE ISOFORM L. 9/99              57  2e-07
+SWALL:CAB42353 Cab42353 L302.11 PROTEIN. 6/99                      54  2e-06
+SWALL:AMD2_RAT Q02356 AMP DEAMINASE 2 (EC 3.5.4.6) (AMP DEAM...    48  8e-05
+SWALL:O59184 O59184 391AA LONG HYPOTHETICAL CHLOROHYDROLASE....    42  0.008
+SWALL:CAB49567 Cab49567 CHLOROHYDROLASE, PUTATIVE. 9/99            40  0.023
+
+QUERY            1    TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIA-LP-AD---TVEEL-RNII-GMDKPL 53
+ADA_MOUSE        4    TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIA-LP-AD---TVEEL-RNII-GMDKPL 56
+ADA_BOVIN        3    TPAFDKPKVELHVHLDGAIKPETILYYGKRRGIA-LP-AD---TPEEL-QNII-GMDKPL 55
+ADA_HUMAN        4    TPAFDKPKVELHVHLDGSIKPETILYYGRRRGIA-LP-AN---TAEGL-LNVI-GMDKPL 56
+CAB09782         1    -----------------------------RRGIA-LP-AN---TAEGL-LNVI-GMDKPL 24
+Q17747           6    ----NFPKVELHLHLDGAVRFDTLIDLSQQKGIP-LAGAK---TVEEL-KKVL-VTHEPA 55
+O53365           14   ------PKALLHDHLDGGLRPATVLDIAGQVGYDDLP-AT---DVDAL-ASWF-RTQSHS 61
+ADD_ECOLI        7    ------PLTDIHRHLDGNIRPQTILELGRQYNIS-LP-AQ---SLETLIPHVQ-VIANEP 54
+CAB42949         15   ------PKAVLHDHLDGGLRPATVVELARSVGHT-LP-TT---DPDEL-AAWYYEAANSG 62
+Q49907           2    ------------------------LDIAGQVGYDRLP-AT---DVESL-ETWF-RTASHS 31
+O86737           56   ------PKAELHVHHVGSASPRIVSELAARHADS-KV-PT---DPEAL-VDYF------- 96
+ADD_STRVG        11   ------PKAHLHLHFTGSMRPSTLLELADKYGVR-LPDAL---TAGEP-PKLR-ATDER- 57
+ADA_YEAST        11   ------PKCEHHLHLEGTLEPDLLFPLAKRNDII-LP-EGFPKSVEEL-NEKY---KKFR 58
+AAD52850              ------------------------------------------------------------
+Q18599           58   ----NMPKVELHAHLSGSLSPETI-----KLIME-SD-ET---RAEEI-MKKY-KLEKPE 101
+Q26642                ------------------------------------------------------------
+Q9ZS86           8    ------PKIELHAHLNGSIRDSTLLELARVLGEK-------------------------- 35
+AAD52851              ------------------------------------------------------------
+O83085           11   ------PKADVHTHLNLSMKYER---YKQWSGVV-IP--------NFP-RKMR-GLDEMH 50
+O96697                ------------------------------------------------------------
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+O80452                ------------------------------------------------------------
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+Q18463                ------------------------------------------------------------
+AMD2_HUMAN            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+O59184                ------------------------------------------------------------
+CAB49567              ------------------------------------------------------------
+
+QUERY            54   -SLPGFLAKFDYYMPVIAGCR--EA--IKR-----IAYEFVEMKAKEGVVYVEVRYSPHL 103
+ADA_MOUSE        57   -SLPGFLAKFDYYMPVIAGCR--EA--IKR-----IAYEFVEMKAKEGVVYVEVRYSPHL 106
+ADA_BOVIN        56   -TLPDFLAKFDYYMPAIAGCR--DA--IKR-----IAYEFVEMKAKDGVVYVEVRYSPHL 105
+ADA_HUMAN        57   -TLPDFLAKFDYYMPAIAGCR--EA--IKR-----IAYEFVEMKAKEGVVYVEVRYSPHL 106
+CAB09782         25   -TLPDFLAKFDYYMPAIAGCR--EA--IKR-----IAYEFVEMKAKEGVVYVEVRYSPHL 74
+Q17747           56   -NLSKVLEAFEIFLPVIRGDL--AA--IER-----VAYELCEDQHNNGVVYFEGRYSPHL 105
+O53365           62   GSLERYLEPFSHTVAVMQ-TP--EA--LYR-----VAFECAQDLAADSVVYAEVRFAPEL 111
+ADD_ECOLI        55   -DLVSFLTKLDWGVKVLASL---DA--CRR-----VAFENIEDAARHGLHYVELRFSPGY 103
+CAB42949         63   -DLVRYIATFEHTLAVMQN-R--EG--LLR-----AAEEYVLDLAADGVVYGEVRYAPEL 111
+Q49907           32   GSLERYLEPFSHTVAVMQ-TP--EA--LHR-----VAYECVEDLAADSVVYAEVRFAPEL 81
+O86737           97   -TFTDFAHFIDVYLSVVDLIRTPED--VRL-----LTYEVARDMARQQVRYAELTITP-- 146
+ADD_STRVG        58   ----GWFRFQRLYDAARSCLR--EPDDIRR-----LVREAAEEDVRDGSGWLEIQ----- 101
+ADA_YEAST        59   -DLQDFL---DYYY---IGTN--VL--ISEQDFFDLAWAYFKKVHKQGLVHAEVFYDPQ- 106
+AAD52850         213  -------------------------------------RQFLEELYADKVLYTEVRVK--- 232
+Q18599           102  -NMTGV---FDCFPVIHAILRKPEA--IRI-----AIRQTIKEFEEDNCVYLELRTSPK- 149
+Q26642           253  -------------------------------------YNALKEFHADGVQYLEFRST--L 273
+Q9ZS86           36   ----GVIVFAD-------------------------VEHVVEDFALENVVYLELRTTPKR 66
+AAD52851         222  -------------------------------------WRLLEELYEDNVMYAELRVELFR 244
+O83085           51   -EIIG-----EYTRPQCKTAQ--DV--LNL-----FTMS-IEDAIADNVVVMETSVDIGF 94
+O96697           207  -----WVRFNKYFAQVIGLLF--YAPIMRD-----YYRQALEEFRADNVQYIELRS--QL 252
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+O80452                ------------------------------------------------------------
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+Q18463                ------------------------------------------------------------
+AMD2_HUMAN            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+O59184                ------------------------------------------------------------
+CAB49567              ------------------------------------------------------------
+
+QUERY            104  LANSKVDPMPWNQTE-------GDVTPDDVVD----LVNQGLQEG---EQAF-G-----I 143
+ADA_MOUSE        107  LANSKVDPMPWNQTE-------GDVTPDDVVD----LVNQGLQEG---EQAF-G-----I 146
+ADA_BOVIN        106  LANSKVEPIPWNQAE-------GDLTPDEVVS----LVNQGLQEG---ERDF-G-----V 145
+ADA_HUMAN        107  LANSKVEPIPWNQAE-------GDLTPDEVVA----LVGQGLQEG---ERDF-G-----V 146
+CAB09782         75   LANSKVEPIPWNQAE-------GDLTPDEVVA----LVGQGLQEG---ERDF-G-----V 114
+Q17747           106  LLCNDYP----------------EVTAAHVVA----AVKKGFDRG---EKQF-G-----I 136
+O53365           112  HISC-------------------GLSFDDVVD----TVLTGFAAG---EKAC-AADGQPI 144
+ADD_ECOLI        104  MAMAHQLPVA------------------GVVE----AVIDGVREG---CRTF-G-----V 132
+CAB42949         112  ------------NTR-------GGLSMREVVE----TVQEGLATGMAKAAAA-G-----T 142
+Q49907           82   HI------------D-------EGLSFDEVLA----SVLAGFADG---ERAC-AAEGNAI 114
+O86737           147  ----------FSSTR-------RGIDEGAFMD----AIEDARKAA---EAEF-G-----T 176
+ADD_STRVG        102  -----VDPTSYAPLL-------GGMIPA--VE----IILDAVDAA---SRET-G-----L 134
+ADA_YEAST        107  -----------SHTS-------RGISIETVTK----GFQRACDKA---FSEF-G-----I 135
+AAD52850         233  ------FSEPYDDTS-------KKYSLDDVVKEIENVVNDFKKTH---PDFI-G-----L 270
+Q18599           150  ----ETDFMTY----------------EDYLQ----VCIESFEAA---KHEFPR-----I 177
+Q26642           274  PILYDLEGTSFTELD----------TVRIYKE----TLDKYMAEH---IDFI-G------ 309
+Q9ZS86           67   SDSIGMSKRSYMEAVIQGLRSVSEVDIDFVTA----SDSQKLHNA---GDGI-GRKK--I 116
+AAD52851         245  LYTEN------GRLD-------REQSILQLWE----VTEQFKKEH---PDFL-G-----V 278
+O83085           95   I------------TH-------YEENLDHFLC----DLSDLHRRY---KRNV-T-----L 122
+O96697           253  FGFFELDGTVHD-AE-------FGLNL---YK----SVTEEFQRE---YPDF-------I 287
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+O80452                ------------------------------------------------------------
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+Q18463                ------------------------------------------------------------
+AMD2_HUMAN            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+O59184                ------------------------------------------------------------
+CAB49567              ------------------------------------------------------------
+
+QUERY            144  KVRS--ILCCMRH-Q-P-SWS-L----------E-----V-----LELCKKY------NQ 171
+ADA_MOUSE        147  KVRS--ILCCMRH-Q-P-SWS-L----------E-----V-----LELCKKY------NQ 174
+ADA_BOVIN        146  KVRS--ILCCMRH-Q-P-SWS-S----------E-----V-----VELCKKY------RE 173
+ADA_HUMAN        147  KARS--ILCCMRH-Q-P-NWS-P----------K-----V-----VELCKKY------QQ 174
+CAB09782         115  KARS--ILCCMRH-Q-P-NWS-P----------K-----V-----VELCKKY------QQ 142
+Q17747           137  KARS--ILCCIRGLD-K-KFP-Q----------L-----I-----LDLATDL------KQ 165
+O53365           145  TVRC--LVTAMRH-A---AMS-R----------E-----I-----AELAIRF------RD 171
+ADD_ECOLI        133  QAKL--IGIMSRT-F-G-EAA-C----------Q-----Q-----ELEAFLA------HR 160
+CAB42949         143  PVRVGTLLCGMRM-F-D-RV--R----------E-----A-----ADLAVAF------RD 171
+Q49907           115  TVRC--LVTAMRH-A---AMS-R----------E-----I-----AELAIRF------RD 141
+O86737           177  VLR-----WCFDI-P-G-EAG-L----------E-----S-----AEETARLATDDRLRP 207
+ADD_STRVG        135  GMRV--LIAANRM-KHP-LDA-R----------T-----L-----ARLAVRY------AD 163
+ADA_YEAST        136  TSKL--IMCLLRHIE-P-EEC-L----------K-----T-----IEEATPFI-----KD 165
+AAD52850         271  KI----IFAILRH-G-K-EDEIR----------K-----N-----FDLYKNL------RS 297
+Q18599           178  KTFL--IVSLDRR-M-PFETA-A----------H-----I-----LGLIGEA------QQ 206
+Q26642           310  -SKL--IYAPIRN-T-D-KEG-L----------D-----NYIKVCVEIKEKY------PD 341
+Q9ZS86           117  YVRL--LLSIDRR-E-T-TES-AMETVSVSKQAK-----L-----LRILKRL------MQ 154
+AAD52851         279  --RL--IYTVLRG-S-K---P-G----------E-----L-----QEYYSRL------KN 302
+O83085           123  HFEL--GISKIR-------ER-S----------F-----V-----EQWAEPM------MR 146
+O96697           288  GAKI--ILSGLRF-K-S-QEE-I----------LNEVKIA-----MDLHKKY------PD 320
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+O80452                ------------------------------------------------------------
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+Q18463                ------------------------------------------------------------
+AMD2_HUMAN            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+O59184                ------------------------------------------------------------
+CAB49567              ------------------------------------------------------------
+
+QUERY            172  K---T--------------------VV-AMDLAGDETIEGSSLFP----------GH--V 195
+ADA_MOUSE        175  K---T--------------------VV-AMDLAGDETIEGSSLFP----------GH--V 198
+ADA_BOVIN        174  Q---T--------------------VV-AIDLAGDETIEGSSLFP----------GH--V 197
+ADA_HUMAN        175  Q---T--------------------VV-AIDLAGDETIPGSSLLP----------GH--V 198
+CAB09782         143  Q---T--------------------VV-AIDLAGDETIPGSSLLP----------GH--V 166
+Q17747           166  L---G--------------------VV-AIDVAGSAHGADEQYEP----------EV--V 189
+O53365           172  K---G--------------------VV-GFDIAGAEAGHPPTR-------------H--L 192
+ADD_ECOLI        161  D---Q--------------------IT-ALDLAGDELGFPGSLFL----------SH--- 183
+CAB42949         172  A---G--------------------VV-GFDIAGAEDGFPPA-------------DH--L 192
+Q49907           142  K---G--------------------VV-GFDIAGAEAGHPPTR-------------H--L 162
+O86737           208  E---G--------------------LV-SFGLGGPEIGVARPQFK----------PY--- 230
+ADD_STRVG        164  R---G--------------------IV-GFGLSNDERRGMARDFD--------------- 184
+ADA_YEAST        166  G---T--------------------IS-ALGLDSAE-----KPFP----------PHLFV 186
+AAD52850         298  KFPNT--------------------II-GLDFVGWED-KGLALQP-----------F--A 322
+Q18599           207  R---TNV------------------IV-GVELSGDPHLDGRRLLK----------LF--V 232
+Q26642           342  ----F--------------------VA-GFDLVGQE--EKGRPLK----------DF--I 362
+Q9ZS86           155  K---TFDTLLFSLKVKLALEMRDVGVV-GIDLSGNPLVGEWSTF---------------L 195
+AAD52851         303  Y---TTRQPDK--------------LV-GFDMVGPEDSDLR--LL----------SF--A 330
+O83085           147  S---G--------------------IFENIDLYGPEISEGIEDF---------------I 168
+O96697           321  ----F--------------------FL-GYDLVGQE--DPNFSLL----------HY--L 341
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+O80452           359  K---Q--------------------VV-GFDLVDDESKPERRPTKHMPTPAQWTNAF--N 392
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+Q18463           672  -----------------------------------------------------------L 672
+AMD2_HUMAN            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+O59184                ------------------------------------------------------------
+CAB49567              ------------------------------------------------------------
+
+QUERY            196  EAYEGA----VK-N------------------GIHRTV---HAGEV---G---------- 216
+ADA_MOUSE        199  EAYEGA----VK-N------------------GIHRTV---HAGEV---G---------- 219
+ADA_BOVIN        198  QAYAEA----VK-S------------------GVHRTV---HAGEV---G---------- 218
+ADA_HUMAN        199  QAYQEA----VK-S------------------GIHRTV---HAGEV---G---------- 219
+CAB09782         167  QAYQEA----VK-S------------------GIHRTV---HAGEV---G---------- 187
+Q17747           190  AAFQEA----HK-R------------------GIHRTV---HAGES---G---------- 210
+O53365           193  DAFEYM----RD-H------------------NARFTI---HAGEA---F---------- 213
+ADD_ECOLI        184  --FNRA----RD-A------------------GWHITV---HAGEA---A---------- 202
+CAB42949         193  DAFEHL----RR-E------------------NVPFTI---HAGEA---H---------- 213
+Q49907           163  DAFEYM----RS-N------------------NARFTI---HAGEA---F---------- 183
+O86737           231  --FDRA----IA-A------------------GLHSVP---HAGET---T---------- 249
+ADD_STRVG        185  RAFAIA----RE-G------------------GLLAAP---HGGEL---T---------- 205
+ADA_YEAST        187  ECYGKAAS--LN-K------------------DLKLTA---HAGEE---G---------- 209
+AAD52850         323  DDFTSA----TR-D------------------GSKLFL---HAGETNQLG---------- 346
+Q18599           233  AAR-------RF-H------------------GLGITI---HLAEV---L---------- 250
+Q26642           363  PQLLGM----PE-N-------------------IDFYF---HAGET---NWF-------- 384
+Q9ZS86           196  PALQYA----KD-N------------------DLHITL---HCGEV---P---------- 216
+AAD52851         331  DNLIEL----SD-K------------------T-KFFF---HAGETNSYG---------- 353
+O83085           169  YIFKLA----EK-Y------------------HLKKKA---HVGEF---S---------- 189
+O96697           342  DALLYPSIQNPP-Y------------------RLPYFF---HAAET---N---------- 366
+AMD3_HUMAN       583  -----------------------------------FRP---HCGEA---G---------- 591
+AMD3_RAT         581  -----------------------------------FRP---HCGEA---G---------- 589
+AAB60408         592  -----------------------------------FRP---HCGEA---G---------- 600
+AAB60409         590  -----------------------------------FRP---HCGEA---G---------- 598
+AMD3_MOUSE       582  -----------------------------------FRP---HCGEA---G---------- 590
+AMD1_RAT         569  -----------------------------------FRP---HCGEA---G---------- 577
+AMDM_YEAST       622  -----------F-N------------------TLVLRP---HCGEA---G---------- 635
+AMD1_HUMAN       569  -----------------------------------FRP---HCGEA---G---------- 577
+O80452           393  PAFSYY----VY-YCYANLYVLNKLRESKGMTTITLRP---HSGEA---G---------- 431
+AMDM_SCHPO       522  -------------------------------------P---HCGEA---G---------- 528
+CAB53720         601  -------------------------------------P---HCGEA---G---------- 607
+Q18463           673  NAFRRA----RGLN------------------TFALRP---HCGEA---G---------- 694
+AMD2_HUMAN       556  ----------RQ-R------------------GFHTFVLRPHCGEA---G---------- 573
+Q16729           549  ----------RQ-R------------------GFHTFVLRPHCGEA---G---------- 566
+AAC50308         420  ----------RQ-R------------------GFHTFVLRPHCGEA---G---------- 437
+AAD56303         600  ----------RQ-R------------------GFHTFVLRPHCGEA---G---------- 617
+CAB42353         1608 -----------------------------------FRP---SCGEA---G---------- 1616
+CAB42353              ------------------------------------------------------------
+AMD2_RAT         1    -------------------------------------P---HCGEA---G---------- 7
+O59184           166  ---EKS----RE-W------------------DSLVTI---HLAET---RDEIKIMEEKY 193
+CAB49567         199  ---EKS----RE-W------------------NSLVTI---HLAET---QDEIKIIREKY 226
+
+QUERY            217  --SPEV----VREAV-D--ILKTERVG-HGYHTIED-----------EALY--NRLLKEN 253
+ADA_MOUSE        220  --SPEV----VREAV-D--ILKTERVG-HGYHTIED-----------EALY--NRLLKEN 256
+ADA_BOVIN        219  --SANV----VKEAV-D--TLKTERLG-HGYHTLED-----------TTLY--NRLRQEN 255
+ADA_HUMAN        220  --SAEV----VKEAV-D--ILKTERLG-HGYHTLED-----------QALY--NRLRQEN 256
+CAB09782         188  --SAEV----VKEAV-D--ILKTERLG-HGYHTLED-----------QALY--NRLRQEN 224
+Q17747           211  --GPKE----VIKAI-E--DMYAERIG-HGYRVMRD-----------EEMYLEHFVNSKN 249
+O53365           214  --GLPS----IHEAI-A--FCGADRLG-HGVRIVDDIDVDADGGFQLGRLA--AILRDKR 261
+ADD_ECOLI        203  --GPES----IWQAI-R--ELGAERIG-HGVKAIED-----------RALM--DFLAEQQ 239
+CAB42949         214  --GLPS----IHQAL-Q--VCGAQRIG-HGVRITDDIPDLAAGKL--GRLA--AWVRDRR 259
+Q49907           184  --GLPS----IHEAI-A--FCGADRLG-HGVRIVDDIDVDPGGGIRLGPLA--SILRDKR 231
+O86737           250  --GPQT----VWEAL-I--DLRAERIG-HGTSSAQD-----------PKLL--AHLAERR 286
+ADD_STRVG        206  --GPSS----VRDCL-D--DLHASRIG-HGVRAAED-----------PRLL--KRLADRQ 242
+ADA_YEAST        210  --PAQF----VSDAL-D--LLQVTRID-HGINSQYD-----------EELL--DRLSRDQ 246
+AAD52850         347  --STDQ----NLVDA-L--LLNTTRIG-HGYALAKH-----------PYLM--RDVKEKD 383
+Q18599           251  --QNMA----DVEDY-L--NLRPDRIG-HGTFLHTD-----------PYTE--YLTNKYK 287
+Q26642           385  --GSTV----DENLI-DAVLLGTKRIG-HGFALVKH-----------PLVL--QMLKERN 423
+Q9ZS86           217  --NPKE----IQAML-D---FKPHRIG-HACFFKDE-----------D--W--TKLKSFR 250
+AAD52851         354  --GTDL----NLVDA-I--LLNTTRIG-LGYALPKH-----------PVLM--KIVKARE 390
+O83085           190  --DAQS----VRHFV-E--IFNLDEVQ-HGIGAATD-----------ENVL--RFLAERK 226
+O96697           367  --WQETEVDYNLADA-L--LLNTTRVG-HGFALIKH-----------PRFT--ELAKENG 407
+AMD3_HUMAN       592  --SITH----LVSA-----FLTADNIS-HGLLLKKS-----------PVLQ--YLYYLAQ 626
+AMD3_RAT         590  --SITH----LVSA-----FLTADNIS-HGLLLKKS-----------PVLQ--YLYYLAQ 624
+AAB60408         601  --SITH----LVSA-----FLTADNIS-HGLLLKKS-----------PVLQ--YLYYLAQ 635
+AAB60409         599  --SITH----LVSA-----FLTADNIS-HGLLLKKS-----------PVLQ--YLYYLAQ 633
+AMD3_MOUSE       591  --SITH----LVSA-----FLTADNIS-HGLLLKKS-----------PVLQ--YLYYLAQ 625
+AMD1_RAT         578  --ALT------HLMT-A--FMIADNIS-HGLNLKKS-----------PVLQ--YLFFLAQ 612
+AMDM_YEAST       636  --DPEH----LVSAY-L--L--AHGIS-HGILLRKV-----------PFVQ--YLYYLDQ 670
+AMD1_HUMAN       578  --ALT------HLMT-A--FMIADDIS-HGLNLKKS-----------PVLQ--YLFFLAQ 612
+O80452           432  --D--I----DHLAA-T--FLTCHSIA-HGINLRKS-----------PVLQ--YLYYLAQ 466
+AMDM_SCHPO       529  --DT------DHLAS-A--FLLSHGIN-HGILLRKV-----------PFLQ--YLWYLDQ 563
+CAB53720         608  --DT------DHLAS-A--FLLSHGIN-HGILLRKV-----------PFLQ--YLWYLDQ 642
+Q18463           695  --HVSH----LLTGY-----LTSESIA-HGILLRKV-----------PVLQ--YLYYLTQ 729
+AMD2_HUMAN       574  --P-------IHHLVSA--FMLAENIS-HGLLLRKA-----------PVLQ--YLYYLAQ 608
+Q16729           567  --P-------IHHLVSA--FMLAENIS-HGLLLRKA-----------PVLQ--YLYYLAQ 601
+AAC50308         438  --P-------IHHLVSA--FMLAENIS-HGLLLRKA-----------PVLQ--YLYYLAQ 472
+AAD56303         618  --P-------IHHLVSA--FMLAENIS-HGLLLRKA-----------PVLQ--YLYYLAQ 652
+CAB42353         1617 --G--V----DHLIG-G--FLLAQSVN-YGVRLADS-----------APLQ--YLFYLAQ 1651
+CAB42353         901  -----------------------------------------------------------Q 901
+AMD2_RAT         8    --P-------IHHLVSA--FMLAENIS-HGLLLRKA-----------PVLQ--YLYYLAQ 42
+O59184           194  GRSPVE----VLKEA-N--LLNDKLIAAHGIWLSKK-----------D--L--EMLASSN 231
+CAB49567         227  GKSPVD----VLEDV-G--LLNEKLIAAHGIWLSDE-----------D--I--RKISSAG 264
+
+QUERY            254  MH---------------FEVCPWSSYLTGAWD-PKTTHAVVRFKNDKANYSLNTDDP-L- 295
+ADA_MOUSE        257  MH---------------FEVCPWSSYLTGAWD-PKTTHAVVRFKNDKANYSLNTDDP-L- 298
+ADA_BOVIN        256  MH---------------FEICPWSSYLTGAWK-PDTEHAVIRFKNDQVNYSLNTDDP-L- 297
+ADA_HUMAN        257  MH---------------FEICPWSSYLTGAWK-PDTEHAVIRLKNDQANYSLNTDDP-L- 298
+CAB09782         225  MH---------------FEICPWSSYLTGAWK-PDTEHAVIRLKNDQANYSLNTDDP-L- 266
+Q17747           250  VH---------------LEACPYSSVMTGAVPLDWKNHPIARWAKDDVNFSVSRDDP-T- 292
+O53365           262  IP---------------LELCPSSNVQTGAVA-SIAEHPFDLLARARFRVTVNTDNR-L- 303
+ADD_ECOLI        240  IG---------------IESCLTSNIQTSTVA-ELAAHPLKTFLEHGIRASINTDDP-G- 281
+CAB42949         260  IA---------------LEMCPTSNLQTGAAT-SIAEHPITALKDLGFRVTLNTDNR-L- 301
+Q49907           232  IP---------------LELCPSSNLQTGAVA-SITEHPFDLLAWARFRVTVNTDNR-L- 273
+O86737           287  IP---------------LEVCPTSNIATRAVR-TLDEHPIKEFVRAGVPVTINSDDP-P- 328
+ADD_STRVG        243  IT---------------CEVCPASNVALGVYE-RPEDVPLRTLFEAGVPMALGADDP-L- 284
+ADA_YEAST        247  TM---------------LTICPLSNVKLQVVQ-SVSELPLQKFLDRDVPFSLNSDDP-A- 288
+AAD52850         384  IA---------------VELCPVSNQVNSFVE-DLRNHPGAILMSENVPVVLGNDSPGF- 426
+Q18599           288  IPLGENLIQLHLIFLFFLEICLSSNVYSKTTT-NYRNSHFNYWRKRGVPVFICTDDK-G- 344
+Q26642           424  IA---------------IEVNPISNQVLQLVA-DYRNHPCAYFFADNYPVVISSDDP-S- 465
+Q9ZS86           251  IP---------------VEICLTSNIVTKSIS-SIDIH---------------------- 272
+AAD52851         391  IP---------------VEVCPISNQVLHLVN-DLRNHPGAILLANNIPMVISNDAP-A- 432
+O83085           227  VR---------------CNVCPTSNVMLNAVE-CLEKHPIKKMMDAGVRVGLGTDDL-L- 268
+O96697           408  VA---------------VEVNPISNQILGLVR-DVRNHALVPLIADDYPIVISSDDP-G- 449
+AMD3_HUMAN       627  IP---------------IAMSPLSN--NSLFL-EYSKNPLREFLHKGLHVSLSTDDP-M- 666
+AMD3_RAT         625  IP---------------IAMSPLSN--NSLFL-EYSKNPLREFLHKGLHVSLSTDDP-M- 664
+AAB60408         636  IP---------------IAMSPLSN--NSLFL-EYSKNPLREFLHKGLHVSLSTDDP-M- 675
+AAB60409         634  IP---------------IAMSPLSN--NSLFL-EYSKNPLREFLHKGLHVSLSTDDP-M- 673
+AMD3_MOUSE       626  IP---------------IAMSPLSN--NSLFL-EYSKKPLREFLHKGLHVSLSTDDP-M- 665
+AMD1_RAT         613  IP---------------IAMSPLSN--NSLFL-EYAKNPFLDFLQKGLMISLSTDDP-M- 652
+AMDM_YEAST       671  VG---------------IAMSPLSNNALFL---TYDKNPFPRYFKRGLNVSLSTDDP-L- 710
+AMD1_HUMAN       613  IP---------------IAMSPLSN--NSLFL-EYAKNPFLDFLQKGLMISLSTDDP-M- 652
+O80452           467  IG---------------LAMSPLSN--NSLFL-DYHRNPFPVFFLRGLNVSLSTDDP-LQ 507
+AMDM_SCHPO       564  IP---------------IAMSPLSNNALFLA---YDKNPFLTYFKRGLNVSLSTDDP-L- 603
+CAB53720         643  IP---------------IAMSPLSNNALFLA---YDKNPFLTYFKRGLNVSLSTDDP-L- 682
+Q18463           730  IG---------------IAMSPLSN--NSLFI-SYQRNPLPEYLQKGLNVSLSTDDP-L- 769
+AMD2_HUMAN       609  IG---------------IAMSPLSN--NSLFL-SYHRNPLPEYLSRGLMVSLSTDDP-L- 648
+Q16729           602  IG---------------IAMSPLSN--NSLFL-SYHRNPLPEYLSRGLMVSLSTDDP-L- 641
+AAC50308         473  IG---------------IAMSPLSN--NSLFL-SYHRNPLPEYLSRGLMVSLSTDDP-L- 512
+AAD56303         653  IG---------------IAMSPLSN--NSLFL-SYHRNPLPEYLSRGLMVSLSTDDP-L- 692
+CAB42353         1652 IG---------------VTLSPLSNN-TKLQL-NYLHNPFPQFFRRGLRVSLGTDSP-L- 1692
+CAB42353         902  IG---------------VAMCPIARSSLGT-T-SLDEHPVARLLWRGLCVSLCTLNP-L- 942
+AMD2_RAT         43   IG---------------IAMSPLSN--NSLFL-SYHRNPLPEYLSRGLMVSLSTDDP-L- 82
+O59184           232  VT---------------IAHCPASNMKLGS-----GIFPMRDAIDEDINVALGTDGA-A- 269
+CAB49567         265  AT---------------IAHCPASNMKLGSGV-----FPMKKALENNVNVALGTDGA-A- 302
+
+QUERY            296  --IF---KS-T---LDTDYQ-----MTK---------KDMGFTEEE---------FKRLN 323
+ADA_MOUSE        299  --IF---KS-T---LDTDYQ-----MTK---------KDMGFTEEE---------FKRLN 326
+ADA_BOVIN        298  --IF---KS-T---LDTDYQ-----MTK---------KDMGFTEEE---------FKRLN 325
+ADA_HUMAN        299  --IF---KS-T---LDTDYQ-----MTK---------RDMGFTEEE---------FKRLN 326
+CAB09782         267  --IF---KS-T---LDTDYQ-----MTK---------RDMGFTEEE---------FKRLN 294
+Q17747           293  --CF---DN-S---MLSELT-----LVH---------KQIGLDVHQ---------LWKAQ 320
+O53365           304  --MS---DT-S---MSLEMH-----RLV---------EAFGYGWSD---------LARFT 331
+ADD_ECOLI        282  --VQ---GV-D---IIHEYT-----VAA---------PAAGLSREQ---------IRQAQ 309
+CAB42949         302  --VS---GT-T---MTREMS-----LLV---------EQAGWSVED---------LRTVT 329
+Q49907           274  --MS---DT-S---MSLEMH-----RLV---------EAFGYGWGD---------LERFT 301
+O86737           329  --MF---GT-D---LNNEYA-----VAA---------RLLGLDERG---------LADLA 356
+ADD_STRVG        285  --LF---GS-R---LAAQYE-----IAR---------RHHAFTDTE---------LAELA 312
+ADA_YEAST        289  --YF---GGYI---LDVYTQ-----VSK---------DFPHWDHET---------WGRIA 317
+AAD52850         427  --MD---FD-G---LNPDYYYAIMSLTP---------YQAGL--KT---------LKRLV 457
+Q18599           345  --VIP--GA-T---LTEEYY-----KAA-------------------------------- 359
+Q26642           466  --FW---KA-TP--LSHDFY-----IAF---------LGIASAHSDMRL------LKKLA 497
+Q9ZS86           271  ------------------------------------------------------------ 272
+AAD52851         433  --FW---GVQG---LSYDYYYTIMSLAS---------NKAGLS--T---------LKQLV 464
+O83085           269  --FF---GK-T------------------------------------------------- 273
+O96697           450  --AW---EA-SP--LSHDFY-----VALMDLCG----RDTALTF-----------LKQLA 481
+AMD3_HUMAN       667  --QFHYTKE-A---LMEEYA-----IAA---------QVWKLSTCD---------LCEIA 697
+AMD3_RAT         665  --QFHYTKE-A---LMEEYA-----IAA---------QVWKLSTCD---------LCEIA 695
+AAB60408         676  --QFHYTKE-A---LMEEYA-----IAA---------QVWKLSTCD---------LCEIA 706
+AAB60409         674  --QFHYTKE-A---LMEEYA-----IAA---------QVWKLSTCD---------LCEIA 704
+AMD3_MOUSE       666  --QFHYTKE-A---LMEEYA-----IAA---------QVWKLSTCD---------LCEIA 696
+AMD1_RAT         653  --QFHFTKE-P---LMEEYA-----IAA---------QVFKLSTCD---------MCEVA 683
+AMDM_YEAST       711  --QF---SY-TREPLIEEYS-----VAA---------QIYKLSNVD---------MCELA 741
+AMD1_HUMAN       653  --QFHFTKE-P---LMEEYA-----IAA---------QVFKLSTCD---------MCEVA 683
+O80452           508  IHLT---KE-P---LVEEYS-----IAA---------SVWKLSACD---------LCEIA 537
+AMDM_SCHPO       604  --QF---AF-TREPLIEEYA-----VAA---------QIYKLSAVD---------MCELA 634
+CAB53720         683  --QF---AF-TREPLIEEYA-----VAA---------QIYKLSAVD---------MCELA 713
+Q18463           770  --QFHYTKE-A---LMEEFS-----IAA---------QVWKLSSCD---------MCELA 800
+AMD2_HUMAN       649  --QFHFTKE-P---LMEEYS-----IAT---------QVWKLSSCD---------MCELA 679
+Q16729           642  --QFHFTKE-P---LMEEYS-----IAT---------QVWKLSSCD---------MCELA 672
+AAC50308         513  --QFHFTKE-P---LMEEYS-----IAT---------QVWKLSSCD---------MCELA 543
+AAD56303         693  --QFHFTKE-P---LMEEYS-----IAT---------QVWKLSSCD---------MCELA 723
+CAB42353         1693 --LY---HH-TQEPLLEEYS-----IAS---------KIWKLSPND---------LSEVA 1723
+CAB42353         943  --YY---HS-SPEPLLEEYT-----AAA---------KVHRLSPTD---------ISEMA 973
+AMD2_RAT         83   --QF-------------------------------------------------------- 84
+O59184           270  --SN---NTLD---IIREMR-----LASLLQKVNTLNPAIVKSEEI---------FRMAT 307
+CAB49567         303  --SN---NTLD---ILREMR-----LAS---------LLQKVIHRDPSIVKSEDIFRMAT 340
+
+QUERY            324  INAAKSSFLPEEEKKE---L---LERLYREYQ 349
+ADA_MOUSE        327  INAAKSSFLPEEEKKE---L---LERLYREYQ 352
+ADA_BOVIN        326  INAAKSSFLPEDEKKE---L---LDLLYKAYR 351
+ADA_HUMAN        327  INAAKSSFLPEDEKRE---L---LDLLYKAY- 351
+CAB09782         295  INAAKSSFLPEDEKRE---L---LDLLYKAY- 319
+Q17747           321  LNAARSCFLPEDEKAE---L---VKRV----- 341
+O53365           332  VNAMKSAFIPFDQRLA---I---IDEVIK--- 354
+ADD_ECOLI        310  INGLEMAFLSAEEKRA---L---REKV----- 330
+CAB42949         330  VNALKSAFVPFDERTA---L---IEDV----- 350
+Q49907           302  INAMKSAFIPFDQRLA---I---IDEVIK--- 324
+O86737           357  KNGVEASFLDAPGKAR---I---ADEI----- 377
+ADD_STRVG        313  RQSVRGSAAPDDVQAK---L---L-------- 330
+ADA_YEAST        318  KNAIKGSWCDDKRKNG---L---LSRV----- 338
+AAD52850         458  ENTIKYAQLNSQEKTQAETL---LKAKWNEF- 485
+Q18599           358  -------------------------------- 359
+Q26642           498  LNSINYSSLSPEQKRV---A---LAK------ 517
+Q9ZS86           271  -------------------------------- 272
+AAD52851         465  FNSIKYSALPEEEKKT---AEKNLEKQWNQF- 492
+O83085           272  -------------------------------- 273
+O96697           482  LNSIRYSAMSDTEKVA---A---KAK------ 501
+AMD3_HUMAN       698  RNSVLQSGLSHQEKQK---F---L-------- 715
+AMD3_RAT         696  RNSVLQSGLSHQEKQK---F---L-------- 713
+AAB60408         707  RNSVLQSGLSHQEKQK---F---L-------- 724
+AAB60409         705  RNSVLQSGLSHQEKQK---F---L-------- 722
+AMD3_MOUSE       697  RNSVLQSGLSHQEKQK---F---L-------- 714
+AMD1_RAT         684  RNSVLQCGISHEEKAK---F---L-------- 701
+AMDM_YEAST       742  RNSV---------------------------- 745
+AMD1_HUMAN       684  RNSVLQCGISHEEKVK---F---L-------- 701
+O80452           538  RNSV---------------------------- 541
+AMDM_SCHPO       635  RNSV---------------------------- 638
+CAB53720         714  RNSV---------------------------- 717
+Q18463           801  RNSVMQSGFEDKVKIH---W---LGPNYKE-- 824
+AMD2_HUMAN       680  RNSVLMSGFSHKVK------------------ 693
+Q16729           673  RNSVLMSGFSHKVK------------------ 686
+AAC50308         544  RNSVLMSGFSHKVK------------------ 557
+AAD56303         724  RNSVLMSGFSHKVK------------------ 737
+CAB42353         1724 RNSV---------------------------- 1727
+CAB42353         974  LHSVCMSSFEDEVKA----------------- 988
+AMD2_RAT         83   -------------------------------- 84
+O59184           308  INGAKALKL----KAG---I---IKEGY---- 325
+CAB49567         341  LNGAK--------------------------- 345
+Searching..................................................done
+Results from round 3
+
+
+                                                                   Score     E
+Sequences producing significant alignments:                        (bits)  Value
+Sequences used in model and found again:
+
+SWALL:ADA_MOUSE P03958 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   514  e-145
+SWALL:ADA_BOVIN P56658 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   506  e-142
+SWALL:ADA_HUMAN P00813 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   505  e-142
+SWALL:CAB09782 Cab09782 ADENOSINE DEAMINASE (ADA) (FRAGMENT)...   448  e-125
+SWALL:Q17747 Q17747 SIMILAR TO ADENOSINE DEAMINASE. 11/98         383  e-105
+SWALL:ADD_ECOLI P22333 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   363  1e-99
+SWALL:O53365 O53365 ADENOSINE DEAMINASE. 5/99                     360  1e-98
+SWALL:CAB42949 Cab42949 PUTATIVE ADENOSINE DEAMINASE. 6/99        349  2e-95
+SWALL:ADD_STRVG P53984 ADENOSINE DEAMINASE (EC 3.5.4.4) (ADE...   328  4e-89
+SWALL:Q49907 Q49907 COSMID L308. 11/98                            327  5e-89
+SWALL:O86737 O86737 PUTATIVE ADENOSINE DEAMINASE. 5/99            322  2e-87
+SWALL:ADA_YEAST P53909 PROBABLE ADENOSINE DEAMINASE (EC 3.5....   296  2e-79
+SWALL:Q18599 Q18599 CODED FOR BY C. ELEGANS CDNA YK20F6.3. 1...   270  1e-71
+SWALL:Q26642 Q26642 SECRETORY COMPONENT. 1/99                     242  2e-63
+SWALL:O83085 O83085 ADENOSINE DEAMINASE, PUTATIVE. 11/98          234  9e-61
+SWALL:AAD52851 Aad52851 SALIVARY GLAND GROWTH FACTOR-2. 9/99      232  2e-60
+SWALL:O96697 O96697 MOLLUSK-DERIVED GROWTH FACTOR. 5/99           231  5e-60
+SWALL:AAD52850 Aad52850 SALIVARY GLAND GROWTH FACTOR-1 PRECU...   230  1e-59
+SWALL:Q9ZS86 Q9zs86 T4B21.20 PROTEIN. 5/99                        204  6e-52
+SWALL:O80452 O80452 PUTATIVE AMIDASE. 5/99                        187  8e-47
+SWALL:Q18463 Q18463 SIMILAR TO AMP DEAMINASE. NCBI GI: 11666...   181  6e-45
+SWALL:AMD3_HUMAN Q01432 AMP DEAMINASE 3 (EC 3.5.4.6) (AMP DE...   177  1e-43
+SWALL:AMD3_RAT O09178 AMP DEAMINASE 3 (EC 3.5.4.6) (AMP DEAM...   177  1e-43
+SWALL:AAB60408 Aab60408 AMP DEAMINASE (EC 3.5.4.6). 9/99          177  1e-43
+SWALL:AAB60409 Aab60409 AMP DEAMINASE (EC 3.5.4.6). 9/99          177  1e-43
+SWALL:AMD2_HUMAN Q01433 AMP DEAMINASE 2 (EC 3.5.4.6) (AMP DE...   175  5e-43
+SWALL:AMD3_MOUSE O08739 AMP DEAMINASE 3 (EC 3.5.4.6) (AMP DE...   175  5e-43
+SWALL:Q16729 Q16729 AMP DEAMINASE ISOFORM L SPLICING VARIANT...   175  5e-43
+SWALL:AAC50308 Aac50308 AMP DEAMINASE (EC 3.5.4.6) (FRAGMENT...   175  5e-43
+SWALL:AAD56303 Aad56303 AMP DEAMINASE ISOFORM L. 9/99             175  5e-43
+SWALL:AMD1_RAT P10759 AMP DEAMINASE 1 (EC 3.5.4.6) (MYOADENY...   174  1e-42
+SWALL:AMD1_HUMAN P23109 AMP DEAMINASE 1 (EC 3.5.4.6) (MYOADE...   170  9e-42
+SWALL:AMDM_SCHPO P50998 AMP DEAMINASE (EC 3.5.4.6) (MYOADENY...   169  4e-41
+SWALL:CAB53720 Cab53720 AMP DEAMINASE. 9/99                       169  4e-41
+SWALL:AMDM_YEAST P15274 AMP DEAMINASE (EC 3.5.4.6) (MYOADENY...   167  8e-41
+SWALL:CAB42353 Cab42353 L302.11 PROTEIN. 6/99                     137  1e-31
+SWALL:AMD2_RAT Q02356 AMP DEAMINASE 2 (EC 3.5.4.6) (AMP DEAM...   115  5e-25
+SWALL:O59184 O59184 391AA LONG HYPOTHETICAL CHLOROHYDROLASE....   102  4e-21
+
+Sequences not found previously or not previously below threshold:
+
+SWALL:AGSA_APLCA P15287 ATRIAL GLAND-SPECIFIC ANTIGEN PRECUR...   106  2e-22
+SWALL:O88692 O88692 AMPD3 PROTEIN. 5/99                            89  4e-17
+SWALL:CAB49567 Cab49567 CHLOROHYDROLASE, PUTATIVE. 9/99            86  3e-16
+SWALL:YB9Z_YEAST P38150 HYPOTHETICAL 92.9 KD PROTEIN IN SSH1...    77  1e-13
+SWALL:O66851 O66851 N-ETHYLAMMELINE CHLOROHYDROLASE. 11/98         65  1e-09
+SWALL:YJH0_YEAST P40361 HYPOTHETICAL 104.3 KD PROTEIN IN SMC...    61  1e-08
+SWALL:Q16688 Q16688 AMP DEAMINASE (EC 3.5.4.6) (MYOADENYLATE...    56  5e-07
+SWALL:YF05_METTH O27549 HYPOTHETICAL PROTEIN MTH1505. 7/98         55  6e-07
+SWALL:Y997_ARCFU O29265 HYPOTHETICAL PROTEIN AF0997. 7/98          53  2e-06
+SWALL:Y550_ARCFU O29701 HYPOTHETICAL PROTEIN AF0550. 7/98          53  3e-06
+SWALL:YDI4_SCHPO Q92342 HYPOTHETICAL 50.4 KD PROTEIN C1F8.04...    51  2e-05
+SWALL:AAD36017 Aad36017 CONSERVED HYPOTHETICAL PROTEIN. 6/99       51  2e-05
+SWALL:YF41_METJA Q58936 HYPOTHETICAL PROTEIN MJ1541. 7/98          49  5e-05
+SWALL:YEB8_SCHPO O14057 HYPOTHETICAL 58.0 KD PROTEIN C2C6.08...    43  0.003
+SWALL:CAA20441 Caa20441 HYPOTHETICAL 58.0 KD PROTEIN. 3/99         43  0.003
+SWALL:O28499 O28499 ATRAZINE CHLOROHYDROLASE, PUTATIVE. 8/98       43  0.004
+SWALL:O58543 O58543 390AA LONG HYPOTHETICAL PROTEIN. 1/99          41  0.014
+SWALL:O27075 O27075 N-ETHYLAMMELINE CHLOROHYDROLASE RELATED ...    40  0.018
+SWALL:TRZA_RHOCO Q52725 S-TRIAZINE HYDROLASE (EC 3.8.1.-) (N...    40  0.018
+
+QUERY            1    TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIA-LP-AD---TVEEL-RNII-GMDKPL 53
+ADA_MOUSE        4    TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIA-LP-AD---TVEEL-RNII-GMDKPL 56
+ADA_BOVIN        3    TPAFDKPKVELHVHLDGAIKPETILYYGKRRGIA-LP-AD---TPEEL-QNII-GMDKPL 55
+ADA_HUMAN        4    TPAFDKPKVELHVHLDGSIKPETILYYGRRRGIA-LP-AN---TAEGL-LNVI-GMDKPL 56
+CAB09782         1    -----------------------------RRGIA-LP-AN---TAEGL-LNVI-GMDKPL 24
+Q17747           6    ----NFPKVELHLHLDGAVRFDTLIDLSQQKGIP-LAGAK---TVEEL-KKVL-VTHEPA 55
+ADD_ECOLI        7    ------PLTDIHRHLDGNIRPQTILELGRQYNIS-LP-AQ---SLETLIPHVQ-VIANEP 54
+O53365           14   ------PKALLHDHLDGGLRPATVLDIAGQVGYDDLP-AT---DVDAL-ASWF-RTQSHS 61
+CAB42949         15   ------PKAVLHDHLDGGLRPATVVELARSVGHT-LP-TT---DPDEL-AAWYYEAANSG 62
+ADD_STRVG        11   ------PKAHLHLHFTGSMRPSTLLELADKYGVR-LPDAL---TAGEP-PKLR-ATDER- 57
+Q49907           2    ------------------------LDIAGQVGYDRLP-AT---DVESL-ETWF-RTASHS 31
+O86737           56   ------PKAELHVHHVGSASPRIVSELAARHADS-KV-PT---DPEAL-VDYF------- 96
+ADA_YEAST        11   ------PKCEHHLHLEGTLEPDLLFPLAKRNDII-LP-EGFPKSVEEL-NEKY-K--KFR 58
+Q18599           58   ----NMPKVELHAHLSGSLSPETI-----KLIME-SD-ET---RAEEI-MKKY-KLEKPE 101
+Q26642           191  ---------------------ELLSKVRELHGAD-KV-DT---YLREH-LTLY-PTVKFL 222
+O83085           11   ------PKADVHTHLNLSMKYER---YKQWSGVV-IP--------NFP-RKMR-GLDEMH 50
+AAD52851              ------------------------------------------------------------
+O96697                ------------------------------------------------------------
+AAD52850              ------------------------------------------------------------
+Q9ZS86           8    ------PKIELHAHLNGSIRDSTLLELARVLGEK-------------------------- 35
+O80452                ------------------------------------------------------------
+Q18463                ------------------------------------------------------------
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD2_HUMAN            ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+AGSA_APLCA            ------------------------------------------------------------
+O59184                ------------------------------------------------------------
+O88692                ------------------------------------------------------------
+CAB49567              ------------------------------------------------------------
+YB9Z_YEAST            ------------------------------------------------------------
+O66851                ------------------------------------------------------------
+YJH0_YEAST            ------------------------------------------------------------
+Q16688                ------------------------------------------------------------
+YF05_METTH            ------------------------------------------------------------
+Y997_ARCFU            ------------------------------------------------------------
+Y550_ARCFU            ------------------------------------------------------------
+YDI4_SCHPO            ------------------------------------------------------------
+AAD36017              ------------------------------------------------------------
+YF41_METJA            ------------------------------------------------------------
+YEB8_SCHPO            ------------------------------------------------------------
+CAA20441              ------------------------------------------------------------
+O28499                ------------------------------------------------------------
+O58543                ------------------------------------------------------------
+O27075                ------------------------------------------------------------
+TRZA_RHOCO            ------------------------------------------------------------
+
+QUERY            54   -SL-PGFLAKFDYYMPVIAGCR--EA--IK-----RIAYEFVEMKAKEGVVYVEVRYSPH 102
+ADA_MOUSE        57   -SL-PGFLAKFDYYMPVIAGCR--EA--IK-----RIAYEFVEMKAKEGVVYVEVRYSPH 105
+ADA_BOVIN        56   -TL-PDFLAKFDYYMPAIAGCR--DA--IK-----RIAYEFVEMKAKDGVVYVEVRYSPH 104
+ADA_HUMAN        57   -TL-PDFLAKFDYYMPAIAGCR--EA--IK-----RIAYEFVEMKAKEGVVYVEVRYSPH 105
+CAB09782         25   -TL-PDFLAKFDYYMPAIAGCR--EA--IK-----RIAYEFVEMKAKEGVVYVEVRYSPH 73
+Q17747           56   -NL-SKVLEAFEIFLPVIRGDL--AA--IE-----RVAYELCEDQHNNGVVYFEGRYSPH 104
+ADD_ECOLI        55   -DL-VSFLTKLDWGVKVLASL---DA--CR-----RVAFENIEDAARHGLHYVELRFSPG 102
+O53365           62   GSL-ERYLEPFSHTVAVMQ-TP--EA--LY-----RVAFECAQDLAADSVVYAEVRFAPE 110
+CAB42949         63   -DL-VRYIATFEHTLAVMQN-R--EG--LL-----RAAEEYVLDLAADGVVYGEVRYAPE 110
+ADD_STRVG        58   -----GWFRFQRLYDAARSCLR--EPDDIR-----RLVREAAEEDVRDGSGWLEIQVDP- 104
+Q49907           32   GSL-ERYLEPFSHTVAVMQ-TP--EA--LH-----RVAYECVEDLAADSVVYAEVRFAPE 80
+O86737           97   -TF-TDFAHFIDVYLSVVDLIRTPED--VR-----LLTYEVARDMARQQVRYAELTITP- 146
+ADA_YEAST        59   -DL-QDFL---DYYY---IGTN--VL--ISEQDFFDLAWAYFKKVHKQGLVHAEVFYDPQ 106
+Q18599           102  -NM-TGV---FDCFPVIHAILRKPEA--IR-----IAIRQTIKEFEEDNCVYLELRTSPK 149
+Q26642           223  -DNNEAWEQFGSIFALLDGLLF--YA--PSWA---DYYYNALKEFHADGVQYLEFRST-- 272
+O83085           51   -EI-IG-----EYTRPQCKTAQ--DV--LN-----LFTMS-IEDAIADNVVVMETSVDIG 93
+AAD52851         216  -------------------------A--AK-----AFYWRLLEELYEDNVMYAELRVELF 243
+O96697           207  ------WVRFNKYFAQVIGLLF--YAPIMR-----DYYRQALEEFRADNVQYIELRS--Q 251
+AAD52850         208  ----------------------------LK-----DHYRQFLEELYADKVLYTEVRVK-- 232
+Q9ZS86           36   -----GVIVFAD-------------------------VEHVVEDFALENVVYLELRTTPK 65
+O80452                ------------------------------------------------------------
+Q18463                ------------------------------------------------------------
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD2_HUMAN            ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+AGSA_APLCA       206  ------WVRFNKYFAQVIGLLF--YAPIMR-----DYYRQALEEFRADNVQYIELRS--Q 250
+O59184                ------------------------------------------------------------
+O88692                ------------------------------------------------------------
+CAB49567              ------------------------------------------------------------
+YB9Z_YEAST            ------------------------------------------------------------
+O66851                ------------------------------------------------------------
+YJH0_YEAST            ------------------------------------------------------------
+Q16688                ------------------------------------------------------------
+YF05_METTH            ------------------------------------------------------------
+Y997_ARCFU            ------------------------------------------------------------
+Y550_ARCFU            ------------------------------------------------------------
+YDI4_SCHPO            ------------------------------------------------------------
+AAD36017              ------------------------------------------------------------
+YF41_METJA            ------------------------------------------------------------
+YEB8_SCHPO            ------------------------------------------------------------
+CAA20441              ------------------------------------------------------------
+O28499                ------------------------------------------------------------
+O58543                ------------------------------------------------------------
+O27075                ------------------------------------------------------------
+TRZA_RHOCO            ------------------------------------------------------------
+
+QUERY            103  LLANSKVDPMPWNQT-------EGDVTPDDVVD----LVNQGLQEG---EQAF-G----- 142
+ADA_MOUSE        106  LLANSKVDPMPWNQT-------EGDVTPDDVVD----LVNQGLQEG---EQAF-G----- 145
+ADA_BOVIN        105  LLANSKVEPIPWNQA-------EGDLTPDEVVS----LVNQGLQEG---ERDF-G----- 144
+ADA_HUMAN        106  LLANSKVEPIPWNQA-------EGDLTPDEVVA----LVGQGLQEG---ERDF-G----- 145
+CAB09782         74   LLANSKVEPIPWNQA-------EGDLTPDEVVA----LVGQGLQEG---ERDF-G----- 113
+Q17747           105  LLLCNDYP----------------EVTAAHVVA----AVKKGFDRG---EKQF-G----- 135
+ADD_ECOLI        103  YMAMAHQLPVA------------------GVVE----AVIDGVREG---CRTF-G----- 131
+O53365           111  LHISC-------------------GLSFDDVVD----TVLTGFAAG---EKAC-AADGQP 143
+CAB42949         111  L------------NT-------RGGLSMREVVE----TVQEGLATGMAKAAAA-G----- 141
+ADD_STRVG        105  ---------TSYAPL-------LGGMIPA--VE----IILDAVDAA---SRET-G----- 133
+Q49907           81   LHI-------------------DEGLSFDEVLA----SVLAGFADG---ERAC-AAEGNA 113
+O86737           147  -----------FSST-------RRGIDEGAFMD----AIEDARKAA---EAEF-G----- 175
+ADA_YEAST        107  ------------SHT-------SRGISIETVTK----GFQRACDKA---FSEF-G----- 134
+Q18599           150  -----ETDFMTY----------------EDYLQ----VCIESFEAA---KHEFPR----- 176
+Q26642           273  LPILYDLEGTSFTEL-------D---TVRIYKE----TLDKYMAEH---IDFI-G----- 309
+O83085           94   FI------------T-------HYEENLDHFLC----DLSDLHRRY---KRNV-T----- 121
+AAD52851         244  RLYTEN------GRL-------DREQSILQLWE----VTEQFKKEH---PDFL-G----- 277
+O96697           252  LFGFFELDGTVHD-A-------EFGLNL---YK----SVTEEFQRE---YPDF------- 286
+AAD52850         233  -------FSEPYDDT-------SKKYSLDDVVKEIENVVNDFKKTH---PDFI-G----- 269
+Q9ZS86           66   RSDSIGMSKRSYMEAVIQGLRSVSEVDIDFVTA----SDSQKLHNA---GDGI-GRKK-- 115
+O80452                ------------------------------------------------------------
+Q18463                ------------------------------------------------------------
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD2_HUMAN            ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+AGSA_APLCA       251  LFGFFELDGTVHD-A-------EFGLNL---YK----SVTEEFQRE---YPDF------- 285
+O59184           94   ----------------------------------------EEVARA---TLEV-G----- 104
+O88692                ------------------------------------------------------------
+CAB49567         127  ----------------------------------------EEIAKA---TEEV-G----- 137
+YB9Z_YEAST            ------------------------------------------------------------
+O66851           122  --------------------------------------FEEAVAEA---CEDV-G----- 134
+YJH0_YEAST            ------------------------------------------------------------
+Q16688                ------------------------------------------------------------
+YF05_METTH            ------------------------------------------------------------
+Y997_ARCFU       121  ----------------------------------------DAVAEA---VGES-G----- 131
+Y550_ARCFU            ------------------------------------------------------------
+YDI4_SCHPO            ------------------------------------------------------------
+AAD36017         118  ---------------------------------------EEWIAKA---VRDF-G----- 129
+YF41_METJA       117  --------------------------------------FLEGIAKA---VDES-G----- 129
+YEB8_SCHPO            ------------------------------------------------------------
+CAA20441              ------------------------------------------------------------
+O28499                ------------------------------------------------------------
+O58543                ------------------------------------------------------------
+O27075                ------------------------------------------------------------
+TRZA_RHOCO            ------------------------------------------------------------
+
+QUERY            143  IKVRS--ILCCMRH-Q-P-SW-S----------L--------E----V-----L------ 163
+ADA_MOUSE        146  IKVRS--ILCCMRH-Q-P-SW-S----------L--------E----V-----L------ 166
+ADA_BOVIN        145  VKVRS--ILCCMRH-Q-P-SW-S----------S--------E----V-----V------ 165
+ADA_HUMAN        146  VKARS--ILCCMRH-Q-P-NW-S----------P--------K----V-----V------ 166
+CAB09782         114  VKARS--ILCCMRH-Q-P-NW-S----------P--------K----V-----V------ 134
+Q17747           136  IKARS--ILCCIRGLD-K-KF-P----------Q--------L----I-----L------ 157
+ADD_ECOLI        132  VQAKL--IGIMSRT-F-G-EA-A----------C--------Q----Q-----E------ 152
+O53365           144  ITVRC--LVTAMRH-A---AM-S----------R--------E----I-----A------ 163
+CAB42949         142  TPVRVGTLLCGMRM-F-D-RV------------R--------E----A-----A------ 163
+ADD_STRVG        134  LGMRV--LIAANRM-KHP-LD-A----------R--------T----L-----A------ 155
+Q49907           114  ITVRC--LVTAMRH-A---AM-S----------R--------E----I-----A------ 133
+O86737           176  TVLR-----WCFDI-P-G-EA-G----------L--------E----S-----A------ 193
+ADA_YEAST        135  ITSKL--IMCLLRHIE-P-EE-C----------L--------K----T-----I------ 156
+Q18599           177  IKTFL--IVSLDRR-M-PFET-A----------A--------H----I-----L------ 198
+Q26642           310  --SKL--IYAPIRN-T-D-KE-G----------L--------D----NYIKVCV------ 333
+O83085           122  LHFEL--GISKIR-------E-R----------S--------F----V-----E------ 138
+AAD52851         278  V--RL--IYTVLRG-S-K----P----------G--------E----L-----Q------ 294
+O96697           287  IGAKI--ILSGLRF-K-S-QE-E----------I--------L----NEVKIAM------ 312
+AAD52850         270  LKI----IFAILRH-G-K-ED-EI---------R--------K----N-----F------ 289
+Q9ZS86           116  IYVRL--LLSIDRR-E-T-TE-SAMETVSVSKQA--------K----L-----L------ 146
+O80452                ------------------------------------------------------------
+Q18463                ------------------------------------------------------------
+AMD3_HUMAN            ------------------------------------------------------------
+AMD3_RAT              ------------------------------------------------------------
+AAB60408              ------------------------------------------------------------
+AAB60409              ------------------------------------------------------------
+AMD2_HUMAN            ------------------------------------------------------------
+AMD3_MOUSE            ------------------------------------------------------------
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+AMD1_RAT              ------------------------------------------------------------
+AMD1_HUMAN            ------------------------------------------------------------
+AMDM_SCHPO            ------------------------------------------------------------
+CAB53720              ------------------------------------------------------------
+AMDM_YEAST            ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+AGSA_APLCA       286  IGAKI--ILSGLRF-K-S-QE-E----------I--------L----NEVKIAM------ 311
+O59184           105  LRGFL--GYGMVDL-E-D-EE-K----------RRKEIKETEK----L-----H------ 133
+O88692                ------------------------------------------------------------
+CAB49567         138  LRAYL--GYGMVDL-D-D-EE-K----------R--------K----I-----EMRETEK 164
+YB9Z_YEAST            ------------------------------------------------------------
+O66851           135  IRAGL--GFGILDF-P-T-KV-A----------K--------T----P-----E------ 155
+YJH0_YEAST            ------------------------------------------------------------
+Q16688                ------------------------------------------------------------
+YF05_METTH            ------------------------------------------------------------
+Y997_ARCFU       132  MRAVL--GYGMADR-G-D-EERA----------R--------K----E-----L------ 153
+Y550_ARCFU            ------------------------------------------------------------
+YDI4_SCHPO       180  ------------------------------------------Q----A-----V------ 182
+AAD36017         130  MRALL--TRGLVDS-N-G-DD-G----------G--------R----L-----E------ 150
+YF41_METJA       130  MRAVL--AYGMIDL-F-D-EE-R----------R--------ERELKN-----A------ 154
+YEB8_SCHPO            ------------------------------------------------------------
+CAA20441              ------------------------------------------------------------
+O28499           133  -----------------P-LA-R----------P--------T----S-----V------ 140
+O58543                ------------------------------------------------------------
+O27075           187  -----------------D-ET-A----------S--------I----I-----V------ 194
+TRZA_RHOCO            ------------------------------------------------------------
+
+QUERY            164  --ELCKKY------NQ------K--------------------T------VV-AMDLAGD 182
+ADA_MOUSE        167  --ELCKKY------NQ------K--------------------T------VV-AMDLAGD 185
+ADA_BOVIN        166  --ELCKKY------RE------Q--------------------T------VV-AIDLAGD 184
+ADA_HUMAN        167  --ELCKKY------QQ------Q--------------------T------VV-AIDLAGD 185
+CAB09782         135  --ELCKKY------QQ------Q--------------------T------VV-AIDLAGD 153
+Q17747           158  --DLATDL------KQ------L--------------------G------VV-AIDVAGS 176
+ADD_ECOLI        153  --LEAFLA------HR------D--------------------Q------IT-ALDLAGD 171
+O53365           164  --ELAIRF------RD------K--------------------G------VV-GFDIAGA 182
+CAB42949         164  --DLAVAF------RD------A--------------------G------VV-GFDIAGA 182
+ADD_STRVG        156  --RLAVRY------AD------R--------------------G------IV-GFGLSND 174
+Q49907           134  --ELAIRF------RD------K--------------------G------VV-GFDIAGA 152
+O86737           194  --EETARLATDDRLRP------E--------------------G------LV-SFGLGGP 218
+ADA_YEAST        157  --EEATPFI-----KD------G--------------------T------IS-ALGLDSA 176
+Q18599           199  --GLIGEA------QQ------R--------------------TNV----IV-GVELSGD 219
+Q26642           334  --EIKEKY------PD---------------------------F------VA-GFDLVGQ 351
+O83085           139  --QWAEPM------MR------S--------------------G------IFENIDLYGP 158
+AAD52851         295  --EYYSRL------KN------Y--------------------TTRQPDKLV-GFDMVGP 319
+O96697           313  --DLHKKY------PD---------------------------F------FL-GYDLVGQ 330
+AAD52850         290  --DLYKNL------RS------KFPN-----------------T------II-GLDFVGW 311
+Q9ZS86           147  --RILKRL------MQ------KTFDTLLFSLKVKLALEMRDVG------VV-GIDLSGN 185
+O80452           359  ----------------------K--------------------Q------VV-GFDLVDD 369
+Q18463                ------------------------------------------------------------
+AMD3_HUMAN       518  ----------------------K--------------------Y------VT-GFDSVDD 528
+AMD3_RAT         516  ----------------------K--------------------Y------VT-GFDSVDD 526
+AAB60408         527  ----------------------K--------------------Y------VT-GFDSVDD 537
+AAB60409         525  ----------------------K--------------------Y------VT-GFDSVDD 535
+AMD2_HUMAN            ------------------------------------------------------------
+AMD3_MOUSE       517  ----------------------K--------------------Y------VT-GFDSVDD 527
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+AMD1_RAT         504  ----------------------K--------------------H------IT-GFDSVDD 514
+AMD1_HUMAN            ------------------------------------------------------------
+AMDM_SCHPO       458  --------------------------------------------------VI-GFDSVDD 466
+CAB53720         537  --------------------------------------------------VI-GFDSVDD 545
+AMDM_YEAST            ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+CAB42353              ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+AGSA_APLCA       312  --DLHKKY------PD---------------------------F------FL-GYDLVGQ 329
+O59184           134  --EFITKL------NS------K---------------------------LV-KFILA-- 149
+O88692           517  ----------------------K--------------------Y------VT-GFDSVDD 527
+CAB49567         165  LYEFIKKL-------D------S--------------------S------KV-NFILA-- 182
+YB9Z_YEAST            ------------------------------------------------------------
+O66851           156  --EYIQRA------RK-----------------------------------F-AEEFKNR 171
+YJH0_YEAST            ------------------------------------------------------------
+Q16688                ------------------------------------------------------------
+YF05_METTH            ------------------------------------------------------------
+Y997_ARCFU       154  --EIGLEF------AE------K--------------------W------NG-GFEGRVT 172
+Y550_ARCFU            ------------------------------------------------------------
+YDI4_SCHPO       183  --ESHSKF------HG------K--------------------G------NG-RVEIWFG 201
+AAD36017         151  --ENLKLY------NEWNGFEGR--------------------I------FV-GFG---- 171
+YF41_METJA       155  --EKYINY------IN------S---------------------------------LNNS 167
+YEB8_SCHPO            ------------------------------------------------------------
+CAA20441              ------------------------------------------------------------
+O28499           141  --EEAEE-------------------------------------------VE-AFGFAYS 154
+O58543                ------------------------------------------------------------
+O27075           195  --EECERA--------------G--------------------K------IA-SIHVAEH 211
+TRZA_RHOCO            ------------------------------------------------------------
+
+QUERY            183  ETIEGSSLF---------------PG----------------------------H----- 194
+ADA_MOUSE        186  ETIEGSSLF---------------PG----------------------------H----- 197
+ADA_BOVIN        185  ETIEGSSLF---------------PG----------------------------H----- 196
+ADA_HUMAN        186  ETIPGSSLL---------------PG----------------------------H----- 197
+CAB09782         154  ETIPGSSLL---------------PG----------------------------H----- 165
+Q17747           177  AHGADEQYE---------------PE----------------------------V----- 188
+ADD_ECOLI        172  ELGFPGSLF---------------LS----------------------------H----- 183
+O53365           183  EAGHPPTR----------------------------------------------H----- 191
+CAB42949         183  EDGFPPAD----------------------------------------------H----- 191
+ADD_STRVG        175  ERRGMARDF---------------D----------------------------------- 184
+Q49907           153  EAGHPPTR----------------------------------------------H----- 161
+O86737           219  EIGVARPQF---------------KP----------------------------Y----- 230
+ADA_YEAST        177  E-----KPF---------------PP----------------------------HLF--- 185
+Q18599           220  PHLDGRRLL---------------KL----------------------------F----- 231
+Q26642           352  E--EKGRPL---------------KD----------------------------F----- 361
+O83085           159  EISEGIEDF--------------------------------------------------- 167
+AAD52851         320  EDSDLR--L---------------LS----------------------------F----- 329
+O96697           331  E--DPNFSL---------------LH----------------------------Y----- 340
+AAD52850         312  EDKGLA--L---------------QP----------------------------F----- 321
+Q9ZS86           186  PLVGEWSTF--------------------------------------------------- 194
+O80452           370  ESKPERRPT---------------KHMPTPAQWTNA------------------F----- 391
+Q18463           0    ------------------------------------------------------------
+AMD3_HUMAN       529  ESKHSDHMFSDKSPNPDVWTSEQNPP----------------------------Y----- 555
+AMD3_RAT         527  ESKHSDHMFSDKSPSPDLWTSEQNPP----------------------------Y----- 553
+AAB60408         538  ESKHSDHMFSDKSPNPDVWTSEQNPP----------------------------Y----- 564
+AAB60409         536  ESKHSDHMFSDKSPNPDVWTSEQNPP----------------------------Y----- 562
+AMD2_HUMAN            ------------------------------------------------------------
+AMD3_MOUSE       528  ESKHSDHMFSDKSPSPDLWTSEQNPP----------------------------Y----- 554
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+AMD1_RAT         515  ESKHSGHMF---------------SSKSPKPEEWTMENNPSYTYYAYYMYANIMV----- 554
+AMD1_HUMAN            ------------------------------------------------------------
+AMDM_SCHPO       467  ESKPERRTF---------------RK----------------------------FPYPKH 483
+CAB53720         546  ESKPERRTF---------------RK----------------------------FPYPKH 562
+AMDM_YEAST            ------------------------------------------------------------
+CAB42353         1575 EDEPPYNYY---------------LY----------------------------H----- 1586
+CAB42353         0    ------------------------------------------------------------
+AMD2_RAT              ------------------------------------------------------------
+AGSA_APLCA       330  E--DPNFSL---------------LH----------------------------Y----- 339
+O59184           150  ----PHAPY---------------TC----------------------------S----- 157
+O88692           528  ESKHSDHMFSDKSPSPDLWTSEQNPP----------------------------Y----- 554
+CAB49567         183  PHAPYTCSF---------------DC----------------------------L----- 194
+YB9Z_YEAST            ------------------------------------------------------------
+O66851           172  ELVFPV--I---------------CP----------------------------H----- 181
+YJH0_YEAST            ------------------------------------------------------------
+Q16688                ------------------------------------------------------------
+YF05_METTH            ------------------------------------------------------------
+Y997_ARCFU       173  TMLAPHAPYTCS------------PE----------------------------F----- 187
+Y550_ARCFU            ------------------------------------------------------------
+YDI4_SCHPO       202  ARTPGGVSE---------------EL----------------------------Y----- 213
+AAD36017         172  PHSPYLCSE---------------EY----------------------------L----- 183
+YF41_METJA       168  RIMPALGPH---------------AP----------------------------YTCSKE 184
+YEB8_SCHPO            ------------------------------------------------------------
+CAA20441              ------------------------------------------------------------
+O28499           155  SARD--HDL---------------KL----------------------------M----- 164
+O58543           0    ------------------------------------------------------------
+O27075           212  RESQRRSLE---------------DT----------------------------G----- 223
+TRZA_RHOCO            ------------------------------------------------------------
+
+QUERY            195  ----------------------VE----------A--------Y----EGA--------- 201
+ADA_MOUSE        198  ----------------------VE----------A--------Y----EGA--------- 204
+ADA_BOVIN        197  ----------------------VQ----------A--------Y----AEA--------- 203
+ADA_HUMAN        198  ----------------------VQ----------A--------Y----QEA--------- 204
+CAB09782         166  ----------------------VQ----------A--------Y----QEA--------- 172
+Q17747           189  ----------------------VA----------A--------F----QEA--------- 195
+ADD_ECOLI        184  -------------------------------------------F----NRA--------- 187
+O53365           192  ----------------------LD----------A--------F----EYM--------- 198
+CAB42949         192  ----------------------LD----------A--------F----EHL--------- 198
+ADD_STRVG        185  -----------------------R----------A--------F----AIA--------- 190
+Q49907           162  ----------------------LD----------A--------F----EYM--------- 168
+O86737           231  -------------------------------------------F----DRA--------- 234
+ADA_YEAST        186  ----------------------VE----------C--------Y----GKAAS------- 194
+Q18599           232  ----------------------VA----------A--------R---------------- 235
+Q26642           362  ----------------------IP----------Q--------L----LGM--------- 368
+O83085           168  ----------------------IY----------I--------F----KLA--------- 174
+AAD52851         330  ----------------------AD----------N--------L----IEL--------- 336
+O96697           341  ----------------------LD----------A--------L----LYPSIQN----- 351
+AAD52850         322  ----------------------AD----------D--------F----TSA--------- 328
+Q9ZS86           195  ----------------------LP----------A--------L----QYA--------- 201
+O80452           392  ----------------------NP----------A--------F----SYY--------- 398
+Q18463           672  ----------------------LN----------A--------F----RRA--------- 678
+AMD3_HUMAN       556  ----------------------SY----------Y--------L----YYMYANIMVLNN 571
+AMD3_RAT         554  ----------------------SY----------Y--------L----YYMYANIMVLNN 569
+AAB60408         565  ----------------------SY----------Y--------L----YYMYANIMVLNN 580
+AAB60409         563  ----------------------SY----------Y--------L----YYMYANIMVLNN 578
+AMD2_HUMAN            ------------------------------------------------------------
+AMD3_MOUSE       555  ----------------------SY----------Y--------L----YYMYANIMVLNN 570
+Q16729                ------------------------------------------------------------
+AAC50308              ------------------------------------------------------------
+AAD56303              ------------------------------------------------------------
+AMD1_RAT         555  ----------------------LN----------C--------L----RKE--------- 561
+AMD1_HUMAN            ------------------------------------------------------------
+AMDM_SCHPO       484  WDINLNPPYSYWLYYMYANMTSLN----------S--------W----RKI--------- 512
+CAB53720         563  WDINLNPPYSYWLYYMYANMTSLN----------S--------W----RKI--------- 591
+AMDM_YEAST            ------------------------------------------------------------
+CAB42353         1587 ----------------------LY----------ANLRSLNCFR----QRR--------- 1601
+CAB42353         836  ----------------------LN----------A--------L----RRR--------- 842
+AMD2_RAT              ------------------------------------------------------------
+AGSA_APLCA       340  ----------------------LD----------A--------L----LY---------- 345
+O59184           158  ----------------------LD----------C--------LKWVAEKS--------- 168
+O88692           555  ----------------------SY----------Y--------L----YYMYANIMVLNN 570
+CAB49567         195  ----------------------RW----------V--------S----EKS--------- 201
+YB9Z_YEAST            ------------------------------------------------------------
+O66851           182  ----------------------APYTCSPNTLRMA--------K----ELA--------- 198
+YJH0_YEAST            ------------------------------------------------------------
+Q16688                ------------------------------------------------------------
+YF05_METTH       200  --------------------------------------------------A--------- 200
+Y997_ARCFU       188  ----------------------LK----------V--------V----SDA--------- 194
+Y550_ARCFU       187  ----------------------------------A--------A----EIA--------- 191
+YDI4_SCHPO       214  ----------------------RK----------M--------V----KIA--------- 220
+AAD36017         184  ----------------------KR----------V--------F----DTA--------- 190
+YF41_METJA       185  LL--------------------ME----------V--------N----NLA--------- 193
+YEB8_SCHPO       227  ------------------------------------------------ELA--------- 229
+CAA20441         227  ------------------------------------------------ELA--------- 229
+O28499           165  ----------------------EE----------V--------R----EIA--------- 171
+O58543           210  ----------------------LR----------L--------L----ARA--------- 216
+O27075           224  ----------------------MS----------E--------V----ERA--------- 230
+TRZA_RHOCO       228  ----------------------------------A--------Q----EIA--------- 232
+
+QUERY            202  --V-K-N------------------G---I---HRTVHAGE-V------------GS--- 217
+ADA_MOUSE        205  --V-K-N------------------G---I---HRTVHAGE-V------------GS--- 220
+ADA_BOVIN        204  --V-K-S------------------G---V---HRTVHAGE-V------------GS--- 219
+ADA_HUMAN        205  --V-K-S------------------G---I---HRTVHAGE-V------------GS--- 220
+CAB09782         173  --V-K-S------------------G---I---HRTVHAGE-V------------GS--- 188
+Q17747           196  --H-K-R------------------G---I---HRTVHAGE-S------------GG--- 211
+ADD_ECOLI        188  --R-D-A------------------G---W---HITVHAGE-A------------AG--- 203
+O53365           199  --R-D-H------------------N---A---RFTIHAGE-A------------FG--- 214
+CAB42949         199  --R-R-E------------------N---V---PFTIHAGE-A------------HG--- 214
+ADD_STRVG        191  --R-E-G------------------G---L---LAAPHGGE-L------------TG--- 206
+Q49907           169  --R-S-N------------------N---A---RFTIHAGE-A------------FG--- 184
+O86737           235  --I-A-A------------------G---L---HSVPHAGE-T------------TG--- 250
+ADA_YEAST        195  --L-N-K------------------D---L---KLTAHAGE-E------------GP--- 210
+Q18599           236  --R-F-H------------------G---L---GITIHLAE-V------------LQ--- 251
+Q26642           369  --P-E-N----------------------I---DFYFHAGE-T------------NWFGS 386
+O83085           175  --E-K-Y------------------H---L---KKKAHVGE-F------------SD--- 190
+AAD52851         337  --S-D-K------------------T-------KFFFHAGE-TNSY---------GG--- 354
+O96697           352  --P-P-Y------------------R---L---PYFFHAAE-T------------NW--- 367
+AAD52850         329  --T-R-D------------------G---S---KLFLHAGE-TNQL---------GS--- 347
+Q9ZS86           202  --K-D-N------------------D---L---HITLHCGE-V------------PN--- 217
+O80452           399  --V-Y-YCYANLYVLNKLRESKGMTT---I---TLRPHSGE-A------------GD--- 432
+Q18463           679  --R-GLN------------------T---F---ALRPHCGE-A------------GH--- 695
+AMD3_HUMAN       572  LRR-E-R------------------G---LSTFLFRPHCGE-A------------GS--- 592
+AMD3_RAT         570  LRR-E-R------------------G---LSTFLFRPHCGE-A------------GS--- 590
+AAB60408         581  LRR-E-R------------------G---LSTFLFRPHCGE-A------------GS--- 601
+AAB60409         579  LRR-E-R------------------G---LSTFLFRPHCGE-A------------GS--- 599
+AMD2_HUMAN       560  ----F-H------------------T---F---VLRPHCGE-A------------GP--- 574
+AMD3_MOUSE       571  LRR-E-R------------------G---LSTFLFRPHCGE-A------------GS--- 591
+Q16729           553  ----F-H------------------T---F---VLRPHCGE-A------------GP--- 567
+AAC50308         424  ----F-H------------------T---F---VLRPHCGE-A------------GP--- 438
+AAD56303         604  ----F-H------------------T---F---VLRPHCGE-A------------GP--- 618
+AMD1_RAT         562  --R-GMN------------------T---F---LFRPHCGE-A------------GA--- 578
+AMD1_HUMAN       565  ------N------------------T---F---LFRPHCGE-A------------GA--- 578
+AMDM_SCHPO       513  --RGF-N------------------T---F---VLRPHCGE-A------------GD--- 529
+CAB53720         592  --RGF-N------------------T---F---VLRPHCGE-A------------GD--- 608
+AMDM_YEAST       622  ----F-N------------------T---L---VLRPHCGE-A------------GD--- 636
+CAB42353         1602 --R-F-S------------------V---F---SFRPSCGE-A------------GG--- 1617
+CAB42353         843  --R-G-Q------------------NVLQL---RVVASSAT-M------------PN--- 861
+AMD2_RAT         1    ------------------------------------PHCGE-A------------GP--- 8
+AGSA_APLCA       344  ------------------------------------------------------------ 345
+O59184           169  --R-E-W------------------D---S---LVTIHLAE-T------------RDEIK 187
+O88692           571  LRR-E-R------------------G---LSTFLFRPHCGE-A------------GS--- 591
+CAB49567         202  --R-E-W------------------N---S---LVTIHLAE-TQDEIKIIREKYGKS--- 229
+YB9Z_YEAST       592  ------N------------------T---L---NFTEHT-E-A------------IL--- 604
+O66851           199  --D-E-Y------------------G---L---LLHIHVAE-TKEEVERIKEQY-GK--- 225
+YJH0_YEAST            ------------------------------------------------------------
+Q16688           560  ----F-H------------------T---F---VLRPHCGE-A------------GP--- 574
+YF05_METTH       201  --D-K-N------------------D---L---MIHIHVSE-T------------ENEVS 219
+Y997_ARCFU       195  --S-KDK------------------G---F---LKHIHVSE-T------------LWEVK 214
+Y550_ARCFU       192  --E-E-M------------------D---I---FMHFHLAE-T------------EK--- 207
+YDI4_SCHPO       221  --R-A-N------------------N---I---GITMHCAE-VKADREFFASKE-HT--- 247
+AAD36017         191  --K-S-L------------------N---A---PVTIHLYE-T------------SK--- 206
+YF41_METJA       194  --K-K-Y------------------N---V---PIHIHLNE-T------------LDEIK 212
+YEB8_SCHPO       230  --E-K-H------------------N---L---PIQTHISENT------------SE--- 246
+CAA20441         230  --E-K-H------------------N---L---PIQTHISENT------------SE--- 246
+O28499           172  --R-R-R------------------K---M---LFAIHAGE-K------------DC--- 187
+O58543           217  --L-K-R------------------E---I---QVKIHL---S------------TS--- 230
+O27075           231  --L-N-A------------------G---F---KLLVHL---T------------NP--- 244
+TRZA_RHOCO       233  --A-S-R------------------T---D---GWTMHVSE-D------------PI--- 248
+
+QUERY            218  ---------PEV----V------------REA-------------VDI-----LKTERV- 233
+ADA_MOUSE        221  ---------PEV----V------------REA-------------VDI-----LKTERV- 236
+ADA_BOVIN        220  ---------ANV----V------------KEA-------------VDT-----LKTERL- 235
+ADA_HUMAN        221  ---------AEV----V------------KEA-------------VDI-----LKTERL- 236
+CAB09782         189  ---------AEV----V------------KEA-------------VDI-----LKTERL- 204
+Q17747           212  ---------PKE----V------------IKA-------------IED-----MYAERI- 227
+ADD_ECOLI        204  ---------PES----I------------WQA-------------IRE-----LGAERI- 219
+O53365           215  ---------LPS----I------------HEA-------------IAF-----CGADRL- 230
+CAB42949         215  ---------LPS----I------------HQA-------------LQV-----CGAQRI- 230
+ADD_STRVG        207  ---------PSS----V------------RDC-------------LDD-----LHASRI- 222
+Q49907           185  ---------LPS----I------------HEA-------------IAF-----CGADRL- 200
+O86737           251  ---------PQT----V------------WEA-------------LID-----LRAERI- 266
+ADA_YEAST        211  ---------AQF----V------------SDA-------------LDL-----LQVTRI- 226
+Q18599           252  ---------NMA----D------------VED-------------YLN-----LRPDRI- 267
+Q26642           387  T--------VDE----N------------LID-------------AVL-----LGTKRI- 403
+O83085           191  ---------AQS----V------------RHF-------------VEI-----FNLDEV- 206
+AAD52851         355  ---------TDL----N------------LVD-------------AIL-----LNTTRI- 370
+O96697           368  ---------QETEVDYN------------LAD-------------ALL-----LNTTRV- 387
+AAD52850         348  ---------TDQ----N------------LVD-------------ALL-----LNTTRI- 363
+Q9ZS86           218  ---------PKE----I------------QAM-------------LDF------KPHRI- 232
+O80452           433  ---------I------D------------HLA-------------ATF-----LTCHSI- 446
+Q18463           696  ---------VSH----L------------LTG-------------Y-------LTSESI- 709
+AMD3_HUMAN       593  ---------ITH----L------------VSA---------------F-----LTADNI- 606
+AMD3_RAT         591  ---------ITH----L------------VSA---------------F-----LTADNI- 604
+AAB60408         602  ---------ITH----L------------VSA---------------F-----LTADNI- 615
+AAB60409         600  ---------ITH----L------------VSA---------------F-----LTADNI- 613
+AMD2_HUMAN       575  ---------IHH----L------------VSA---------------F-----MLAENI- 588
+AMD3_MOUSE       592  ---------ITH----L------------VSA---------------F-----LTADNI- 605
+Q16729           568  ---------IHH----L------------VSA---------------F-----MLAENI- 581
+AAC50308         439  ---------IHH----L------------VSA---------------F-----MLAENI- 452
+AAD56303         619  ---------IHH----L------------VSA---------------F-----MLAENI- 632
+AMD1_RAT         579  ---------LT------------------HLM-------------TAF-----MIADNI- 592
+AMD1_HUMAN       579  ---------LT------------------HLM-------------TAF-----MIADDI- 592
+AMDM_SCHPO       530  ---------T------D------------HLA-------------SAF-----LLSHGI- 543
+CAB53720         609  ---------T------D------------HLA-------------SAF-----LLSHGI- 622
+AMDM_YEAST       637  ---------PEH----L------------VSA-------------Y-------LLAHGI- 650
+CAB42353         1618 -----------V----D------------HLI-------------GGF-----LLAQSV- 1631
+CAB42353         862  ---------TSS----A------------HDA-------------SLL-----LLSYLI- 877
+AMD2_RAT         9    ---------IHH----L------------VSA---------------F-----MLAENI- 22
+AGSA_APLCA       344  ------------------------------------------------------------ 345
+O59184           188  IMEEKYGRSPVE----V------------LKE-------------ANL-----LNDKLI- 212
+O88692           592  ---------ITH----L------------VSA---------------F-----LTADNI- 605
+CAB49567         230  ---------PVD----V------------LED-------------VGL-----LNEKLI- 245
+YB9Z_YEAST       605  ---------NNF----L------------LAC-------------GGF-----LNAENL- 620
+O66851           226  ---------TPV----E------------HLE-------------SIG-----FLDKNVL 242
+YJH0_YEAST            ------------------------------------------------------------
+Q16688           575  ---------IHH----L------------VSA---------------F-----MLAENI- 588
+YF05_METTH       220  EVSRSHGMTPVE----Y------------LDE-------------VGV-----LGPRTV- 244
+Y997_ARCFU       215  EVRERYGKRPVE----F------------LDS-------------IGF-----LDSSTVL 240
+Y550_ARCFU       208  ---------EVL----DFKKQHGKLIVQALDE-------------IGF-----LSKRLI- 235
+YDI4_SCHPO       248  ---------PMT----Y------------CKD-------------LGL-----LGPKTVL 264
+AAD36017         207  ---------EEY----D------------LED-------------ILN-----IGLKEVK 223
+YF41_METJA       213  MVKEKTGMEPFI----Y------------LNS-------------FGF-----FDDVRAI 238
+YEB8_SCHPO       247  ---------IEL----V------------KELFPERKSYADVYDYYKL-----LTPQTIL 276
+CAA20441         247  ---------IEL----V------------KELFPERKSYADVYDYYKL-----LTPQTIL 276
+O28499           188  ---------ADV----D--------------A-------------ALA-----LEPDFV- 201
+O58543           231  ---------PDE----I------------YAA-------------IRIIKEFNLNAT-I- 250
+O27075           245  ---------VRE----D------------LK----------------------------- 250
+TRZA_RHOCO       249  ---------EAR----V------------HS----------------------MNAPEY- 260
+
+QUERY            234  ---G-H----GYHTIED-----------E--ALY-----------NRLLKENMH------ 255
+ADA_MOUSE        237  ---G-H----GYHTIED-----------E--ALY-----------NRLLKENMH------ 258
+ADA_BOVIN        236  ---G-H----GYHTLED-----------T--TLY-----------NRLRQENMH------ 257
+ADA_HUMAN        237  ---G-H----GYHTLED-----------Q--ALY-----------NRLRQENMH------ 258
+CAB09782         205  ---G-H----GYHTLED-----------Q--ALY-----------NRLRQENMH------ 226
+Q17747           228  ---G-H----GYRVMRD-----------EEMYLE-----------HFVNSKNVH------ 251
+ADD_ECOLI        220  ---G-H----GVKAIED-----------R--ALM-----------DFLAEQQIG------ 241
+O53365           231  ---G-H----GVRIVDDIDVDADGGFQLG--RLA-----------AILRDKRIP------ 263
+CAB42949         231  ---G-H----GVRITDDIPDLAAGKL--G--RLA-----------AWVRDRRIA------ 261
+ADD_STRVG        223  ---G-H----GVRAAED-----------P--RLL-----------KRLADRQIT------ 244
+Q49907           201  ---G-H----GVRIVDDIDVDPGGGIRLG--PLA-----------SILRDKRIP------ 233
+O86737           267  ---G-H----GTSSAQD-----------P--KLL-----------AHLAERRIP------ 288
+ADA_YEAST        227  ---D-H----GINSQYD-----------E--ELL-----------DRLSRDQTM------ 248
+Q18599           268  ---G-H----GTFLHTD-----------P--YTE-----------YLTNKYKIPLGENLI 295
+Q26642           404  ---G-H----GFALVKH-----------P--LVL-----------QMLKERNIA------ 425
+O83085           207  ---Q-H----GIGAATD-----------E--NVL-----------RFLAERKVR------ 228
+AAD52851         371  ---G-L----GYALPKH-----------P--VLM-----------KIVKAREIP------ 392
+O96697           388  ---G-H----GFALIKH-----------P--RFT-----------ELAKENGVA------ 409
+AAD52850         364  ---G-H----GYALAKH-----------P--YLM-----------RDVKEKDIA------ 385
+Q9ZS86           233  ---G-H----ACFFKDE-----------D----W-----------TKLKSFRIP------ 252
+O80452           447  ---A-H----GINLRKS-----------P--VLQ-----------YLYYLAQIG------ 468
+Q18463           710  ---A-H----GILLRKV-----------P--VLQ-----------YLYYLTQIG------ 731
+AMD3_HUMAN       607  ---S-H----GLLLKKS-----------P--VLQ-----------YLYYLAQIP------ 628
+AMD3_RAT         605  ---S-H----GLLLKKS-----------P--VLQ-----------YLYYLAQIP------ 626
+AAB60408         616  ---S-H----GLLLKKS-----------P--VLQ-----------YLYYLAQIP------ 637
+AAB60409         614  ---S-H----GLLLKKS-----------P--VLQ-----------YLYYLAQIP------ 635
+AMD2_HUMAN       589  ---S-H----GLLLRKA-----------P--VLQ-----------YLYYLAQIG------ 610
+AMD3_MOUSE       606  ---S-H----GLLLKKS-----------P--VLQ-----------YLYYLAQIP------ 627
+Q16729           582  ---S-H----GLLLRKA-----------P--VLQ-----------YLYYLAQIG------ 603
+AAC50308         453  ---S-H----GLLLRKA-----------P--VLQ-----------YLYYLAQIG------ 474
+AAD56303         633  ---S-H----GLLLRKA-----------P--VLQ-----------YLYYLAQIG------ 654
+AMD1_RAT         593  ---S-H----GLNLKKS-----------P--VLQ-----------YLFFLAQIP------ 614
+AMD1_HUMAN       593  ---S-H----GLNLKKS-----------P--VLQ-----------YLFFLAQIP------ 614
+AMDM_SCHPO       544  ---N-H----GILLRKV-----------P--FLQ-----------YLWYLDQIP------ 565
+CAB53720         623  ---N-H----GILLRKV-----------P--FLQ-----------YLWYLDQIP------ 644
+AMDM_YEAST       651  ---S-H----GILLRKV-----------P--FVQ-----------YLYYLDQVG------ 672
+CAB42353         1632 ---N-Y----GVRLADS-----------A--PLQ-----------YLFYLAQIG------ 1653
+CAB42353         878  ---A-DVVVDAVALDRQ-----------P--VLQ-----------YLYGLHQIG------ 903
+AMD2_RAT         23   ---S-H----GLLLRKA-----------P--VLQ-----------YLYYLAQIG------ 44
+AGSA_APLCA       344  ------------------------------------------------------------ 345
+O59184           213  ---AAH----GIWLSKK-----------D----L-----------EMLASSNVT------ 233
+O88692           606  ---S-H----GLLLKKS-----------P--VLQ-----------YLYYLAQIP------ 627
+CAB49567         246  ---AAH----GIWLSDE-----------D--I-------------RKISSAGAT------ 266
+YB9Z_YEAST       621  ---W-N----A-----P-----------P--SLV-----------YLFYLSQIP------ 637
+O66851           243  C--A-H----MVWTTEK-----------E--R-------------EILKERDVK------ 263
+YJH0_YEAST       725  --------------------------------LE-----------HDYLKDQET------ 735
+Q16688           589  ---S-H----GLLLRKA-----------P--VLQ-----------YLYY----------- 605
+YF05_METTH       245  ---AAH----CVWLKDW-----------E--I-------------DVLAERDVK------ 265
+Y997_ARCFU       241  ---A-H----AVWLSEA-----------E----M-----------KILAERGVS------ 260
+Y550_ARCFU       236  ---AAH----SVWLEDA-----------E--I-------------EILAKKGVS------ 256
+YDI4_SCHPO       265  ---A-H----MVHLDTQ-----------D--LEI-----------LEKHGNGTS------ 286
+AAD36017         224  TIAA-H----CVHLPER----------------------------YFGVLKDIP------ 244
+YF41_METJA       239  A--A-H----CVHLTDE-----------E--I-------------KIMKQKNIN------ 259
+YEB8_SCHPO       277  ---A-H----AIHLEDE-----------E--I-------------ELLTKRSSG------ 296
+CAA20441         277  ---A-H----AIHLEDE-----------E--I-------------ELLTKRSSG------ 296
+O28499           202  ---V-H-------MNSC-----------P--EKI-----------REFVEAEIP------ 220
+O58543           251  ---D-H----AFG---S-----------Q--LVA-----------DMLSREGIP------ 269
+O27075           251  ----------------------------------------------LVRESGAS------ 258
+TRZA_RHOCO       261  ---L-H----HLGCLDD-----------R--LLAAHCVHIDSRDIRLFRQHDVK------ 293
+
+QUERY            256  ---------FEVC--P-WSSYL------------TGAW-DP----KTTHAVVRFKNDKAN 286
+ADA_MOUSE        259  ---------FEVC--P-WSSYL------------TGAW-DP----KTTHAVVRFKNDKAN 289
+ADA_BOVIN        258  ---------FEIC--P-WSSYL------------TGAW-KP----DTEHAVIRFKNDQVN 288
+ADA_HUMAN        259  ---------FEIC--P-WSSYL------------TGAW-KP----DTEHAVIRLKNDQAN 289
+CAB09782         227  ---------FEIC--P-WSSYL------------TGAW-KP----DTEHAVIRLKNDQAN 257
+Q17747           252  ---------LEAC--P-YSSVM------------TGAVPLD----WKNHPIARWAKDDVN 283
+ADD_ECOLI        242  ---------IESC--L-TSNIQ------------TSTV-AE----LAAHPLKTFLEHGIR 272
+O53365           264  ---------LELC--P-SSNVQ------------TGAV-AS----IAEHPFDLLARARFR 294
+CAB42949         262  ---------LEMC--P-TSNLQ------------TGAA-TS----IAEHPITALKDLGFR 292
+ADD_STRVG        245  ---------CEVC--P-ASNVA------------LGVY-ER----PEDVPLRTLFEAGVP 275
+Q49907           234  ---------LELC--P-SSNLQ------------TGAV-AS----ITEHPFDLLAWARFR 264
+O86737           289  ---------LEVC--P-TSNIA------------TRAV-RT----LDEHPIKEFVRAGVP 319
+ADA_YEAST        249  ---------LTIC--P-LSNVK------------LQVV-QS----VSELPLQKFLDRDVP 279
+Q18599           296  QLHLIFLFFLEIC--L-SSNVY------------SKTT-TN----YRNSHFNYWRKRGVP 335
+Q26642           426  ---------IEVN--P-ISNQV------------LQLV-AD----YRNHPCAYFFADNYP 456
+O83085           229  ---------CNVC--P-TSNVM------------LNAV-EC----LEKHPIKKMMDAGVR 259
+AAD52851         393  ---------VEVC--P-ISNQV------------LHLV-ND----LRNHPGAILLANNIP 423
+O96697           410  ---------VEVN--P-ISNQI------------LGLV-RD----VRNHALVPLIADDYP 440
+AAD52850         386  ---------VELC--P-VSNQV------------NSFV-ED----LRNHPGAILMSENVP 416
+Q9ZS86           253  ---------VEIC--L-TSNIV------------TKSI-SS----IDIHHF--------- 274
+O80452           469  ---------LAMS--P-LSN--------------NSLF-LD----YHRNPFPVFFLRGLN 497
+Q18463           732  ---------IAMS--P-LSN--------------NSLF-IS----YQRNPLPEYLQKGLN 760
+AMD3_HUMAN       629  ---------IAMS--P-LSN--------------NSLF-LE----YSKNPLREFLHKGLH 657
+AMD3_RAT         627  ---------IAMS--P-LSN--------------NSLF-LE----YSKNPLREFLHKGLH 655
+AAB60408         638  ---------IAMS--P-LSN--------------NSLF-LE----YSKNPLREFLHKGLH 666
+AAB60409         636  ---------IAMS--P-LSN--------------NSLF-LE----YSKNPLREFLHKGLH 664
+AMD2_HUMAN       611  ---------IAMS--P-LSN--------------NSLF-LS----YHRNPLPEYLSRGLM 639
+AMD3_MOUSE       628  ---------IAMS--P-LSN--------------NSLF-LE----YSKKPLREFLHKGLH 656
+Q16729           604  ---------IAMS--P-LSN--------------NSLF-LS----YHRNPLPEYLSRGLM 632
+AAC50308         475  ---------IAMS--P-LSN--------------NSLF-LS----YHRNPLPEYLSRGLM 503
+AAD56303         655  ---------IAMS--P-LSN--------------NSLF-LS----YHRNPLPEYLSRGLM 683
+AMD1_RAT         615  ---------IAMS--P-LSN--------------NSLF-LE----YAKNPFLDFLQKGLM 643
+AMD1_HUMAN       615  ---------IAMS--P-LSN--------------NSLF-LE----YAKNPFLDFLQKGLM 643
+AMDM_SCHPO       566  ---------IAMS--P-LSNNA------------LFLA-------YDKNPFLTYFKRGLN 594
+CAB53720         645  ---------IAMS--P-LSNNA------------LFLA-------YDKNPFLTYFKRGLN 673
+AMDM_YEAST       673  ---------IAMS--P-LSNNA--------------LF-LT----YDKNPFPRYFKRGLN 701
+CAB42353         1654 ---------VTLS--P-LSNN-------------TKLQ-LN----YLHNPFPQFFRRGLR 1683
+CAB42353         904  ---------VAMC--P-IARSS------------LGT--TS----LDEHPVARLLWRGLC 933
+AMD2_RAT         45   ---------IAMS--P-LSN--------------NSLF-LS----YHRNPLPEYLSRGLM 73
+AGSA_APLCA       344  ------------------------------------------------------------ 345
+O59184           234  ---------IAHC--P-ASNMK------------LGS---------GIFPMRDAIDEDIN 260
+O88692           628  ---------IAMS--P-LSN--------------NSLF-LE----YSKNP---------- 646
+CAB49567         267  ---------IAHC--P-ASNMK------------LGS---------GVFPMKKALENNVN 293
+YB9Z_YEAST       638  ---------MVVA--P-LNSIVDSKPTMLQEQAPTGLV-LEPSKPYKKNPFMKFFEMGFK 684
+O66851           264  ---------IAHC--P-ESNLK------------LAS---------GIAPVPDYVKRGIT 290
+YJH0_YEAST       736  ---------AKIN--P-SRDIT------------VGEQ-RS----YETNPFMKMFKMGLK 766
+Q16688           604  ------------------------------------------------------------ 605
+YF05_METTH       266  ---------VSHN--P-SSNMK------------LAS---------GVSPVARLLQRGVN 292
+Y997_ARCFU       261  ---------VAHC--P-TSNLK------------LSS---------GIAKVSELLEMGVN 287
+Y550_ARCFU       257  ---------VAHC--P-ASNMK------------LCVG-KA----IRYEAMKR---AGVN 284
+YDI4_SCHPO       287  ---------VAHC--P-VSNSK------------LGS---------GIAPLKEMLEKSII 313
+AAD36017         245  ---------FFVSHNP-ASNLK------------LGN---------GIAPVQRMIEHGMK 273
+YF41_METJA       260  ---------VSHN--P-ISNLK------------LAS---------GVAPIPKLLAEGIN 286
+YEB8_SCHPO       297  ---------ISHC--P-TSNSI------------LASG-LA----N----VRKLLDSGIN 323
+CAA20441         297  ---------ISHC--P-TSNSI------------LASG-LA----N----VRKLLDSGIN 323
+O28499           221  ---------IVSC--I-RSNAF------------FGLL-NK----KSYELLSEYEK---- 247
+O58543           270  ---------VIYG--PPMITRI------------ASFF-RY----VDDKAPVLLFKKGVN 301
+O27075           259  ---------VVLC--P-RSNGA------------LSSG-IP--------PIRRMHELGIN 285
+TRZA_RHOCO       294  ---------ISTQ--P-VSNSY------------LAA---------GIAPVPEMLAHGVT 320
+
+QUERY            287  YSLNTDDP-------L-IF----K----S-T---LDTDYQ-----MTK---------KDM 312
+ADA_MOUSE        290  YSLNTDDP-------L-IF----K----S-T---LDTDYQ-----MTK---------KDM 315
+ADA_BOVIN        289  YSLNTDDP-------L-IF----K----S-T---LDTDYQ-----MTK---------KDM 314
+ADA_HUMAN        290  YSLNTDDP-------L-IF----K----S-T---LDTDYQ-----MTK---------RDM 315
+CAB09782         258  YSLNTDDP-------L-IF----K----S-T---LDTDYQ-----MTK---------RDM 283
+Q17747           284  FSVSRDDP-------T-CF----D----N-S---MLSELT-----LVH---------KQI 309
+ADD_ECOLI        273  ASINTDDP-------G-VQ----G----V-D---IIHEYT-----VAA---------PAA 298
+O53365           295  VTVNTDNR-------L-MS----D----T-S---MSLEMH-----RLV---------EAF 320
+CAB42949         293  VTLNTDNR-------L-VS----G----T-T---MTREMS-----LLV---------EQA 318
+ADD_STRVG        276  MALGADDP-------L-LF----G----S-R---LAAQYE-----IAR---------RHH 301
+Q49907           265  VTVNTDNR-------L-MS----D----T-S---MSLEMH-----RLV---------EAF 290
+O86737           320  VTINSDDP-------P-MF----G----T-D---LNNEYA-----VAA---------RLL 345
+ADA_YEAST        280  FSLNSDDP-------A-YFG---G----Y-I---LDVYTQ-----VSK---------DFP 306
+Q18599           336  VFICTDDK-------G-VIP---G----A-T---LTEEYY-----KAA----------IT 361
+Q26642           457  VVISSDDP-------S-FW----K----A-TP--LSHDFY-----IAF---------LGI 483
+O83085           260  VGLGTDDL-------L-FF----G----K-T---NSEQ---------------------- 277
+AAD52851         424  MVISNDAP-------A-FW----G----VQG---LSYDYYYTIMSLAS---------NKA 455
+O96697           441  IVISSDDP-------G-AW----EA---S-P---LSHDFY-----VALMDLCG----RDT 472
+AAD52850         417  VVLGNDSP-------GFMD----F----D-G---LNPDYYYAIMSLTP---------YQA 448
+Q9ZS86           273  ------------------------------------------------------------ 274
+O80452           498  VSLSTDDP-------L-QIHLT-K----E-P---LVEEYS-----IAA---------SVW 526
+Q18463           761  VSLSTDDP-------L-QF----H----Y-TKEALMEEFS-----IAA---------QVW 789
+AMD3_HUMAN       658  VSLSTDDP-------M-QF----H----Y-TKEALMEEYA-----IAA---------QVW 686
+AMD3_RAT         656  VSLSTDDP-------M-QF----H----Y-TKEALMEEYA-----IAA---------QVW 684
+AAB60408         667  VSLSTDDP-------M-QF----H----Y-TKEALMEEYA-----IAA---------QVW 695
+AAB60409         665  VSLSTDDP-------M-QF----H----Y-TKEALMEEYA-----IAA---------QVW 693
+AMD2_HUMAN       640  VSLSTDDP-------L-QFHFT-K----E-P---LMEEYS-----IAT---------QVW 668
+AMD3_MOUSE       657  VSLSTDDP-------M-QF----H----Y-TKEALMEEYA-----IAA---------QVW 685
+Q16729           633  VSLSTDDP-------L-QFHFT-K----E-P---LMEEYS-----IAT---------QVW 661
+AAC50308         504  VSLSTDDP-------L-QFHFT-K----E-P---LMEEYS-----IAT---------QVW 532
+AAD56303         684  VSLSTDDP-------L-QFHFT-K----E-P---LMEEYS-----IAT---------QVW 712
+AMD1_RAT         644  ISLSTDDP-------M-QFHFT-K----E-P---LMEEYA-----IAA---------QVF 672
+AMD1_HUMAN       644  ISLSTDDP-------M-QFHFT-K----E-P---LMEEYA-----IAA---------QVF 672
+AMDM_SCHPO       595  VSLSTDDP-------L-QF----A----F-TREPLIEEYA-----VAA---------QIY 623
+CAB53720         674  VSLSTDDP-------L-QF----A----F-TREPLIEEYA-----VAA---------QIY 702
+AMDM_YEAST       702  VSLSTDDP-------L-QF----S----Y-TREPLIEEYS-----VAA---------QIY 730
+CAB42353         1684 VSLGTDSP-------L-LY----H----H-TQEPLLEEYS-----IAS---------KIW 1712
+CAB42353         934  VSLCTLNP-------L-YY----HSSP-E-P---LLEEYT-----AAA---------KVH 962
+AMD2_RAT         74   VSLSTDDP-------L-QF----H----F-T----------------------------- 87
+AGSA_APLCA       344  ------------------------------------------------------------ 345
+O59184           261  VALGTDGA-------A-SN----N----TLD---IIREMR-----LASLLQKVNTLNPAI 296
+O88692           645  ------------------------------------------------------------ 646
+CAB49567         294  VALGTDGA-------A-SN----N----TLD---ILREMR-----LASLLQKVIHRDPSI 329
+YB9Z_YEAST       685  ISLSSESI-------L-YNNSYTK----E-P---IIEEYS-----VAA---------SIY 714
+O66851           291  VTLGTDGA-------A-SN----D----NLN---MLEETS-----TCA---------KFH 317
+YJH0_YEAST       767  ISLSSKSI-------L-YN----SSYTLE-P---LIEEYS-----VAA---------SIY 796
+Q16688           604  ------------------------------------------------------------ 605
+YF05_METTH       293  VSLGTDGA-------A-SN----N----NLD---MFQEMK-----TAS---------LLQ 319
+Y997_ARCFU       288  VGIGTDGA-------A-SN----N------------------------------------ 299
+Y550_ARCFU       285  FTLATDGA-------A-SN----N----NLD---MLEEMK-----FAA---------LLQ 311
+YDI4_SCHPO       314  VGIGCDGC-------P-CN----N----TMD---LLQEMK-----MAS---------LLP 340
+AAD36017         274  VTLGTDGAASNNSLNL-FF----E----M-R---LASLLQ-----KAQ---------NPR 306
+YF41_METJA       287  VTLGTDGC-------G-SN----N----NLN---LFEEIK-----VSA---------ILH 313
+YEB8_SCHPO       324  VGLGTD------------------------------------------------------ 329
+CAA20441         324  VGLGTD------------------------------------------------------ 329
+O28499           248  WMLGTDNA-------M-IS----T----A-S---MLDEMH-----FAA---------YLI 273
+O58543           302  VSIMTDHP-------V-LP----E----K-H---LRLLAA-----VVA---------RN- 326
+O27075           286  LLLGTDNL-------M-FN----S----P-D---MLREME-----YTL---------KV- 310
+TRZA_RHOCO       321  VGIGTDDA-------N-CN----D----SVN---LISDMK-----VLA---------LIH 347
+
+QUERY            313  G---------F---------TEEE---------FKRLNINAAKSSFLP---EEEKK---E 339
+ADA_MOUSE        316  G---------F---------TEEE---------FKRLNINAAKSSFLP---EEEKK---E 342
+ADA_BOVIN        315  G---------F---------TEEE---------FKRLNINAAKSSFLP---EDEKK---E 341
+ADA_HUMAN        316  G---------F---------TEEE---------FKRLNINAAKSSFLP---EDEKR---E 342
+CAB09782         284  G---------F---------TEEE---------FKRLNINAAKSSFLP---EDEKR---E 310
+Q17747           310  G---------L---------DVHQ---------LWKAQLNAARSCFLP---EDEKA---E 336
+ADD_ECOLI        299  G---------L---------SREQ---------IRQAQINGLEMAFLS---AEEKR---A 325
+O53365           321  G---------Y---------GWSD---------LARFTVNAMKSAFIP---FDQRL---A 347
+CAB42949         319  G---------W---------SVED---------LRTVTVNALKSAFVP---FDERT---A 345
+ADD_STRVG        302  A---------F---------TDTE---------LAELARQSVRGSAAP---DDVQA---K 328
+Q49907           291  G---------Y---------GWGD---------LERFTINAMKSAFIP---FDQRL---A 317
+O86737           346  G---------L---------DERG---------LADLAKNGVEASFLD---APGKA---R 372
+ADA_YEAST        307  H---------W---------DHET---------WGRIAKNAIKGSWCD---DKRKN---G 333
+Q18599           362  M---------L---------SRLT---------SRSLGTSAACS---------------- 378
+Q26642           484  A---------S---------AHSDMRL------LKKLALNSINYSSLS---PEQKR---V 513
+O83085           276  ------------------------------------------------------------ 277
+AAD52851         456  G---------L---------S--T---------LKQLVFNSIKYSALP---EEEKK---T 480
+O96697           473  A---------L---------TF-----------LKQLALNSIRYSAMS---DTEKV---A 497
+AAD52850         449  G---------L-----------KT---------LKRLVENTIKYAQLN---SQEKTQAET 476
+Q9ZS86           273  ------------------------------------------------------------ 274
+O80452           527  K---------L---------SACD---------LCEIARNSVYQSGFS---HALKS---H 553
+Q18463           790  K---------L---------SSCD---------MCELARNSVMQSGFE---DKVKI---H 816
+AMD3_HUMAN       687  K---------L---------STCD---------LCEIARNSVLQSGLS---HQEKQ---K 713
+AMD3_RAT         685  K---------L---------STCD---------LCEIARNSVLQSGLS---HQEKQ---K 711
+AAB60408         696  K---------L---------STCD---------LCEIARNSVLQSGLS---HQEKQ---K 722
+AAB60409         694  K---------L---------STCD---------LCEIARNSVLQSGLS---HQEKQ---K 720
+AMD2_HUMAN       669  K---------L---------SSCD---------MCELARNSVLMSGFS---HKVKS---H 695
+AMD3_MOUSE       686  K---------L---------STCD---------LCEIARNSVLQSGLS---HQEKQ---K 712
+Q16729           662  K---------L---------SSCD---------MCELARNSVLMSGFS---HKVKS---H 688
+AAC50308         533  K---------L---------SSCD---------MCELARNSVLMSGFS---HKVKS---H 559
+AAD56303         713  K---------L---------SSCD---------MCELARNSVLMSGFS---HKVKS---H 739
+AMD1_RAT         673  K---------L---------STCD---------MCEVARNSVLQCGIS---HEEKA---K 699
+AMD1_HUMAN       673  K---------L---------STCD---------MCEVARNSVLQCGIS---HEEKV---K 699
+AMDM_SCHPO       624  K---------L---------SAVD---------MCELARNSVLQSGFE---RQLKE---R 650
+CAB53720         703  K---------L---------SAVD---------MCELARNSVLQSGFE---RQLKE---R 729
+AMDM_YEAST       731  K---------L---------SNVD---------MCELARNSVLQSGWE---AQIKK---H 757
+CAB42353         1713 K---------L---------SPND---------LSEVARNSVLLSNFSLRFKEEKL---G 1742
+CAB42353         963  R---------L---------SPTD---------ISEMALHSVCMSSFE---DEVKA---S 989
+AMD2_RAT         86   ------------------------------------------------------------ 87
+AGSA_APLCA       344  ------------------------------------------------------------ 345
+O59184           297  V---------K---------SEEI---------FRMATINGAKALKL-------KA---G 319
+O88692           645  ------------------------------------------------------------ 646
+CAB49567         330  V---------K---------SEDI---------FRMATLNGAKALGL-------KA---G 352
+YB9Z_YEAST       715  R---------L---------HSAD---------LCELLRNSVITSGFS---STLKN---K 741
+O66851           318  K---------G---------YNLDAKAIDAGTALKIATENGFKVAGI-------KA---G 349
+YJH0_YEAST       797  L---------L---------NPTD---------LCELSRTSVLSSGYE---GWYKA---H 823
+Q16688           604  ------------------------------------------------------------ 605
+YF05_METTH       320  K---------V---------NLEDPTALPAMDVFSMATLNGARALGID------------ 349
+Y997_ARCFU       298  ------------------------------------------------------------ 299
+Y550_ARCFU       312  K---------FHHSNPTLLKAEEV---------FEAATLNGAKAFGI-------KS---G 343
+YDI4_SCHPO       341  K---------A---------LHGDPSIVPAEKIVEMATINGAKALGRD---D-------- 371
+AAD36017         307  N---------L---------DVNTC--------LKMVTYDGAQAMGF-------KS---G 330
+YF41_METJA       314  KGVNLNPTVVK---------AEEA---------FNFATKNGAKALNI-------KA---G 345
+YEB8_SCHPO       328  ------------------------------------------------------------ 329
+CAA20441         328  ------------------------------------------------------------ 329
+O28499           274  G---------K---------EKAI---------LRAAT---------------------- 284
+O58543           327  G---------L---------SLDDA--------LKLITINPAKALGID------------ 348
+O27075           309  ------------------------------------------------------------ 310
+TRZA_RHOCO       348  R---------A---------AHRD------------------------------------ 353
+
+QUERY            340  L---LERLYREYQ 349
+ADA_MOUSE        343  L---LERLYREYQ 352
+ADA_BOVIN        342  L---LDLLYKAYR 351
+ADA_HUMAN        343  L---LDLLYKAY- 351
+CAB09782         311  L---LDLLYKAY- 319
+Q17747           337  L---VKRV----- 341
+ADD_ECOLI        326  L---REKV----- 330
+O53365           348  I---IDEVIK--- 354
+CAB42949         346  L---IEDV----- 350
+ADD_STRVG        329  L---L-------- 330
+Q49907           318  I---IDEVIK--- 324
+O86737           373  I---ADEI----- 377
+ADA_YEAST        334  L---LSRV----- 338
+Q18599           377  ------------- 378
+Q26642           514  A---LAK------ 517
+O83085           276  ------------- 277
+AAD52851         481  AEKNLEKQWNQF- 492
+O96697           498  A---KAK------ 501
+AAD52850         477  L---LKAKWNEF- 485
+Q9ZS86           273  ------------- 274
+O80452           554  W---IGKDY---- 559
+Q18463           817  W---LGPNYKE-- 824
+AMD3_HUMAN       714  F---LGQNY---- 719
+AMD3_RAT         712  F---LGQNY---- 717
+AAB60408         723  F---LGQNY---- 728
+AAB60409         721  F---LGQNY---- 726
+AMD2_HUMAN       696  W---LGPNY---- 701
+AMD3_MOUSE       713  F---LGQNY---- 718
+Q16729           689  W---LGPNY---- 694
+AAC50308         560  W---LGPNY---- 565
+AAD56303         740  W---LGPNY---- 745
+AMD1_RAT         700  F---LGNNYLE-- 707
+AMD1_HUMAN       700  F---LGDNYLE-- 707
+AMDM_SCHPO       651  W---L-------- 652
+CAB53720         730  W---L-------- 731
+AMDM_YEAST       758  W---IGK------ 761
+CAB42353         1743 A------------ 1743
+CAB42353         990  W---V-------- 991
+AMD2_RAT         86   ------------- 87
+AGSA_APLCA       344  ------------- 345
+O59184           320  I---IKEGY---- 325
+O88692           645  ------------- 646
+CAB49567         353  V---IAEGY---- 358
+YB9Z_YEAST       742  W---L-------- 743
+O66851           350  K---VEEGYEA-- 357
+YJH0_YEAST       824  W---IGVGVK--- 830
+Q16688           604  ------------- 605
+YF05_METTH       348  ------------- 349
+Y997_ARCFU       298  ------------- 299
+Y550_ARCFU       344  V---IKEGYEA-- 351
+YDI4_SCHPO       370  ------------- 371
+AAD36017         331  K---IEEGWNA-- 338
+YF41_METJA       346  E---IREGY---- 351
+YEB8_SCHPO       328  ------------- 329
+CAA20441         328  ------------- 329
+O28499           283  ------------- 284
+O58543           347  ------------- 348
+O27075           309  ------------- 310
+TRZA_RHOCO       352  ------------- 353
+  Database: /ebi/services/idata/blastdb/swall
+    Posted date:  Oct 1, 1999 11:36 PM
+  Number of letters in database: 112,757,116
+  Number of sequences in database:  358,428
+  
+Lambda     K      H
+   0.317    0.149    0.412 
+
+Lambda     K      H
+   0.270   0.0522    0.230 
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Number of Hits to DB: 221617602
+Number of Sequences: 358428
+Number of extensions: 9244527
+Number of successful extensions: 23414
+Number of sequences better than 5.0e-02: 116
+Number of HSP's better than  0.1 without gapping: 73
+Number of HSP's successfully gapped in prelim test: 43
+Number of HSP's that attempted gapping in prelim test: 23043
+Number of HSP's gapped (non-prelim): 142
+length of query: 349
+length of database: 112,757,116
+effective HSP length: 54
+effective length of query: 295
+effective length of database: 93,402,004
+effective search space: 27553591180
+effective search space used: 27553591180
+T: 11
+A: 40
+X1: 16 ( 7.3 bits)
+X2: 38 (14.8 bits)
+X3: 64 (24.9 bits)
+S1: 41 (21.5 bits)
+S2: 90 (39.3 bits)

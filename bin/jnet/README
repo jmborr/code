@@ -1,0 +1,458 @@
+NOTE: I had to compile in local machine because it needs gcc version > 4.0
+
+/************************************************************************
+ *               Jnet - A consensus neural network secondary            * 
+ *                      structure prediction method                     * 
+ *                                                                      *
+ *                          James Cuff (c) 1999                         *
+ ************************************************************************/
+
+
+                                 LICENCE
+-------------------------------------------------------------------------
+This software can be copied and used freely providing it is not 
+resold in any form and its use is acknowledged.  
+
+This software is provided by "as is" and any express or implied
+warranties, including, but not limited to, the implied warranties of
+merchantability and fitness for a particular purpose are disclaimed.
+In no event shall the regents or contributors be liable for any
+direct, indirect, incidental, special, exemplary, or consequential
+damages (including, but not limited to, procurement of substitute
+goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether
+in contract, strict liability, or tort (including negligence or
+otherwise) arising in any way out of the use of this software, even 
+if advised of the possibility of such damage.
+
+
+-------------------------------------------------------------------------
+                                Building
+-------------------------------------------------------------------------
+
+(if you have downloaded a binary distribution skip to the Installing
+section)
+
+- gunzip jnet.src.tar.gz
+- tar xvf jnet.src.tar
+- cd jnetsrc/src
+- edit CC and CFLAGS lines in the Makefile to reflect your 
+  compiler and optimiser
+- make
+- cp jnet ../bin
+
+You'll also need the hmmbuild and hmmconvert programs from the HMMER2 
+package.  This code was made available courtesy of Prof. Sean Eddy of 
+Washington University, St. Louis.  Please see http://hmmer.wustl.edu/
+for more details concerning licencing and further use of the HMMER2 
+package.
+
+                               Installing   
+-------------------------------------------------------------------------
+if (binary distribution){
+
+	After issuing the commands gunzip, and tar xvf jnet.arch.tar.gz 
+	to uncompress the files:
+
+}
+
+  1.    Firstly set an environment variable JNET to point to
+        the installation directory,
+
+        i.e. if installed in /homes/james/jnet/
+
+          setenv JNET /homes/james/jnet  (if using csh,tcsh)
+        or
+          export JNET=/homes/james/jnet  (if using bash)
+
+  2.    All the perl scripts in the perl dir will need have
+        their #!CHANGEJNET headers to point at your
+        perl installation, usually /usr/local/bin/perl. 
+        There is a script called $JNET/perl/change_header
+        that will do this for you if you have sed and sh installed
+        which I guess you should have...  Just cd to the perl
+        directory and run the script there.
+
+        If the wrong directory is supplied, you'll have to untar the
+        files again and start from the beginning, you also need to 
+        be in the perl directory to run this script.
+        - sorry this is so shoddy but this is academic code :-),
+        I'll get round to writing a proper configure script one day.
+
+        Perl version > 5 is required for all the scripts in Jnet.
+
+  3. *SGI ONLY*
+        If using an older SGI machine (r4000), rename the jnet_mips2 
+        binary to jnet. The original jnet binary was optimised 
+        for the R10,000, mips4 architecture
+
+
+                                 Running        
+--------------------------------------------------------------------------
+
+        The Jnet executable can take 3 inputs.  
+        
+        You will need an MSF alignment for your protein, 
+        and a PSIBLAST report file for your protein.
+
+        Upon running Jnet with no parameters or
+        files you will see the following:
+        
+Jnet - secondary structure prediction method
+
+Usage: jnet -mode <sequence file> [hmm profile] [<psiblast pssm> and <psiblast freq>]
+
+        HMM profile and PSIBLAST profiles are optional
+        PSIBLAST profiles must be supplied in pairs (and in the right order)
+
+Modes:  -p Human readable
+        -c Concise output
+        -z Column output
+
+        The files after the mode switch in the usage line correspond to:
+
+        1.   <sequence file> (compulsory)
+
+             A fasta alignment - this can be generated from a
+             Clustalw MSF file with the script $JNET/perl/msf2jnet
+
+        2.   <hmm profile> (optional)
+
+             A HMM profile - this can be generated from a 
+             clustalw MSF file with the script $JNET/perl/gethmm
+
+        3+4. [<psiblast pssm> and <psiblast freq>] (optional)
+
+             These two profiles can be generated from a PSIBLAST
+             report with the perl scripts $JNET/perl/getpssm and
+             $JNET/perl/getfreq. If supplied both must be present.
+
+        
+        Once all files have been created Jnet can run.  The order
+        of the files on the command line *is* important.  The
+        HMM and PSIBlast profiles are optional, but the accuracy will
+        be much lower without these two components.
+
+        As a guide the cross-validated accuracy for Jnet 
+        at each stage is:
+        
+        ------------------------------------------------------------------
+        Fasta Alignment file only:                      71.6%
+        Adding in the HMMer profile:                    74.4%
+        Adding in the PSIBLAST frequency profiles:      75.2%
+        ------------------------------------------------------------------
+        Jury Decision if all files are available:       76.4%
+        ------------------------------------------------------------------
+        
+        The best way to run Jnet is with all the files, as a consensus
+        display is also printed, with areas for which there is no jury 
+        are also shown.
+
+        The $JNET/examples directory contains examples of each of the
+        files you will need for Jnet.  Most important are the .blast
+        files and the .msf files.  These are the formats that are
+        acceptable by the perl conversion programs.
+
+Example (see also ./perl/README file)
+
+	0. Generate PSIBLAST report
+
+	./blastpgp -Q 1aad.pssm -m6 -d ./pdb -b20000 -j3 -i 1aad.seq > 1aad.blast
+
+        1. Generating the data input files from an msf file and a PSIBLAST
+           profile:
+
+        firstly parse the MSF file:
+ 
+        ./perl/msf2jnet ./test/1add.msf  - gives ./test/1add.msf.fa
+        ./perl/gethmm ./test/1add.msf - gives ./test/1add.msf.hmmprof
+
+        now do the PSIBLAST file
+
+	./perl/parse_psi -freq ./test/1add.blast > ./test/1add.blast.freq
+	./perl/getpssm ./test/1add.pssm > ./test/1add.pssm.jnet
+
+        ok so now we have all the data, lets run Jnet:
+
+        ./bin/jnet -p ./test/1add.msf.fa ./test/1add.msf.hmmprof ./test/1add.pssm.jnet ./test/1add.blast.freq
+
+        The program will produce:
+
+--------------------------------------------------------------------------
+
+
+MODE: Prediction
+JNet Started!
+Reading Data
+There are 7 sequence homologues in the file
+
+Generating...
+        Length numbers
+        Profile - frequency based
+        Profile - average mutation score based
+        Conservation numbers
+Done initial calculations!
+
+Found HMM profile file...
+Using HMM enhanced neural networks
+
+Found PSIBlast profile files...
+Using PSIBlast enhanced neural networks
+
+Running final predictions!
+
+
+Both PSIBLAST and HMM profiles were found
+Accuracy will average 76.4%
+
+
+Length = 349  Homologues =  7
+ RES    : TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIALPADTVEELRNIIGMDKPLSLPGFLAKFDYY
+ ALIGN  : ----------H----------HHHHHH---------------------------HHHHHHHHHHH
+ HMM    : --------HHHHHH------HHHHHH----------H------------------HHHHHHHHHH
+ FREQ   : ---------EEEE-------HHHHHHHHHHH--------HHHHHHHHH---------HHHHHHHH
+ PSSM   : ---------EEE--------HHHHHHHH------------HHHHH-HE-------HHHHH-----
+ CONF   : 87766772000002354544437877741317878847624433345204787634612175236
+ NOJURY :         ******      *     *****     *  *********      ***   *****
+ FINAL  : --------HHHHH-------HHHHHHHHHH---------HHHHHHHHH-------HHHHHHHHHH
+ SOL25  : ---B-BBBBBBBBBB-B-B-B-BBB-BB----B-BBB--B--B--BB-B-----B--BB-BB-BB
+ SOL5   : ----------BB--B-------BBB--B--------------------------B--BB--B---
+ SOL0   : ----------B------------------------------------------------------
+
+
+ RES    : MPVIAGCREAIKRIAYEFVEMKAKEGVVYVEVRYSPHLLANSKVDPMPWNQTEGDVTPDDVVDLV
+ ALIGN  : EEEE---HHHHHHHHHHHHHHHH----EEEEEE--------------------------EEEEEH
+ HMM    : HHHHHH-HHHHHHHHHHHHHHHHH---EEEEEEE-----------------------HHHHHHHH
+ FREQ   : HHHHH--HHHHHHHHHHHHHHHH---EEEEEEE-------------------------HHHHHHH
+ PSSM   : HHHH---HHHHHHHHHHHHHHHHH---EEEEEEE--HH-------------------HHHHHHHH
+ CONF   : 88873585789999999999987069639998624331014787777778887777568999999
+ NOJURY : ******                 *  *      *  **                   ******* 
+ FINAL  : HHHHH--HHHHHHHHHHHHHHHH----EEEEEEE-----------------------HHHHHHHH
+ SOL25  : B-BBBBB--BBBBBBBBBB---B--BBBBBBBBBBB-BBBB--B--BBB------BBB--BB-BB
+ SOL5   : B-BB--B---B--BB--BB-------B--B-B-B--------------------------B--BB
+ SOL0   : ----------B--BB---B----------B------------------------------B---B
+
+
+ RES    : NQGLQEGEQAFGIKVRSILCCMRHQPSWSLEVLELCKKYNQKTVVAMDLAGDETIEGSSLFPGHV
+ ALIGN  : HHHHHHHHHHHHHHHHHHHHHH----HHHHHHHHHHHHH----EEEEE--------------HHH
+ HMM    : HHHHHHHHHHH----EEEEE------HHHHHHHHHHHHH----EEEEE----------------H
+ FREQ   : HHHHHHHHHHHHHHHHEEEEE-------HHHHHHHHHHH---EEEEEE---------------HH
+ PSSM   : HHHHHHHHHHH---EEEEEE-------HHHHHHHHHHH-----EEEEE-------------HHHH
+ CONF   : 99999975651320256664045787064899999873479935888417888889998862488
+ NOJURY :            ***********    **          *   *                  *** 
+ FINAL  : HHHHHHHHHHH---EEEEEEE------HHHHHHHHHHHH----EEEEE--------------HHH
+ SOL25  : --BB--BB--BBB-BBBBBBBB-----BB--BB-BB--B---BBBBBBBBB---------B--BB
+ SOL5   : --BB--B---B---B-BBBBB----------BB-BB-------BBBBBB----------------
+ SOL0   : --B---B-------B--B---------------------------B-------------------
+
+
+ RES    : EAYEGAVKNGIHRTVHAGEVGSPEVVREAVDILKTERVGHGYHTIEDEALYNRLLKENMHFEVCP
+ ALIGN  : HHHHHHHH---EEEEE-------HHHHHHHHHHHHHH-----HHH-HHHHHHHHHH----EEEE-
+ HMM    : HHHHHHHH---EEEE--------HHHHHHHHHH-----------HHHHHHHHHHHH----EEEE-
+ FREQ   : HHHHHHH-----EEE--------HHHHHHHHHH-HHHH------H--HHHHHHHHH---EEEE--
+ PSSM   : HHHHHHHH---EEEE--------HHHHHHHHH----------HHHH-HHHHHHHHH----EEEE-
+ CONF   : 99998765696488504558882679999986254111012034513899998863488278721
+ NOJURY :        *   *   *                ******    ** **            *   * 
+ FINAL  : HHHHHHHH---EEEE--------HHHHHHHHHH---------HHHHHHHHHHHHHH----EEEE-
+ SOL25  : -BB--B----B-BBBBBBB-B-B-BBB-BB-BB-B-BBBBBB-BB-B--BB-BBB---B-BBBBB
+ SOL5   : -BB--B----B--BBBBB-------B--BB--B----B--B--------BB--B------B-BBB
+ SOL0   : -----B-------BB-----------------------------------------------B--
+
+
+ RES    : WSSYLTGAWDPKTTHAVVRFKNDKANYSLNTDDPLIFKSTLDTDYQMTKKDMGFTEEEFKRLNIN
+ ALIGN  : -----EEEE-------HHHHH-----EEE-----------HHHHHHHHHH-----HHHHHHHHHH
+ HMM    : ------------HHHHHHHHHH----EEE-----------HHHHHHHHHHH----HHHHHHHHHH
+ FREQ   : -----EEEEE-------HHHHH----EEE----------HHHHHHHHHHHHH---HHHHHHHHHH
+ PSSM   : ----------------HHHHHH----EEE-----------HHHHHHHHHHH----HHHHHHHHHH
+ CONF   : 32100200205742416888876994776278866666614789999876616874689999998
+ NOJURY :      *****  *****    *                 *          **             
+ FINAL  : -------EE-------HHHHHH----EEE----------HHHHHHHHHHHH----HHHHHHHHHH
+ SOL25  : BBBBBB-BB--B--BBB--BB---B-BBBBBBB--BB---B--BBBBBB-BB-B---BBB-BBB-
+ SOL5   : -B-----B-------BB--B----B-BBBB----------B---B--B----------B--B---
+ SOL0   : ---------------------------BB------------------B----------B--B---
+
+
+ RES    : AAKSSFLPEEEKKELLERLYREYQ
+ ALIGN  : HH------HHHHHHHHHHHHH---
+ HMM    : HHHH----HHHHHHHHHHHHH---
+ FREQ   : HHH-----HHHHHHHHHHHHHH--
+ PSSM   : HHH-----HHHHHHHHHHH-----
+ CONF   : 756158982889999998476379
+ NOJURY :   **               ***  
+ FINAL  : HHH-----HHHHHHHHHHHHHH--
+ SOL25  : BB-BBBB----B--BB--BB--B-
+ SOL5   : -B--B---------B---B-----
+ SOL0   : -B----------------------
+
+
+All done!
+
+---------------------------------------------------------------------------
+
+        And that's all there is to it really.  
+        
+        You could also use Jnet with just a fasta alignment:
+
+        ./bin/jnet -p ./test/1add.msf.fa
+
+Warning! : Can't open HMM profile file
+Falling back to less accurate alignment mode
+Warning! : Can't open PSIBlast profile file
+Falling back to less accurate alignment mode
+
+MODE: Prediction
+JNet Started!
+Reading Data
+There are 7 sequence homologues in the file
+
+Generating...
+        Length numbers
+        Profile - frequency based
+        Profile - average mutation score based
+        Conservation numbers
+Done initial calculations!
+
+Running final predictions!
+
+WARNING!: Only using the sequence alignment
+          Accuracy will average 71.6
+
+
+Length = 349  Homologues =  7
+ RES    : TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIALPADTVEELRNIIGMDKPLSLPGFLAKFDYY
+ ALIGN  : ---------------------HHHHHH---------------------------HHHHHHHHHHH
+ CONF   : 98888876310001478877401012024333334453444344432345743326454553001
+ FINAL  : ---------------------HHHHHH---------------------------HHHHHHHHHHH
+
+
+ RES    : MPVIAGCREAIKRIAYEFVEMKAKEGVVYVEVRYSPHLLANSKVDPMPWNQTEGDVTPDDVVDLV
+ ALIGN  : EEEE---HHHHHHHHHHHHHHHH----EEEEEE--------------------------EEEEEH
+ CONF   : 01101662668889989988876388369987327765456777877766756753453233200
+ FINAL  : EEEE---HHHHHHHHHHHHHHHH----EEEEEE--------------------------EEEEEH
+
+
+ RES    : NQGLQEGEQAFGIKVRSILCCMRHQPSWSLEVLELCKKYNQKTVVAMDLAGDETIEGSSLFPGHV
+ ALIGN  : HH-HHHHHHHHHHHHHHHHHHH----HHHHHHHHHHHHH----EEEEE--------------HHH
+ CONF   : 21001000223331232211213686057889999887379846897225776788887520178
+ FINAL  : HHHHHHHHHHHHHHHHHHHHHH----HHHHHHHHHHHHH----EEEEE--------------HHH
+
+
+ RES    : EAYEGAVKNGIHRTVHAGEVGSPEVVREAVDILKTERVGHGYHTIEDEALYNRLLKENMHFEVCP
+ ALIGN  : HHHHHHHH---EEEEE-------HHHHHHHHHHHHHH-----HHH-HHHHHHHHHH----EEEE-
+ CONF   : 88888763697276633578772307988888745411366401021899999875188257605
+ FINAL  : HHHHHHHH---EEEEE-------HHHHHHHHHHHHHH----HHHHHHHHHHHHHHH----EEEE-
+
+
+ RES    : WSSYLTGAWDPKTTHAVVRFKNDKANYSLNTDDPLIFKSTLDTDYQMTKKDMGFTEEEFKRLNIN
+ ALIGN  : -----EEEE-------HHHHH-----EEE-----------HHHHHHHHHH-----HHHHHHHHHH
+ CONF   : 65300002215875522312204872354577765444330688988875056646778989886
+ FINAL  : -----EEEE-------HHHHH-----EEE-----------HHHHHHHHHH-----HHHHHHHHHH
+
+
+ RES    : AAKSSFLPEEEKKELLERLYREYQ
+ ALIGN  : HH------HHHHHHHHHHHHH---
+ CONF   : 421454515769999988876078
+ FINAL  : HH------HHHHHHHHHHHHH---
+
+
+All done!
+
+
+        or with the fasta file and the HMM profile:
+
+        ./bin/jnet -p ./test/1add.msf.fa ./test/1add.msf.hmmprof 
+
+Warning! : Can't open PSIBlast profile file
+Falling back to less accurate alignment mode
+
+MODE: Prediction
+JNet Started!
+Reading Data
+There are 7 sequence homologues in the file
+
+Generating...
+        Length numbers
+        Profile - frequency based
+        Profile - average mutation score based
+        Conservation numbers
+Done initial calculations!
+
+Found HMM profile file...
+Using HMM enhanced neural networks
+
+Running final predictions!
+
+
+WARNING!: Only using the sequence alignment, and HMM profile
+          Accuracy will average 74.4%
+
+
+Length = 349  Homologues =  7
+ RES    : TPAFNKPKVELHVHLDGAIKPETILYFGKKRGIALPADTVEELRNIIGMDKPLSLPGFLAKFDYY
+ ALIGN  : ----------H----------HHHHHH---------------------------HHHHHHHHHHH
+ HMM    : --------HHHHHH------HHHHHH----------H------------------HHHHHHHHHH
+ CONF   : 12166562101222146862122101267778631010345567741114766523788999986
+ FINAL  : --------HHHHHH------HHHHHH-----------------------------HHHHHHHHHH
+ SOL25  : --BB-BB-B-BBBBB-B-B-B-BBB-BB----B-BBB--B-----B--B--BB-B--BB-BB-BB
+ SOL5   : ----------BB--B-------BBB-BB----B--BB-----------------B--BB--B--B
+ SOL0   : ----------B------------------------------------------------------
+
+
+ RES    : MPVIAGCREAIKRIAYEFVEMKAKEGVVYVEVRYSPHLLANSKVDPMPWNQTEGDVTPDDVVDLV
+ ALIGN  : EEEE---HHHHHHHHHHHHHHHH----EEEEEE--------------------------EEEEEH
+ HMM    : HHHHHH-HHHHHHHHHHHHHHHHH---EEEEEEE-----------------------HHHHHHHH
+ CONF   : 67886154689999999999865189738988732421015777777777787754432688999
+ FINAL  : HHHHHHHHHHHHHHHHHHHHHHHH---EEEEEEE-----------------------HHHHHHHH
+ SOL25  : B-BB--B--BBB-BBBBBB---B--BBBBBBBBBBBBBBBB--BB-B-B------BBB--BB-BB
+ SOL5   : B-BB--B--BB--BB--BB---B---B-BBBB-B--------------------------B---B
+ SOL0   : ----------B--BB---B----------B-B----------------------------B---B
+
+
+ RES    : NQGLQEGEQAFGIKVRSILCCMRHQPSWSLEVLELCKKYNQKTVVAMDLAGDETIEGSSLFPGHV
+ ALIGN  : HHHHHHHHHHHHHHHHHHHHHH----HHHHHHHHHHHHH----EEEEE--------------HHH
+ HMM    : HHHHHHHHHHH----EEEEE------HHHHHHHHHHHHH----EEEEE----------------H
+ CONF   : 99998878874232105530357886068999999776449936775137877788988775203
+ FINAL  : HHHHHHHHHHH----EEEEE------HHHHHHHHHHHHH----EEEEE----------------H
+ SOL25  : --BB--BB--BBB-B-BBBBBB-----BB--BB-BB--B---BBBBBBBBB-B--B---BB---B
+ SOL5   : --BB--B---B-B---BB-BB----------B--B--------BBBBBB----------------
+ SOL0   : --B---B----------B---------------------------B-------------------
+
+
+ RES    : EAYEGAVKNGIHRTVHAGEVGSPEVVREAVDILKTERVGHGYHTIEDEALYNRLLKENMHFEVCP
+ ALIGN  : HHHHHHHH---EEEEE-------HHHHHHHHHHHHHH-----HHH-HHHHHHHHHH----EEEE-
+ HMM    : HHHHHHHH---EEEE--------HHHHHHHHHH-----------HHHHHHHHHHHH----EEEE-
+ CONF   : 68999886299288447667883489999987167602553001115889999874599547722
+ FINAL  : HHHHHHHH---EEEE--------HHHHHHHHHH-----------HHHHHHHHHHHH----EEEE-
+ SOL25  : -BB--BB---BBBBBBBBB-B-B--BB-BB--B-B-BBBBBB-BB-B--BB--BB---B-BBBBB
+ SOL5   : -----B----B--BBBBB-------B--BB--B----BB-B-----B--BB---------B-BB-
+ SOL0   : -----B-------BB----------B---------------------------------------
+
+
+ RES    : WSSYLTGAWDPKTTHAVVRFKNDKANYSLNTDDPLIFKSTLDTDYQMTKKDMGFTEEEFKRLNIN
+ ALIGN  : -----EEEE-------HHHHH-----EEE-----------HHHHHHHHHH-----HHHHHHHHHH
+ HMM    : ------------HHHHHHHHHH----EEE-----------HHHHHHHHHHH----HHHHHHHHHH
+ CONF   : 44312234356337899998864994773688876567402689999886057756789999997
+ FINAL  : ------------HHHHHHHHHH----EEE-----------HHHHHHHHHHH----HHHHHHHHHH
+ SOL25  : BBBBBBBBB---B-BBB--BB---B-BBBBBBBBBBB---B---B-BBB-BB-B----BB-BBBB
+ SOL5   : -B---B-B-------BB--B----B-BBB-----------B--BB--B----------B--B---
+ SOL0   : ---------------B------------B------------------B----------B--B---
+
+
+ RES    : AAKSSFLPEEEKKELLERLYREYQ
+ ALIGN  : HH------HHHHHHHHHHHHH---
+ HMM    : HHHH----HHHHHHHHHHHHH---
+ CONF   : 576045764359999999875126
+ FINAL  : HHHH----HHHHHHHHHHHHH---
+ SOL25  : BB-BBBB----B--BB--B---B-
+ SOL5   : BB-BBBB-------B---B-----
+ SOL0   : -B-B--------------------
+
+
+All done!
+
+
+James Cuff.  
+(1999)
+
+
+

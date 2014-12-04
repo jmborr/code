@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+#use Env qw(JNET);
+
+#if ($JNET eq ""){
+#        print "Enrironment for JNET missing!\n";
+#        exit(0);
+#}
+
+#we need to copy subdirectories /gpfs1/active/jose/code/bin/jnet/perl
+#and /gpfs1/active/jose/code/bin/jnet/bin to our working directory
+$JNET=".";
+
+system ("rm -rf tmp.hmm tmp.prof");
+system ("$JNET/bin/hmmbuild -F --fast --gapmax 1 --wblosum tmp.hmm $ARGV[0]");
+system ("$JNET/bin/hmmconvert -F -p tmp.hmm tmp.prof");
+system ("$JNET/perl/hmm2profile tmp.prof > $ARGV[0].hmmprof");
+system ("rm tmp.hmm tmp.prof");

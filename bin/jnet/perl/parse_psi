@@ -1,0 +1,255 @@
+#!/usr/bin/perl
+
+# hack to pull the alignments and profiles from psiblast
+
+# -m6 switch is needed to get the alignments
+# in the BLAST report, also generates the
+# psiblast frequency profiles, as they
+# are no longer present in the output
+
+use Getopt::Std;
+getopt(hfgud);
+
+if ($opt_f eq"req"){$freq=1}
+elsif ($opt_g eq "ap"){$gap=1}
+elsif ($opt_u eq "ngap"){$ungap=1}
+elsif ($opt_d eq "egap"){$degap=1}
+elsif ($opt_h eq "elp"){
+    print " 
+# Parse_PSI
+
+This little script allows parsing of psiblast report files
+to extract the embedded sequence alignment, and write out
+in different formats.
+
+parse_psi -help  : help
+parse_psi -degap : remove all gaps in alignment and print as
+                   a fasta format file
+parse_psi -ungap : remove gaps in query sequence, and those
+                   below the gap in the query sequence, print
+                   as fasta format
+parse_psi -gap   : print alignment with gaps in fasta format
+parse_psi -freq  : print frequency profile needed for Jnet 
+
+Usage:
+
+parse_psi -freq file.blast > file.freq
+\n";exit(0);
+}
+
+else {print "NO options given, try -help\n";exit}
+if (!-e "$ARGV[0]"){
+    print ("No such file as $ARGV[0] exists in this path...\n");
+    exit (0);
+}
+
+if ($ARGV[0] eq ""){
+    print "No filename given... \n";
+    exit;
+}
+
+open IN, "$ARGV[0]";
+$num=$thisone=$c=0;
+while(<IN>){
+    if (/^Sequences producing significant alignments/){
+	$num++;
+    }
+}
+print STDERR "$num alignments were found in PSIBlast file $ARGV[0]\n";
+$num--;
+
+close IN;
+open IN, "$ARGV[0]";
+while(<IN>){
+    if (/^Sequences producing significant alignments/){
+	if ($thisone == $num){
+	    while (($ln2 = <IN>)){
+		if ($ln2 =~ /^QUERY/){
+		    $alignout[$c]=$ln2;
+		    $c++;
+		    while (($align = <IN>) !~ /^  Database/){
+		       	$alignout[$c]=$align;
+			$c++;
+		    }
+		    last;
+		}
+	    }
+	}
+	$thisone++;
+    }
+}
+
+$c=$j=$z=$blocks=0;
+
+# get number of blocks and number of sequences in a block
+
+foreach (@alignout){    
+    if ($_ =~ /^\n/){
+	$blocks++;
+    }
+    if ($_ !~ /^\n/){
+	$store[$blocks][$z]=$_;
+	$z++;
+    }
+}
+$npb=($z/($blocks+1));
+
+for ($i=0; $i < ($blocks+1); $i++){
+    for ($j=0; $j < $npb ; $j++){
+	# get the alignment itself
+	#print "$store[$i][$q]";
+	(@tokens)=split(" ",$store[$i][$q]);
+	#print "$tokens[0] $tokens[1] $tokens[2] $tokens[3]\n";
+	if($#tokens == 3){
+	    $id=$tokens[0];
+	    $interest=$tokens[2];
+	}
+	if($#tokens == 1){
+	    $id=$tokens[0];
+	    $interest=$tokens[1];
+	}
+	if($#tokens == 2){
+	    $id=$tokens[0];
+	    $interest=$tokens[1];
+	    if ($interest =~ /\d/g){
+		# get the next token, number
+		# must be at this end
+		$interest=$tokens[2];
+	    }
+	}
+	# remove any digits that may creep in with the 3 token,
+	# this would mean the coord is on the end not in the
+	# middle.
+	$interest =~ s/\d//g;
+	undef @tokens;
+       
+	$namekeep[$j]=$id;
+	$seqkeep[$j]=$seqkeep[$j].$interest;
+	$q++;
+    }
+}
+
+
+if ($gap==1 || $degap==1){
+    $c=0;
+    foreach (@seqkeep){
+	
+	if ($degap==1){
+	  $seqkeep[$c] =~ s/-//g;
+	}
+	print ">$namekeep[$c]\n$seqkeep[$c]\n";
+	$c++;
+    }
+}
+
+if ($ungap==1 || $freq == 1){
+    $c=0;
+    
+    @sequence=split("",$seqkeep[0]);
+    
+    foreach (@sequence){
+	if($sequence[$count] eq "\-"){
+	    $printer[$count]=1;
+	}
+	else{$printer[$count]=0;}
+	
+	$count++;
+    }
+    $d=0;
+    foreach $erm (@seqkeep){
+	undef @sequence;
+	@sequence=split("",$erm);
+	$count=0;
+	foreach (@sequence){
+	    if ($printer[$count]==0){
+		$ung[$d]=$ung[$d].$sequence[$count];
+	    }
+	    $count++;
+	}
+	$d++;
+    }
+    if ($ungap == 1){
+	$c=0;
+	foreach $re (@ung){
+	    print ">$namekeep[$c]\n$re\n";
+	    $c++;
+	}
+    }
+    if ($freq == 1){
+	# do the counting....
+	$seqlen=length($ung[0]);
+	
+	#get a double array	
+	for ($i =0 ; $i < $#ung ; $i++){
+	    undef @sequence;
+	    @sequence=split("",$ung[$i]);
+
+	    # convert sequence to an integer value
+	    @ints = seq2int(@sequence);
+	    $count=0;
+	    $j=0;
+	    foreach (@sequence){
+		$ar[$i][$j]=$ints[$j];
+		$j++;
+	    }
+	}
+	
+	# zero countup
+	for ($r=0; $r <20; $r++){ 
+	    $countup[$r]=0;
+	}
+	
+	for ($i =0 ; $i < ($seqlen);  $i++){ 
+	    # skip the query sequence
+	    for ($j=1; $j < $#ung ;$j++){
+		# look at array
+		$countup[$ar[$j][$i]]++;
+	    }
+	   
+	    # get total counts for this column
+	    $tot = 0;
+	    for ($r=0; $r <20; $r++){
+		$tot=$tot+$countup[$r];
+	    }
+	    for ($r=0; $r <20; $r++){
+		# get percent and round up to 10
+		# this seems to be slightly different to how 
+		# psiblast works god knowns how.... 
+                # works for now. :-(
+		$outnum=(($countup[$r])/($tot))*10;
+		printf ("%2.0f ",$outnum);
+		$countup[$r]=0;
+	    }
+	    print "\n";
+	}
+    }
+}
+
+sub seq2int{
+    my(@s)=@_;
+    $g=0;
+    for ($g=0; $g <= $#s; $g++){
+	if ($s[$g] eq 'A'){ $intseq[$g] = "0"};
+	if ($s[$g] eq 'R'){ $intseq[$g] = "1"};
+	if ($s[$g] eq 'N'){ $intseq[$g] = "2"};
+	if ($s[$g] eq 'D'){ $intseq[$g] = "3"};
+	if ($s[$g] eq 'C'){ $intseq[$g] = "4"};
+	if ($s[$g] eq 'Q'){ $intseq[$g] = "5"};
+	if ($s[$g] eq 'E'){ $intseq[$g] = "6"};
+	if ($s[$g] eq 'G'){ $intseq[$g] = "7"};
+	if ($s[$g] eq 'H'){ $intseq[$g] = "8"};
+	if ($s[$g] eq 'I'){ $intseq[$g] = "9"};
+	if ($s[$g] eq 'L'){ $intseq[$g] = "10"};
+	if ($s[$g] eq 'K'){ $intseq[$g] = "11"};
+	if ($s[$g] eq 'M'){ $intseq[$g] = "12"};
+	if ($s[$g] eq 'F'){ $intseq[$g] = "13"};
+	if ($s[$g] eq 'P'){ $intseq[$g] = "14"};
+	if ($s[$g] eq 'S'){ $intseq[$g] = "15"};
+	if ($s[$g] eq 'T'){ $intseq[$g] = "16"};
+	if ($s[$g] eq 'W'){ $intseq[$g] = "17"};
+	if ($s[$g] eq 'Y'){ $intseq[$g] = "18"};
+	if ($s[$g] eq 'V'){ $intseq[$g] = "19"};
+        if ($s[$g] eq '-'){ $intseq[$g] = "25"};
+    }
+    return (@intseq);
+}

@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# header change script - thanks to Steve Searle and the
+# EBI developers mailing list for help with this one
+
+echo "Please enter where your version of perl is (e.g. /usr/local/bin/perl)"
+echo "Try not to type this in wrong - nothing will work :-)"
+
+read pants
+echo "Changing files to $pants... hang on..."
+
+for file in getpssm parse_psi 
+do
+        sed -e s:CHANGEJNET:$pants: $file > dohjnet
+	mv dohjnet $file
+	chmod +x $file
+done
+echo "all done"

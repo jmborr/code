@@ -1,0 +1,28 @@
+#!/usr/bin/perl
+
+open IN, "$ARGV[0]";
+$c=0;
+$resc=0;
+$linecount=0;
+
+while (<IN>){
+	if (/^Cons/){
+		while (($line = <IN>)!~ /\*/){				
+			if ($line !~ /\!/){
+				$storeline[$c]=$line;
+				$c++;
+			}
+		}
+	}
+}	
+
+foreach $bah(@storeline){
+	(@thisline)=split(" ",$bah);
+	for ($i=1;$i<=24;$i++){
+		$thisline[$i]=$thisline[$i]/100;
+		$out=1/(1+(exp(-$thisline[$i])));
+		printf ("%2.5f ", $out);	
+	}
+	undef @thisline;
+	print "\n";
+}

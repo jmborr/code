@@ -1,0 +1,61 @@
+#!/usr/bin/perl
+
+# gets a frequency profile from a PSIBLAST report file
+
+open(FILE, "$ARGV[0]");
+
+open (OUT, ">$ARGV[0].freq");
+
+# find howmany passes there were in the original and jump to the last one
+
+$sumsucc = `grep "position counts used. multiplied by 10 and rounded and" $ARGV[0] | wc -l`;
+
+$sumsucc=~ s/ //g;
+chop $sumsucc;
+print STDERR "$sumsucc frequency tables were found in PSIBlast file $ARGV[0]\n";
+
+$charfreq=0;$done=0;$c=0;
+while (<FILE>){
+  if (/^position counts used. multiplied by 10 and rounded and/){
+    $charfreq++;
+  }
+  if ($charfreq == $sumsucc && $done == 0){
+    $junk=<FILE>;
+   # print STDERR "Found frequency profile number $charfreq of $sumsucc, extracting profile...\n\n";	
+    while (($ln2 = <FILE>) !~ /^\n/){
+     $profile[$c] = $ln2;
+     $c++;
+    }
+    $done=1;
+  }
+}
+$c=0;
+foreach $odh (@profile){
+  if ($c > 0){
+   $odh =~ s/-/0/g;
+	
+#need to chop off 15 chars from the begining
+$odh=~ s/^.{15}//;
+  (@thisline)=split(" ",$odh);
+
+	for ($i=0; $i < 20; $i++){
+		if ($thisline[$i] > 10){
+			# something wrong!
+			print STDERR "ERROR: $ARGV[0] - PROFILE LOOKS WRONG!\n EXIT!\n";
+			close OUT;
+                        system ("rm $ARGV[0].freq");
+			exit(0);
+		}
+          printf OUT ("%2d ", $thisline[$i]);
+	  $xsum=$xsum+$thisline[$i];
+	}
+	print OUT "\n";
+  undef @thisline;
+}
+  $c++;
+}
+
+if ($xsum == 0){
+	print STDERR "WARNING: $ARGV[0] PROFILE CONTAINS NO USEFUL DATA!\n";
+}
+

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.47)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Score list</TITLE>
+<META NAME="description" CONTENT="Score list">
+<META NAME="keywords" CONTENT="scanps_manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="scanps_manual.css">
+
+<LINK REL="next" HREF="node13.html">
+<LINK REL="previous" HREF="node11.html">
+<LINK REL="up" HREF="node10.html">
+<LINK REL="next" HREF="node13.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html167"
+  HREF="node13.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html165"
+  HREF="node10.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html159"
+  HREF="node11.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html168"
+  HREF="node13.html">Pairwise Alignments</A>
+<B> Up:</B> <A NAME="tex2html166"
+  HREF="node10.html">Standard SCANPS search</A>
+<B> Previous:</B> <A NAME="tex2html160"
+  HREF="node11.html">Output preamble</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00071200000000000000">
+Score list</A>
+</H3>
+
+<P>
+The next part of the output contains the score list, ranked by Evalue.
+This is bounded by the key words ``Start_Scores'' and
+``End_Scores''.  Only the first 17 and last 6 scores are shown here:
+
+<P>
+<PRE>
+# Start_Scores: ----------------------------------------------------
+   1  450 56.95  2.05e-20 ANX3_RAT         (P14669) Annexin III (Lipocort
+   2  439 55.40  9.61e-20 ANX3_MOUSE       (O35639) Annexin III (Lipocort
+   3  392 48.78  7.26e-17 ANX3_HUMAN       (P12429) Annexin III (Lipocort
+   4  255 29.48  1.75e-08 ANX5_MOUSE       (P48036) Annexin V (Lipocortin
+   5  245 28.07  7.15e-08 ANX5_RAT         (P14668) Annexin V (Lipocortin
+   6  245 28.07  7.18e-08 ANX5_HUMAN       (P08758) Annexin V (Lipocortin
+   7  245 28.06  7.2e-08  ANX5_BOVIN       (P81287) Annexin V (Lipocortin
+   8  247 27.78  9.52e-08 ANXB_HUMAN       (P50995) Annexin A11 (Annexin 
+   9  239 27.19  1.72e-07 ANX8_MOUSE       (O35640) Annexin A8 (Annexin V
+  10  239 27.19  1.72e-07 ANX8_HUMAN       (P13928) Annexin A8 (Annexin V
+  11  243 26.97  2.15e-07 ANX6_BOVIN       (P79134) Annexin VI (Lipocorti
+  12  236 26.79  2.57e-07 ANX5_CHICK       (P17153) Annexin V (Lipocortin
+  13  228 26.77  2.61e-07 ANX1_CHICK       (Q92108) Annexin I (Lipocortin
+  14  240 26.44  3.63e-07 ANX6_HUMAN       (P08133) Annexin VI (Lipocorti
+  15  237 26.38  3.88e-07 ANXB_RABIT       (P33477) Annexin A11 (Annexin 
+  16  237 26.38  3.88e-07 ANXB_MOUSE       (P97384) Annexin A11 (Annexin 
+  17  237 26.38  3.88e-07 ANXB_BOVIN       (P27214) Annexin A11 (Annexin 
+
+  lines deleted here.
+
+  55  189 20.10  0.000207 ANX9_HUMAN       (O76027) Annexin A9 (Annexin 3
+  56  187 19.91  0.000251 ANX4_FRAAN       (P51074) Annexin-like protein 
+  57  186 19.66  0.000319 AN11_COLLI       (P14950) Annexin I, isoform P3
+  58  184 19.39  0.000419 ANX9_MOUSE       (Q9JHQ0) Annexin A9 (Annexin 3
+  59  116 12.21  0.551    ANX2_PIG         (P19620) Annexin II (Lipocorti
+  60  100 8.82   16.3     Y069_ARCFU       (O30167) Hypothetical protein 
+# End_Scores: ------------------------------------------------------
+</PRE>
+
+<P>
+The columns are: 1: Rank, 2: Raw Score, 3: (Intermediary score -
+ignore, this will be deleted from a future release of SCANPS) 4:
+Evalue, 5: ID of database sequence, 6: Title of database sequence.
+
+<P>
+How many scores you see is controlled by the <B>probcut</B>, <B>nptt</B>, and <B>max_nout</B> command line options.  <B>nptt</B> means
+``numbers, print to threshold'' and is a toggle.  For example, to
+print all results down to an Evalue of 100 you would add:
+
+<P>
+<PRE>
+-aptt 1 -probcut 100
+</PRE>
+
+<P>
+on the command line (the default is -aptt 1 -probcut 10).  If you want
+to print all scores down to a rank, e.g. the top 50,  rather than controlled by Evalue,
+then do the following:
+
+<P>
+<PRE>
+-aptt 0 -max_nout 50
+</PRE>
+
+<P>
+This is not recommended, unless you are trying to suppress a huge
+output.  It is better to control output through the -probcut option.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Geoff Barton (GJB)
+2002-07-23
+</ADDRESS>
+</BODY>
+</HTML>

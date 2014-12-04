@@ -1,0 +1,3230 @@
+# SCANPS Scan:    Thu Jul 18 13:05:55 2002
+# SCANPS Version: 2.3.9 (Wed Jul 17 14:02:27 BST 2002)
+# Authors:        G. J. Barton, S. M. J. Searle, C. Webber
+#                 University of Dundee and EMBL-EBI
+# Query file:     test.fa
+# Query ID:       SCANPS_TEST
+# Query Title:    - Annexin domain test seq for SCANPS                         
+# Query Length:   74
+# SCANPS MODE:    202
+# Matrix file:    /homes/geoff/c/scanps/gjscanps/mat//BLOSUM50
+# Matrix title:   NCBI Matrix - see file for type
+# LD penalty:   2.00
+# LI penalty:  12.00
+# Database name:                   sprot.fas
+# Created on:                      Mon Jun 24 22:43:18 2002
+# Number of sequences:             110788
+# Number of residues/bases in database: 40678337
+# Eval Cutoff:                     30
+# FIT_A: -2019.8 1999.54 -369.492
+# FIT_B: 0 0.543961 
+# Eval Cutoff for profile:       0.1
+# Number of iterations:            1
+# Profile Weight Method:           1
+# Pos Weight Factor:               1.500000
+# Pid Threshold:                   0.970000
+#
+# Intel MMX and SSE instructions supported by chip.
+#
+# Iteration: 0
+# Start_Scores: ----------------------------------------------------
+   1  450 77.30  2.99e-29 ANX3_RAT         (P14669) Annexin III (Lipocort
+   2  439 75.25  2.31e-28 ANX3_MOUSE       (O35639) Annexin III (Lipocort
+   3  392 66.49  1.47e-24 ANX3_HUMAN       (P12429) Annexin III (Lipocort
+   4  255 40.97  1.78e-13 ANX5_MOUSE       (P48036) Annexin V (Lipocortin
+   5  228 39.54  7.42e-13 ANX1_CHICK       (Q92108) Annexin I (Lipocortin
+   6  245 39.11  1.14e-12 ANX5_RAT         (P14668) Annexin V (Lipocortin
+   7  245 39.11  1.15e-12 ANX5_HUMAN       (P08758) Annexin V (Lipocortin
+   8  245 39.11  1.15e-12 ANX5_BOVIN       (P81287) Annexin V (Lipocortin
+   9  247 39.01  1.27e-12 ANXB_HUMAN       (P50995) Annexin A11 (Annexin 
+  10  239 37.97  3.6e-12  ANX8_MOUSE       (O35640) Annexin A8 (Annexin V
+  11  239 37.97  3.6e-12  ANX8_HUMAN       (P13928) Annexin A8 (Annexin V
+  12  240 37.41  6.3e-12  ANX6_HUMAN       (P08133) Annexin VI (Lipocorti
+  13  237 37.15  8.16e-12 ANXB_RABIT       (P33477) Annexin A11 (Annexin 
+  14  237 37.15  8.16e-12 ANXB_MOUSE       (P97384) Annexin A11 (Annexin 
+  15  237 37.15  8.16e-12 ANXB_BOVIN       (P27214) Annexin A11 (Annexin 
+  16  237 36.93  1.01e-11 ANX6_BOVIN       (P79134) Annexin VI (Lipocorti
+  17  233 36.87  1.08e-11 ANX5_CHICK       (P17153) Annexin V (Lipocortin
+  18  236 36.66  1.33e-11 ANX6_MOUSE       (P14824) Annexin VI (Lipocorti
+  19  227 35.74  3.32e-11 ANX5_CYNPY       (P70075) Annexin V            
+  20  230 35.54  4.06e-11 ANX6_CHICK       (P51901) Annexin VI (Lipocorti
+  21  225 35.39  4.75e-11 ANX4_BOVIN       (P13214) Annexin A4 (Annexin I
+  22  229 35.36  4.89e-11 ANX6_RAT         (P48037) Annexin VI (Lipocorti
+  23  221 34.65  9.94e-11 ANXC_HYDAT       (P26256) Annexin XII          
+  24  219 34.18  1.58e-10 ANX1_RAT         (P07150) Annexin I (Lipocortin
+  25  218 34.08  1.75e-10 ANX4_PIG         (P08132) Annexin A4 (Annexin I
+  26  218 34.00  1.9e-10  ANX1_HUMAN       (P04083) Annexin I (Lipocortin
+  27  217 33.88  2.15e-10 ANXA_HUMAN       (Q9UJ72) Annexin A10 (Annexin 
+  28  216 33.62  2.77e-10 ANX1_BOVIN       (P46193) Annexin I (Lipocortin
+  29  215 33.52  3.06e-10 ANX4_HUMAN       (P09525) Annexin A4 (Annexin I
+  30  213 33.15  4.44e-10 ANX4_CANFA       (P50994) Annexin A4 (Annexin I
+  31  213 33.14  4.47e-10 ANXX_DROME       (P22465) Annexin X            
+  32  213 33.06  4.85e-10 ANX1_RABIT       (P51662) Annexin I (Lipocortin
+  33  212 32.94  5.46e-10 ANX9_DROME       (P22464) Annexin IX           
+  34  211 32.78  6.45e-10 ANX4_MOUSE       (P97429) Annexin A4 (Annexin I
+  35  209 32.39  9.54e-10 ANXA_MOUSE       (Q9QZ10) Annexin A10          
+  36  209 32.32  1.02e-09 ANX1_PIG         (P19619) Annexin I (Lipocortin
+  37  210 32.10  1.27e-09 ANX7_XENLA       (Q92125) Annexin A7 (Annexin V
+  38  206 31.85  1.64e-09 ANX4_RAT         (P55260) Annexin A4 (Annexin I
+  39  206 31.77  1.77e-09 AN12_COLLI       (Q92040) Annexin I, isoform P3
+  40  205 31.60  2.1e-09  ANX2_CHICK       (P17785) Annexin II (Lipocorti
+  41  204 31.39  2.59e-09 ANX1_CAVCU       (P14087) Annexin I (Lipocortin
+  42  205 31.27  2.91e-09 ANX7_MOUSE       (Q07076) Annexin A7 (Annexin V
+  43  202 31.04  3.67e-09 ANX2_RAT         (Q07936) Annexin II (Lipocorti
+  44  203 30.89  4.25e-09 ANX7_HUMAN       (P20073) Annexin A7 (Annexin V
+  45  200 30.64  5.45e-09 ANX1_MOUSE       (P10107) Annexin I (Lipocortin
+  46  199 30.48  6.43e-09 ANX2_HUMAN       (P07355) Annexin II (Lipocorti
+  47  194 29.62  1.52e-08 ANXD_CANFA       (Q29471) Annexin A13 (Annexin 
+  48  194 29.54  1.64e-08 ANXB_XENLA       (P27006) Annexin II type I (Li
+  49  195 29.41  1.87e-08 ANX7_DICDI       (P24639) Annexin A7 (Annexin V
+  50  193 29.36  1.97e-08 ANX2_MOUSE       (P07356) Annexin II (Lipocorti
+  51  193 29.36  1.97e-08 ANX2_BOVIN       (P04272) Annexin II (Lipocorti
+  52  191 28.98  2.86e-08 ANX2_XENLA       (P24801) Annexin II type II (L
+  53  187 28.32  5.57e-08 ANX4_FRAAN       (P51074) Annexin-like protein 
+  54  186 28.13  6.74e-08 ANXD_HUMAN       (P27216) Annexin A13 (Annexin 
+  55  186 28.06  7.25e-08 ANX9_HUMAN       (O76027) Annexin A9 (Annexin 3
+  56  186 28.05  7.31e-08 AN11_COLLI       (P14950) Annexin I, isoform P3
+  57  183 27.50  1.27e-07 ANX9_MOUSE       (Q9JHQ0) Annexin A9 (Annexin 3
+  58  182 27.29  1.56e-07 ANX1_RODSP       (P24551) Annexin I (Lipocortin
+  59  116 18.51  0.00101  ANX2_PIG         (P19620) Annexin II (Lipocorti
+  60   87 11.55  1.06     Y069_ARCFU       (O30167) Hypothetical protein 
+  61   70 9.10   12.3     XYLH_PSEPU       (Q01468) 4-oxalocrotonate taut
+  62   82 8.81   16.5     GIA2_GIALA       (P19389) Giardin alpha-2 chain
+  63   75 8.67   19       RL9_MYCGE        (P47339) 50S ribosomal protein
+  64   81 8.63   19.8     GIA1_GIALA       (P17063) Giardin alpha-1 chain
+  65   85 8.60   20.3     HTPG_HELPJ       (Q9ZMM2) Chaperone protein htp
+  66   66 8.26   28.7     IATP_PICJA       (P09940) ATPase inhibitor, mit
+  67   81 8.25   28.9     CLPX_RICPR       (Q9ZCN1) ATP-dependent Clp pro
+# End_Scores: ------------------------------------------------------
+
+# Start_Alignments_Rank: 1
+# Query: SCANPS_TEST Target: ANX3_RAT Number_of_Alignments: 257
+# Target_Title: (P14669) Annexin III (Lipocort
+# N: 1 Raw_Score: 450 Query_Length: 74 Target_Length: 324 Evalue: 2.90478e-29
+        *****************.**************************. ****
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     16 YPGFNPSVDAEAIRKAIKGIGTDEKTLINILTERSNAQRQLIVKHIQEAY      65
+
+        ************************
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     66 EQALKADLKGDLSGHFEHVMVALI      89
+
+# End_N: 1
+# N: 2 Raw_Score: 133 Query_Length: 74 Target_Length: 324 Evalue: 0.00131339
+        **. .  *  .  ****  .  **  **  * .*   .*.   .. ..  
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    179 DAQTLYDAGEKKWGTDEDKFTEILCLRSFPQLKLTFDEYRNISQKDIEDS     228
+
+        .**.****** ...*..
+     59 LKGDLSGHFEHVMVALI      75
+    229 IKGELSGHFEDLLLAVV     245
+
+# End_N: 2
+# N: 3 Raw_Score: 117 Query_Length: 74 Target_Length: 324 Evalue: 0.0258999
+        *.  *  . .*..* **** **  *.  **      * ..... *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    252 PAFLAGRLHQALKGAGTDEFTLNRIMVSRSEIDLLDIRREFKKHYGCSLY     301
+
+        . .. * ** .  *.. .
+     56 ADLKGDLSGHFEHVMVAL      73
+    302 SAIQSDTSGDYRTVLLKI     319
+
+# End_N: 3
+# N: 4 Raw_Score: 110 Query_Length: 74 Target_Length: 324 Evalue: 0.0954594
+        *.* **. ..*..**.**** *** *** *
+      6 PSV-DAEAIRKAIRGIGTDEKTLINILTER      35
+     92 PAVFDAKQLKKSMRGMGTDEDTLIEILTTR     121
+
+# End_N: 4
+# End_Alignments_Rank: 1
+
+# Start_Alignments_Rank: 2
+# Query: SCANPS_TEST Target: ANX3_MOUSE Number_of_Alignments: 278
+# Target_Title: (O35639) Annexin III (Lipocort
+# N: 1 Raw_Score: 439 Query_Length: 74 Target_Length: 323 Evalue: 2.24889e-28
+        ****.**************.*************************** **
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     15 YPGFSPSVDAEAIRKAIRGLGTDEKTLINILTERSNAQRQLIVKQYQAAY      64
+
+        ** ** *****************.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     65 EQELKDDLKGDLSGHFEHVMVALV      88
+
+# End_N: 1
+# N: 2 Raw_Score: 132 Query_Length: 74 Target_Length: 323 Evalue: 0.00157737
+        **. .  *     ****  .  .*  **  * .*   .*.   .. ..  
+      9 DAEAIRKAIRGI-GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    178 DAQILYNAGENKWGTDEDKFTEVLCLRSFPQLKLTFDEYRNISQKDIEDS     227
+
+        .**.****** ...*..
+     59 LKGDLSGHFEHVMVALI      75
+    228 IKGELSGHFEDLLLAIV     244
+
+# End_N: 2
+# N: 3 Raw_Score: 125 Query_Length: 74 Target_Length: 323 Evalue: 0.00581373
+        *.  ** . .*..* **** **  *.  **      *  .... *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    251 PAFLAERLHQALKGAGTDEFTLNRIMVSRSEIDLLDIRHEFKKHYGYSLY     300
+
+        . .. * ** .  *.. .
+     56 ADLKGDLSGHFEHVMVAL      73
+    301 SAIQSDTSGDYRTVLLKI     318
+
+# End_N: 3
+# N: 4 Raw_Score: 87 Query_Length: 74 Target_Length: 323 Evalue: 6.91594
+        **  ..*...* ****  ** ***
+      9 DAEAIRKAIRGIGTDEKTLINILT      32
+     95 DANELKKSMKGTGTDEDALIEILT     118
+
+# End_N: 4
+# End_Alignments_Rank: 2
+
+# Start_Alignments_Rank: 3
+# Query: SCANPS_TEST Target: ANX3_HUMAN Number_of_Alignments: 266
+# Target_Title: (P12429) Annexin III (Lipocort
+# N: 1 Raw_Score: 392 Query_Length: 74 Target_Length: 323 Evalue: 1.43136e-24
+        ** *.********.*********** **.***************.** **
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     15 YPDFSPSVDAEAIQKAIRGIGTDEKMLISILTERSNAQRQLIVKEYQAAY      64
+
+         . ** ************.****.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     65 GKELKDDLKGDLSGHFEHLMVALV      88
+
+# End_N: 1
+# N: 2 Raw_Score: 135 Query_Length: 74 Target_Length: 323 Evalue: 0.000901862
+        **. . **     ****  .  **  **  * .*   .*.   .. .   
+      9 DAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    178 DAQILYKAGENRWGTDEDKFTEILCLRSFPQLKLTFDEYRNISQKDIVDS     227
+
+        .**.****** ...*..
+     59 LKGDLSGHFEHVMVALI      75
+    228 IKGELSGHFEDLLLAIV     244
+
+# End_N: 2
+# N: 3 Raw_Score: 134 Query_Length: 74 Target_Length: 323 Evalue: 0.0010866
+        *.  ** . .*..****** **  *.  **      *  .... *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    251 PAFLAERLHRALKGIGTDEFTLNRIMVSRSEIDLLDIRTEFKKHYGYSLY     300
+
+        . .* * ** .*  .. .
+     56 ADLKGDLSGHFEHVMVAL      73
+    301 SAIKSDTSGDYEITLLKI     318
+
+# End_N: 3
+# N: 4 Raw_Score: 92 Query_Length: 74 Target_Length: 323 Evalue: 2.72392
+        *.* **. ..*...* **.*  ** *** *
+      6 PSV-DAEAIRKAIRGIGTDEKTLINILTER      35
+     91 PAVFDAKQLKKSMKGAGTNEDALIEILTTR     120
+
+# End_N: 4
+# End_Alignments_Rank: 3
+
+# Start_Alignments_Rank: 4
+# Query: SCANPS_TEST Target: ANX5_MOUSE Number_of_Alignments: 290
+# Target_Title: (P48036) Annexin V (Lipocortin
+# N: 1 Raw_Score: 255 Query_Length: 74 Target_Length: 319 Evalue: 1.72883e-13
+        .***.   *** .***..*.**** ...*.** ******* * ....  .
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     10 FPGFDGRADAEVLRKAMKGLGTDEDSILNLLTSRSNAQRQEIAQEFKTLF      59
+
+         . *  *** .*.* ** ..**..
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     60 GRDLVDDLKSELTGKFEKLIVAMM      83
+
+# End_N: 1
+# N: 2 Raw_Score: 160 Query_Length: 74 Target_Length: 319 Evalue: 8.4381e-06
+        **  .. *..* ***** *  *.  *.  .   * . *.* *   *. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     90 DAYELKHALKGAGTDEKVLTEIIASRTPEELSAIKQVYEEEYGSNLEDDV     139
+
+         ** **... ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    140 VGDTSGYYQRMLVVLL     155
+
+# End_N: 2
+# N: 3 Raw_Score: 139 Query_Length: 74 Target_Length: 319 Evalue: 0.00042248
+        *.  ** .  *..* ***. *** ..  **      * *.... .  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    246 PAYLAETLYYAMKGAGTDDHTLIRVVVSRSEIDLFNIRKEFRKNFATSLY     295
+
+        . .*** ** ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    296 SMIKGDTSGDYKKALLLL     313
+
+# End_N: 3
+# N: 4 Raw_Score: 85 Query_Length: 74 Target_Length: 319 Evalue: 9.91074
+        .**.*. .*     ****. .* *.  ** .. . .  .*       .. 
+      8 VDAEAIRKAIR-GIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKA      57
+    172 LDAQALFQAGELKWGTDEEKFITIFGTRSVSHLRRVFDKYMTISGFQIEE     221
+
+         .  . **..*....*..
+     58 DLKGDLSGHFEHVMVALI      75
+    222 TIDRETSGNLEQLLLAVV     239
+
+# End_N: 4
+# End_Alignments_Rank: 4
+
+# Start_Alignments_Rank: 5
+# Query: SCANPS_TEST Target: ANX1_CHICK Number_of_Alignments: 181
+# Target_Title: (Q92108) Annexin I (Lipocortin
+# N: 1 Raw_Score: 228 Query_Length: 74 Target_Length: 130 Evalue: 6.42324e-13
+        * *.** *  *. ***   * ** *.*.***.*.***** *   **.*  
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+     35 PNFDPSADVSALDKAITVKGVDEATIIDILTKRTNAQRQQIKAAYQQAKG      84
+
+        ..*. ***  *  *.* *.***.
+     52 QALKADLKGDLSGHFEHVMVALI      74
+     85 KSLEEDLKKVLKSHLEDVVVALL     107
+
+# End_N: 1
+# End_Alignments_Rank: 5
+
+# Start_Alignments_Rank: 6
+# Query: SCANPS_TEST Target: ANX5_RAT Number_of_Alignments: 277
+# Target_Title: (P14668) Annexin V (Lipocortin
+# N: 1 Raw_Score: 245 Query_Length: 74 Target_Length: 318 Evalue: 1.11085e-12
+        . **.   *** .***..*.**** ...*.** ******* * ....  .
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+      9 FSGFDGRADAEVLRKAMKGLGTDEDSILNLLTARSNAQRQQIAEEFKTLF      58
+
+         . *  *.* .*.* ** ..***.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     59 GRDLVNDMKSELTGKFEKLIVALM      82
+
+# End_N: 1
+# N: 2 Raw_Score: 163 Query_Length: 74 Target_Length: 318 Evalue: 4.8088e-06
+        **  .. *..* ***** *  *.  *.  . . * . *.* *   *. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     89 DAYELKHALKGAGTDEKVLTEIIASRTPEELRAIKQAYEEEYGSNLEDDV     138
+
+         ** **... ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    139 VGDTSGYYQRMLVVLL     154
+
+# End_N: 2
+# N: 3 Raw_Score: 140 Query_Length: 74 Target_Length: 318 Evalue: 0.000349511
+        *.  ** .  *..* ***. *** ..  **      * *.... .  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    245 PAYLAETLYYAMKGAGTDDHTLIRVIVSRSEIDLFNIRKEFRKNFATSLY     294
+
+        . .*** ** ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    295 SMIKGDTSGDYKKALLLL     312
+
+# End_N: 3
+# N: 4 Raw_Score: 89 Query_Length: 74 Target_Length: 318 Evalue: 4.68778
+        .**.*. .*     ****. .* **  ** .. . .  .*       .. 
+      8 VDAEAIRKAIR-GIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKA      57
+    171 LDAQALFQAGELKWGTDEEKFITILGTRSVSHLRRVFDKYMTISGFQIEE     220
+
+         .  . **..*....*..
+     58 DLKGDLSGHFEHVMVALI      75
+    221 TIDRETSGNLENLLLAVV     238
+
+# End_N: 4
+# End_Alignments_Rank: 6
+
+# Start_Alignments_Rank: 7
+# Query: SCANPS_TEST Target: ANX5_HUMAN Number_of_Alignments: 281
+# Target_Title: (P08758) Annexin V (Lipocortin
+# N: 1 Raw_Score: 245 Query_Length: 74 Target_Length: 319 Evalue: 1.11447e-12
+        .***.   *** .***..*.****.... .** ******* *   ..  .
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     11 FPGFDERADAETLRKAMKGLGTDEESILTLLTSRSNAQRQEISAAFKTLF      60
+
+         . *  *** .*.* ** ..***.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     61 GRDLLDDLKSELTGKFEKLIVALM      84
+
+# End_N: 1
+# N: 2 Raw_Score: 157 Query_Length: 74 Target_Length: 319 Evalue: 1.47584e-05
+        **  .. *..* **.** *  *.  *.  . . * . *.* *  .*. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     91 DAYELKHALKGAGTNEKVLTEIIASRTPEELRAIKQVYEEEYGSSLEDDV     140
+
+         ** **... ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    141 VGDTSGYYQRMLVVLL     156
+
+# End_N: 2
+# N: 3 Raw_Score: 141 Query_Length: 74 Target_Length: 319 Evalue: 0.000291033
+        *.  ** .  *..* ***. *** ..  **      * *.... .  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    247 PAYLAETLYYAMKGAGTDDHTLIRVMVSRSEIDLFNIRKEFRKNFATSLY     296
+
+        . .*** ** ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    297 SMIKGDTSGDYKKALLLL     314
+
+# End_N: 3
+# N: 4 Raw_Score: 84 Query_Length: 74 Target_Length: 319 Evalue: 11.9409
+        **.*. .*     ****. .* *.  ** .. . .  .*       ..  
+      9 DAEAIRKAIR-GIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    174 DAQALFQAGELKWGTDEEKFITIFGTRSVSHLRKVFDKYMTISGFQIEET     223
+
+        .  . **..*....*..
+     59 LKGDLSGHFEHVMVALI      75
+    224 IDRETSGNLEQLLLAVV     240
+
+# End_N: 4
+# End_Alignments_Rank: 7
+
+# Start_Alignments_Rank: 8
+# Query: SCANPS_TEST Target: ANX5_BOVIN Number_of_Alignments: 285
+# Target_Title: (P81287) Annexin V (Lipocortin
+# N: 1 Raw_Score: 245 Query_Length: 74 Target_Length: 320 Evalue: 1.11809e-12
+        .***.   *** .***..*.****.... .** ******* *   ..  .
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     11 FPGFDERADAETLRKAMKGLGTDEESILTLLTSRSNAQRQEIAVAFKTLF      60
+
+         . *  *** .*.* ** ..***.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     61 GRDLLDDLKSELTGKFEKLIVALM      84
+
+# End_N: 1
+# N: 2 Raw_Score: 163 Query_Length: 74 Target_Length: 320 Evalue: 4.84015e-06
+        **  .. *..* ***** *  *.  *.  . . * . *.* *  .*. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     91 DAYELKHALKGAGTDEKVLTEIIASRTPEELRAIKQVYEEEYGSSLEDDV     140
+
+         ** **... ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    141 VGDTSGYYQRMLVVLL     156
+
+# End_N: 2
+# N: 3 Raw_Score: 140 Query_Length: 74 Target_Length: 320 Evalue: 0.000351789
+        *.  ** .  *..* ***. *** ..  **      * *.... .  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    247 PAYLAETLYYAMKGAGTDDHTLIRVVVSRSEIDLYNIRKEFRKNFGTSLY     296
+
+        . .*** ** ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    297 SMIKGDTSGDYKKALLLL     314
+
+# End_N: 3
+# N: 4 Raw_Score: 84 Query_Length: 74 Target_Length: 320 Evalue: 11.9797
+        **.*. .*     ****. .* *.  ** .. . .  .*       ..  
+      9 DAEAIRKAIR-GIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    174 DAQALFQAGELKWGTDEEKFITIFGTRSVSHLRRVFDKYMTISGFQIEET     223
+
+        .  . **..*....*..
+     59 LKGDLSGHFEHVMVALI      75
+    224 IDRETSGNLEQLLLAVV     240
+
+# End_N: 4
+# End_Alignments_Rank: 8
+
+# Start_Alignments_Rank: 9
+# Query: SCANPS_TEST Target: ANXB_HUMAN Number_of_Alignments: 503
+# Target_Title: (P50995) Annexin A11 (Annexin 
+# N: 1 Raw_Score: 247 Query_Length: 74 Target_Length: 505 Evalue: 1.23617e-12
+        ***.*  *** .***..* ****. .*. *  *** *** *.  .. ** 
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+    198 PGFDPLRDAEVLRKAMKGFGTDEQAIIDCLGSRSNKQRQQILLSFKTAYG     247
+
+        . *  *** .***.**  ..**.
+     52 QALKADLKGDLSGHFEHVMVALI      74
+    248 KDLIKDLKSELSGNFEKTILALM     270
+
+# End_N: 1
+# N: 2 Raw_Score: 173 Query_Length: 74 Target_Length: 505 Evalue: 1.20506e-06
+        *   *..**.*.****  ** **  *** . . . . *.  ... *.  .
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    277 DIYEIKEAIKGVGTDEACLIEILASRSNEHIRELNRAYKAEFKKTLEEAI     326
+
+        . * ****. ....*
+     59 KGDLSGHFEHVMVAL      73
+    327 RSDTSGHFQRLLISL     341
+
+# End_N: 2
+# N: 3 Raw_Score: 155 Query_Length: 74 Target_Length: 505 Evalue: 3.44966e-05
+        *.  ** . **.** ** ..*** *.  **      *  .*.  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    433 PAFFAERLNKAMRGAGTKDRTLIRIMVSRSETDLLDIRSEYKRMYGKSLY     482
+
+         *. ** ** .  ... .
+     56 ADLKGDLSGHFEHVMVAL      73
+    483 HDISGDTSGDYRKILLKI     500
+
+# End_N: 3
+# N: 4 Raw_Score: 93 Query_Length: 74 Target_Length: 505 Evalue: 3.59359
+        **. .  *    .****  .  .*  ** *.   .  .**    . ..  
+      9 DAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    360 DAQELYAAGENRLGTDESKFNAVLCSRSRAHLVAVFNEYQRMTGRDIEKS     409
+
+        .  ..** .*  *.*..
+     59 LKGDLSGHFEHVMVALI      75
+    410 ICREMSGDLEEGMLAVV     426
+
+# End_N: 4
+# End_Alignments_Rank: 9
+
+# Start_Alignments_Rank: 10
+# Query: SCANPS_TEST Target: ANX8_MOUSE Number_of_Alignments: 359
+# Target_Title: (O35640) Annexin A8 (Annexin V
+# N: 1 Raw_Score: 239 Query_Length: 74 Target_Length: 327 Evalue: 3.49788e-12
+        ***  *** . **..****.*. .*..**.*** *** * * ..  . . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+     21 FNPDPDAETLYKAMKGIGTNEQAIIDVLTKRSNVQRQQIAKSFKAQFGKD      70
+
+        *   ** .*** ** ..***.
+     54 LKADLKGDLSGHFEHVMVALI      74
+     71 LTETLKSELSGKFERLIVALM      91
+
+# End_N: 1
+# N: 2 Raw_Score: 182 Query_Length: 74 Target_Length: 327 Evalue: 1.43516e-07
+        ** .  * .*. .  *..*.** *  .* **  *.  * . *.* *.* *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     92 YPPY--SYEAKELHDAMKGLGTKEGVIIEILASRTKNQLREIMKAYEEDY     141
+
+           *. *..** **..* ..* *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+    142 GSTLEEDIQGDTSGYLERILVCLL     165
+
+# End_N: 2
+# N: 3 Raw_Score: 119 Query_Length: 74 Target_Length: 327 Evalue: 0.0180129
+        ** .  *..* ** . ***  .  **     **  *... * . * . . 
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    259 AERLYYAMKGAGTRDGTLIRNIVSRSEIDLNLIKGQFRKMYGKTLSSMIM     308
+
+         * **...  .. *.
+     60 GDLSGHFEHVMVALI      74
+    309 ADTSGYYKTALLNLV     323
+
+# End_N: 3
+# N: 4 Raw_Score: 108 Query_Length: 74 Target_Length: 327 Evalue: 0.139904
+        **.*. .*   * ****  .* **  **  .   . ..*..  .. ..  
+      9 DAEAIRKAIRGI-GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    182 DAQALHEAGEKIMGTDEMKFITILCTRSLTHLMRVFEEYEKIADKCIEDS     231
+
+        .* .  * .*  *. ..
+     59 LKGDLSGHFEHVMVALI      75
+    232 FKSETHGSLEEAMLTVV     248
+
+# End_N: 4
+# End_Alignments_Rank: 10
+
+# Start_Alignments_Rank: 11
+# Query: SCANPS_TEST Target: ANX8_HUMAN Number_of_Alignments: 374
+# Target_Title: (P13928) Annexin A8 (Annexin V
+# N: 1 Raw_Score: 239 Query_Length: 74 Target_Length: 327 Evalue: 3.49788e-12
+        ***  *** . **..****.*. .*..**.*** *** * * ..  . . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+     21 FNPDPDAETLYKAMKGIGTNEQAIIDVLTKRSNTQRQQIAKSFKAQFGKD      70
+
+        *   ** .*** ** ..***.
+     54 LKADLKGDLSGHFEHVMVALI      74
+     71 LTETLKSELSGKFERLIVALM      91
+
+# End_N: 1
+# N: 2 Raw_Score: 169 Query_Length: 74 Target_Length: 327 Evalue: 1.61811e-06
+        ** .    .*. .  *..*.** *  .* **  *.  * . *.* *.* *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     92 YPPYR--YEAKELHDAMKGLGTKEGVIIEILASRTKNQLREIMKAYEEDY     141
+
+          .*. *.. * **..* ..* *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+    142 GSSLEEDIQADTSGYLERILVCLL     165
+
+# End_N: 2
+# N: 3 Raw_Score: 112 Query_Length: 74 Target_Length: 327 Evalue: 0.0663902
+        ** .  *..* ** . ***  .  **     **  .... * . * . . 
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    259 AERLYYAMKGAGTRDGTLIRNIVSRSEIDLNLIKCHFKKMYGKTLSSMIM     308
+
+         * ** ... ...*.
+     60 GDLSGHFEHVMVALI      74
+    309 EDTSGDYKNALLSLV     323
+
+# End_N: 3
+# N: 4 Raw_Score: 100 Query_Length: 74 Target_Length: 327 Evalue: 0.621272
+        **. .  *   * ****  .* **  **  .   . ..*..   ....  
+      9 DAEAIRKAIRGI-GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    182 DAQDLYAAGEKIRGTDEMKFITILCTRSATHLLRVFEEYEKIANKSIEDS     231
+
+        .* .  * .*  *. ..
+     59 LKGDLSGHFEHVMVALI      75
+    232 IKSETHGSLEEAMLTVV     248
+
+# End_N: 4
+# End_Alignments_Rank: 11
+
+# Start_Alignments_Rank: 12
+# Query: SCANPS_TEST Target: ANX6_HUMAN Number_of_Alignments: 644
+# Target_Title: (P08133) Annexin VI (Lipocorti
+# N: 1 Raw_Score: 240 Query_Length: 74 Target_Length: 672 Evalue: 6.12907e-12
+        .***.*. ****.  *..* *.*.. ...*.* *** *** . . *.  *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     16 FPGFDPNQDAEALYTAMKGFGSDKEAILDIITSRSNRQRQEVCQSYKSLY      65
+
+         . * **** .*.* ** ..* *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     66 GKDLIADLKYELTGKFERLIVGLM      89
+
+# End_N: 1
+# N: 2 Raw_Score: 229 Query_Length: 74 Target_Length: 672 Evalue: 4.76037e-11
+        **. *. ** ******* ** **  *.* * . .*  *..***. *.**.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     96 DAKEIKDAISGIGTDEKCLIEILASRTNEQMHQLVAAYKDAYERDLEADI     145
+
+         ** ****. ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    146 IGDTSGHFQKMLVVLL     161
+
+# End_N: 2
+# N: 3 Raw_Score: 224 Query_Length: 74 Target_Length: 672 Evalue: 1.20864e-10
+        ***  **.*.***..*.**** *.*.*.* *** *** * . ..  . . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+    362 FNPDADAKALRKAMKGLGTDEDTIIDIITHRSNVQRQQIRQTFKSHFGRD     411
+
+        *  *** ..** .  ... *.
+     54 LKADLKGDLSGHFEHVMVALI      74
+    412 LMTDLKSEISGDLARLILGLM     432
+
+# End_N: 3
+# N: 4 Raw_Score: 197 Query_Length: 74 Target_Length: 672 Evalue: 1.85118e-08
+        **. ..**. * ***** ** **  *.**. . * . *.* * ..*.  *
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    439 DAKQLKKAMEGAGTDEKALIEILATRTNAEIRAINEAYKEDYHKSLEDAL     488
+
+          * ****  ....*
+     59 KGDLSGHFEHVMVAL      73
+    489 SSDTSGHFRRILISL     503
+
+# End_N: 4
+# N: 5 Raw_Score: 154 Query_Length: 74 Target_Length: 672 Evalue: 5.59116e-05
+        *   *. . *...* *******  *.  **      * ... * *...* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    600 PLFFADKLYKSMKGAGTDEKTLTRIMVSRSEIDLLNIRREFIEKYDKSLH     649
+
+          ..** ** *   ..**
+     56 ADLKGDLSGHFEHVMVAL      73
+    650 QAIEGDTSGDFLKALLAL     667
+
+# End_N: 5
+# N: 6 Raw_Score: 134 Query_Length: 74 Target_Length: 672 Evalue: 0.00232344
+        *   ** . **..*.** . *** *.  **      * . ..  **..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    252 PEYFAERLFKAMKGLGTRDNTLIRIMVSRSELDMLDIREIFRTKYEKSLY     301
+
+        . .* * ** ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    302 SMIKNDTSGEYKKTLLKL     319
+
+# End_N: 6
+# N: 7 Raw_Score: 132 Query_Length: 74 Target_Length: 672 Evalue: 0.00337283
+        ****  .* **  **  . .*.  .* .   . ..* ..*.*** ** .*
+     21 GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHVM      70
+    192 GTDEAQFIYILGNRSKQHLRLVFDEYLKTTGKPIEASIRGELSGDFEKLM     241
+
+        .*..
+     71 VALI      74
+    242 LAVV     245
+
+# End_N: 7
+# End_Alignments_Rank: 12
+
+# Start_Alignments_Rank: 13
+# Query: SCANPS_TEST Target: ANXB_RABIT Number_of_Alignments: 501
+# Target_Title: (P33477) Annexin A11 (Annexin 
+# N: 1 Raw_Score: 237 Query_Length: 74 Target_Length: 503 Evalue: 7.93609e-12
+        **.*  *** .***..* ****. .*. *  *** *** *.  .. ** .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+    197 GFDPLRDAEVLRKAMKGFGTDEQAIIDCLGSRSNKQRQQILLSFKTAYGK     246
+
+         *  *** .***.**  ..**.
+     53 ALKADLKGDLSGHFEHVMVALI      74
+    247 DLIKDLKSELSGNFEKTILALM     268
+
+# End_N: 1
+# N: 2 Raw_Score: 177 Query_Length: 74 Target_Length: 503 Evalue: 5.69503e-07
+        **  *..**.* ****  ** **  *** . . . * *.  ... *.  .
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    275 DAYEIKEAIKGAGTDEACLIEILASRSNEHIRELNKAYKTEFKKTLEEAI     324
+
+        . * ****. ....*
+     59 KGDLSGHFEHVMVAL      73
+    325 RSDTSGHFQRLLISL     339
+
+# End_N: 2
+# N: 3 Raw_Score: 150 Query_Length: 74 Target_Length: 503 Evalue: 8.7226e-05
+        *.  ** . .*.** ** ..*** *.  **      *  .*.  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    431 PAFFAERLNRAMRGAGTKDRTLIRIMVSRSEIDLLDIRAEYKRMYGKSLY     480
+
+         *. ** ** .  ... .
+     56 ADLKGDLSGHFEHVMVAL      73
+    481 HDISGDTSGDYRKILLKI     498
+
+# End_N: 3
+# N: 4 Raw_Score: 91 Query_Length: 74 Target_Length: 503 Evalue: 5.19522
+        .****  .  .*  ** *.   .  .**    . ..  .  ..** .*. 
+     20 IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHV      69
+    370 LGTDESKFNAVLCSRSRAHLVAVFNEYQRMTGRDIEKSICREMSGDLEQG     419
+
+        *.*..
+     70 MVALI      74
+    420 MLAVV     424
+
+# End_N: 4
+# End_Alignments_Rank: 13
+
+# Start_Alignments_Rank: 14
+# Query: SCANPS_TEST Target: ANXB_MOUSE Number_of_Alignments: 496
+# Target_Title: (P97384) Annexin A11 (Annexin 
+# N: 1 Raw_Score: 237 Query_Length: 74 Target_Length: 503 Evalue: 7.93609e-12
+        **.*  *** .***..* ****. .*. *  *** *** *.  .. ** .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+    197 GFDPLRDAEVLRKAMKGFGTDEQAIIDCLGSRSNKQRQQILLSFKTAYGK     246
+
+         *  *** .***.**  ..**.
+     53 ALKADLKGDLSGHFEHVMVALI      74
+    247 DLIKDLKSELSGNFEKTILALM     268
+
+# End_N: 1
+# N: 2 Raw_Score: 167 Query_Length: 74 Target_Length: 503 Evalue: 3.67122e-06
+        *   *..**.* ****  ** *.  *** . . . . *.  ... *.  .
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    275 DVYEIKEAIKGAGTDEACLIEIFASRSNEHIRELSRAYKTEFQKTLEEAI     324
+
+        . * ****. ....*
+     59 KGDLSGHFEHVMVAL      73
+    325 RSDTSGHFQRLLISL     339
+
+# End_N: 2
+# N: 3 Raw_Score: 151 Query_Length: 74 Target_Length: 503 Evalue: 7.2396e-05
+        *.  ** . **.** ** ..*** *.  **      *  .*.  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    431 PAFFAERLNKAMRGAGTKDRTLIRIMVSRSELDLLDIRAEYKRMYGKSLY     480
+
+         *. ** ** .  ... .
+     56 ADLKGDLSGHFEHVMVAL      73
+    481 HDITGDTSGDYRKILLKI     498
+
+# End_N: 3
+# N: 4 Raw_Score: 92 Query_Length: 74 Target_Length: 503 Evalue: 4.31194
+        .****  .  **  ** *.   .  .**    . ..  .  ..** .*. 
+     20 IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHV      69
+    370 LGTDESKFNAILCSRSRAHLVAVFNEYQRMTGRDIEKSICREMSGDLEQG     419
+
+        *.*..
+     70 MVALI      74
+    420 MLAVV     424
+
+# End_N: 4
+# End_Alignments_Rank: 14
+
+# Start_Alignments_Rank: 15
+# Query: SCANPS_TEST Target: ANXB_BOVIN Number_of_Alignments: 510
+# Target_Title: (P27214) Annexin A11 (Annexin 
+# N: 1 Raw_Score: 237 Query_Length: 74 Target_Length: 503 Evalue: 7.93609e-12
+        **.*  *** .***..* ****. .*. *  *** *** *.  .. ** .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+    197 GFDPLRDAEVLRKAMKGFGTDEQAIIDCLGSRSNKQRQQILLSFKTAYGK     246
+
+         *  *** .***.**  ..**.
+     53 ALKADLKGDLSGHFEHVMVALI      74
+    247 DLIKDLKSELSGNFEKTILALM     268
+
+# End_N: 1
+# N: 2 Raw_Score: 172 Query_Length: 74 Target_Length: 503 Evalue: 1.44595e-06
+        **  *..**.* ****  ** **  *** . . . . *.  ... *.  .
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    275 DAYEIKEAIKGAGTDEACLIEILASRSNEHIRELNRVYKTEFKKTLEEAI     324
+
+        . * ****. ....*
+     59 KGDLSGHFEHVMVAL      73
+    325 RSDTSGHFQRLLISL     339
+
+# End_N: 2
+# N: 3 Raw_Score: 151 Query_Length: 74 Target_Length: 503 Evalue: 7.2396e-05
+        *.  ** . **.** ** ..*** *.  **      *  .*.  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    431 PAFFAERLNKAMRGAGTKDRTLIRIMVSRSEIDLLDIRAEYKRLYGKSLY     480
+
+         *. ** ** .  ... .
+     56 ADLKGDLSGHFEHVMVAL      73
+    481 HDITGDTSGDYRKILLKI     498
+
+# End_N: 3
+# N: 4 Raw_Score: 92 Query_Length: 74 Target_Length: 503 Evalue: 4.31194
+        .****  .  **  ** *.   .  .**    . ..  .  ..** .*. 
+     20 IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHV      69
+    370 LGTDESKFNAILCSRSRAHLVAVFNEYQRMTGRDIEKSICREMSGDLEQG     419
+
+        *.*..
+     70 MVALI      74
+    420 MLAVV     424
+
+# End_N: 4
+# End_Alignments_Rank: 15
+
+# Start_Alignments_Rank: 16
+# Query: SCANPS_TEST Target: ANX6_BOVIN Number_of_Alignments: 656
+# Target_Title: (P79134) Annexin VI (Lipocorti
+# N: 1 Raw_Score: 237 Query_Length: 74 Target_Length: 618 Evalue: 9.82686e-12
+        ***  **.*.***..*.**** *.*.*.* ******* * . ..  . . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+    308 FNPDADAKALRKAMKGLGTDEDTIIDIITHRSNAQRQQIRQTFKSHFGRD     357
+
+        * **** .*** .  ... *.
+     54 LKADLKGDLSGHFEHVMVALI      74
+    358 LMADLKSELSGDLARLILGLM     378
+
+# End_N: 1
+# N: 2 Raw_Score: 228 Query_Length: 74 Target_Length: 618 Evalue: 5.25773e-11
+        **. *. ** ******* ** **  *.* * . .*  *..***. *.**.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     42 DAKEIKDAISGIGTDEKCLIEILASRTNEQIHQLVAAYKDAYERELEADI      91
+
+         ** ****  ..* *.
+     59 KGDLSGHFEHVMVALI      74
+     92 TGDTSGHFRKMLVVLL     107
+
+# End_N: 2
+# N: 3 Raw_Score: 208 Query_Length: 74 Target_Length: 618 Evalue: 2.18488e-09
+        **. ..**. * ***** ** **  *.**. * * * *.* * . *.  *
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    385 DAKQLKKAMEGAGTDEKALIEILATRTNAEIQAINKAYKEDYHKTLEDAL     434
+
+          * ****. ....*
+     59 KGDLSGHFEHVMVAL      73
+    435 SSDTSGHFKRILISL     449
+
+# End_N: 3
+# N: 4 Raw_Score: 156 Query_Length: 74 Target_Length: 618 Evalue: 3.53074e-05
+        *   *. . *...* **.****  *.  **      * ... * *...* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    546 PLFFADKLYKSMKGAGTEEKTLTRIMVSRSEIDLLNIRREFIEKYDKSLH     595
+
+          ..** ****   ..*.
+     56 ADLKGDLSGHFEHVMVAL      73
+    596 QAIEGDTSGHFLKALLAI     613
+
+# End_N: 4
+# N: 5 Raw_Score: 132 Query_Length: 74 Target_Length: 618 Evalue: 0.00309187
+        ****  .* **  **  . .*.  .* .   . ..* ..*.*** ** .*
+     21 GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHVM      70
+    138 GTDEAQFIYILGNRSKQHLRLVFDEYLKTTGKPIEASIRGELSGDFEKLM     187
+
+        .*..
+     71 VALI      74
+    188 LAVV     191
+
+# End_N: 5
+# N: 6 Raw_Score: 131 Query_Length: 74 Target_Length: 618 Evalue: 0.00372523
+        ** . **..*.** . *** *.  **      * . ..  **..* . .*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    202 AERLFKAMKGLGTRDNTLIRIMVSRSELDMLDIREIFRTKYEKSLYSMIK     251
+
+         * ** ..  .. *
+     60 GDLSGHFEHVMVAL      73
+    252 NDTSGEYKKTLLKL     265
+
+# End_N: 6
+# N: 7 Raw_Score: 91 Query_Length: 74 Target_Length: 618 Evalue: 6.43298
+        * * . *.  * . * **** .*.* ** ..* *.
+     40 QLIVKQYQEAYEQALKADLKGDLSGHFEHVMVALI      74
+      1 QEICQNYKSLYGKDLIADLKYELTGKFERLIVGLM      35
+
+# End_N: 7
+# End_Alignments_Rank: 16
+
+# Start_Alignments_Rank: 17
+# Query: SCANPS_TEST Target: ANX5_CHICK Number_of_Alignments: 297
+# Target_Title: (P17153) Annexin V (Lipocortin
+# N: 1 Raw_Score: 233 Query_Length: 74 Target_Length: 321 Evalue: 1.04968e-11
+        .  *.   ****.***..*.****.*.. *** *.***** *   ..  .
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     12 FSPFDARADAEALRKAMKGMGTDEETILKILTSRNNAQRQEIASAFKTLF      61
+
+         . *  *** .*.* ** .**.*.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     62 GRDLVDDLKSELTGKFETLMVSLM      85
+
+# End_N: 1
+# N: 2 Raw_Score: 181 Query_Length: 74 Target_Length: 321 Evalue: 1.69627e-07
+        ** *.. **.* **.** *  **  *. *. * * . * . **  *.  .
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     92 DAHALKHAIKGAGTNEKVLTEILASRTPAEVQNIKQVYMQEYEANLEDKI     141
+
+         *. ****. ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    142 TGETSGHFQRLLVVLL     157
+
+# End_N: 2
+# N: 3 Raw_Score: 117 Query_Length: 74 Target_Length: 321 Evalue: 0.0256514
+        *.  ** .  ...* ***. *** ..  **      *  .... . ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    248 PAYFAETLYYSMKGAGTDDDTLIRVMVSRSEIDLLDIRHEFRKNFAKSLY     297
+
+          .. * ** .   .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    298 QMIQKDTSGDYRKALLLL     315
+
+# End_N: 3
+# N: 4 Raw_Score: 87 Query_Length: 74 Target_Length: 321 Evalue: 6.87157
+        **. . .*     ****.*.* **  ** .. . .  .*       ..  
+      9 DAEAIRKAIR-GIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    175 DAQVLFRAGELKWGTDEETFITILGTRSVSHLRRVFDKYMTISGFQIEET     224
+
+        .  . ** .* ...*..
+     59 LKGDLSGHFEHVMVALI      75
+    225 IDRETSGDLEKLLLAVV     241
+
+# End_N: 4
+# End_Alignments_Rank: 17
+
+# Start_Alignments_Rank: 18
+# Query: SCANPS_TEST Target: ANX6_MOUSE Number_of_Alignments: 690
+# Target_Title: (P14824) Annexin VI (Lipocorti
+# N: 1 Raw_Score: 236 Query_Length: 74 Target_Length: 672 Evalue: 1.29158e-11
+        ***  **.*.***..****** *.*.*.* ******* * . ..  . . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+    362 FNPDADAKALRKAMKGIGTDEATIIDIVTHRSNAQRQQIRQTFKSHFGRD     411
+
+        * **** ..** .  ... *.
+     54 LKADLKGDLSGHFEHVMVALI      74
+    412 LMADLKSEISGDLARLILGLM     432
+
+# End_N: 1
+# N: 2 Raw_Score: 225 Query_Length: 74 Target_Length: 672 Evalue: 1.00315e-10
+        **. *. ** ******* ** **  *.* * . .*  *..***. *..*.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     96 DAKEIKDAISGIGTDEKCLIEILASRTNEQMHQLVAAYKDAYERDLESDI     145
+
+         ** ****. ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    146 IGDTSGHFQKMLVVLL     161
+
+# End_N: 2
+# N: 3 Raw_Score: 210 Query_Length: 74 Target_Length: 672 Evalue: 1.64187e-09
+        .* *. . ****.  *..* *.*..... ..* *** *** * . *.  *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     16 FPEFDANQDAEALYTAMKGFGSDKESILELITSRSNKQRQEICQSYKSLY      65
+
+         . *  *** .*.* ** ..* *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     66 GKDLIEDLKYELTGKFERLIVNLM      89
+
+# End_N: 3
+# N: 4 Raw_Score: 202 Query_Length: 74 Target_Length: 672 Evalue: 7.29106e-09
+        **. ..**. * ******** **  *.**. . * . *.* * ..*.  *
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    439 DAKQLKKAMEGAGTDEKTLIEILATRTNAEIRAINEAYKEDYHKSLEDAL     488
+
+          * ****  ....*
+     59 KGDLSGHFEHVMVAL      73
+    489 SSDTSGHFRRILISL     503
+
+# End_N: 4
+# N: 5 Raw_Score: 154 Query_Length: 74 Target_Length: 672 Evalue: 5.59116e-05
+        *   *. . *...* *******  ..  **      * ... * *...* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    600 PLFFADKLYKSMKGAGTDEKTLTRVMVSRSEIDLLNIRREFIEKYDKSLH     649
+
+          ..** ** *   ..**
+     56 ADLKGDLSGHFEHVMVAL      73
+    650 QAIEGDTSGDFMKALLAL     667
+
+# End_N: 5
+# N: 6 Raw_Score: 134 Query_Length: 74 Target_Length: 672 Evalue: 0.00232344
+        *   ** . **..*.** . *** *.  **      * . ..  **..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    252 PEYFAERLFKAMKGLGTRDNTLIRIMVSRSELDMLDIREIFRTKYEKSLY     301
+
+        . .* * ** ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    302 SMIKNDTSGEYKKALLKL     319
+
+# End_N: 6
+# N: 7 Raw_Score: 132 Query_Length: 74 Target_Length: 672 Evalue: 0.00337283
+        ****  .* **  **  . .*.  .* .   . ..* ..*.*** ** .*
+     21 GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHVM      70
+    192 GTDEAQFIYILGNRSKQHLRLVFDEYLKTTGKPIEASIRGELSGDFEKLM     241
+
+        .*..
+     71 VALI      74
+    242 LAVV     245
+
+# End_N: 7
+# End_Alignments_Rank: 18
+
+# Start_Alignments_Rank: 19
+# Query: SCANPS_TEST Target: ANX5_CYNPY Number_of_Alignments: 341
+# Target_Title: (P70075) Annexin V            
+# N: 1 Raw_Score: 227 Query_Length: 74 Target_Length: 323 Evalue: 3.23179e-11
+        * **   *** .* *..*.**** *.. .*  *** *** *   *.  . 
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+     15 PDFNDKEDAETLRHAMKGLGTDEDTILKLLISRSNKQRQQIALTYKTLFG      64
+
+        . *  *** .*** ** ..***.
+     52 QALKADLKGDLSGHFEHVMVALI      74
+     65 RDLTDDLKSELSGKFETLLVALM      87
+
+# End_N: 1
+# N: 2 Raw_Score: 170 Query_Length: 74 Target_Length: 323 Evalue: 1.32598e-06
+        **  .* **.*.** *  .* *.  *. *. . * . *.. ..  *. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     94 DACELRNAIKGLGTLENVIIEIMASRTAAEVKNIKETYKKEFDSDLEKDI     143
+
+         ** **.** ..*.*.
+     59 KGDLSGHFEHVMVALI      74
+    144 VGDTSGNFERLLVSLV     159
+
+# End_N: 2
+# N: 3 Raw_Score: 128 Query_Length: 74 Target_Length: 323 Evalue: 0.003324
+        ** .  ...* ***..*** .*  **      * . ... * ..* * ..
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    254 AEVLYNSMKGAGTDDQTLIRVLVSRSEIDLFNIRQTFRKHYGKSLHAMIQ     303
+
+         * ** . . .. *
+     60 GDLSGHFEHVMVAL      73
+    304 SDTSGDYRNALLLL     317
+
+# End_N: 3
+# N: 4 Raw_Score: 116 Query_Length: 74 Target_Length: 323 Evalue: 0.0311056
+        **.*.  *     ****.*.*.**. *   . . .  **       ..  
+      9 DAEAIRKAIRGI-GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    177 DAKALFDAGENKWGTDEETFISILSTRGVGHLRKVFDQYMTISGYQIEES     226
+
+        .. .  **** ...*..
+     59 LKGDLSGHFEHVMVALI      75
+    227 IQSETGGHFEKLLLAVV     243
+
+# End_N: 4
+# End_Alignments_Rank: 19
+
+# Start_Alignments_Rank: 20
+# Query: SCANPS_TEST Target: ANX6_CHICK Number_of_Alignments: 686
+# Target_Title: (P51901) Annexin VI (Lipocorti
+# N: 1 Raw_Score: 230 Query_Length: 74 Target_Length: 671 Evalue: 3.94491e-11
+        **   **. .***..*.****  .* .**.******* *.* *.  * . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+    361 FNDDGDAQVLRKAMKGLGTDEGAIIEVLTQRSNAQRQQILKAYKAHYGRD     410
+
+        * **** .*** . .... *.
+     54 LKADLKGDLSGHFEHVMVALI      74
+    411 LLADLKSELSGSLANLILGLM     431
+
+# End_N: 1
+# N: 2 Raw_Score: 221 Query_Length: 74 Target_Length: 671 Evalue: 2.11067e-10
+        .**** * **.*.  *..* *.*.  .....* *** **  * . *.  *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     15 FPGFNASQDADALCNAMKGFGSDKDAILDLITSRSNKQRLEICQAYKSQY      64
+
+         . * **** .*.* ** ..*.*.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     65 GKDLIADLKYELTGKFERLIVSLM      88
+
+# End_N: 2
+# N: 3 Raw_Score: 217 Query_Length: 74 Target_Length: 671 Evalue: 4.44782e-10
+        **. *. ** ******* ** **  *.* . . .*  *..***. *.**.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     95 DAKEIKDAIAGIGTDEKCLIEILASRTNQEIHDLVAAYKDAYERDLEADV     144
+
+         ** ****. ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    145 VGDTSGHFKKMLVVLL     160
+
+# End_N: 3
+# N: 4 Raw_Score: 192 Query_Length: 74 Target_Length: 671 Evalue: 4.69282e-08
+        **. .***. * **** **. *.  *.* .   * . **.** ..*. **
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    438 DAKQLRKAVEGDGTDESTLVEIMATRNNQEIAAINEAYQQAYHKSLEDDL     487
+
+          * * **. ..*.*
+     59 KGDLSGHFEHVMVAL      73
+    488 SSDTSVHFKRLLVSL     502
+
+# End_N: 4
+# N: 5 Raw_Score: 129 Query_Length: 74 Target_Length: 671 Evalue: 0.00589004
+        ** . **..*.** . ***.*.  **      * . ..  *...*   .*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    255 AERLYKAMKGLGTRDNTLIHIMVSRSEIDMLDIREVFRTKYDKSLHNMIK     304
+
+         * ** ..  .. *
+     60 GDLSGHFEHVMVAL      73
+    305 EDTSGEYKKALLKL     318
+
+# End_N: 5
+# N: 6 Raw_Score: 111 Query_Length: 74 Target_Length: 671 Evalue: 0.168611
+        *.  *. . *...* ****.**  *.  **      *  .. . ....* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    600 PAFFADKLYKSMKGAGTDERTLTRIMISRSEIDLLNIRGEFIDLFDKSLY     649
+
+          .. * ** .   ..**
+     56 ADLKGDLSGHFEHVMVAL      73
+    650 QMIEKD-SGDYCKALLAL     667
+
+# End_N: 6
+# N: 7 Raw_Score: 105 Query_Length: 74 Target_Length: 671 Evalue: 0.515791
+        ****  .* **  **  . ...  .* .   . ..  .. .*** ** . 
+     21 GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHVM      70
+    191 GTDEAQFIYILGRRSKQHLRMVFDEYLKISGKPIERSIRAELSGDFEKLK     240
+
+        .*..
+     71 VALI      74
+    241 LAVV     244
+
+# End_N: 7
+# End_Alignments_Rank: 20
+
+# Start_Alignments_Rank: 21
+# Query: SCANPS_TEST Target: ANX4_BOVIN Number_of_Alignments: 318
+# Target_Title: (P13214) Annexin A4 (Annexin I
+# N: 1 Raw_Score: 225 Query_Length: 74 Target_Length: 318 Evalue: 4.6162e-11
+        *** . **. .***..*.****  .**.*  ** **** *   *.    .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+     12 GFNAAEDAQTLRKAMKGLGTDEDAIINVLAYRSTAQRQEIRTAYKTTIGR      61
+
+         *  *** .***.**.*.. ..
+     53 ALKADLKGDLSGHFEHVMVALI      74
+     62 DLMDDLKSELSGNFEQVILGMM      83
+
+# End_N: 1
+# N: 2 Raw_Score: 163 Query_Length: 74 Target_Length: 318 Evalue: 4.8088e-06
+        *.*  * . .***..* ****  ** **  *.  . . * . **  * ..
+      6 PSV--DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      55
+     85 PTVLYDVQELRKAMKGAGTDEGCLIEILASRTPEEIRRINQTYQLQYGRS     134
+
+        *. *.. * *  *. *.*.*
+     56 LKADLKGDLSGHFEHVMVAL      75
+    135 LEDDIRSDTSFMFQRVLVSL     154
+
+# End_N: 2
+# N: 3 Raw_Score: 137 Query_Length: 74 Target_Length: 318 Evalue: 0.000611302
+        ** . *...*.***. *** ..  *.      *   ..  * ..* . .*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    250 AERLYKSMKGLGTDDDTLIRVMVSRAEIDMLDIRANFKRLYGKSLYSFIK     299
+
+        ** ** .  *.. *
+     60 GDLSGHFEHVMVAL      73
+    300 GDTSGDYRKVLLIL     313
+
+# End_N: 3
+# N: 4 Raw_Score: 98 Query_Length: 74 Target_Length: 318 Evalue: 0.87616
+        **. . .*  .  ****  .. .*  *.  .   .  .*.   .. ..  
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    173 DAQDLYEAGEKKWGTDEVKFLTVLCSRNRNHLLHVFDEYKRIAQKDIEQS     222
+
+        .* . ** **  ..*..
+     59 LKGDLSGHFEHVMVALI      75
+    223 IKSETSGSFEDALLAIV     239
+
+# End_N: 4
+# End_Alignments_Rank: 21
+
+# Start_Alignments_Rank: 22
+# Query: SCANPS_TEST Target: ANX6_RAT Number_of_Alignments: 721
+# Target_Title: (P48037) Annexin VI (Lipocorti
+# N: 1 Raw_Score: 229 Query_Length: 74 Target_Length: 672 Evalue: 4.76037e-11
+        ***  **. .***..****** *.*.*.*.*** *** * . ..  . . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+    362 FNPDADAKGLRKAMKGIGTDEATIIDIITQRSNVQRQQIRQTFKSHFGRD     411
+
+        * **** ..** .  ... *.
+     54 LKADLKGDLSGHFEHVMVALI      74
+    412 LMADLKSEISGDLARLILGLM     432
+
+# End_N: 1
+# N: 2 Raw_Score: 223 Query_Length: 74 Target_Length: 672 Evalue: 1.45623e-10
+        **. *. ** ******* ** **  *.* * . .*  *..***. *..*.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+     96 DAKEIKDAISGIGTDEKCLIEILASRTNEQIHQLVAAYKDAYERDLESDI     145
+
+         ** ****. ..* *.
+     59 KGDLSGHFEHVMVALI      74
+    146 IGDTSGHFQKMLVVLL     161
+
+# End_N: 2
+# N: 3 Raw_Score: 207 Query_Length: 74 Target_Length: 672 Evalue: 2.87166e-09
+        .  *. . ****.  *..* *.*..... ..* *** *** * . *.  *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     16 FADFDANQDAEALYTAMKGFGSDKESILELITSRSNKQRQEICQSYKSLY      65
+
+         . * **** .*.* ** ..* *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     66 GKDLIADLKYELTGKFERLIVNLM      89
+
+# End_N: 3
+# N: 4 Raw_Score: 198 Query_Length: 74 Target_Length: 672 Evalue: 1.53644e-08
+        **. ..**. * ***** ** **  *.**. . * . *.* * ..*.  *
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    439 DAKQLKKAMEGAGTDEKALIEILATRTNAEIRAINEAYKEDYHKSLEDAL     488
+
+          * ****. ....*
+     59 KGDLSGHFEHVMVAL      73
+    489 SSDTSGHFKRILISL     503
+
+# End_N: 4
+# N: 5 Raw_Score: 145 Query_Length: 74 Target_Length: 672 Evalue: 0.000299148
+        *   *. . *...* *******  ..  **      * ... * *...  
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    600 PLFFADKLYKSMKGAGTDEKTLTRVMVSRSEIDLLNIRREFIEKYDKSPH     649
+
+          ..** ** *   ..**
+     56 ADLKGDLSGHFEHVMVAL      73
+    650 QAIEGDTSGDFMKALLAL     667
+
+# End_N: 5
+# N: 6 Raw_Score: 134 Query_Length: 74 Target_Length: 672 Evalue: 0.00232344
+        *   ** . **..*.** . *** *.  **      * . ..  **..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    252 PEYFAERLFKAMKGLGTRDNTLIRIMVSRSELDMLDIREIFRTKYEKSLY     301
+
+        . .* * ** ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    302 SMIKNDTSGEYKKALLKL     319
+
+# End_N: 6
+# N: 7 Raw_Score: 132 Query_Length: 74 Target_Length: 672 Evalue: 0.00337283
+        ****  .* **  **  . .*.  .* .   . ..* ..*.*** ** .*
+     21 GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHVM      70
+    192 GTDEAQFIYILGNRSKQHLRLVFDEYLKTTGKPIEASIRGELSGDFEKLM     241
+
+        .*..
+     71 VALI      74
+    242 LAVV     245
+
+# End_N: 7
+# End_Alignments_Rank: 22
+
+# Start_Alignments_Rank: 23
+# Query: SCANPS_TEST Target: ANXC_HYDAT Number_of_Alignments: 311
+# Target_Title: (P26256) Annexin XII          
+# N: 1 Raw_Score: 221 Query_Length: 74 Target_Length: 316 Evalue: 9.66432e-11
+        .  **   *** .***..*******.. .**  ******* *   *   .
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     10 HASFNSREDAETLRKAMKGIGTDEKSITHILATRSNAQRQQIKTDYTTLF      59
+
+         . *. .** .***..*   .**.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     60 GKHLEDELKSELSGNYEAAALALL      83
+
+# End_N: 1
+# N: 2 Raw_Score: 154 Query_Length: 74 Target_Length: 316 Evalue: 2.55612e-05
+        ** .  *..*.****  **.**  .**** . *   ..  *.. *. .. 
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+     91 AEQLHAAMKGLGTDENALIDILCTQSNAQIHAIKAAFKLLYKEDLEKEII     140
+
+         . **.*. ..*...
+     60 GDLSGHFEHVMVALI      74
+    141 SETSGNFQRLLVSML     155
+
+# End_N: 2
+# N: 3 Raw_Score: 122 Query_Length: 74 Target_Length: 316 Evalue: 0.00994005
+        ** .  *..*.** .**** **  **      * . .*  * ..*   . 
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    250 AERLHHAMKGLGTSDKTLIRILVSRSEIDLANIKETFQAMYGKSLYEFIA     299
+
+         * ** .. ... .
+     60 GDLSGHFEHVMVAL      73
+    300 DDCSGDYKDLLLQI     313
+
+# End_N: 3
+# N: 4 Raw_Score: 109 Query_Length: 74 Target_Length: 316 Evalue: 0.112072
+        ** ** .*  * *****  .  .*  **  * . *  .* .   . .   
+      9 DAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    173 DAAAIYQAGEGQIGTDESRFNAVLATRSYPQLHQIFHEYSKISNKTILQA     222
+
+        .. ..**  .. ..*..
+     59 LKGDLSGHFEHVMVALI      75
+    223 IENEFSGDIKNGLLAIV     239
+
+# End_N: 4
+# End_Alignments_Rank: 23
+
+# Start_Alignments_Rank: 24
+# Query: SCANPS_TEST Target: ANX1_RAT Number_of_Alignments: 344
+# Target_Title: (P07150) Annexin I (Lipocortin
+# N: 1 Raw_Score: 219 Query_Length: 74 Target_Length: 345 Evalue: 1.53658e-10
+        ** **** *  *. ***   * ** *.*.***.*.***** *   * .  
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     38 YPSFNPSSDVAALHKAIMVKGVDEATIIDILTKRTNAQRQQIKAAYLQET      87
+
+         . *   **  *.**.* *..*..
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     88 GKPLDETLKKALTGHLEEVVLAML     111
+
+# End_N: 1
+# N: 2 Raw_Score: 188 Query_Length: 74 Target_Length: 345 Evalue: 4.95942e-08
+        **. .* *..*.**** *** *** *** * . * . *.*  .. *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    118 DADELRAAMKGLGTDEDTLIEILTTRSNQQIREITRVYREELKRDLAKDI     167
+
+          * ** * . ..**
+     59 KGDLSGHFEHVMVAL      73
+    168 TSDTSGDFRNALLAL     182
+
+# End_N: 2
+# N: 3 Raw_Score: 126 Query_Length: 74 Target_Length: 345 Evalue: 0.00516634
+        *.  ** . .*..* **  **** *.  **      *   **. *   * 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    274 PAFFAEKLYEAMKGAGTRHKTLIRIMVSRSEIDMNEIKVFYQKKYGIPLC     323
+
+          .  .  * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    324 QAILDETKGDYEKILVAL     341
+
+# End_N: 3
+# N: 4 Raw_Score: 85 Query_Length: 74 Target_Length: 345 Evalue: 10.7491
+        ** *. .*  *  ***   .  *** **  . . . . *..  .. .   
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    201 DARALYEAGERRKGTDVNVFNTILTTRSYPHLRKVFQNYRKYSQHDMNKA     250
+
+        *  .* *  *  .  ..
+     59 LKGDLSGHFEHVMVALI      75
+    251 LDLELKGDIEKCLTTIV     267
+
+# End_N: 4
+# End_Alignments_Rank: 24
+
+# Start_Alignments_Rank: 25
+# Query: SCANPS_TEST Target: ANX4_PIG Number_of_Alignments: 319
+# Target_Title: (P08132) Annexin A4 (Annexin I
+# N: 1 Raw_Score: 218 Query_Length: 74 Target_Length: 318 Evalue: 1.70139e-10
+        *** . **. .***..*.****  .*..*  ** **** *   *.    .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+     12 GFNAAEDAQTLRKAMKGLGTDEDAIISVLAYRSTAQRQEIRTAYKSTIGR      61
+
+         *  *** .***.**.*.. ..
+     53 ALKADLKGDLSGHFEHVMVALI      74
+     62 DLLDDLKSELSGNFEQVILGMM      83
+
+# End_N: 1
+# N: 2 Raw_Score: 160 Query_Length: 74 Target_Length: 318 Evalue: 8.41068e-06
+        *.*  * . .*.*..* ****  ** **  *.  . . * . **  * ..
+      6 PSV--DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      55
+     85 PTVLYDVQELRRAMKGAGTDEGCLIEILASRTPEEIRRINQTYQLQYGRS     134
+
+        *. *.. * *  *. *.*.*
+     56 LKADLKGDLSGHFEHVMVAL      75
+    135 LEDDIRSDTSFMFQRVLVSL     154
+
+# End_N: 2
+# N: 3 Raw_Score: 140 Query_Length: 74 Target_Length: 318 Evalue: 0.000349511
+        ** . *...*.***. *** ..  *.      *   ..  * ..* . .*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    250 AERLYKSMKGLGTDDNTLIRVMVSRAEIDMMDIRANFKRLYGKSLYSFIK     299
+
+        ** ** .  *.. *
+     60 GDLSGHFEHVMVAL      73
+    300 GDTSGDYRKVLLIL     313
+
+# End_N: 3
+# N: 4 Raw_Score: 98 Query_Length: 74 Target_Length: 318 Evalue: 0.87616
+        **. . .*  .  ****  .. .*  *.  .   .  .*.   .. ..  
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    173 DAQDLYEAGEKKWGTDEVKFLTVLCSRNRNHLLHVFDEYKRISQKDIEQS     222
+
+        .* . ** **  ..*..
+     59 LKGDLSGHFEHVMVALI      75
+    223 IKSETSGSFEDALLAIV     239
+
+# End_N: 4
+# End_Alignments_Rank: 25
+
+# Start_Alignments_Rank: 26
+# Query: SCANPS_TEST Target: ANX1_HUMAN Number_of_Alignments: 383
+# Target_Title: (P04083) Annexin I (Lipocortin
+# N: 1 Raw_Score: 218 Query_Length: 74 Target_Length: 345 Evalue: 1.85134e-10
+        ** **** *  *. ***   * ** *.*.***.*.***** *   * .  
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     38 YPTFNPSSDVAALHKAIMVKGVDEATIIDILTKRNNAQRQQIKAAYLQET      87
+
+         . *   **  *.**.* *..**.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     88 GKPLDETLKKALTGHLEEVVLALL     111
+
+# End_N: 1
+# N: 2 Raw_Score: 167 Query_Length: 74 Target_Length: 345 Evalue: 2.48309e-06
+        **. .* *..*.**** *** **  *.* . . * . *.*  .. *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    118 DADELRAAMKGLGTDEDTLIEILASRTNKEIRDINRVYREELKRDLAKDI     167
+
+          * ** * . ...*
+     59 KGDLSGHFEHVMVAL      73
+    168 TSDTSGDFRNALLSL     182
+
+# End_N: 2
+# N: 3 Raw_Score: 131 Query_Length: 74 Target_Length: 345 Evalue: 0.00203482
+        *.  ** . .*..*.**  * ** *.  **      *   **. *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    274 PAFFAEKLHQAMKGVGTRHKALIRIMVSRSEIDMNDIKAFYQKMYGISLC     323
+
+          .  .  * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    324 QAILDETKGDYEKILVAL     341
+
+# End_N: 3
+# N: 4 Raw_Score: 93 Query_Length: 74 Target_Length: 345 Evalue: 2.42059
+        ** *. .*  *  ***   .  *** **  * . . ..* .  .. .   
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    201 DARALYEAGERRKGTDVNVFNTILTTRSYPQLRRVFQKYTKYSKHDMNKV     250
+
+        *  .* *  *  . *..
+     59 LKGDLSGHFEHVMVALI      75
+    251 LDLELKGDIEKCLTAIV     267
+
+# End_N: 4
+# End_Alignments_Rank: 26
+
+# Start_Alignments_Rank: 27
+# Query: SCANPS_TEST Target: ANXA_HUMAN Number_of_Alignments: 371
+# Target_Title: (Q9UJ72) Annexin A10 (Annexin 
+# N: 1 Raw_Score: 217 Query_Length: 74 Target_Length: 324 Evalue: 2.09002e-10
+        * *** .**. .  *..*   *.  ******.* **** .* . **  * 
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+     15 PNFNPIMDAQMLGGALQGFDCDKDMLINILTQRCNAQRMMIAEAYQSMYG      64
+
+        . *  **.  ** **. **  *.
+     52 QALKADLKGDLSGHFEHVMVALI      74
+     65 RDLIGDLREQLSDHFKDVMAGLM      87
+
+# End_N: 1
+# N: 2 Raw_Score: 157 Query_Length: 74 Target_Length: 324 Evalue: 1.49982e-05
+        **   *  **  .  *..*.****  ** **  *.* .   . . *   *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     88 YPP--PLYDAHELWHAMKGVGTDENCLIEILASRTNGEIFQMREAYCLQY     137
+
+           *. *.  . ****   .. *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+    138 SNNLQEDIYSETSGHFRDTLMNLV     161
+
+# End_N: 2
+# N: 3 Raw_Score: 125 Query_Length: 74 Target_Length: 324 Evalue: 0.00583239
+        *.  *  .  **   *   **.* **  **      * *.*.* * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    249 PAYFAYRLYSAIHDFGFHNKTVIRILIARSEIDLLTIRKRYKERYGKSLF     298
+
+         *..   ***..  ..*.
+     56 ADLKGDLSGHFEHVMVAL      73
+    299 HDIRNFASGHYKKALLAI     316
+
+# End_N: 3
+# N: 4 Raw_Score: 83 Query_Length: 74 Target_Length: 324 Evalue: 14.6207
+        **  . .* .    . **..  **  .*  * .*. ...*    * .   
+      9 DAEAIRKAIRGIGTDEKTLIN-ILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    176 DAMVLWEACQQKTGEHKTMLQMILCNKSYQQLRLVFQEFQNISGQDMVDA     225
+
+        .     *.*. ..**..
+     59 LKGDLSGHFEHVMVALI      75
+    226 INECYDGYFQELLVAIV     242
+
+# End_N: 4
+# End_Alignments_Rank: 27
+
+# Start_Alignments_Rank: 28
+# Query: SCANPS_TEST Target: ANX1_BOVIN Number_of_Alignments: 371
+# Target_Title: (P46193) Annexin I (Lipocortin
+# N: 1 Raw_Score: 216 Query_Length: 74 Target_Length: 346 Evalue: 2.69558e-10
+        ** **** * **. ***   * ** *.* ***.*.***** *   * .  
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     39 YPTFNPSSDVEALHKAITVKGVDEATIIEILTKRNNAQRQQIKAAYLQEK      88
+
+         . *   **  * **.* *..**.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     89 GKPLDEVLKKALLGHLEEVVLALL     112
+
+# End_N: 1
+# N: 2 Raw_Score: 162 Query_Length: 74 Target_Length: 346 Evalue: 6.32343e-06
+        *** .* *..*.**** **  **  *.* . . * . ..*  .. *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    119 DAEELRAAMKGLGTDEDTLNEILASRTNREIREINRVHREELKRDLAKDI     168
+
+          * ** .*  ..**
+     59 KGDLSGHFEHVMVAL      73
+    169 ASDTSGDYEKALLAL     183
+
+# End_N: 2
+# N: 3 Raw_Score: 134 Query_Length: 74 Target_Length: 346 Evalue: 0.0011669
+        *   ** . .*..****  **** *.  **      *   **. *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    275 PMFFAEKLHQAMKGIGTRHKTLIRIMVSRSEIDMNDIKACYQKLYGISLC     324
+
+          .  .  * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    325 QAILDETKGDYEKILVAL     342
+
+# End_N: 3
+# N: 4 Raw_Score: 85 Query_Length: 74 Target_Length: 346 Evalue: 10.7814
+        ** *. .*  *  ***   .  *** **  . . . ..* .  .. .   
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    202 DARALYEAGERRKGTDVNVFTTILTTRSYPHLRRVFQKYSKYSKHDMNKV     251
+
+        *  .* *  *  .  ..
+     59 LKGDLSGHFEHVMVALI      75
+    252 LDLELKGDIEKCLTVIV     268
+
+# End_N: 4
+# End_Alignments_Rank: 28
+
+# Start_Alignments_Rank: 29
+# Query: SCANPS_TEST Target: ANX4_HUMAN Number_of_Alignments: 312
+# Target_Title: (P09525) Annexin A4 (Annexin I
+# N: 1 Raw_Score: 215 Query_Length: 74 Target_Length: 318 Evalue: 2.97577e-10
+        ***   **. .***..*.****  .*..*  *. **** *   *.    .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+     12 GFNAMEDAQTLRKAMKGLGTDEDAIISVLAYRNTAQRQEIRTAYKSTIGR      61
+
+         *  *** .***.**.*.* ..
+     53 ALKADLKGDLSGHFEHVMVALI      74
+     62 DLIDDLKSELSGNFEQVIVGMM      83
+
+# End_N: 1
+# N: 2 Raw_Score: 166 Query_Length: 74 Target_Length: 318 Evalue: 2.74943e-06
+        *.*  * . .*.*..* ****  ** **  *.  . . * . **. * ..
+      6 PSV--DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      55
+     85 PTVLYDVQELRRAMKGAGTDEGCLIEILASRTPEEIRRISQTYQQQYGRS     134
+
+        *. *.. * *  *. *.*.*
+     56 LKADLKGDLSGHFEHVMVAL      75
+    135 LEDDIRSDTSFMFQRVLVSL     154
+
+# End_N: 2
+# N: 3 Raw_Score: 141 Query_Length: 74 Target_Length: 318 Evalue: 0.000290088
+        ** . *...*.***. *** ..  *.      *  ...  * ..* . .*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    250 AEKLYKSMKGLGTDDNTLIRVMVSRAEIDMLDIRAHFKRLYGKSLYSFIK     299
+
+        ** ** .  *.. *
+     60 GDLSGHFEHVMVAL      73
+    300 GDTSGDYRKVLLVL     313
+
+# End_N: 3
+# N: 4 Raw_Score: 98 Query_Length: 74 Target_Length: 318 Evalue: 0.87616
+        **. . .*  .  ****  .. .*  *.  .   .  .*.   .. ..  
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    173 DAQDLYEAGEKKWGTDEVKFLTVLCSRNRNHLLHVFDEYKRISQKDIEQS     222
+
+        .* . ** **  ..*..
+     59 LKGDLSGHFEHVMVALI      75
+    223 IKSETSGSFEDALLAIV     239
+
+# End_N: 4
+# End_Alignments_Rank: 29
+
+# Start_Alignments_Rank: 30
+# Query: SCANPS_TEST Target: ANX4_CANFA Number_of_Alignments: 319
+# Target_Title: (P50994) Annexin A4 (Annexin I
+# N: 1 Raw_Score: 213 Query_Length: 74 Target_Length: 318 Evalue: 4.31979e-10
+        **. . **. .***..*.****  .*..*  *. .*** *   *.    .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+     12 GFSATEDAQTLRKAMKGLGTDEDAIISVLAPRNTSQRQEIRTAYKSTIGR      61
+
+         *  *** .***.** *.* .*
+     53 ALKADLKGDLSGHFEHVMVALI      74
+     62 DLMDDLKSELSGNFERVIVGMI      83
+
+# End_N: 1
+# N: 2 Raw_Score: 148 Query_Length: 74 Target_Length: 318 Evalue: 7.87062e-05
+        *.*  * . .*.*..* ****  ** **  *.  . . * . **  * ..
+      6 PSV--DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      55
+     85 PTVLYDVQELRRAMKGSGTDEGCLIEILASRTPEELRCINQTYQLQYGRS     134
+
+        *.  .. * *  *. *.*.*
+     56 LKADLKGDLSGHFEHVMVAL      75
+    135 LEDVIRSDTSFMFQRVLVSL     154
+
+# End_N: 2
+# N: 3 Raw_Score: 142 Query_Length: 74 Target_Length: 318 Evalue: 0.000240768
+        ** . *...*.***. *** ..  *.      * . ..  * ..* . .*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    250 AERLYKSMKGLGTDDNTLIRVMVSRAEIDMMDIRESFKRLYGKSLYSFIK     299
+
+        ** ** .  *.. *
+     60 GDLSGHFEHVMVAL      73
+    300 GDTSGDYRKVLLIL     313
+
+# End_N: 3
+# N: 4 Raw_Score: 97 Query_Length: 74 Target_Length: 318 Evalue: 1.05564
+        **. . .*  .  ****  .. .*  *.  .   .  .*.   .. ..  
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    173 DAQDLYEAGEKKWGTDEVKFLTVLCSRNRNHLLHVFDEYKRISQKDIEQG     222
+
+        .* . ** **  ..*..
+     59 LKGDLSGHFEHVMVALI      75
+    223 IKSETSGSFEDALLAIV     239
+
+# End_N: 4
+# End_Alignments_Rank: 30
+
+# Start_Alignments_Rank: 31
+# Query: SCANPS_TEST Target: ANXX_DROME Number_of_Alignments: 330
+# Target_Title: (P22465) Annexin X            
+# N: 1 Raw_Score: 213 Query_Length: 74 Target_Length: 320 Evalue: 4.34795e-10
+        *. * **. .* *..* ****. .*..*  *** *** *   *.  .*. 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+     15 FDASQDAQVLRAAMKGFGTDEQEIIDVLVGRSNQQRQTIKAVYEAEFERD      64
+
+        *  *** .* * ** *.* *.
+     54 LKADLKGDLSGHFEHVMVALI      74
+     65 LVDDLKDELGGKFEDVIVGLM      85
+
+# End_N: 1
+# N: 2 Raw_Score: 132 Query_Length: 74 Target_Length: 320 Evalue: 0.00156219
+        * *.   . .  *. ****.* **. **  ..* .   **  *.* *.. 
+      6 PSVD--AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      55
+     87 PPVEYLCKQLHAAMAGIGTEEATLVEILCTKTNEEMAQIVAVYEERYQRP     136
+
+        *   .  . ** *  ..  ..
+     56 LKADLKGDLSGHFEHVMVALI      76
+    137 LAEQMCSETSGFFRRLLTLIV     157
+
+# End_N: 2
+# N: 3 Raw_Score: 129 Query_Length: 74 Target_Length: 320 Evalue: 0.00273231
+        *  . **. * ***. *** *.  **    . * ....  * . * . . 
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    253 ANRLYKAMNGAGTDDATLIRIIVSRSEIDLETIKQEFERIYNRTLHSAVV     302
+
+         . ** ..  . **.
+     60 GDLSGHFEHVMVALI      74
+    303 AETSGDYKRALTALL     317
+
+# End_N: 3
+# N: 4 Raw_Score: 93 Query_Length: 74 Target_Length: 320 Evalue: 2.23904
+        .****. .  *..  *  * .*. ..*.    * ..  .* ..*  .   
+     20 IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHV      69
+    188 LGTDEEVFNRIMSHASFPQLRLVFEEYKVLSGQTIEQAIKHEMSDELHEA     237
+
+        *.*..
+     70 MVALI      74
+    238 MMAIV     242
+
+# End_N: 4
+# End_Alignments_Rank: 31
+
+# Start_Alignments_Rank: 32
+# Query: SCANPS_TEST Target: ANX1_RABIT Number_of_Alignments: 385
+# Target_Title: (P51662) Annexin I (Lipocortin
+# N: 1 Raw_Score: 213 Query_Length: 74 Target_Length: 346 Evalue: 4.71462e-10
+        ** **** *  *. .**   * ** *.*.***.*.***** *   * .  
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     39 YPAFNPSSDVAALHQAIMVKGVDEATIIDILTKRNNAQRQQIKAAYLQEK      88
+
+         . *   **  *.**.* *..**.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     89 GKPLDEVLKKALTGHLEEVVLALL     112
+
+# End_N: 1
+# N: 2 Raw_Score: 168 Query_Length: 74 Target_Length: 346 Evalue: 2.06711e-06
+        **. .* *..*.**** *** **  *.* . . * . *.*  .. *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    119 DADELRAAMKGLGTDEDTLIEILASRNNKEIREINRVYREELKRDLAKDI     168
+
+          * ** *.  ...*
+     59 KGDLSGHFEHVMVAL      73
+    169 ASDTSGDFQKALLSL     183
+
+# End_N: 2
+# N: 3 Raw_Score: 126 Query_Length: 74 Target_Length: 346 Evalue: 0.00518186
+        *.  ** . .*..* **  * ** *.  **      *   **. *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    275 PAYFAEKLYQAMKGAGTRHKALIRIMVSRSEVDMNDIKAFYQKKYGVSLC     324
+
+          .  .  * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    325 QAILDETKGDYEKILVAL     342
+
+# End_N: 3
+# N: 4 Raw_Score: 85 Query_Length: 74 Target_Length: 346 Evalue: 10.7814
+        ** *. .*  *  * *   .  *** **  . . . ..* .  .. .   
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    202 DARALYEAGERRKGADVNVFTTILTTRSYLHLRRVFQKYSKYSQHDMNKV     251
+
+        *  .* *  *  . *..
+     59 LKGDLSGHFEHVMVALI      75
+    252 LDLELKGDIEKCLTAIV     268
+
+# End_N: 4
+# End_Alignments_Rank: 32
+
+# Start_Alignments_Rank: 33
+# Query: SCANPS_TEST Target: ANX9_DROME Number_of_Alignments: 297
+# Target_Title: (P22464) Annexin IX           
+# N: 1 Raw_Score: 212 Query_Length: 74 Target_Length: 324 Evalue: 5.30648e-10
+        **   *.*  **  .***..* ***** .* **  *   **  * . .. 
+      1 YPG--FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQE      50
+     16 YPADPFDPVEDAAILRKAMKGFGTDEKAIIEILARRGIVQRLEIAEAFKT      65
+
+        .* . * .*** .* * ** *..**.
+     51 AYEQALKADLKGDLSGHFEHVMVALI      76
+     66 SYGKDLISDLKSELGGKFEDVILALM      91
+
+# End_N: 1
+# N: 2 Raw_Score: 184 Query_Length: 74 Target_Length: 324 Evalue: 9.79239e-08
+        *   *. .  ** *.****. .* **   **   . * . *.... ..*.
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+     95 PQFYAQELHDAISGLGTDEEAIIEILCTLSNYGIKTIAQFYEQSFGKSLE     144
+
+        .***** ****. . *.*.
+     56 ADLKGDLSGHFEHVMVALI      74
+    145 SDLKGDTSGHFKRLCVSLV     163
+
+# End_N: 2
+# N: 3 Raw_Score: 105 Query_Length: 74 Target_Length: 324 Evalue: 0.242368
+        .* .  .. *.** .**** *.  **      * . .*  * ..*.. .*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    258 SERLHDSMAGMGTKDKTLIRIIVSRSEIDLGDIKEAFQNKYGKSLESWIK     307
+
+         *      .*.* *
+     60 GDLSGHFEHVMVAL      73
+    308 EDAETDIGYVLVTL     321
+
+# End_N: 3
+# N: 4 Raw_Score: 103 Query_Length: 74 Target_Length: 324 Evalue: 0.351835
+        **.*.  *  *  **** *. .**  **  * . *  .*.      ..  
+      9 DAEAIRKAIRGI-GTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    181 DAQALHDAGEGQWGTDESTFNSILITRSYQQLRQIFLEYENLSGNDIEKA     230
+
+        .* ..**  *   .*..
+     59 LKGDLSGHFEHVMVALI      75
+    231 IKREFSGSVEKGFLAIV     247
+
+# End_N: 4
+# End_Alignments_Rank: 33
+
+# Start_Alignments_Rank: 34
+# Query: SCANPS_TEST Target: ANX4_MOUSE Number_of_Alignments: 310
+# Target_Title: (P97429) Annexin A4 (Annexin I
+# N: 1 Raw_Score: 211 Query_Length: 74 Target_Length: 318 Evalue: 6.27084e-10
+        *** . **. .***..*.****  .* **  *. **** *   *.    .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+     12 GFNATEDAQTLRKAMKGLGTDEDAIIGILAYRNTAQRQEIRSAYKSTIGR      61
+
+         *  *** .** .**.*.. *.
+     53 ALKADLKGDLSGHFEHVMVALI      74
+     62 DLIEDLKSELSSNFEQVILGLM      83
+
+# End_N: 1
+# N: 2 Raw_Score: 156 Query_Length: 74 Target_Length: 318 Evalue: 1.77238e-05
+        *.*  * . .*.*..* ****  ** **  *.  . . * . **. * ..
+      6 PSV--DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      55
+     85 PTVLYDVQELRRAMKGAGTDEGCLIEILASRTPEEIRRINQTYQQQYGRS     134
+
+        *. *.  * *  *. *.* *
+     56 LKADLKGDLSGHFEHVMVAL      75
+    135 LEEDICSDTSFMFQRVLVFL     154
+
+# End_N: 2
+# N: 3 Raw_Score: 147 Query_Length: 74 Target_Length: 318 Evalue: 9.48289e-05
+        **  ** . *...*.***. *** ..  *.      *   ..  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    246 PSYFAERLYKSMKGLGTDDNTLIRVMVSRAEIDMLDIRASFKRLYGKSLY     295
+
+        . .*** ** .  *.. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    296 SFIKGDTSGDYRKVLLIL     313
+
+# End_N: 3
+# N: 4 Raw_Score: 100 Query_Length: 74 Target_Length: 318 Evalue: 0.60356
+        **. . .*  .  ****  ...**  *.  .   .  .*.   .. ..  
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    173 DAQELYEAGEKRWGTDEVKFLSILCSRNRNHLLHVFDEYKRISQKDIEQS     222
+
+        .* . ** **  ..*..
+     59 LKGDLSGHFEHVMVALI      75
+    223 IKSETSGSFEDALLAIV     239
+
+# End_N: 4
+# End_Alignments_Rank: 34
+
+# Start_Alignments_Rank: 35
+# Query: SCANPS_TEST Target: ANXA_MOUSE Number_of_Alignments: 369
+# Target_Title: (Q9QZ10) Annexin A10          
+# N: 1 Raw_Score: 209 Query_Length: 74 Target_Length: 324 Evalue: 9.28114e-10
+        * *** .**. .   ..*   ..  **.***.*******.*   **  * 
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+     15 PNFNPMMDAQMLGGRLQGFDCNKDMLIDILTQRSNAQRQMIAGTYQSMYG      64
+
+        . * . **  ** **. *** *.
+     52 QALKADLKGDLSGHFEHVMVALI      74
+     65 RDLISVLKEQLSSHFKEVMVGLM      87
+
+# End_N: 1
+# N: 2 Raw_Score: 158 Query_Length: 74 Target_Length: 324 Evalue: 1.24482e-05
+        **   ** **  .  *..* ****  ** **  *.* .   . . *   *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     88 YPP--PSYDAHELWHAMKGPGTDENCLIEILASRTNGEIFQMREAYCLQY     137
+
+           *. *.  . ****   .. *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+    138 SNNLQEDIYSETSGHFRDTLMNLV     161
+
+# End_N: 2
+# N: 3 Raw_Score: 139 Query_Length: 74 Target_Length: 324 Evalue: 0.000429344
+        **  *  . .**   *   **.* **  **      * *.*.* . ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    249 PSYFAYKLYRAIHDFGFHNKTVIRILIARSEIDLMTIRKRYKERFGKSLF     298
+
+         *.*   ***.*  ..*.
+     56 ADLKGDLSGHFEHVMVAL      73
+    299 HDIKNFASGHYEKALLAI     316
+
+# End_N: 3
+# N: 4 Raw_Score: 85 Query_Length: 74 Target_Length: 324 Evalue: 10.0718
+        **  . .* .    . **..  **  .*  * .*. ...*    * .   
+      9 DAEAIRKAIRGIGTDEKTLIN-ILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    176 DAMVLWEACQQKTGEHKTMMQMILCNKSYPQLRLVFQEFQNISGQDMVDA     225
+
+        .     *.*. ..**..
+     59 LKGDLSGHFEHVMVALI      75
+    226 INDCTDGYFQELLVAIV     242
+
+# End_N: 4
+# End_Alignments_Rank: 35
+
+# Start_Alignments_Rank: 36
+# Query: SCANPS_TEST Target: ANX1_PIG Number_of_Alignments: 374
+# Target_Title: (P19619) Annexin I (Lipocortin
+# N: 1 Raw_Score: 209 Query_Length: 74 Target_Length: 346 Evalue: 9.93511e-10
+        ** **** * **  ***   * ** *.* * *.*.***** *   * .  
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     39 YPTFNPSSDVEASHKAITVKGVDEATIIEIHTKRTNAQRQQIKAAYLQEK      88
+
+         . *   **  *.**.* * .**.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     89 GKPLDEALKKALTGHLEEVALALL     112
+
+# End_N: 1
+# N: 2 Raw_Score: 157 Query_Length: 74 Target_Length: 346 Evalue: 1.6055e-05
+        **. .* *..*.**** **  **  *.* . . * . *.*  .. *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    119 DADELRAAMKGLGTDEDTLNEILASRTNREIREINRVYKEELKRDLAKDI     168
+
+          * ** ..  ...*
+     59 KGDLSGHFEHVMVAL      73
+    169 TSDTSGDYQKALLSL     183
+
+# End_N: 2
+# N: 3 Raw_Score: 126 Query_Length: 74 Target_Length: 346 Evalue: 0.00518186
+        *   ** . .*..* **  **** *.  **      *   **. *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    275 PMFFAEKLHQAMKGNGTRHKTLIRIMVSRSEIDMNDIKACYQKLYGISLC     324
+
+          .  .  * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    325 QAILDETKGDYEKILVAL     342
+
+# End_N: 3
+# N: 4 Raw_Score: 90 Query_Length: 74 Target_Length: 346 Evalue: 4.24639
+        ** *. .*  *  ***   .* *** **  . . . ..* .  .. .   
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    202 DARALYEAGERRKGTDLNVFITILTTRSYLHLRRVFQKYSKYSKHDMNKV     251
+
+        *  .* *  *. .  ..
+     59 LKGDLSGHFEHVMVALI      75
+    252 LDLELKGDIENCLTVVV     268
+
+# End_N: 4
+# End_Alignments_Rank: 36
+
+# Start_Alignments_Rank: 37
+# Query: SCANPS_TEST Target: ANX7_XENLA Number_of_Alignments: 538
+# Target_Title: (Q92125) Annexin A7 (Annexin V
+# N: 1 Raw_Score: 210 Query_Length: 74 Target_Length: 512 Evalue: 1.23808e-09
+        * *.   *** .***..* *****  *...  *** *** *   .. ** 
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+    207 PNFDALSDAEKLRKAMKGFGTDEKP-IDVVANRSNDQRQKIQAAFKTAYG     256
+
+        . *  *** .***. * ...**
+     52 QALKADLKGDLSGHFEHVMVAL      73
+    257 KDLIKDLKSELSGNVEELIIAL     278
+
+# End_N: 1
+# N: 2 Raw_Score: 178 Query_Length: 74 Target_Length: 512 Evalue: 4.81455e-07
+        * **   ** ..  *..* ** *. ** **  *.*.. . **  *.. . 
+      4 FNPSV--DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      53
+    278 FMPSTYYDAWSLYNAMKGAGTQERVLIEILCTRTNSEIRNIVACYKQEFG     327
+
+        . .. *.. * ***** ......
+     54 QALKADLKGDLSGHFEHVMVALI      76
+    328 REIEKDIRSDTSGHFERLLISIM     350
+
+# End_N: 2
+# N: 3 Raw_Score: 129 Query_Length: 74 Target_Length: 512 Evalue: 0.00444835
+        ....* ***. *** *.  **      * . * . *...* * .  * **
+     15 KAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSG      64
+    451 RSMKGAGTDDSTLIRIIVTRSEIDLVQIKQAYVQMYQKSLSAAISSDTSG     500
+
+         .. ...*.
+     65 HFEHVMVAL      73
+    501 AYKRMLLAI     509
+
+# End_N: 3
+# N: 4 Raw_Score: 88 Query_Length: 74 Target_Length: 512 Evalue: 9.25529
+        **. . .*  * .**** ..  .*  **  * . . . *    .. * . 
+      9 DAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    369 DAQRLYQAGEGKLGTDESSFNLVLASRSFPQLKAVAEAYARISKRDLLSV     418
+
+        .  ..**. *  . *..
+     59 LKGDLSGHFEHVMVALI      75
+    419 IGREFSGYIEDGLKAVL     435
+
+# End_N: 4
+# End_Alignments_Rank: 37
+
+# Start_Alignments_Rank: 38
+# Query: SCANPS_TEST Target: ANX4_RAT Number_of_Alignments: 321
+# Target_Title: (P55260) Annexin A4 (Annexin I
+# N: 1 Raw_Score: 206 Query_Length: 74 Target_Length: 318 Evalue: 1.59215e-09
+        *** . **. .***..*.****  .* .*  *. **** *   *.    .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+     12 GFNATEDAQVLRKAMKGLGTDEDAIIGVLACRNTAQRQEIRTAYKSTIGR      61
+
+         *  *** .** .**.*.. ..
+     53 ALKADLKGDLSGHFEHVMVALI      74
+     62 DLLEDLKSELSSNFEQVILGMM      83
+
+# End_N: 1
+# N: 2 Raw_Score: 159 Query_Length: 74 Target_Length: 318 Evalue: 1.01336e-05
+        *.*  * . .*.*..* ****  ** **  *.  . . * . **. * ..
+      6 PSV--DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      55
+     85 PTVLYDVQELRRAMKGAGTDEGCLIEILASRNPEEIRRINQTYQQQYGRS     134
+
+        *. *.  * *  *. *.*.*
+     56 LKADLKGDLSGHFEHVMVAL      75
+    135 LEEDICSDTSFMFQRVLVSL     154
+
+# End_N: 2
+# N: 3 Raw_Score: 143 Query_Length: 74 Target_Length: 318 Evalue: 0.000199833
+        *.  ** . *...*.***. *** ..  *       *   ..  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    246 PAYFAERLYKSMKGLGTDDSTLIRVMVSRPEIDMLDIPANFKRVYGKSLY     295
+
+        . .*** ** .  *.. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    296 SFIKGDTSGDYRKVLLIL     313
+
+# End_N: 3
+# N: 4 Raw_Score: 99 Query_Length: 74 Target_Length: 318 Evalue: 0.727197
+        **. . .*  .  ****  ...**  *.  .   .  .*.   .. ..  
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    173 DAQDLYEAGEKRWGTDEVKFLSILCSRNRNHLLHVFDEYKRISQKDIEQS     222
+
+        .* . ** **  ..*..
+     59 LKGDLSGHFEHVMVALI      75
+    223 IKSETSGSFEDALLAIV     239
+
+# End_N: 4
+# End_Alignments_Rank: 38
+
+# Start_Alignments_Rank: 39
+# Query: SCANPS_TEST Target: AN12_COLLI Number_of_Alignments: 385
+# Target_Title: (Q92040) Annexin I, isoform P3
+# N: 1 Raw_Score: 206 Query_Length: 74 Target_Length: 343 Evalue: 1.72205e-09
+        * *.** *  *. **.   * ** *.*.*.*.*.****. *   **.*  
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+     36 PNFDPSADVVALEKAMTAKGVDEATIIDIMTKRTNAQRHRIKAAYQKAKG      85
+
+        ..*.  .*  *  *.* *.***.
+     52 QALKADLKGDLSGHFEHVMVALI      74
+     86 KSLEEAMKRVLKSHLEDVVVALL     108
+
+# End_N: 1
+# N: 2 Raw_Score: 181 Query_Length: 74 Target_Length: 343 Evalue: 1.81691e-07
+        *** .*  ..*.**** *** **  *** . .   . *.*  .. *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    115 DAEELRACMKGLGTDEDTLIEILASRSNKEIREASRYYKEVLKRDLTQDI     164
+
+          * ****.  .* *
+     59 KGDLSGHFEHVMVAL      73
+    165 ISDTSGHFQKALVVL     179
+
+# End_N: 2
+# N: 3 Raw_Score: 124 Query_Length: 74 Target_Length: 343 Evalue: 0.00745468
+        *.  ** .  *..* **  * ** *.  *       *   *.. *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    271 PAFFAEKLHLAMKGFGTRHKDLIRIMVSRHEVDMNEIKCYYKKMYGISLC     320
+
+          .  ** * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    321 QAIMDDLKGDYETILVAL     338
+
+# End_N: 3
+# N: 4 Raw_Score: 88 Query_Length: 74 Target_Length: 343 Evalue: 6.10889
+        ** *. .*  .  ***   .. .** **  . . . ..* .  .. .   
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    198 DARALYEAGEQKKGTDVNVFVTVLTARSYPHLRRVFQKYTKYSKHDMNKV     247
+
+        .  .* *  *  . **.
+     59 LKGDLSGHFEHVMVALI      75
+    248 VDMELKGDIEKCLTALV     264
+
+# End_N: 4
+# End_Alignments_Rank: 39
+
+# Start_Alignments_Rank: 40
+# Query: SCANPS_TEST Target: ANX2_CHICK Number_of_Alignments: 369
+# Target_Title: (P17785) Annexin II (Lipocorti
+# N: 1 Raw_Score: 205 Query_Length: 74 Target_Length: 338 Evalue: 2.04347e-09
+        *  *.   ** *.  **.  * ** *.***** *** *** *   **   
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     29 YSNFDADRDAAALEAAIKTKGVDEVTIINILTNRSNEQRQDIAFAYQRRT      78
+
+        .. * * **  ****.* *.. *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     79 KKELSAALKSALSGHLEAVILGLL     102
+
+# End_N: 1
+# N: 2 Raw_Score: 179 Query_Length: 74 Target_Length: 338 Evalue: 2.59769e-07
+        **  **  .. *..*.**** *** *.  *.* .   * . *.* *.  *
+      6 PS-VDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQAL      55
+    105 PSQYDASELKAAMKGLGTDEDTLIEIICSRTNQELNEINRVYREMYKTEL     154
+
+        . *.  * ** *  .****
+     56 KADLKGDLSGHFEHVMVAL      74
+    155 EKDIISDTSGDFRKLMVAL     173
+
+# End_N: 2
+# N: 3 Raw_Score: 101 Query_Length: 74 Target_Length: 338 Evalue: 0.533633
+        **  .  * ..  ***    ***.****  . * . ..*.    *.  ..
+      9 DAEAIRKA-IRGIGTDEKTLINILTERSNAQRQLIVKQYQE--AYE--QA      58
+    193 DARELYDAGVKRKGTDVPKWINIMTERSVPHLQKVFERYKSYSPYDMLES     242
+
+        .* ..****   *
+     59 LKADLKGDLSGHF      71
+    243 IKKEVKGDLENAF     255
+
+# End_N: 3
+# N: 4 Raw_Score: 93 Query_Length: 74 Target_Length: 338 Evalue: 2.36971
+        *. .  ...* ** .* ** *.  *       *  ...  * ..*   ..
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    270 ADRLYDSMKGKGTRDKVLIRIMVSRCEVDMLKIKSEFKRKYGKSLYYFIQ     319
+
+         *  * ..  .. *
+     60 GDLSGHFEHVMVAL      73
+    320 QDTKGDYQRALLNL     333
+
+# End_N: 4
+# End_Alignments_Rank: 40
+
+# Start_Alignments_Rank: 41
+# Query: SCANPS_TEST Target: ANX1_CAVCU Number_of_Alignments: 396
+# Target_Title: (P14087) Annexin I (Lipocortin
+# N: 1 Raw_Score: 204 Query_Length: 74 Target_Length: 346 Evalue: 2.52249e-09
+        ** *. * *  *. ***   * ** *.*.***.*.***** *   * .  
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     39 YPSFDASSDVAALHKAITVKGVDEATIIDILTKRNNAQRQQIKAAYLQEK      88
+
+         . *   **  *.**.* *..**.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     89 GKPLDEALKKALTGHLEEVVLALL     112
+
+# End_N: 1
+# N: 2 Raw_Score: 164 Query_Length: 74 Target_Length: 346 Evalue: 4.35602e-06
+        .**. .* *..*.**** *** **  * * . . * . *..  .. *  *
+      8 VDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      57
+    118 LDADELRAAMKGLGTDEDTLIEILVSRKNREIKEINRVYRDELKRDLAKD     167
+
+        .  * ** *.  ...*
+     58 LKGDLSGHFEHVMVAL      73
+    168 ITSDTSGDFQKALLSL     183
+
+# End_N: 2
+# N: 3 Raw_Score: 122 Query_Length: 74 Target_Length: 346 Evalue: 0.0109197
+        *.  ** .  *..* **  * ** *.  **      *   **. *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    275 PAFFAEKLHLAMKGAGTRHKALIRIMVSRSEIDMNDIKVYYQKMYGISLC     324
+
+          .  .  * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    325 QAILDETKGDYEKILVAL     342
+
+# End_N: 3
+# N: 4 Raw_Score: 101 Query_Length: 74 Target_Length: 346 Evalue: 0.54673
+        ** *. .*  *  ***   .* *** ** .. . . ..* .  .. .   
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    202 DARALYEAGERRKGTDVNVFITILTTRSYSHLRRVFQKYTKYSQHDMNKA     251
+
+        *  .* *  *. . *..
+     59 LKGDLSGHFEHVMVALI      75
+    252 LDLELKGDIENCLTAIV     268
+
+# End_N: 4
+# End_Alignments_Rank: 41
+
+# Start_Alignments_Rank: 42
+# Query: SCANPS_TEST Target: ANX7_MOUSE Number_of_Alignments: 483
+# Target_Title: (Q07076) Annexin A7 (Annexin V
+# N: 1 Raw_Score: 205 Query_Length: 74 Target_Length: 463 Evalue: 2.8319e-09
+        *.   *** .***..* ****. ...... *** *** *   ..  * . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+    160 FDAMRDAEILRKAMKGFGTDEQAIVDVVSNRSNDQRQQIKAAFKTMYGKD     209
+
+        *  *** .***. * ...**
+     54 LKADLKGDLSGHFEHVMVAL      73
+    210 LIKDLKSELSGNMEELILAL     229
+
+# End_N: 1
+# N: 2 Raw_Score: 194 Query_Length: 74 Target_Length: 463 Evalue: 2.1995e-08
+        * **   ** ..***..* ** *. ** **  *.* . . **. **  . 
+      4 FNPSV--DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      53
+    230 FMPSTYYDAWSLRKAMQGAGTQERVLIEILCTRTNQEIRDIVRCYQLEFG     279
+
+        . *. *.. * ***** ..*..
+     54 QALKADLKGDLSGHFEHVMVAL      75
+    280 RDLEKDIRSDTSGHFERLLVSM     301
+
+# End_N: 2
+# N: 3 Raw_Score: 131 Query_Length: 74 Target_Length: 463 Evalue: 0.00276063
+        *.  ** .  ...* ***. **. *.  **      * . . . *.. * 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    393 PAFFAERLYYSMKGAGTDDSTLVRIVVTRSEIDLVQIKQMFTQMYQKTLS     442
+
+          .  * ** .  ...*..
+     56 ADLKGDLSGHFEHVMVALI      74
+    443 TMIASDTSGDYRKLLLAIV     461
+
+# End_N: 3
+# N: 4 Raw_Score: 85 Query_Length: 74 Target_Length: 463 Evalue: 14.5833
+        **. . .*  * .****  .  **  **  * .  .. *     . * . 
+      9 DAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    320 DAQRLYQAGEGRLGTDESCFNMILATRSFPQLKATMEAYSRMANRDLLSS     369
+
+        .  ..**. *
+     59 LKGDLSGHFE      68
+    370 VSREFSGYVE     379
+
+# End_N: 4
+# End_Alignments_Rank: 42
+
+# Start_Alignments_Rank: 43
+# Query: SCANPS_TEST Target: ANX2_RAT Number_of_Alignments: 369
+# Target_Title: (Q07936) Annexin II (Lipocorti
+# N: 1 Raw_Score: 202 Query_Length: 74 Target_Length: 338 Evalue: 3.57407e-09
+        *  *.   **  *  **.  * ** *..**** ******* *   **   
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     29 YTNFDAERDALNIETAIKTKGVDEVTIVNILTNRSNAQRQDIAFAYQRRT      78
+
+        .. * . .*  ****.* **. *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     79 KKELPSAMKSALSGHLETVMLGLL     102
+
+# End_N: 1
+# N: 2 Raw_Score: 174 Query_Length: 74 Target_Length: 338 Evalue: 6.59545e-07
+        **  .. ...*.**** .** *.  *.* . * * . *.* *.  *. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    109 DASELKASMKGLGTDEDSLIEIICSRTNQELQEINRVYKEMYKTDLEKDI     158
+
+          * ** *  ..***
+     59 KGDLSGHFEHVMVAL      73
+    159 ISDTSGEFRKLLVAL     173
+
+# End_N: 2
+# N: 3 Raw_Score: 99 Query_Length: 74 Target_Length: 338 Evalue: 0.77465
+        *   *. .  ...* ** .* ** *.  **      *  ...  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    266 PLYFADRLYDSMKGKGTRDKVLIRIMVSRSEVDMLKIRSEFKRKYGKSLY     315
+
+          .. *  * ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    316 YFIQQDTKGDYQKALLYL     333
+
+# End_N: 3
+# N: 4 Raw_Score: 92 Query_Length: 74 Target_Length: 338 Evalue: 2.85513
+        **  .  * ..  ***    *.*.****  . * . ..*.    *.  ..
+      9 DAEAIRKA-IRGIGTDEKTLINILTERSNAQRQLIVKQYQE--AYE--QA      58
+    193 DARELYDAGVKRKGTDVPKWISIMTERSVCHLQKVFERYKSYSPYDMLES     242
+
+        .. ..****   *
+     59 LKADLKGDLSGHF      71
+    243 IRKEVKGDLENAF     255
+
+# End_N: 4
+# End_Alignments_Rank: 43
+
+# Start_Alignments_Rank: 44
+# Query: SCANPS_TEST Target: ANX7_HUMAN Number_of_Alignments: 452
+# Target_Title: (P20073) Annexin A7 (Annexin V
+# N: 1 Raw_Score: 203 Query_Length: 74 Target_Length: 466 Evalue: 4.13858e-09
+        *.   *** .***..* ****. .....  *** *** *   .. .* . 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+    163 FDAIRDAEILRKAMKGFGTDEQAIVDVVANRSNDQRQKIKAAFKTSYGKD     212
+
+        *  *** .***. * ...**
+     54 LKADLKGDLSGHFEHVMVAL      73
+    213 LIKDLKSELSGNMEELILAL     232
+
+# End_N: 1
+# N: 2 Raw_Score: 190 Query_Length: 74 Target_Length: 466 Evalue: 4.66617e-08
+        ** ..***..* ** *. ** **  *.* . . **. **  . . *. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    240 DAWSLRKAMQGAGTQERVLIEILCTRTNQEIREIVRCYQSEFGRDLEKDI     289
+
+        . * ***** ..*..
+     59 KGDLSGHFEHVMVAL      73
+    290 RSDTSGHFERLLVSM     304
+
+# End_N: 2
+# N: 3 Raw_Score: 141 Query_Length: 74 Target_Length: 466 Evalue: 0.000431125
+        *.  ** .  *..* ***. **. *.  **      * . . . *.. * 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    396 PAFFAERLYYAMKGAGTDDSTLVRIVVTRSEIDLVQIKQMFAQMYQKTLG     445
+
+          . ** ** .  ...*..
+     56 ADLKGDLSGHFEHVMVALI      74
+    446 TMIAGDTSGDYRRLLLAIV     464
+
+# End_N: 3
+# N: 4 Raw_Score: 84 Query_Length: 74 Target_Length: 466 Evalue: 17.6888
+        **. . .*  * .****  .  **  **  * .  .. *     . * . 
+      9 DAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    323 DAQRLYQAGEGRLGTDESCFNMILATRSFPQLRATMEAYSRMANRDLLSS     372
+
+        .  ..**. *
+     59 LKGDLSGHFE      68
+    373 VSREFSGYVE     382
+
+# End_N: 4
+# End_Alignments_Rank: 44
+
+# Start_Alignments_Rank: 45
+# Query: SCANPS_TEST Target: ANX1_MOUSE Number_of_Alignments: 354
+# Target_Title: (P10107) Annexin I (Lipocortin
+# N: 1 Raw_Score: 200 Query_Length: 74 Target_Length: 345 Evalue: 5.29972e-09
+        ** ** * *  *. ***   * ** *.*.***.*.***** *   * .  
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     38 YPSFNVSSDVAALHKAIMVKGVDEATIIDILTKRTNAQRQQIKAAYLQEN      87
+
+         . *   *.  *.**.* *..*..
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     88 GKPLDEVLRKALTGHLEEVVLAML     111
+
+# End_N: 1
+# N: 2 Raw_Score: 183 Query_Length: 74 Target_Length: 345 Evalue: 1.25918e-07
+        **. .* *..*.**** *** *** *** * . * . *.*  .. *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    118 DADELRGAMKGLGTDEDTLIEILTTRSNEQIREINRVYREELKRDLAKDI     167
+
+          * ** *   ..**
+     59 KGDLSGHFEHVMVAL      73
+    168 TSDTSGDFRKALLAL     182
+
+# End_N: 2
+# N: 3 Raw_Score: 123 Query_Length: 74 Target_Length: 345 Evalue: 0.00903603
+        *.  ** . .*..* **  * ** *.  **      *   **. *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    274 PAFFAEKLYEAMKGAGTRHKALIRIMVSRSEIDMNEIKVFYQKKYGISLC     323
+
+          .  .  * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    324 QAILDETKGDYEKILVAL     341
+
+# End_N: 3
+# N: 4 Raw_Score: 85 Query_Length: 74 Target_Length: 345 Evalue: 10.7491
+        ** *. .*  *  ***   .  *** **  . . . . *    *    .*
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQY----QEAYEQA      58
+    201 DARALYEAGERRKGTDVNVFTTILTSRSFPHLRRVFQNYGKYSQHDMNKA     250
+
+        *  .****.
+     59 LKADLKGDL      67
+    251 LDLELKGDI     259
+
+# End_N: 4
+# End_Alignments_Rank: 45
+
+# Start_Alignments_Rank: 46
+# Query: SCANPS_TEST Target: ANX2_HUMAN Number_of_Alignments: 369
+# Target_Title: (P07355) Annexin II (Lipocorti
+# N: 1 Raw_Score: 199 Query_Length: 74 Target_Length: 338 Evalue: 6.25111e-09
+        *  *.   **  *  **.  * ** *..**** ******* *   **   
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     29 YTNFDAERDALNIETAIKTKGVDEVTIVNILTNRSNAQRQDIAFAYQRRT      78
+
+        .. * . **  ****.* *.. *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     79 KKELASALKSALSGHLETVILGLL     102
+
+# End_N: 1
+# N: 2 Raw_Score: 177 Query_Length: 74 Target_Length: 338 Evalue: 3.77094e-07
+        **  .. ...*.**** .** *.  *.* . * * . *.* *.  *. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    109 DASELKASMKGLGTDEDSLIEIICSRTNQELQEINRVYKEMYKTDLEKDI     158
+
+          * ** *  .****
+     59 KGDLSGHFEHVMVAL      73
+    159 ISDTSGDFRKLMVAL     173
+
+# End_N: 2
+# N: 3 Raw_Score: 101 Query_Length: 74 Target_Length: 338 Evalue: 0.533633
+        *   *. .  ...* ** .* ** *.  **      *  ...  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    266 PLYFADRLYDSMKGKGTRDKVLIRIMVSRSEVDMLKIRSEFKRKYGKSLY     315
+
+          .. *  * ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    316 YYIQQDTKGDYQKALLYL     333
+
+# End_N: 3
+# N: 4 Raw_Score: 89 Query_Length: 74 Target_Length: 338 Evalue: 4.99368
+        **  .  * ..  ***    *.*.****  . * .  .*.    *.  ..
+      9 DAEAIRKA-IRGIGTDEKTLINILTERSNAQRQLIVKQYQE--AYE--QA      58
+    193 DARDLYDAGVKRKGTDVPKWISIMTERSVPHLQKVFDRYKSYSPYDMLES     242
+
+        .. ..****   *
+     59 LKADLKGDLSGHF      71
+    243 IRKEVKGDLENAF     255
+
+# End_N: 4
+# End_Alignments_Rank: 46
+
+# Start_Alignments_Rank: 47
+# Query: SCANPS_TEST Target: ANXD_CANFA Number_of_Alignments: 336
+# Target_Title: (Q29471) Annexin A13 (Annexin 
+# N: 1 Raw_Score: 194 Query_Length: 74 Target_Length: 315 Evalue: 1.47535e-08
+        **.   **. . ** .*.****  .* **. *.. .** * ..*.  * .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+     12 GFDVDHDAKKLNKACKGMGTDEAAIIEILSSRTSDERQQIKQKYKATYGK      61
+
+         *.  .* ****.**   .**.
+     53 ALKADLKGDLSGHFEHVMVALI      74
+     62 DLEEVFKSDLSGNFEKTALALL      83
+
+# End_N: 1
+# N: 2 Raw_Score: 184 Query_Length: 74 Target_Length: 315 Evalue: 9.51064e-08
+        **  **  ..**..*.****  ** **  *.* .   * . **  ....*
+      6 PS-VDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQAL      55
+     86 PSEYDARQLQKAMKGLGTDEAVLIEILCTRTNKEIMAIKEAYQRLFDRSL     135
+
+        ..*.* * **... ..*.*.
+     56 KADLKGDLSGHFEHVMVALI      75
+    136 ESDVKADTSGNLKAILVSLL     155
+
+# End_N: 2
+# N: 3 Raw_Score: 168 Query_Length: 74 Target_Length: 315 Evalue: 1.87548e-06
+        *. . *...* ****.***.*.  *.    * *  ..** *...*   ..
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    250 ADRLYKSMKGTGTDEETLIHIIVTRAEVDLQGIKAKFQEKYQKSLSDMVR     299
+
+         * ** *. ..***.
+     60 GDLSGHFEHVMVALI      74
+    300 SDTSGDFQKLLVALL     314
+
+# End_N: 3
+# N: 4 Raw_Score: 89 Query_Length: 74 Target_Length: 315 Evalue: 4.64196
+        **. .  *  *  ****  .  .* .**. * .   . **   .. ..  
+      9 DAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    173 DAKDLYDAGDGRWGTDELAFNEVLAKRSHKQLRATFQAYQILIDKDIEEA     222
+
+        .. . ** ..   . *.
+     59 LKGDLSGHFEHVMVALI      75
+    223 IEAETSGDLQKAYLTLV     239
+
+# End_N: 4
+# End_Alignments_Rank: 47
+
+# Start_Alignments_Rank: 48
+# Query: SCANPS_TEST Target: ANXB_XENLA Number_of_Alignments: 380
+# Target_Title: (P27006) Annexin II type I (Li
+# N: 1 Raw_Score: 194 Query_Length: 74 Target_Length: 339 Evalue: 1.592e-08
+        *.   ** **  **.  * ** *.***** *** *** *   *.   .. 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+     33 FDAEKDAAAIETAIKTKGVDELTIINILTNRSNDQRQDIAFAYHRRTKKD      82
+
+        * . *** ***..* **. **
+     54 LKADLKGDLSGHFEHVMVALI      74
+     83 LASALKGALSGNLETVMLGLI     103
+
+# End_N: 1
+# N: 2 Raw_Score: 177 Query_Length: 74 Target_Length: 339 Evalue: 3.78251e-07
+        *  **  .. ...*.**** *** *.  *.* .   *   *.* *.  *.
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    107 PQYDASELKASMKGLGTDEDTLIEIICSRTNKELLDIQNAYRELYKTELE     156
+
+         *.  * ** *  .****
+     56 ADLKGDLSGHFEHVMVAL      73
+    157 KDIVSDTSGDFRKLMVAL     174
+
+# End_N: 2
+# N: 3 Raw_Score: 102 Query_Length: 74 Target_Length: 339 Evalue: 0.444264
+        **  . .* ..  ***    * *.****  . * . ..*.    *  *..
+      9 DAEAIRKA-IRGIGTDEKTLINILTERSNAQRQLIVKQYQE--AY--EQA      58
+    194 DARELYEAGVKRKGTDVGKWITIMTERSTPHLQKVFERYKSYSPYDMEES     243
+
+        .* ..****   *
+     59 LKADLKGDLSGHF      71
+    244 IKKEVKGDLENAF     256
+
+# End_N: 3
+# N: 4 Raw_Score: 96 Query_Length: 74 Target_Length: 339 Evalue: 1.35903
+        *   *. . ....* ** .* **  .  **      * *.... * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    267 PLYFADRLYESMKGRGTKDKILIRTMVSRSELDMLKIRKEFKKKYGKSLH     316
+
+          .  *  * ..  .  *
+     56 ADLKGDLSGHFEHVMVAL      73
+    317 YFIGQDTKGDYQRALFNL     334
+
+# End_N: 4
+# End_Alignments_Rank: 48
+
+# Start_Alignments_Rank: 49
+# Query: SCANPS_TEST Target: ANX7_DICDI Number_of_Alignments: 559
+# Target_Title: (P24639) Annexin A7 (Annexin V
+# N: 1 Raw_Score: 195 Query_Length: 74 Target_Length: 462 Evalue: 1.82146e-08
+        *** .***..****.*  ** .*  *. *.*. * ...   * . *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    166 DAEVLRKAMKGIGTNESDLIKVLANRNWAEREQIKREFSAKYSKDLIQDI     215
+
+        * . **.**  .***.
+     59 KGDLSGHFEHVMVALI      74
+    216 KSETSGNFEKCLVALL     231
+
+# End_N: 1
+# N: 2 Raw_Score: 140 Query_Length: 74 Target_Length: 462 Evalue: 0.000514815
+        * * *  *  * **.* *.* **  *** * . * . ..  . ..**  *
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    238 DVEQIHSACAGAGTNENTIIEILVTRSNVQMEYIKQIFKNKHGKSLKDRL     287
+
+        . . ** *. ..  *
+     59 KGDLSGHFEHVMVAL      73
+    288 ESEASGDFKKLLEKL     302
+
+# End_N: 2
+# N: 3 Raw_Score: 120 Query_Length: 74 Target_Length: 462 Evalue: 0.0213934
+        *  **   * *** . **  * ****** .* *** **  .   .  .* 
+      2 PGFNP---SVDAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQ      51
+    310 PVINPMQVSKDAEDLYKAGEGKIGTDEKEFIKILTSRSLPHIAAVASEYI     359
+
+        . ... .*   .  ..**  .  ..*..
+     52 EAYEQ-ALKADLKGDLSGHFEHVMVALI      79
+    360 KHHKKHSLIKAIDSEFSGSIKTGLIAIV     387
+
+# End_N: 3
+# N: 4 Raw_Score: 107 Query_Length: 74 Target_Length: 462 Evalue: 0.241207
+        ** . *...* **..  **  .  . .   * *   *   .. .*  *..
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    398 AEILNKSMKGAGTNDNKLIRTVVTQMHNMPQ-IKTAYSTLFKNSLAHDIQ     447
+
+         * ** *. ... .*
+     60 GDLSGHFEHVMVALI      74
+    448 ADCSGDFKKLLLDII     462
+
+# End_N: 4
+# End_Alignments_Rank: 49
+
+# Start_Alignments_Rank: 50
+# Query: SCANPS_TEST Target: ANX2_MOUSE Number_of_Alignments: 373
+# Target_Title: (P07356) Annexin II (Lipocorti
+# N: 1 Raw_Score: 193 Query_Length: 74 Target_Length: 338 Evalue: 1.91226e-08
+        *  *.   **  *  *..  * ** *..**** *** *** *   **   
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     29 YTNFDAERDALNIETAVKTKGVDEVTIVNILTNRSNVQRQDIAFAYQRRT      78
+
+        .. * . **  ****.* *.. *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     79 KKELPSALKSALSGHLETVILGLL     102
+
+# End_N: 1
+# N: 2 Raw_Score: 177 Query_Length: 74 Target_Length: 338 Evalue: 3.77094e-07
+        **  .. ...*.**** .** *.  *.* . * * . *.* *.  *. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    109 DASELKASMKGLGTDEDSLIEIICSRTNQELQEINRVYKEMYKTDLEKDI     158
+
+          * ** *  .****
+     59 KGDLSGHFEHVMVAL      73
+    159 ISDTSGDFRKLMVAL     173
+
+# End_N: 2
+# N: 3 Raw_Score: 101 Query_Length: 74 Target_Length: 338 Evalue: 0.533633
+        *   *. .  ...* ** .* ** *.  **      *  ...  * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    266 PLYFADRLYDSMKGKGTRDKVLIRIMVSRSEVDMLKIRSEFKRKYGKSLY     315
+
+          .. *  * ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    316 YYIQQDTKGDYQKALLYL     333
+
+# End_N: 3
+# N: 4 Raw_Score: 95 Query_Length: 74 Target_Length: 338 Evalue: 1.63242
+        **  .  * ..  ***    *.*.****  . * . ..*.    *.  ..
+      9 DAEAIRKA-IRGIGTDEKTLINILTERSNAQRQLIVKQYQE--AYE--QA      58
+    193 DARELYDAGVKRKGTDVPKWISIMTERSVCHLQKVFERYKSYSPYDMLES     242
+
+        .* ..****   *
+     59 LKADLKGDLSGHF      71
+    243 IKKEVKGDLENAF     255
+
+# End_N: 4
+# End_Alignments_Rank: 50
+
+# Start_Alignments_Rank: 51
+# Query: SCANPS_TEST Target: ANX2_BOVIN Number_of_Alignments: 374
+# Target_Title: (P04272) Annexin II (Lipocorti
+# N: 1 Raw_Score: 193 Query_Length: 74 Target_Length: 338 Evalue: 1.91226e-08
+        *  *.   **  *  **.  * ** *..**** *** *** *   **   
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     29 YTNFDAERDALNIETAIKTKGVDEVTIVNILTNRSNEQRQDIAFAYQRRT      78
+
+        .. * . **  ****.* *.. *.
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     79 KKELASALKSALSGHLETVILGLL     102
+
+# End_N: 1
+# N: 2 Raw_Score: 177 Query_Length: 74 Target_Length: 338 Evalue: 3.77094e-07
+        **  .. ...*.**** .** *.  *.* . * * . *.* *.  *. *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    109 DASELKASMKGLGTDEDSLIEIICSRTNQELQEINRVYKEMYKTDLEKDI     158
+
+          * ** *  .****
+     59 KGDLSGHFEHVMVAL      73
+    159 VSDTSGDFRKLMVAL     173
+
+# End_N: 2
+# N: 3 Raw_Score: 102 Query_Length: 74 Target_Length: 338 Evalue: 0.442906
+        *   *. .  ...* ** .* ** *.  **      *  .... * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    266 PLYFADRLYDSMKGKGTRDKVLIRIMVSRSEVDMLKIRSEFKKKYGKSLY     315
+
+          .. *  * ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    316 YYIQQDTKGDYQKALLYL     333
+
+# End_N: 3
+# N: 4 Raw_Score: 94 Query_Length: 74 Target_Length: 338 Evalue: 1.96681
+        **  .  * ..  ***    *.*.****  . * . ..*.    *.  ..
+      9 DAEAIRKA-IRGIGTDEKTLINILTERSNAQRQLIVKQYQE--AYE--QA      58
+    193 DARDLYDAGVKRKGTDVPKWISIMTERSVCHLQKVFERYKSYSPYDMLES     242
+
+        .* ..****   *
+     59 LKADLKGDLSGHF      71
+    243 IKKEVKGDLENAF     255
+
+# End_N: 4
+# End_Alignments_Rank: 51
+
+# Start_Alignments_Rank: 52
+# Query: SCANPS_TEST Target: ANX2_XENLA Number_of_Alignments: 378
+# Target_Title: (P24801) Annexin II type II (L
+# N: 1 Raw_Score: 191 Query_Length: 74 Target_Length: 339 Evalue: 2.78445e-08
+        *.   ** **  **.  * ** *.***** *** *** *   ..   .. 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+     33 FDAEKDAAAIETAIKTKGVDELTIINILTNRSNEQRQDIAFAFHRRTKKD      82
+
+        * . *** ***..* **. **
+     54 LKADLKGDLSGHFEHVMVALI      74
+     83 LPSALKGALSGNLETVMLGLI     103
+
+# End_N: 1
+# N: 2 Raw_Score: 174 Query_Length: 74 Target_Length: 339 Evalue: 6.61567e-07
+        *  **  .. ...*.**** *** *.  *.* .   *   *.* ..  *.
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    107 PQYDASELKASMKGLGTDEDTLIEIICSRTNKELLDIQNAYRELFKTELE     156
+
+         *.  * ** *  .****
+     56 ADLKGDLSGHFEHVMVAL      73
+    157 KDIMSDTSGDFRKLMVAL     174
+
+# End_N: 2
+# N: 3 Raw_Score: 104 Query_Length: 74 Target_Length: 339 Evalue: 0.30604
+        **  . .* ..  ***    * *.****. . * . ..*.    *  *..
+      9 DAEAIRKA-IRGIGTDEKTLINILTERSNAQRQLIVKQYQE--AY--EQA      58
+    194 DARELYEAGVKRKGTDVTKWITIMTERSHPHLQKVFERYKSYSPYDIEES     243
+
+        .* ..****   *
+     59 LKADLKGDLSGHF      71
+    244 IKKEVKGDLENAF     256
+
+# End_N: 3
+# N: 4 Raw_Score: 102 Query_Length: 74 Target_Length: 339 Evalue: 0.444264
+        *   *. . ....* ** .* ** *.  * *     * ..... * ..* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    267 PLYFADRLYESMKGKGTKDKILIRIMVSRRNLDMLKIRQEFKKKYGKSLH     316
+
+          .  *  * ..  .. *
+     56 ADLKGDLSGHFEHVMVAL      73
+    317 YFIGQDTKGDYQRALLNL     334
+
+# End_N: 4
+# End_Alignments_Rank: 52
+
+# Start_Alignments_Rank: 53
+# Query: SCANPS_TEST Target: ANX4_FRAAN Number_of_Alignments: 371
+# Target_Title: (P51074) Annexin-like protein 
+# N: 1 Raw_Score: 187 Query_Length: 74 Target_Length: 314 Evalue: 5.41981e-08
+        * *    ****.**...* **.** .*.**  *.  **. *   *.. *.
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+      8 PNFCAKEDAEALRKSVKGWGTNEKAIISILGHRNAGQRKEIRAAYEQLYQ      57
+
+        . *   *. .*** **  .
+     52 QALKADLKGDLSGHFEHVM      70
+     58 EDLLKPLESELSGDFEKAV      76
+
+# End_N: 1
+# N: 2 Raw_Score: 91 Query_Length: 74 Target_Length: 314 Evalue: 3.18718
+        . .* **. .****  *  ..  *.    . * . * .     *.  .  
+     11 EAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKG      60
+    247 KVLRNAIKRVGTDEDALTRVIVTRAERDLRDIKEVYYKKNSVPLEQAVAK     296
+
+        * ** ..  .. *.
+     61 DLSGHFEHVMVALI      74
+    297 DTSGDYKAFLLTLL     310
+
+# End_N: 2
+# End_Alignments_Rank: 53
+
+# Start_Alignments_Rank: 54
+# Query: SCANPS_TEST Target: ANXD_HUMAN Number_of_Alignments: 332
+# Target_Title: (P27216) Annexin A13 (Annexin 
+# N: 1 Raw_Score: 186 Query_Length: 74 Target_Length: 315 Evalue: 6.55159e-08
+        **.   **. . ** .*.**.*  .* **. *.. .** * ..*.  * .
+      3 GFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQ      52
+     12 GFDVDRDAKKLNKACKGMGTNEAAIIEILSGRTSDERQQIKQKYKATYGK      61
+
+         *.  ** .***.**   .**.
+     53 ALKADLKGDLSGHFEHVMVALI      74
+     62 ELEEVLKSELSGNFEKTALALL      83
+
+# End_N: 1
+# N: 2 Raw_Score: 177 Query_Length: 74 Target_Length: 315 Evalue: 3.50534e-07
+        *  ..**..*.****  **  *  *.* .   * . **  ....*..*.*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+     91 ARQLQKAMKGLGTDESVLIEFLCTRTNKEIIAIKEAYQRLFDRSLESDVK     140
+
+        ** **... ..*.*.
+     60 GDLSGHFEHVMVALI      74
+    141 GDTSGNLKKILVSLL     155
+
+# End_N: 2
+# N: 3 Raw_Score: 167 Query_Length: 74 Target_Length: 315 Evalue: 2.25967e-06
+        ** . *...* ****.*** *.  *.    * *  ..** *...*   ..
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+    250 AERLYKSMKGAGTDEETLIRIVVTRAEVDLQGIKAKFQEKYQKSLSDMVR     299
+
+         * ** *  ..***.
+     60 GDLSGHFEHVMVALI      74
+    300 SDTSGDFRKLLVALL     314
+
+# End_N: 3
+# N: 4 Raw_Score: 81 Query_Length: 74 Target_Length: 315 Evalue: 20.6136
+        **. .  *  *  ****  .  .* .**  * .   . **    .  *.*
+      9 DAEAIRKAIRG-IGTDEKTLINILTERSNAQRQLIVKQYQ----EAYEQA      58
+    173 DAKDLYDAGEGRWGTDELAFNEVLAKRSYKQLRATFQAYQILIGKDIEEA     222
+
+        .. .  ***   .
+     59 LKADLKGDLSGHF      71
+    223 IEEETSGDLQKAY     235
+
+# End_N: 4
+# End_Alignments_Rank: 54
+
+# Start_Alignments_Rank: 55
+# Query: SCANPS_TEST Target: ANX9_HUMAN Number_of_Alignments: 517
+# Target_Title: (O76027) Annexin A9 (Annexin 3
+# N: 1 Raw_Score: 186 Query_Length: 74 Target_Length: 338 Evalue: 7.04801e-08
+        .* *** .* *  .** * * *   ....** **  ***** . .**  .
+      4 FNPSVDAEAIR--KAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      53
+     32 LNFSVDKDAQRLLRAITGQGVDRSAIVDVLTNRSREQRQLISRNFQERTQ      81
+
+        * *   *.  ***..* ...**.
+     54 QALKADLKGDLSGHFEHVMVALI      76
+     82 QDLMKSLQAALSGNLERIVMALL     104
+
+# End_N: 1
+# End_Alignments_Rank: 55
+
+# Start_Alignments_Rank: 56
+# Query: SCANPS_TEST Target: AN11_COLLI Number_of_Alignments: 387
+# Target_Title: (P14950) Annexin I, isoform P3
+# N: 1 Raw_Score: 186 Query_Length: 74 Target_Length: 341 Evalue: 7.11286e-08
+        *.** *  *. **.   * ** *.*.*.* *.****  *   *..*  ..
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+     37 FDPSADVVALEKAMTAKGVDEATIIDIMTTRTNAQRPRIKAAYHKAKGKS      86
+
+        *.  .*  *  *.* *.***.
+     54 LKADLKGDLSGHFEHVMVALI      74
+     87 LEEAMKRVLKSHLEDVVVALL     107
+
+# End_N: 1
+# N: 2 Raw_Score: 162 Query_Length: 74 Target_Length: 341 Evalue: 6.22873e-06
+        *** .*  ..* **** *** **  *.* . .   . *.*  .. *  *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    114 DAEELRACMKGHGTDEDTLIEILASRNNKEIREACRYYKEVLKRDLTQDI     163
+
+          * ** *.  .*.*
+     59 KGDLSGHFEHVMVAL      73
+    164 ISDTSGDFQKALVSL     178
+
+# End_N: 2
+# N: 3 Raw_Score: 118 Query_Length: 74 Target_Length: 341 Evalue: 0.0226665
+        *.  ** .  *..* **  . ** *.  *       *   *.. *  .* 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    269 PAFFAEKLHMAMKGFGTQHRDLIRIMVSRHEVDMNEIKGYYKKMYGISLC     318
+
+          .  .* * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    319 QAIMDELKGGYETILVAL     336
+
+# End_N: 3
+# N: 4 Raw_Score: 81 Query_Length: 74 Target_Length: 341 Evalue: 22.3795
+        ** *. .*  .  ***   .. .** **  . . . ..* .  .. .   
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    197 DARALYEAGEQKKGTDINVFVTVLTARSYPHSE-VFQKYTKYSKHDMNKA     246
+
+        .  .. *  *  . **.
+     59 LKGDLSGHFEHVMVALI      75
+    247 VDMEMKGDIEKCLTALV     263
+
+# End_N: 4
+# End_Alignments_Rank: 56
+
+# Start_Alignments_Rank: 57
+# Query: SCANPS_TEST Target: ANX9_MOUSE Number_of_Alignments: 526
+# Target_Title: (Q9JHQ0) Annexin A9 (Annexin 3
+# N: 1 Raw_Score: 183 Query_Length: 74 Target_Length: 338 Evalue: 1.23271e-07
+        *.   * . . *** * * *  *....** **  ***** . .**  .* 
+      4 FNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQA      53
+     34 FSVDKDVQRLLKAIAGQGVDYDTIVDVLTNRSREQRQLISRAFQERTKQD      83
+
+        *   *.  ***..* ..***.
+     54 LKADLKGDLSGHFEHVMVALI      74
+     84 LLKSLQAALSGNLEKIVVALL     104
+
+# End_N: 1
+# N: 2 Raw_Score: 94 Query_Length: 74 Target_Length: 338 Evalue: 1.96681
+        **. .* *..  *. *   . **  *. .. *  .  *.  ..   . *.
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    111 DAQELRTALKTSGSAEDVALEILATRAFSRLQACLAVYKHDFQVEAEEDI     160
+
+        . . .* .. ...**
+     59 KGDLSGHFEHVMVAL      73
+    161 RTETNGILQDLLLAL     175
+
+# End_N: 2
+# End_Alignments_Rank: 57
+
+# Start_Alignments_Rank: 58
+# Query: SCANPS_TEST Target: ANX1_RODSP Number_of_Alignments: 377
+# Target_Title: (P24551) Annexin I (Lipocortin
+# N: 1 Raw_Score: 182 Query_Length: 74 Target_Length: 345 Evalue: 1.51712e-07
+        ** *.** *  *. * *   * ** *....**.* ****. .   * .  
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAY      50
+     38 YPSFDPSSDVAALHKGIMVNGVDEATILDLLTKRYNAQRHHLKAVYIQET      87
+
+         . *   **  *.** . ...*.*
+     51 EQALKADLKGDLSGHFEHVMVALI      74
+     88 GEPLDETLKKALTGHIQELLLAMI     111
+
+# End_N: 1
+# N: 2 Raw_Score: 148 Query_Length: 74 Target_Length: 345 Evalue: 8.56427e-05
+        *   .* *.. .****.*** **  *** * . *   *.*  .. .    
+      9 DAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADL      58
+    118 DGNELRAAMKAVGTDEETLIEILWTRSNQQIREITSVYREELKKDIAKYQ     167
+
+          * ** *   ..**
+     59 KGDLSGHFEHVMVAL      73
+    168 TSDTSGEFRDALLAL     182
+
+# End_N: 2
+# N: 3 Raw_Score: 127 Query_Length: 74 Target_Length: 345 Evalue: 0.00428797
+        *.  ** . .*..* **  **** *.  **      *   **. *   * 
+      6 PSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALK      55
+    274 PAFFAEKLYEAMKGAGTRHKTLIRIMVSRSEIDSDQIKVFYQKKYGVPLC     323
+
+          .  .  * .* ..***
+     56 ADLKGDLSGHFEHVMVAL      73
+    324 QAILDETKGAYEKILVAL     341
+
+# End_N: 3
+# N: 4 Raw_Score: 81 Query_Length: 74 Target_Length: 345 Evalue: 22.6517
+        ** *. .*  *  ***   .  *** .   . .   . *..  *. .*  
+      9 DAEAIRKAI-RGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKAD      58
+    201 DARALYQAAERRNGTDVNVFNTILTTKKYPHLRNKFQNYRKYTEEDMKKA     250
+
+        *  .* *. *  .  .
+     59 LKGDLSGHFEHVMVAL      74
+    251 LDIELKGQIEKCLTTI     266
+
+# End_N: 4
+# End_Alignments_Rank: 58
+
+# Start_Alignments_Rank: 59
+# Query: SCANPS_TEST Target: ANX2_PIG Number_of_Alignments: 129
+# Target_Title: (P19620) Annexin II (Lipocorti
+# N: 1 Raw_Score: 116 Query_Length: 74 Target_Length: 69 Evalue: 0.000984053
+        *  *.   **  *  **.  * ** *..**** *** * *
+      1 YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQ      40
+     29 YTNFDAERDALNIETAIKTKGVDEVTIVNILTNRSNEQXQ      68
+
+# End_N: 1
+# End_Alignments_Rank: 59
+
+# Start_Alignments_Rank: 60
+# Query: SCANPS_TEST Target: Y069_ARCFU Number_of_Alignments: 217
+# Target_Title: (O30167) Hypothetical protein 
+# N: 1 Raw_Score: 87 Query_Length: 74 Target_Length: 120 Evalue: 0.998173
+        *.***.* ** *  .*. .    .  * . ..*..   **   .   **
+     12 AIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKG      60
+     21 ALRKALR-IGDDYASLVELEYVETKEQFEEVIKKFLRRYETIARRGYKG      69
+
+# End_N: 1
+# End_Alignments_Rank: 60
+
+# Start_Alignments_Rank: 61
+# Query: SCANPS_TEST Target: XYLH_PSEPU Number_of_Alignments: 107
+# Target_Title: (Q01468) 4-oxalocrotonate taut
+# N: 1 Raw_Score: 70 Query_Length: 74 Target_Length: 62 Evalue: 11.941
+        *.**  **. *.. ....  **  ..* * *
+     28 INILTERSNAQRQLIVKQYQEAYEQALKADL      58
+      5 IHILEGRSDEQKETLIREVSEAISRSLDAPL      35
+
+# End_N: 1
+# End_Alignments_Rank: 61
+
+# Start_Alignments_Rank: 62
+# Query: SCANPS_TEST Target: GIA2_GIALA Number_of_Alignments: 469
+# Target_Title: (P19389) Giardin alpha-2 chain
+# N: 1 Raw_Score: 82 Query_Length: 74 Target_Length: 296 Evalue: 16.0407
+        **  .  * .* *   ** * . *.. * . *  *.*  * *  *  ..
+     23 DEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLSGHFEHVMV      71
+     19 DEAQIAFIASEYSADARQRIAQGYRDQYGKELPDDIKKALKGGSEESLL      67
+
+# End_N: 1
+# End_Alignments_Rank: 62
+
+# Start_Alignments_Rank: 63
+# Query: SCANPS_TEST Target: RL9_MYCGE Number_of_Alignments: 304
+# Target_Title: (P47339) 50S ribosomal protein
+# N: 1 Raw_Score: 75 Query_Length: 74 Target_Length: 150 Evalue: 17.9781
+        * *   **... * * * .** ** *..  **   **
+     25 KTLINILTERSNAQRQLIVKQYQEAYEQ--ALKADLK      61
+     33 KKLAAPLTKKAIANRDLFLKQQQEQYQKNRALAEKLK      69
+
+# End_N: 1
+# End_Alignments_Rank: 63
+
+# Start_Alignments_Rank: 64
+# Query: SCANPS_TEST Target: GIA1_GIALA Number_of_Alignments: 434
+# Target_Title: (P17063) Giardin alpha-1 chain
+# N: 1 Raw_Score: 81 Query_Length: 74 Target_Length: 295 Evalue: 19.259
+        *  ...**     **  .  * .* *   *. * * *  .* . *  *.*
+     10 AEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+      8 ANELKQAIDA--KDEVQIAFIASEYSAESREKIAKAYVASYGKELPDDIK      57
+
+          * *  *  ..
+     60 GDLSGHFEHVMV      71
+     58 KALKGGSEESLL      69
+
+# End_N: 1
+# End_Alignments_Rank: 64
+
+# Start_Alignments_Rank: 65
+# Query: SCANPS_TEST Target: HTPG_HELPJ Number_of_Alignments: 1280
+# Target_Title: (Q9ZMM2) Chaperone protein htp
+# N: 1 Raw_Score: 85 Query_Length: 74 Target_Length: 621 Evalue: 19.7781
+        ** *   *    * *       *  *  *  *  .  . **     .*.*
+      2 PGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQRQLIVKQYQEAYE      51
+    471 PGVNE-YDKTPFRDASHSESLKELGLAEIHDEVKDQFKDLI-----KAFE     520
+
+        . ** ..** .****.    ****
+     52 QALKADLKG-DLSGHFEHVMVALI      75
+    521 ENLKDEIKGVELSGHLTSA-VALI     544
+
+# End_N: 1
+# End_Alignments_Rank: 65
+
+# Start_Alignments_Rank: 66
+# Query: SCANPS_TEST Target: IATP_PICJA Number_of_Alignments: 96
+# Target_Title: (P09940) ATPase inhibitor, mit
+# N: 1 Raw_Score: 66 Query_Length: 74 Target_Length: 63 Evalue: 27.8466
+        . . .*  **  * ..*...   .***  **
+     29 NILTERSNAQRQLIVKQYQEAYEQALKADLK      59
+     15 DAFEKREKAQEDLYIRQHEKEQLEALKESLK      45
+
+# End_N: 1
+# End_Alignments_Rank: 66
+
+# Start_Alignments_Rank: 67
+# Query: SCANPS_TEST Target: CLPX_RICPR Number_of_Alignments: 775
+# Target_Title: (Q9ZCN1) ATP-dependent Clp pro
+# N: 1 Raw_Score: 81 Query_Length: 74 Target_Length: 425 Evalue: 28.1194
+        *.. ** ***.  **    ******. .*    ***  * *
+     23 DEKTLINILTERSNAQRQLIVKQYQEAYEQALKADLKGDLS      63
+    313 DKEALITILTKPKNA----IVKQYQKQFELD-DADLVIDYS     353
+
+# End_N: 1
+# End_Alignments_Rank: 67
+# 
+# Multiple alignment Start for iteration: 0
+# Format: Simple
+# Residues_per_line: 50
+#
+# ID             Evalue   Start   End   Len
+#                                            1         
+SCANPS_TEST      0             1    74    74: YPGFNPSVDAEAIRKAIRGIGTDEKTLINILTERSNAQR
+ANX3_RAT         2.9e-29      16    89   324: YPGFNPSVDAEAIRKAIKGIGTDEKTLINILTERSNAQR
+ANX3_RAT         0.00131     179   245   324: --------DAQTLYDAGKKWGTDEDKFTEILCLRSFPQL
+ANX3_RAT         0.0259      252   319   324: -----PAFLAGRLHQALKGAGTDEFTLNRIMVSRSEIDL
+ANX3_RAT         0.0955       92   121   324: -----PAVDAKQLKKSMRGMGTDEDTLIEILTTR-----
+ANX3_MOUSE       2.25e-28     15    88   323: YPGFSPSVDAEAIRKAIRGLGTDEKTLINILTERSNAQR
+ANX3_MOUSE       0.00158     178   244   323: --------DAQILYNAGENKGTDEDKFTEVLCLRSFPQL
+ANX3_MOUSE       0.00581     251   318   323: -----PAFLAERLHQALKGAGTDEFTLNRIMVSRSEIDL
+ANX3_HUMAN       1.43e-24     15    88   323: YPDFSPSVDAEAIQKAIRGIGTDEKMLISILTERSNAQR
+ANX3_HUMAN       0.000902    178   244   323: --------DAQILYKAGENWGTDEDKFTEILCLRSFPQL
+ANX3_HUMAN       0.00109     251   318   323: -----PAFLAERLHRALKGIGTDEFTLNRIMVSRSEIDL
+ANX5_MOUSE       1.73e-13     10    83   319: FPGFDGRADAEVLRKAMKGLGTDEDSILNLLTSRSNAQR
+ANX5_MOUSE       8.44e-06     90   155   319: --------DAYELKHALKGAGTDEKVLTEIIASRTPEEL
+ANX5_MOUSE       0.000422    246   313   319: -----PAYLAETLYYAMKGAGTDDHTLIRVVVSRSEIDL
+ANX1_CHICK       6.42e-13     35   107   130: -PNFDPSADVSALDKAITVKGVDEATIIDILTKRTNAQR
+ANX5_RAT         1.11e-12      9    82   318: FSGFDGRADAEVLRKAMKGLGTDEDSILNLLTARSNAQR
+ANX5_RAT         4.81e-06     89   154   318: --------DAYELKHALKGAGTDEKVLTEIIASRTPEEL
+ANX5_RAT         0.00035     245   312   318: -----PAYLAETLYYAMKGAGTDDHTLIRVIVSRSEIDL
+ANX5_HUMAN       1.11e-12     11    84   319: FPGFDERADAETLRKAMKGLGTDEESILTLLTSRSNAQR
+ANX5_HUMAN       1.48e-05     91   156   319: --------DAYELKHALKGAGTNEKVLTEIIASRTPEEL
+ANX5_HUMAN       0.000291    247   314   319: -----PAYLAETLYYAMKGAGTDDHTLIRVMVSRSEIDL
+ANX5_BOVIN       1.12e-12     11    84   320: FPGFDERADAETLRKAMKGLGTDEESILTLLTSRSNAQR
+ANX5_BOVIN       4.84e-06     91   156   320: --------DAYELKHALKGAGTDEKVLTEIIASRTPEEL
+ANX5_BOVIN       0.000352    247   314   320: -----PAYLAETLYYAMKGAGTDDHTLIRVVVSRSEIDL
+ANXB_HUMAN       1.24e-12    198   270   505: -PGFDPLRDAEVLRKAMKGFGTDEQAIIDCLGSRSNKQR
+ANXB_HUMAN       1.21e-06    277   341   505: --------DIYEIKEAIKGVGTDEACLIEILASRSNEHI
+ANXB_HUMAN       3.45e-05    433   500   505: -----PAFFAERLNKAMRGAGTKDRTLIRIMVSRSETDL
+ANX8_MOUSE       3.5e-12      21    91   327: ---FNPDPDAETLYKAMKGIGTNEQAIIDVLTKRSNVQR
+ANX8_MOUSE       1.44e-07     92   163   327: YPPY--SYEAKELHDAMKGLGTKEGVIIEILASRTKNQL
+ANX8_MOUSE       0.018       259   323   327: ---------AERLYYAMKGAGTRDGTLIRNIVSRSEIDL
+ANX8_HUMAN       3.5e-12      21    91   327: ---FNPDPDAETLYKAMKGIGTNEQAIIDVLTKRSNTQR
+ANX8_HUMAN       1.62e-06     92   163   327: YPPYR--YEAKELHDAMKGLGTKEGVIIEILASRTKNQL
+ANX8_HUMAN       0.0664      259   323   327: ---------AERLYYAMKGAGTRDGTLIRNIVSRSEIDL
+ANX6_HUMAN       6.13e-12     16    89   672: FPGFDPNQDAEALYTAMKGFGSDKEAILDIITSRSNRQR
+ANX6_HUMAN       4.76e-11     96   161   672: --------DAKEIKDAISGIGTDEKCLIEILASRTNEQM
+ANX6_HUMAN       1.21e-10    362   432   672: ---FNPDADAKALRKAMKGLGTDEDTIIDIITHRSNVQR
+ANX6_HUMAN       1.85e-08    439   503   672: --------DAKQLKKAMEGAGTDEKALIEILATRTNAEI
+ANX6_HUMAN       5.59e-05    600   667   672: -----PLFFADKLYKSMKGAGTDEKTLTRIMVSRSEIDL
+ANX6_HUMAN       0.00232     252   319   672: -----PEYFAERLFKAMKGLGTRDNTLIRIMVSRSELDM
+ANX6_HUMAN       0.00337     192   245   672: --------------------GTDEAQFIYILGNRSKQHL
+ANXB_RABIT       7.94e-12    197   268   503: --GFDPLRDAEVLRKAMKGFGTDEQAIIDCLGSRSNKQR
+ANXB_RABIT       5.7e-07     275   339   503: --------DAYEIKEAIKGAGTDEACLIEILASRSNEHI
+ANXB_RABIT       8.72e-05    431   498   503: -----PAFFAERLNRAMRGAGTKDRTLIRIMVSRSEIDL
+ANXB_MOUSE       7.94e-12    197   268   503: --GFDPLRDAEVLRKAMKGFGTDEQAIIDCLGSRSNKQR
+ANXB_MOUSE       3.67e-06    275   339   503: --------DVYEIKEAIKGAGTDEACLIEIFASRSNEHI
+ANXB_MOUSE       7.24e-05    431   498   503: -----PAFFAERLNKAMRGAGTKDRTLIRIMVSRSELDL
+ANXB_BOVIN       7.94e-12    197   268   503: --GFDPLRDAEVLRKAMKGFGTDEQAIIDCLGSRSNKQR
+ANXB_BOVIN       1.45e-06    275   339   503: --------DAYEIKEAIKGAGTDEACLIEILASRSNEHI
+ANXB_BOVIN       7.24e-05    431   498   503: -----PAFFAERLNKAMRGAGTKDRTLIRIMVSRSEIDL
+ANX6_BOVIN       9.83e-12    308   378   618: ---FNPDADAKALRKAMKGLGTDEDTIIDIITHRSNAQR
+ANX6_BOVIN       5.26e-11     42   107   618: --------DAKEIKDAISGIGTDEKCLIEILASRTNEQI
+ANX6_BOVIN       2.18e-09    385   449   618: --------DAKQLKKAMEGAGTDEKALIEILATRTNAEI
+ANX6_BOVIN       3.53e-05    546   613   618: -----PLFFADKLYKSMKGAGTEEKTLTRIMVSRSEIDL
+ANX6_BOVIN       0.00309     138   191   618: --------------------GTDEAQFIYILGNRSKQHL
+ANX6_BOVIN       0.00373     202   265   618: ---------AERLFKAMKGLGTRDNTLIRIMVSRSELDM
+ANX5_CHICK       1.05e-11     12    85   321: FSPFDARADAEALRKAMKGMGTDEETILKILTSRNNAQR
+ANX5_CHICK       1.7e-07      92   157   321: --------DAHALKHAIKGAGTNEKVLTEILASRTPAEV
+ANX5_CHICK       0.0257      248   315   321: -----PAYFAETLYYSMKGAGTDDDTLIRVMVSRSEIDL
+ANX6_MOUSE       1.29e-11    362   432   672: ---FNPDADAKALRKAMKGIGTDEATIIDIVTHRSNAQR
+ANX6_MOUSE       1e-10        96   161   672: --------DAKEIKDAISGIGTDEKCLIEILASRTNEQM
+ANX6_MOUSE       1.64e-09     16    89   672: FPEFDANQDAEALYTAMKGFGSDKESILELITSRSNKQR
+ANX6_MOUSE       7.29e-09    439   503   672: --------DAKQLKKAMEGAGTDEKTLIEILATRTNAEI
+ANX6_MOUSE       5.59e-05    600   667   672: -----PLFFADKLYKSMKGAGTDEKTLTRVMVSRSEIDL
+ANX6_MOUSE       0.00232     252   319   672: -----PEYFAERLFKAMKGLGTRDNTLIRIMVSRSELDM
+ANX6_MOUSE       0.00337     192   245   672: --------------------GTDEAQFIYILGNRSKQHL
+ANX5_CYNPY       3.23e-11     15    87   323: -PDFNDKEDAETLRHAMKGLGTDEDTILKLLISRSNKQR
+ANX5_CYNPY       1.33e-06     94   159   323: --------DACELRNAIKGLGTLENVIIEIMASRTAAEV
+ANX5_CYNPY       0.00332     254   317   323: ---------AEVLYNSMKGAGTDDQTLIRVLVSRSEIDL
+ANX5_CYNPY       0.0311      177   243   323: --------DAKALFDAGENKGTDEETFISILSTRGVGHL
+ANX6_CHICK       3.94e-11    361   431   671: ---FNDDGDAQVLRKAMKGLGTDEGAIIEVLTQRSNAQR
+ANX6_CHICK       2.11e-10     15    88   671: FPGFNASQDADALCNAMKGFGSDKDAILDLITSRSNKQR
+ANX6_CHICK       4.45e-10     95   160   671: --------DAKEIKDAIAGIGTDEKCLIEILASRTNQEI
+ANX6_CHICK       4.69e-08    438   502   671: --------DAKQLRKAVEGDGTDESTLVEIMATRNNQEI
+ANX6_CHICK       0.00589     255   318   671: ---------AERLYKAMKGLGTRDNTLIHIMVSRSEIDM
+ANX4_BOVIN       4.62e-11     12    83   318: --GFNAAEDAQTLRKAMKGLGTDEDAIINVLAYRSTAQR
+ANX4_BOVIN       4.81e-06     85   154   318: -----PTVDVQELRKAMKGAGTDEGCLIEILASRTPEEI
+ANX4_BOVIN       0.000611    250   313   318: ---------AERLYKSMKGLGTDDDTLIRVMVSRAEIDM
+ANX6_RAT         4.76e-11    362   432   672: ---FNPDADAKGLRKAMKGIGTDEATIIDIITQRSNVQR
+ANX6_RAT         1.46e-10     96   161   672: --------DAKEIKDAISGIGTDEKCLIEILASRTNEQI
+ANX6_RAT         2.87e-09     16    89   672: FADFDANQDAEALYTAMKGFGSDKESILELITSRSNKQR
+ANX6_RAT         1.54e-08    439   503   672: --------DAKQLKKAMEGAGTDEKALIEILATRTNAEI
+ANX6_RAT         0.000299    600   667   672: -----PLFFADKLYKSMKGAGTDEKTLTRVMVSRSEIDL
+ANX6_RAT         0.00232     252   319   672: -----PEYFAERLFKAMKGLGTRDNTLIRIMVSRSELDM
+ANX6_RAT         0.00337     192   245   672: --------------------GTDEAQFIYILGNRSKQHL
+ANXC_HYDAT       9.66e-11     10    83   316: HASFNSREDAETLRKAMKGIGTDEKSITHILATRSNAQR
+ANXC_HYDAT       2.56e-05     91   155   316: ---------AEQLHAAMKGLGTDENALIDILCTQSNAQI
+ANXC_HYDAT       0.00994     250   313   316: ---------AERLHHAMKGLGTSDKTLIRILVSRSEIDL
+ANX1_RAT         1.54e-10     38   111   345: YPSFNPSSDVAALHKAIMVKGVDEATIIDILTKRTNAQR
+ANX1_RAT         4.96e-08    118   182   345: --------DADELRAAMKGLGTDEDTLIEILTTRSNQQI
+ANX1_RAT         0.00517     274   341   345: -----PAFFAEKLYEAMKGAGTRHKTLIRIMVSRSEIDM
+ANX4_PIG         1.7e-10      12    83   318: --GFNAAEDAQTLRKAMKGLGTDEDAIISVLAYRSTAQR
+ANX4_PIG         8.41e-06     85   154   318: -----PTVDVQELRRAMKGAGTDEGCLIEILASRTPEEI
+ANX4_PIG         0.00035     250   313   318: ---------AERLYKSMKGLGTDDNTLIRVMVSRAEIDM
+ANX1_HUMAN       1.85e-10     38   111   345: YPTFNPSSDVAALHKAIMVKGVDEATIIDILTKRNNAQR
+ANX1_HUMAN       2.48e-06    118   182   345: --------DADELRAAMKGLGTDEDTLIEILASRTNKEI
+ANX1_HUMAN       0.00203     274   341   345: -----PAFFAEKLHQAMKGVGTRHKALIRIMVSRSEIDM
+ANXA_HUMAN       2.09e-10     15    87   324: -PNFNPIMDAQMLGGALQGFDCDKDMLINILTQRCNAQR
+ANXA_HUMAN       1.5e-05      88   159   324: YPP--PLYDAHELWHAMKGVGTDENCLIEILASRTNGEI
+ANXA_HUMAN       0.00583     249   316   324: -----PAYFAYRLYSAIHDFGFHNKTVIRILIARSEIDL
+ANX1_BOVIN       2.7e-10      39   112   346: YPTFNPSSDVEALHKAITVKGVDEATIIEILTKRNNAQR
+ANX1_BOVIN       6.32e-06    119   183   346: --------DAEELRAAMKGLGTDEDTLNEILASRTNREI
+ANX1_BOVIN       0.00117     275   342   346: -----PMFFAEKLHQAMKGIGTRHKTLIRIMVSRSEIDM
+ANX4_HUMAN       2.98e-10     12    83   318: --GFNAMEDAQTLRKAMKGLGTDEDAIISVLAYRNTAQR
+ANX4_HUMAN       2.75e-06     85   154   318: -----PTVDVQELRRAMKGAGTDEGCLIEILASRTPEEI
+ANX4_HUMAN       0.00029     250   313   318: ---------AEKLYKSMKGLGTDDNTLIRVMVSRAEIDM
+ANX4_CANFA       4.32e-10     12    83   318: --GFSATEDAQTLRKAMKGLGTDEDAIISVLAPRNTSQR
+ANX4_CANFA       7.87e-05     85   154   318: -----PTVDVQELRRAMKGSGTDEGCLIEILASRTPEEL
+ANX4_CANFA       0.000241    250   313   318: ---------AERLYKSMKGLGTDDNTLIRVMVSRAEIDM
+ANXX_DROME       4.35e-10     15    85   320: ---FDASQDAQVLRAAMKGFGTDEQEIIDVLVGRSNQQR
+ANXX_DROME       0.00156      87   157   320: -----PPVECKQLHAAMAGIGTEEATLVEILCTKTNEEM
+ANXX_DROME       0.00273     253   317   320: ---------ANRLYKAMNGAGTDDATLIRIIVSRSEIDL
+ANX1_RABIT       4.71e-10     39   112   346: YPAFNPSSDVAALHQAIMVKGVDEATIIDILTKRNNAQR
+ANX1_RABIT       2.07e-06    119   183   346: --------DADELRAAMKGLGTDEDTLIEILASRNNKEI
+ANX1_RABIT       0.00518     275   342   346: -----PAYFAEKLYQAMKGAGTRHKALIRIMVSRSEVDM
+ANX9_DROME       5.31e-10     16    91   324: YPAFDPVEDAAILRKAMKGFGTDEKAIIEILARRGIVQR
+ANX9_DROME       9.79e-08     95   163   324: -----PQFYAQELHDAISGLGTDEEAIIEILCTLSNYGI
+ANX4_MOUSE       6.27e-10     12    83   318: --GFNATEDAQTLRKAMKGLGTDEDAIIGILAYRNTAQR
+ANX4_MOUSE       1.77e-05     85   154   318: -----PTVDVQELRRAMKGAGTDEGCLIEILASRTPEEI
+ANX4_MOUSE       9.48e-05    246   313   318: -----PSYFAERLYKSMKGLGTDDNTLIRVMVSRAEIDM
+ANXA_MOUSE       9.28e-10     15    87   324: -PNFNPMMDAQMLGGRLQGFDCNKDMLIDILTQRSNAQR
+ANXA_MOUSE       1.24e-05     88   159   324: YPP--PSYDAHELWHAMKGPGTDENCLIEILASRTNGEI
+ANXA_MOUSE       0.000429    249   316   324: -----PSYFAYKLYRAIHDFGFHNKTVIRILIARSEIDL
+ANX1_PIG         9.94e-10     39   112   346: YPTFNPSSDVEASHKAITVKGVDEATIIEIHTKRTNAQR
+ANX1_PIG         1.61e-05    119   183   346: --------DADELRAAMKGLGTDEDTLNEILASRTNREI
+ANX1_PIG         0.00518     275   342   346: -----PMFFAEKLHQAMKGNGTRHKTLIRIMVSRSEIDM
+ANX7_XENLA       1.24e-09    207   277   512: -PNFDALSDAEKLRKAMKGFGTDEKP-IDVVANRSNDQR
+ANX7_XENLA       4.81e-07    278   350   512: ---FMPSTDAWSLYNAMKGAGTQERVLIEILCTRTNSEI
+ANX7_XENLA       0.00445     451   509   512: --------------RSMKGAGTDDSTLIRIIVTRSEIDL
+ANX4_RAT         1.59e-09     12    83   318: --GFNATEDAQVLRKAMKGLGTDEDAIIGVLACRNTAQR
+ANX4_RAT         1.01e-05     85   154   318: -----PTVDVQELRRAMKGAGTDEGCLIEILASRNPEEI
+ANX4_RAT         0.0002      246   313   318: -----PAYFAERLYKSMKGLGTDDSTLIRVMVSRPEIDM
+AN12_COLLI       1.72e-09     36   108   343: -PNFDPSADVVALEKAMTAKGVDEATIIDIMTKRTNAQR
+AN12_COLLI       1.82e-07    115   179   343: --------DAEELRACMKGLGTDEDTLIEILASRSNKEI
+AN12_COLLI       0.00745     271   338   343: -----PAFFAEKLHLAMKGFGTRHKDLIRIMVSRHEVDM
+ANX2_CHICK       2.04e-09     29   102   338: YSNFDADRDAAALEAAIKTKGVDEVTIINILTNRSNEQR
+ANX2_CHICK       2.6e-07     105   173   338: -----PSYDASELKAAMKGLGTDEDTLIEIICSRTNQEL
+ANX1_CAVCU       2.52e-09     39   112   346: YPSFDASSDVAALHKAITVKGVDEATIIDILTKRNNAQR
+ANX1_CAVCU       4.36e-06    118   183   346: -------LDADELRAAMKGLGTDEDTLIEILVSRKNREI
+ANX1_CAVCU       0.0109      275   342   346: -----PAFFAEKLHLAMKGAGTRHKALIRIMVSRSEIDM
+ANX7_MOUSE       2.83e-09    160   229   463: ---FDAMRDAEILRKAMKGFGTDEQAIVDVVSNRSNDQR
+ANX7_MOUSE       2.2e-08     230   301   463: ---FMPSTDAWSLRKAMQGAGTQERVLIEILCTRTNQEI
+ANX7_MOUSE       0.00276     393   461   463: -----PAFFAERLYYSMKGAGTDDSTLVRIVVTRSEIDL
+ANX2_RAT         3.57e-09     29   102   338: YTNFDAERDALNIETAIKTKGVDEVTIVNILTNRSNAQR
+ANX2_RAT         6.6e-07     109   173   338: --------DASELKASMKGLGTDEDSLIEIICSRTNQEL
+ANX7_HUMAN       4.14e-09    163   232   466: ---FDAIRDAEILRKAMKGFGTDEQAIVDVVANRSNDQR
+ANX7_HUMAN       4.67e-08    240   304   466: --------DAWSLRKAMQGAGTQERVLIEILCTRTNQEI
+ANX7_HUMAN       0.000431    396   464   466: -----PAFFAERLYYAMKGAGTDDSTLVRIVVTRSEIDL
+ANX1_MOUSE       5.3e-09      38   111   345: YPSFNVSSDVAALHKAIMVKGVDEATIIDILTKRTNAQR
+ANX1_MOUSE       1.26e-07    118   182   345: --------DADELRGAMKGLGTDEDTLIEILTTRSNEQI
+ANX1_MOUSE       0.00904     274   341   345: -----PAFFAEKLYEAMKGAGTRHKALIRIMVSRSEIDM
+ANX2_HUMAN       6.25e-09     29   102   338: YTNFDAERDALNIETAIKTKGVDEVTIVNILTNRSNAQR
+ANX2_HUMAN       3.77e-07    109   173   338: --------DASELKASMKGLGTDEDSLIEIICSRTNQEL
+ANXD_CANFA       1.48e-08     12    83   315: --GFDVDHDAKKLNKACKGMGTDEAAIIEILSSRTSDER
+ANXD_CANFA       9.51e-08     86   155   315: -----PSYDARQLQKAMKGLGTDEAVLIEILCTRTNKEI
+ANXD_CANFA       1.88e-06    250   314   315: ---------ADRLYKSMKGTGTDEETLIHIIVTRAEVDL
+ANXB_XENLA       1.59e-08     33   103   339: ---FDAEKDAAAIETAIKTKGVDELTIINILTNRSNDQR
+ANXB_XENLA       3.78e-07    107   174   339: -----PQYDASELKASMKGLGTDEDTLIEIICSRTNKEL
+ANX7_DICDI       1.82e-08    166   231   462: --------DAEVLRKAMKGIGTNESDLIKVLANRNWAER
+ANX7_DICDI       0.000515    238   302   462: --------DVEQIHSACAGAGTNENTIIEILVTRSNVQM
+ANX7_DICDI       0.0214      310   387   462: -PVINPSKDAEDLYKAGEGIGTDEKEFIKILTSRSLPHI
+ANX2_MOUSE       1.91e-08     29   102   338: YTNFDAERDALNIETAVKTKGVDEVTIVNILTNRSNVQR
+ANX2_MOUSE       3.77e-07    109   173   338: --------DASELKASMKGLGTDEDSLIEIICSRTNQEL
+ANX2_BOVIN       1.91e-08     29   102   338: YTNFDAERDALNIETAIKTKGVDEVTIVNILTNRSNEQR
+ANX2_BOVIN       3.77e-07    109   173   338: --------DASELKASMKGLGTDEDSLIEIICSRTNQEL
+ANX2_XENLA       2.78e-08     33   103   339: ---FDAEKDAAAIETAIKTKGVDELTIINILTNRSNEQR
+ANX2_XENLA       6.62e-07    107   174   339: -----PQYDASELKASMKGLGTDEDTLIEIICSRTNKEL
+ANX4_FRAAN       5.42e-08      8    76   314: -PNFCAKEDAEALRKSVKGWGTNEKAIISILGHRNAGQR
+ANXD_HUMAN       6.55e-08     12    83   315: --GFDVDRDAKKLNKACKGMGTNEAAIIEILSGRTSDER
+ANXD_HUMAN       3.51e-07     91   155   315: ---------ARQLQKAMKGLGTDESVLIEFLCTRTNKEI
+ANXD_HUMAN       2.26e-06    250   314   315: ---------AERLYKSMKGAGTDEETLIRIVVTRAEVDL
+ANX9_HUMAN       7.05e-08     32   104   338: ---LNFSVDKDAQRRAITGQGVDRSAIVDVLTNRSREQR
+AN11_COLLI       7.11e-08     37   107   341: ---FDPSADVVALEKAMTAKGVDEATIIDIMTTRTNAQR
+AN11_COLLI       6.23e-06    114   178   341: --------DAEELRACMKGHGTDEDTLIEILASRNNKEI
+AN11_COLLI       0.0227      269   336   341: -----PAFFAEKLHMAMKGFGTQHRDLIRIMVSRHEVDM
+ANX9_MOUSE       1.23e-07     34   104   338: ---FSVDKDVQRLLKAIAGQGVDYDTIVDVLTNRSREQR
+ANX1_RODSP       1.52e-07     38   111   345: YPSFDPSSDVAALHKGIMVNGVDEATILDLLTKRYNAQR
+ANX1_RODSP       8.56e-05    118   182   345: --------DGNELRAAMKAVGTDEETLIEILWTRSNQQI
+ANX1_RODSP       0.00429     274   341   345: -----PAFFAEKLYEAMKGAGTRHKTLIRIMVSRSEIDS
+ANX2_PIG         0.000984     29    68    69: YTNFDAERDALNIETAIKTKGVDEVTIVNILTNRSNEQX
+#
+# ID             Evalue   Start   End   Len
+#                                            41        
+SCANPS_TEST      0             1    74    74: LIVKQYQEAYEQALKADLKGDLSGHFEHVMVALI
+ANX3_RAT         2.9e-29      16    89   324: LIVKHIQEAYEQALKADLKGDLSGHFEHVMVALI
+ANX3_RAT         0.00131     179   245   324: LTFDEYRNISQKDIEDSIKGELSGHFEDLLLAVV
+ANX3_RAT         0.0259      252   319   324: DIRREFKKHYGCSLYSAIQSDTSGDYRTVLLKI-
+ANX3_RAT         0.0955       92   121   324: ----------------------------------
+ANX3_MOUSE       2.25e-28     15    88   323: LIVKQYQAAYEQELKDDLKGDLSGHFEHVMVALV
+ANX3_MOUSE       0.00158     178   244   323: LTFDEYRNISQKDIEDSIKGELSGHFEDLLLAIV
+ANX3_MOUSE       0.00581     251   318   323: DIRHEFKKHYGYSLYSAIQSDTSGDYRTVLLKI-
+ANX3_HUMAN       1.43e-24     15    88   323: LIVKEYQAAYGKELKDDLKGDLSGHFEHLMVALV
+ANX3_HUMAN       0.000902    178   244   323: LTFDEYRNISQKDIVDSIKGELSGHFEDLLLAIV
+ANX3_HUMAN       0.00109     251   318   323: DIRTEFKKHYGYSLYSAIKSDTSGDYEITLLKI-
+ANX5_MOUSE       1.73e-13     10    83   319: EIAQEFKTLFGRDLVDDLKSELTGKFEKLIVAMM
+ANX5_MOUSE       8.44e-06     90   155   319: AIKQVYEEEYGSNLEDDVVGDTSGYYQRMLVVLL
+ANX5_MOUSE       0.000422    246   313   319: NIRKEFRKNFATSLYSMIKGDTSGDYKKALLLL-
+ANX1_CHICK       6.42e-13     35   107   130: QIKAAYQQAKGKSLEEDLKKVLKSHLEDVVVALL
+ANX5_RAT         1.11e-12      9    82   318: QIAEEFKTLFGRDLVNDMKSELTGKFEKLIVALM
+ANX5_RAT         4.81e-06     89   154   318: AIKQAYEEEYGSNLEDDVVGDTSGYYQRMLVVLL
+ANX5_RAT         0.00035     245   312   318: NIRKEFRKNFATSLYSMIKGDTSGDYKKALLLL-
+ANX5_HUMAN       1.11e-12     11    84   319: EISAAFKTLFGRDLLDDLKSELTGKFEKLIVALM
+ANX5_HUMAN       1.48e-05     91   156   319: AIKQVYEEEYGSSLEDDVVGDTSGYYQRMLVVLL
+ANX5_HUMAN       0.000291    247   314   319: NIRKEFRKNFATSLYSMIKGDTSGDYKKALLLL-
+ANX5_BOVIN       1.12e-12     11    84   320: EIAVAFKTLFGRDLLDDLKSELTGKFEKLIVALM
+ANX5_BOVIN       4.84e-06     91   156   320: AIKQVYEEEYGSSLEDDVVGDTSGYYQRMLVVLL
+ANX5_BOVIN       0.000352    247   314   320: NIRKEFRKNFGTSLYSMIKGDTSGDYKKALLLL-
+ANXB_HUMAN       1.24e-12    198   270   505: QILLSFKTAYGKDLIKDLKSELSGNFEKTILALM
+ANXB_HUMAN       1.21e-06    277   341   505: ELNRAYKAEFKKTLEEAIRSDTSGHFQRLLISL-
+ANXB_HUMAN       3.45e-05    433   500   505: DIRSEYKRMYGKSLYHDISGDTSGDYRKILLKI-
+ANX8_MOUSE       3.5e-12      21    91   327: QIAKSFKAQFGKDLTETLKSELSGKFERLIVALM
+ANX8_MOUSE       1.44e-07     92   163   327: EIMKAYEEDYGSTLEEDIQGDTSGYLERILVCLL
+ANX8_MOUSE       0.018       259   323   327: LIKGQFRKMYGKTLSSMIMADTSGYYKTALLNLV
+ANX8_HUMAN       3.5e-12      21    91   327: QIAKSFKAQFGKDLTETLKSELSGKFERLIVALM
+ANX8_HUMAN       1.62e-06     92   163   327: EIMKAYEEDYGSSLEEDIQADTSGYLERILVCLL
+ANX8_HUMAN       0.0664      259   323   327: LIKCHFKKMYGKTLSSMIMEDTSGDYKNALLSLV
+ANX6_HUMAN       6.13e-12     16    89   672: EVCQSYKSLYGKDLIADLKYELTGKFERLIVGLM
+ANX6_HUMAN       4.76e-11     96   161   672: QLVAAYKDAYERDLEADIIGDTSGHFQKMLVVLL
+ANX6_HUMAN       1.21e-10    362   432   672: QIRQTFKSHFGRDLMTDLKSEISGDLARLILGLM
+ANX6_HUMAN       1.85e-08    439   503   672: AINEAYKEDYHKSLEDALSSDTSGHFRRILISL-
+ANX6_HUMAN       5.59e-05    600   667   672: NIRREFIEKYDKSLHQAIEGDTSGDFLKALLAL-
+ANX6_HUMAN       0.00232     252   319   672: DIREIFRTKYEKSLYSMIKNDTSGEYKKTLLKL-
+ANX6_HUMAN       0.00337     192   245   672: LVFDEYLKTTGKPIEASIRGELSGDFEKLMLAVV
+ANXB_RABIT       7.94e-12    197   268   503: QILLSFKTAYGKDLIKDLKSELSGNFEKTILALM
+ANXB_RABIT       5.7e-07     275   339   503: ELNKAYKTEFKKTLEEAIRSDTSGHFQRLLISL-
+ANXB_RABIT       8.72e-05    431   498   503: DIRAEYKRMYGKSLYHDISGDTSGDYRKILLKI-
+ANXB_MOUSE       7.94e-12    197   268   503: QILLSFKTAYGKDLIKDLKSELSGNFEKTILALM
+ANXB_MOUSE       3.67e-06    275   339   503: ELSRAYKTEFQKTLEEAIRSDTSGHFQRLLISL-
+ANXB_MOUSE       7.24e-05    431   498   503: DIRAEYKRMYGKSLYHDITGDTSGDYRKILLKI-
+ANXB_BOVIN       7.94e-12    197   268   503: QILLSFKTAYGKDLIKDLKSELSGNFEKTILALM
+ANXB_BOVIN       1.45e-06    275   339   503: ELNRVYKTEFKKTLEEAIRSDTSGHFQRLLISL-
+ANXB_BOVIN       7.24e-05    431   498   503: DIRAEYKRLYGKSLYHDITGDTSGDYRKILLKI-
+ANX6_BOVIN       9.83e-12    308   378   618: QIRQTFKSHFGRDLMADLKSELSGDLARLILGLM
+ANX6_BOVIN       5.26e-11     42   107   618: QLVAAYKDAYERELEADITGDTSGHFRKMLVVLL
+ANX6_BOVIN       2.18e-09    385   449   618: AINKAYKEDYHKTLEDALSSDTSGHFKRILISL-
+ANX6_BOVIN       3.53e-05    546   613   618: NIRREFIEKYDKSLHQAIEGDTSGHFLKALLAI-
+ANX6_BOVIN       0.00309     138   191   618: LVFDEYLKTTGKPIEASIRGELSGDFEKLMLAVV
+ANX6_BOVIN       0.00373     202   265   618: DIREIFRTKYEKSLYSMIKNDTSGEYKKTLLKL-
+ANX5_CHICK       1.05e-11     12    85   321: EIASAFKTLFGRDLVDDLKSELTGKFETLMVSLM
+ANX5_CHICK       1.7e-07      92   157   321: NIKQVYMQEYEANLEDKITGETSGHFQRLLVVLL
+ANX5_CHICK       0.0257      248   315   321: DIRHEFRKNFAKSLYQMIQKDTSGDYRKALLLL-
+ANX6_MOUSE       1.29e-11    362   432   672: QIRQTFKSHFGRDLMADLKSEISGDLARLILGLM
+ANX6_MOUSE       1e-10        96   161   672: QLVAAYKDAYERDLESDIIGDTSGHFQKMLVVLL
+ANX6_MOUSE       1.64e-09     16    89   672: EICQSYKSLYGKDLIEDLKYELTGKFERLIVNLM
+ANX6_MOUSE       7.29e-09    439   503   672: AINEAYKEDYHKSLEDALSSDTSGHFRRILISL-
+ANX6_MOUSE       5.59e-05    600   667   672: NIRREFIEKYDKSLHQAIEGDTSGDFMKALLAL-
+ANX6_MOUSE       0.00232     252   319   672: DIREIFRTKYEKSLYSMIKNDTSGEYKKALLKL-
+ANX6_MOUSE       0.00337     192   245   672: LVFDEYLKTTGKPIEASIRGELSGDFEKLMLAVV
+ANX5_CYNPY       3.23e-11     15    87   323: QIALTYKTLFGRDLTDDLKSELSGKFETLLVALM
+ANX5_CYNPY       1.33e-06     94   159   323: NIKETYKKEFDSDLEKDIVGDTSGNFERLLVSLV
+ANX5_CYNPY       0.00332     254   317   323: NIRQTFRKHYGKSLHAMIQSDTSGDYRNALLLL-
+ANX5_CYNPY       0.0311      177   243   323: KVFDQYMTISGYQIEESIQSETGGHFEKLLLAVV
+ANX6_CHICK       3.94e-11    361   431   671: QILKAYKAHYGRDLLADLKSELSGSLANLILGLM
+ANX6_CHICK       2.11e-10     15    88   671: EICQAYKSQYGKDLIADLKYELTGKFERLIVSLM
+ANX6_CHICK       4.45e-10     95   160   671: DLVAAYKDAYERDLEADVVGDTSGHFKKMLVVLL
+ANX6_CHICK       4.69e-08    438   502   671: AINEAYQQAYHKSLEDDLSSDTSVHFKRLLVSL-
+ANX6_CHICK       0.00589     255   318   671: DIREVFRTKYDKSLHNMIKEDTSGEYKKALLKL-
+ANX4_BOVIN       4.62e-11     12    83   318: EIRTAYKTTIGRDLMDDLKSELSGNFEQVILGMM
+ANX4_BOVIN       4.81e-06     85   154   318: RINQTYQLQYGRSLEDDIRSDTSFMFQRVLVSL-
+ANX4_BOVIN       0.000611    250   313   318: DIRANFKRLYGKSLYSFIKGDTSGDYRKVLLIL-
+ANX6_RAT         4.76e-11    362   432   672: QIRQTFKSHFGRDLMADLKSEISGDLARLILGLM
+ANX6_RAT         1.46e-10     96   161   672: QLVAAYKDAYERDLESDIIGDTSGHFQKMLVVLL
+ANX6_RAT         2.87e-09     16    89   672: EICQSYKSLYGKDLIADLKYELTGKFERLIVNLM
+ANX6_RAT         1.54e-08    439   503   672: AINEAYKEDYHKSLEDALSSDTSGHFKRILISL-
+ANX6_RAT         0.000299    600   667   672: NIRREFIEKYDKSPHQAIEGDTSGDFMKALLAL-
+ANX6_RAT         0.00232     252   319   672: DIREIFRTKYEKSLYSMIKNDTSGEYKKALLKL-
+ANX6_RAT         0.00337     192   245   672: LVFDEYLKTTGKPIEASIRGELSGDFEKLMLAVV
+ANXC_HYDAT       9.66e-11     10    83   316: QIKTDYTTLFGKHLEDELKSELSGNYEAAALALL
+ANXC_HYDAT       2.56e-05     91   155   316: AIKAAFKLLYKEDLEKEIISETSGNFQRLLVSML
+ANXC_HYDAT       0.00994     250   313   316: NIKETFQAMYGKSLYEFIADDCSGDYKDLLLQI-
+ANX1_RAT         1.54e-10     38   111   345: QIKAAYLQETGKPLDETLKKALTGHLEEVVLAML
+ANX1_RAT         4.96e-08    118   182   345: EITRVYREELKRDLAKDITSDTSGDFRNALLAL-
+ANX1_RAT         0.00517     274   341   345: EIKVFYQKKYGIPLCQAILDETKGDYEKILVAL-
+ANX4_PIG         1.7e-10      12    83   318: EIRTAYKSTIGRDLLDDLKSELSGNFEQVILGMM
+ANX4_PIG         8.41e-06     85   154   318: RINQTYQLQYGRSLEDDIRSDTSFMFQRVLVSL-
+ANX4_PIG         0.00035     250   313   318: DIRANFKRLYGKSLYSFIKGDTSGDYRKVLLIL-
+ANX1_HUMAN       1.85e-10     38   111   345: QIKAAYLQETGKPLDETLKKALTGHLEEVVLALL
+ANX1_HUMAN       2.48e-06    118   182   345: DINRVYREELKRDLAKDITSDTSGDFRNALLSL-
+ANX1_HUMAN       0.00203     274   341   345: DIKAFYQKMYGISLCQAILDETKGDYEKILVAL-
+ANXA_HUMAN       2.09e-10     15    87   324: MIAEAYQSMYGRDLIGDLREQLSDHFKDVMAGLM
+ANXA_HUMAN       1.5e-05      88   159   324: QMREAYCLQYSNNLQEDIYSETSGHFRDTLMNLV
+ANXA_HUMAN       0.00583     249   316   324: TIRKRYKERYGKSLFHDIRNFASGHYKKALLAI-
+ANX1_BOVIN       2.7e-10      39   112   346: QIKAAYLQEKGKPLDEVLKKALLGHLEEVVLALL
+ANX1_BOVIN       6.32e-06    119   183   346: EINRVHREELKRDLAKDIASDTSGDYEKALLAL-
+ANX1_BOVIN       0.00117     275   342   346: DIKACYQKLYGISLCQAILDETKGDYEKILVAL-
+ANX4_HUMAN       2.98e-10     12    83   318: EIRTAYKSTIGRDLIDDLKSELSGNFEQVIVGMM
+ANX4_HUMAN       2.75e-06     85   154   318: RISQTYQQQYGRSLEDDIRSDTSFMFQRVLVSL-
+ANX4_HUMAN       0.00029     250   313   318: DIRAHFKRLYGKSLYSFIKGDTSGDYRKVLLVL-
+ANX4_CANFA       4.32e-10     12    83   318: EIRTAYKSTIGRDLMDDLKSELSGNFERVIVGMI
+ANX4_CANFA       7.87e-05     85   154   318: CINQTYQLQYGRSLEDVIRSDTSFMFQRVLVSL-
+ANX4_CANFA       0.000241    250   313   318: DIRESFKRLYGKSLYSFIKGDTSGDYRKVLLIL-
+ANXX_DROME       4.35e-10     15    85   320: TIKAVYEAEFERDLVDDLKDELGGKFEDVIVGLM
+ANXX_DROME       0.00156      87   157   320: QIVAVYEERYQRPLAEQMCSETSGFFRRLLTLIV
+ANXX_DROME       0.00273     253   317   320: TIKQEFERIYNRTLHSAVVAETSGDYKRALTALL
+ANX1_RABIT       4.71e-10     39   112   346: QIKAAYLQEKGKPLDEVLKKALTGHLEEVVLALL
+ANX1_RABIT       2.07e-06    119   183   346: EINRVYREELKRDLAKDIASDTSGDFQKALLSL-
+ANX1_RABIT       0.00518     275   342   346: DIKAFYQKKYGVSLCQAILDETKGDYEKILVAL-
+ANX9_DROME       5.31e-10     16    91   324: EIAEAFKTSYGKDLISDLKSELGGKFEDVILALM
+ANX9_DROME       9.79e-08     95   163   324: TIAQFYEQSFGKSLESDLKGDTSGHFKRLCVSLV
+ANX4_MOUSE       6.27e-10     12    83   318: EIRSAYKSTIGRDLIEDLKSELSSNFEQVILGLM
+ANX4_MOUSE       1.77e-05     85   154   318: RINQTYQQQYGRSLEEDICSDTSFMFQRVLVFL-
+ANX4_MOUSE       9.48e-05    246   313   318: DIRASFKRLYGKSLYSFIKGDTSGDYRKVLLIL-
+ANXA_MOUSE       9.28e-10     15    87   324: MIAGTYQSMYGRDLISVLKEQLSSHFKEVMVGLM
+ANXA_MOUSE       1.24e-05     88   159   324: QMREAYCLQYSNNLQEDIYSETSGHFRDTLMNLV
+ANXA_MOUSE       0.000429    249   316   324: TIRKRYKERFGKSLFHDIKNFASGHYEKALLAI-
+ANX1_PIG         9.94e-10     39   112   346: QIKAAYLQEKGKPLDEALKKALTGHLEEVALALL
+ANX1_PIG         1.61e-05    119   183   346: EINRVYKEELKRDLAKDITSDTSGDYQKALLSL-
+ANX1_PIG         0.00518     275   342   346: DIKACYQKLYGISLCQAILDETKGDYEKILVAL-
+ANX7_XENLA       1.24e-09    207   277   512: KIQAAFKTAYGKDLIKDLKSELSGNVEELIIAL-
+ANX7_XENLA       4.81e-07    278   350   512: NIVACYKQEFGREIEKDIRSDTSGHFERLLISIM
+ANX7_XENLA       0.00445     451   509   512: QIKQAYVQMYQKSLSAAISSDTSGAYKRMLLAI-
+ANX4_RAT         1.59e-09     12    83   318: EIRTAYKSTIGRDLLEDLKSELSSNFEQVILGMM
+ANX4_RAT         1.01e-05     85   154   318: RINQTYQQQYGRSLEEDICSDTSFMFQRVLVSL-
+ANX4_RAT         0.0002      246   313   318: DIPANFKRVYGKSLYSFIKGDTSGDYRKVLLIL-
+AN12_COLLI       1.72e-09     36   108   343: RIKAAYQKAKGKSLEEAMKRVLKSHLEDVVVALL
+AN12_COLLI       1.82e-07    115   179   343: EASRYYKEVLKRDLTQDIISDTSGHFQKALVVL-
+AN12_COLLI       0.00745     271   338   343: EIKCYYKKMYGISLCQAIMDDLKGDYETILVAL-
+ANX2_CHICK       2.04e-09     29   102   338: DIAFAYQRRTKKELSAALKSALSGHLEAVILGLL
+ANX2_CHICK       2.6e-07     105   173   338: EINRVYREMYKTELEKDIISDTSGDFRKLMVAL-
+ANX1_CAVCU       2.52e-09     39   112   346: QIKAAYLQEKGKPLDEALKKALTGHLEEVVLALL
+ANX1_CAVCU       4.36e-06    118   183   346: EINRVYRDELKRDLAKDITSDTSGDFQKALLSL-
+ANX1_CAVCU       0.0109      275   342   346: DIKVYYQKMYGISLCQAILDETKGDYEKILVAL-
+ANX7_MOUSE       2.83e-09    160   229   463: QIKAAFKTMYGKDLIKDLKSELSGNMEELILAL-
+ANX7_MOUSE       2.2e-08     230   301   463: DIVRCYQLEFGRDLEKDIRSDTSGHFERLLVSM-
+ANX7_MOUSE       0.00276     393   461   463: QIKQMFTQMYQKTLSTMIASDTSGDYRKLLLAIV
+ANX2_RAT         3.57e-09     29   102   338: DIAFAYQRRTKKELPSAMKSALSGHLETVMLGLL
+ANX2_RAT         6.6e-07     109   173   338: EINRVYKEMYKTDLEKDIISDTSGEFRKLLVAL-
+ANX7_HUMAN       4.14e-09    163   232   466: KIKAAFKTSYGKDLIKDLKSELSGNMEELILAL-
+ANX7_HUMAN       4.67e-08    240   304   466: EIVRCYQSEFGRDLEKDIRSDTSGHFERLLVSM-
+ANX7_HUMAN       0.000431    396   464   466: QIKQMFAQMYQKTLGTMIAGDTSGDYRRLLLAIV
+ANX1_MOUSE       5.3e-09      38   111   345: QIKAAYLQENGKPLDEVLRKALTGHLEEVVLAML
+ANX1_MOUSE       1.26e-07    118   182   345: EINRVYREELKRDLAKDITSDTSGDFRKALLAL-
+ANX1_MOUSE       0.00904     274   341   345: EIKVFYQKKYGISLCQAILDETKGDYEKILVAL-
+ANX2_HUMAN       6.25e-09     29   102   338: DIAFAYQRRTKKELASALKSALSGHLETVILGLL
+ANX2_HUMAN       3.77e-07    109   173   338: EINRVYKEMYKTDLEKDIISDTSGDFRKLMVAL-
+ANXD_CANFA       1.48e-08     12    83   315: QIKQKYKATYGKDLEEVFKSDLSGNFEKTALALL
+ANXD_CANFA       9.51e-08     86   155   315: AIKEAYQRLFDRSLESDVKADTSGNLKAILVSLL
+ANXD_CANFA       1.88e-06    250   314   315: GIKAKFQEKYQKSLSDMVRSDTSGDFQKLLVALL
+ANXB_XENLA       1.59e-08     33   103   339: DIAFAYHRRTKKDLASALKGALSGNLETVMLGLI
+ANXB_XENLA       3.78e-07    107   174   339: DIQNAYRELYKTELEKDIVSDTSGDFRKLMVAL-
+ANX7_DICDI       1.82e-08    166   231   462: QIKREFSAKYSKDLIQDIKSETSGNFEKCLVALL
+ANX7_DICDI       0.000515    238   302   462: YIKQIFKNKHGKSLKDRLESEASGDFKKLLEKL-
+ANX7_DICDI       0.0214      310   387   462: AVASEYIKHHKKSLIKAIDSEFSGSIKTGLIAIV
+ANX2_MOUSE       1.91e-08     29   102   338: DIAFAYQRRTKKELPSALKSALSGHLETVILGLL
+ANX2_MOUSE       3.77e-07    109   173   338: EINRVYKEMYKTDLEKDIISDTSGDFRKLMVAL-
+ANX2_BOVIN       1.91e-08     29   102   338: DIAFAYQRRTKKELASALKSALSGHLETVILGLL
+ANX2_BOVIN       3.77e-07    109   173   338: EINRVYKEMYKTDLEKDIVSDTSGDFRKLMVAL-
+ANX2_XENLA       2.78e-08     33   103   339: DIAFAFHRRTKKDLPSALKGALSGNLETVMLGLI
+ANX2_XENLA       6.62e-07    107   174   339: DIQNAYRELFKTELEKDIMSDTSGDFRKLMVAL-
+ANX4_FRAAN       5.42e-08      8    76   314: EIRAAYEQLYQEDLLKPLESELSGDFEKAV----
+ANXD_HUMAN       6.55e-08     12    83   315: QIKQKYKATYGKELEEVLKSELSGNFEKTALALL
+ANXD_HUMAN       3.51e-07     91   155   315: AIKEAYQRLFDRSLESDVKGDTSGNLKKILVSLL
+ANXD_HUMAN       2.26e-06    250   314   315: GIKAKFQEKYQKSLSDMVRSDTSGDFRKLLVALL
+ANX9_HUMAN       7.05e-08     32   104   338: LISRNFQERTQQDLMKSLQAALSGNLERIVMALL
+AN11_COLLI       7.11e-08     37   107   341: RIKAAYHKAKGKSLEEAMKRVLKSHLEDVVVALL
+AN11_COLLI       6.23e-06    114   178   341: EACRYYKEVLKRDLTQDIISDTSGDFQKALVSL-
+AN11_COLLI       0.0227      269   336   341: EIKGYYKKMYGISLCQAIMDELKGGYETILVAL-
+ANX9_MOUSE       1.23e-07     34   104   338: LISRAFQERTKQDLLKSLQAALSGNLEKIVVALL
+ANX1_RODSP       1.52e-07     38   111   345: HLKAVYIQETGEPLDETLKKALTGHIQELLLAMI
+ANX1_RODSP       8.56e-05    118   182   345: EITSVYREELKKDIAKYQTSDTSGEFRDALLAL-
+ANX1_RODSP       0.00429     274   341   345: QIKVFYQKKYGVPLCQAILDETKGAYEKILVAL-
+ANX2_PIG         0.000984     29    68    69: ----------------------------------
+#
+# Multiple alignment End for iteration: 0
+#
+# ------------------------------------------------------
+# Scan Completed at: Thu Jul 18 13:05:56 2002
+# 
+# Times:                              (Seconds)
+# Load matrix, query and index:        0.0     0.0     0.0     0.0
+# Load database:                       0.6     0.6     0.6     0.6
+# Scan database:                      20.6    21.2    20.6    21.2
+# Output scores:                       0.5    21.6     0.4    21.6
+# Generate and write alignments:       0.7    22.3     0.7    22.3
+# Millions of cell updates/sec in scan (CPU): 146.13 (Elapsed): 146.13

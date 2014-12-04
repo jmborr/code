@@ -1,0 +1,2 @@
+#!/bin/bash
+scp $1 jbq@camm2.sns.gov:$2

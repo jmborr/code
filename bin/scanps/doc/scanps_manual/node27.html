@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.47)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The scanps_gapdefs.dat file</TITLE>
+<META NAME="description" CONTENT="The scanps_gapdefs.dat file">
+<META NAME="keywords" CONTENT="scanps_manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="scanps_manual.css">
+
+<LINK REL="next" HREF="node28.html">
+<LINK REL="previous" HREF="node26.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node28.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html321"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html319"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html313"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html322"
+  HREF="node28.html">Scanning Protein with DNA</A>
+<B> Up:</B> <A NAME="tex2html320"
+  HREF="node19.html">Getting more from SCANPS</A>
+<B> Previous:</B> <A NAME="tex2html314"
+  HREF="node26.html">Commands to help find</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00087000000000000000">
+The scanps_gapdefs.dat file</A>
+</H2>
+
+<P>
+This file sets default gap penalty combinations for each matrix type
+and mode.  If USE_GAPDEFS is set to 1, then scanps will take the
+default gap penalty combinations from the scanps_defaults.dat file for
+the given matrix and MODE.  These values will OVERRIDE any penalties
+specified in the scanps_defaults.dat file, or on the command
+line.  If you wish to specify non-default gap penalty combinations,
+then set USE_GAPDEFS (ugd) to 0.
+
+<P>
+For example:
+
+<P>
+If the scanps_gapdefs.dat file has the following entries:
+
+<P>
+<PRE>
+#Format is:
+# mode:matrix_name:ld_pen:li_pen:fs_pen:fse_pen
+#
+0:nmd.mat:8:0:0:0
+2:nmd.mat:4:12:0:0
+0:md.mat:8:0:0:0
+2:md.mat:0.2:12:0:0
+#
+</PRE>
+
+<P>
+and USE_GAPDEFS = 1, then 
+
+<P>
+scanps -s hahu.seq -mode 200 -m nmd.mat -bdb swissprot
+
+<P>
+will do a scan of the swissprot database with the nmd.mat matrix and a penalty of 8
+
+<P>
+scanps -s hahu.seq -mode 202 -m md.mat -bdb swissprot
+
+<P>
+would do an affine scan with the penalties of ld_pen 0.2, li_pen 12.
+
+<P>
+scanps -s hahu.seq -mode 2 -m md.mat -bdb swissprot -ugd 0 -li_pen 12 -ld_pen 4
+
+<P>
+would do the affine scan with penalties of 12, 4 rather than 12, 0.2. 
+
+<P>
+WARNING: With the exception of the values for BLOSUM50 the
+scanps_gapdefs.dat file contains numbers that I guessed might be
+appropriate for the given matrix and mode.  They are almost certainly
+not the optimum choices.  
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html321"
+  HREF="node28.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html319"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html313"
+  HREF="node26.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html322"
+  HREF="node28.html">Scanning Protein with DNA</A>
+<B> Up:</B> <A NAME="tex2html320"
+  HREF="node19.html">Getting more from SCANPS</A>
+<B> Previous:</B> <A NAME="tex2html314"
+  HREF="node26.html">Commands to help find</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Geoff Barton (GJB)
+2002-07-23
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,87 @@
+#!/usr/bin/perl
+
+#
+# Perl utility to 'sort out' MSF format alignments
+# for secondary structure prediction, removes gaps 
+# in the target sequence and all data below that
+# gap.
+#
+
+# Usage : msf2jnet <msf file>
+
+$num=0;
+$start=0;
+$keyword="bah";
+$max_length=0;
+$count=0;
+
+if (!-e "$ARGV[0]"){
+        print ("No such file as $ARGV[0] exists in this path...\n");
+        exit (0);
+}
+
+if ($ARGV[0] eq ""){
+   print "No filename given... \n";
+   exit;
+}
+
+open OUTFA,">$ARGV[0].fa";
+open IN,"$ARGV[0]";
+$endnamelook=0;
+while(<IN>){
+    if(/\/\//){
+	$endnamelook=1;
+    }
+   if(/Name/ || /NAME/ &&  $endnamelook == 0 ){
+     ($keyword,$name[$num],$rest)=split(" ",$_,3);
+     $seq{$name[$num]}="";
+     if(length($name[$num])>$max_length){ $max_length=length($name[$num]) };
+     $num++;
+   } elsif(m?//?){ $start=1; }
+   if($start && ((/[A-Z]/) || (/\./))){
+      ($seq_name,$rest)=split(" ",$_,2); 
+      chop($rest);
+      $seq{$seq_name} .= $rest ;
+      $seq{$seq_name} =~  s/\ //g;
+   }
+}
+$numseq = $num;
+$count=0;
+$loopcount=0;
+$start=0;
+$nc=0;
+
+foreach $id (@name){
+    if ($loopcount==0){
+	@sequence=unpack("a" x length($seq{$id}),$seq{$id});
+	foreach (@sequence){
+	    if($sequence[$count] eq "\."){
+		$printer[$count]=1;
+	    }
+	    else{$printer[$count]=0;}
+	    $count++;
+	}                       
+	$count=0;
+	undef @sequence;       
+    }
+    $loopcount++;
+}
+$count=0;
+$numbercount=1;
+
+foreach $id (@name){   
+    print OUTFA ">$id\n";
+    @sequence=unpack("a" x length($seq{$id}),$seq{$id});
+    foreach(@sequence){	  
+	if ($printer[$count]==0){    
+	    print OUTFA "$sequence[$count]";
+	}  
+        $count++;
+    }      
+    print OUTFA "\n";   
+    $count=0;
+    undef @sequence;
+    $numbercount++;
+}
+close OUTFA;
+

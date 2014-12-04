@@ -1,0 +1,930 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head><title>Protein disorder prediction: Implications for structural proteomics</title>
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> 
+<link rel="StyleSheet" href="paper_files/screen_paper.css" type="text/css" media="screen"></head><body>
+
+<h1>Protein disorder prediction: Implications for structural proteomics</h1>
+
+<p>
+Rune Linding<sup>1†*</sup>, Lars Juhl Jensen<sup>12†</sup>, Francesca Diella<sup>3</sup>, Peer Bork<sup>12</sup>, Toby J. Gibson<sup>1</sup> and Robert B. Russell<sup>1</sup>
+</p>
+
+<ol>
+<li>EMBL - Biocomputing Unit<br>
+Meyerhofstr 1<br>
+D-69117 Heidelberg, Germany
+</li><li>Max-Delbr�ck-Centre f�r Molecular Medicine<br>
+Robert-R�ssle-Strasse 10<br>
+D-13092 Berlin, Germany
+</li><li>CellZome GmbH<br>
+Meyerhofstr 1<br>
+D-69117 Heidelberg, Germany
+</li></ol>
+
+<p>
+† These authors contributed equally.<br>
+* To whom correspondence should be addressed (email: linding@embl.de)
+</p>
+
+
+<h2>Abbreviations</h2>
+
+<p>
+IDPs - Intrinsically Disordered Proteins<br>
+ELMs - Eukaryotic Linear Motifs<br>
+PONDR - Predictor Of Natural Disordered Regions<br>
+B-factors - atomic displacement parameters; temperature factors<br>
+PDB - Protein databank<br>
+DSSP - Dictionary of Secondary Structure of Proteins
+</p>
+
+
+<h2>Keywords</h2>
+
+<p>
+protein disorder; intrinsic disorder; hot loops; target selection;
+structural genomics; structural biology; structural proteomics
+</p>
+
+
+<h2>Summary</h2>
+
+<p class="abstract">A great challenge in the proteomics and structural
+genomics era is to predict protein structure and function, including
+identification of those proteins that are partially or wholly
+unstructured. Disordered regions in proteins often contain short linear
+peptide motifs (<em>e.g.</em>
+SH3-ligands and targeting signals) that are important for protein
+function. We present here DisEMBL, a computational tool for prediction
+of disordered/unstructured regions within a protein sequence. As no
+clear definition of disorder exists, we have developed parameters based
+on several alternative definitions, and introduced a new one based on
+the concept of "hot loops", i.e. coils with high temperature factors.
+Avoiding potentially disordered segments in protein expression
+constructs can increase expression, foldability and stability of the
+expressed protein. DisEMBL is thus useful for target selection and the
+design of constructs as needed for many biochemical studies,
+particularly structural biology and structural genomics projects. The
+tool is freely available via a web interface (<a href="http://dis.embl.de/">http://dis.embl.de</a>) and can be downloaded for use in large scale studies.
+</p>
+
+
+<h2>Introduction</h2>
+
+<p>
+In the post-genomic era, discovery of novel domains and functional
+sites in proteins is of growing importance. One focus of structural
+genomics initiatives is to solve structures for novel domains and
+thereby increase the coverage of fold and structure space (<a href="#bre00nsb">Brenner, 2000</a>).
+During the target selection process in structural genomics/biology
+intrinsic protein disorder is important to consider since disordered
+regions at the N- and C- termini (or even within domains) often leads
+to difficulties in protein expression, purification and
+crystallisation. It is therefore essential to be able to predict which
+regions of a target protein are potentially disordered/unstructured.
+Computational tools to help discern ordered globular domains from
+disordered regions are key to such efforts.
+</p>
+
+<p>
+It is becoming increasingly clear that many functionally important protein segments occur outside of globular domains (<a href="#wri99jmb">Wright and Dyson, 1999</a> and <a href="#dun02biochem">Dunker et&nbsp;al., 2002</a>).
+Protein structure and function space is partitioned in two sub spaces.
+The first consist of globular units with binding pockets, active sites
+and interaction surfaces. The second sub space contains non-globular
+segments such as sorting signals, post-translational modification sites
+and protein ligands (<em>e.g.</em> SH3 ligands). Globular units are
+built of regular secondary structure elements and contribute the
+majority of the structural data deposited in PDB. In contrast, the
+non-globular sub space encompasses disordered, unstructured and
+flexible regions without regular secondary structure. Functional sites
+within the non-globular space are known as linear motifs (catalogued by
+ELM, <a href="http://elm.eu.org/">http://elm.eu.org</a>) (<a href="#pun03nar">Puntervoll et&nbsp;al., 2003</a>).
+</p>
+
+<p>
+There are also many recent reports of Intrinsically Disordered Proteins
+(IDPs, also known as Intrinsically Unstructured Proteins). These are
+proteins or domains that, in their native state, are either completely
+disordered or contain large disordered regions. More than 100 such
+proteins are known including Tau, Prions, Bcl-2, p53, 4E-BP1 and eIF1A
+(see Figure&nbsp;4) (<a href="#tom02tibs">Tompa, 2002</a> and <a href="#uve02protsci">Uversky, 2002</a>).
+</p>
+
+<p>
+Protein disorder is important for understanding protein function as well as protein folding pathways (<a href="#pla01nsb">Plaxco and Gross, 2001</a> and <a href="#ver03pnas">Verkhivker et&nbsp;al., 2003</a>).
+Although little is understood about the cellular and structural meaning
+of IDPs, they are thought to become ordered only when bound to another
+molecule (<em>e.g.</em> CREB-CBP complex (<a href="#rad97cell">Radhakrishnan et&nbsp;al., 1997</a>)) or owing to changes in the biochemical environment (<a href="#dun01jmgm">Dunker et&nbsp;al., 2001</a>, <a href="#dun02biochem">Dunker et&nbsp;al., 2002</a>, and <a href="#uve02protsci">Uversky, 2002</a>).
+</p>
+
+<p>
+The current view on disorder is that disordered proteins are disordered
+to allow for more interaction partners and modification sites (<a href="#wri99jmb">Wright and Dyson, 1999</a>, <a href="#liu02jmb">Liu et&nbsp;al., 2002</a>, and <a href="#tom02tibs">Tompa, 2002</a>).
+It has also been suggested that disordered proteins exist to provide a
+simple solution to having large intermolecular interfaces while keeping
+smaller protein, genome and cell sizes (<a href="#gun03tibs">Gunasekaran et&nbsp;al., 2003</a>).
+It has been noted that having several relatively low affinity linear
+interaction sites allows for a flexible, subtle regulation as well as
+account for specificity with fewer linear motifs types (<a href="#eva02cosb">Evans and Owen, 2002</a>).
+It has also been demonstrated that protein disorder plays a central
+role in biology and in diseases mediated by protein misfolding and
+aggregation (<a href="#sch94jbc">Schweers et&nbsp;al., 1994</a>, <a href="#kap03jmn">Kaplan et&nbsp;al., 2003</a>, and <a href="#bat03lan">Bates, 2003</a>).
+</p>
+
+<p>
+No commonly agreed definition of protein disorder exists. The
+thermodynamic definition of disorder in a polypeptide chain is the
+"random coil" structural state. The random coil state can best be
+understood as the structural ensemble spanned by a given polypeptide in
+which all degrees of freedom are used within the conformational space.
+However, even under extremely denaturing solvation conditions, such as
+8M urea, this theoretical state is not observed in solvated proteins (<a href="#sho01sci">Shortle and Ackerman, 2001</a>, <a href="#ack02biochem">Ackerman and Shortle, 2002</a>, and <a href="#kle02sci">Klein-Seetharaman et&nbsp;al., 2002</a>). Proteins in solution thus seem to always keep a certain amount of residual structure.
+</p>
+
+<p>
+Protein disorder is only indirectly observed by a variety of
+experimental methods, such as X-ray crystallography, NMR-, Raman-,
+CD-spectroscopy and hydrodynamic measurements (<a href="#smy01biopol">Smyth et&nbsp;al., 2001</a> and <a href="#dun01jmgm">Dunker et&nbsp;al., 2001</a>). <em>In&nbsp;vivo</em> studies of disorder are possible with NMR spectroscopy on living cells (<em>e.g.</em> anti-sigma factor FlgM (<a href="#ded02pnas">Dedmon et&nbsp;al., 2002</a>)).
+Each one of these methods detects different aspects of disorder
+resulting in several operational definitions of protein disorder (see <a href="#tom02tibs">Tompa, 2002</a> for a review).
+</p>
+
+<p>
+There have been several previous attempts to predict disorder. Perhaps
+the earliest are methods finding regions of low-complexity. Although
+many such regions are structurally disordered, the correlation is far
+from perfect as regions of low sequence complexity are not always
+disordered (and vice versa) (<a href="#dun02biochem">Dunker et&nbsp;al., 2002</a>).
+Likely the strongest evidence for this correlation comes from the fact
+that low-complexity regions are rarely seen in protein 3D structures (<a href="#saq94proteng">Saqi and Sternberg, 1994</a>). Methods to predict low complexity, like SEG (<a href="#woo94cac">Wootton, 1994</a>) and CAST (<a href="#pro00bioinf">Promponas et&nbsp;al., 2000</a>),
+are thus often used for this purpose. Methods using hydrophobicity can
+also give hints as to disordered regions, as they are typically exposed
+and rarely hydrophobic.
+</p>
+
+<p>
+The first tool designed specifically for prediction of protein disorder was PONDR (Predictor Of Naturally Disordered Regions, <a href="http://www.pondr.com/">http://www.pondr.com</a>) (<a href="#rom97icnn">Romero et&nbsp;al., 1997</a>, <a href="#gar98giswgi">Garner et&nbsp;al., 1998</a>, and <a href="#gar99giswgi">Garner et&nbsp;al., 1999</a>). It is based on artificial neural networks. An alternative method is GlobPlot (<a href="http://globplot.embl.de/">http://globplot.embl.de</a>) that instead relies on a novel propensity based disorder prediction algorithm (<a href="#lin03nar">Linding et&nbsp;al., 2003</a>).
+</p>
+
+<p>
+Regions without regular secondary structure can be predicted by the NORSp (NOn Regular Structure) server (<a href="#liu02jmb">Liu et&nbsp;al., 2002</a>),
+however as the authors admit such regions are not necessarily
+disordered. Structures such as the Kringle domain (PDB:&nbsp;1KRN) are
+almost entirely without regular secondary structure in their native
+state but they still have tertiary structure wherein the basic building
+block is coils. These "loopy proteins" are not necessarily IDPs since
+they can still form a well defined globular tertiary structure.
+</p>
+
+<p>Prediction of protein tertiary structure could be an alternative
+route to disorder prediction, though such methods are computationally
+intensive and error-prone. Moreover such methods are usually designed
+to predict the structure of globular domains, meaning that their
+behaviour on other sequences can be unpredictable.
+</p>
+
+<p>Here we present DisEMBL a method based on artificial neural networks
+trained for predicting several definitions of disorder. It predicts and
+displays the probability of disordered segments within a protein
+sequence. DisEMBL furthermore provide a pipeline interface for bulk
+predictions, essential for large scale structural genomics.
+</p>
+
+
+<h2>Results and Discussion</h2>
+
+<h3>Our definitions of disorder</h3>
+
+<p>As no single definition of disorder exists, we will describe in
+detail what we define as disordered regions. We describe protein
+disorder as two-state models where each residue is either ordered or
+disordered. For this purpose we used three different criteria for
+assigning disorder:
+</p>
+
+<ul>
+<li><strong>Loops/coils</strong> as defined by DSSP (<a href="#kab83biopol">Kabsch and Sander, 1983</a>).
+Residues are assigned as belonging to one of several secondary
+structure types. For this definition we considered residues as α-helix
+('H'), 3<sub>10</sub>-helix ('G') or β-strand ('E') as ordered, and all
+other states ('T', 'S', 'B', 'I', ' ') as loops (also known as coils).
+Loops/coils are not necessarily disordered, however protein disorder is
+only found within loops. It follows that one can use loop assignments
+as a necessary but not sufficient requirement for disorder; a disorder
+predictor entirely based on this definition will thus be promiscuous.
+</li><li><strong>Hot loops</strong> constitute a refined subset of the
+above, namely those loops with a high degree of mobility as determined
+from C-α temperature factors (B-factors). It follows that highly
+dynamic loops should be considered protein disorder. Several attempts
+have been made to try to use B-factors for disorder prediction (<a href="#bro85pnas">Brooks and Karplus, 1985</a>, <a href="#vih94proteins">Vihinen et&nbsp;al., 1994</a>, <a href="#gar98giswgi">Garner et&nbsp;al., 1998</a>, <a href="#dun98psb">Dunker et&nbsp;al., 1998</a>, and <a href="#zoe02jmb">Zoete et&nbsp;al., 2002</a>)
+but there are many pitfalls in doing so as B-factors can vary greatly
+within a single structure due to effects of local packing and
+structural environment. Recent progress in deriving propensity scales
+for residue mobility based on B-factors (<a href="#smi03protsci">Smith et&nbsp;al., 2003</a>), encouraged us to use B-factors for defining protein disorder.
+</li><li><strong>Missing coordinates</strong> in X-Ray structure as
+defined by REMARK465 entries in PDB. Non assigned electron densities
+most often reflect intrinsic disorder, and have been used early on in
+disorder prediction (<a href="#li00giswgi">Li et&nbsp;al., 2000</a>).
+</li></ul>
+
+<p>
+A fundamental problem with X-ray data, is that it is limited to what is
+found in the PDB. Many structures are solved on truncated polypeptides,
+explicitly <em>because</em>
+the parts that are cut off are disordered or highly flexible, meaning
+that the data set itself is truncated. Some of these regions could be
+recovered by combining PDB with sequence databases, however this cannot
+be performed in an automated fashion.
+</p>
+
+<h3>Performance evaluation</h3>
+
+<p class="figure">
+<img alt="Figure 1" src="paper_files/disembl_005.png">
+</p>
+<p class="caption">Sensitivity and rate of false positives for the
+various DisEMBL neural networks. The receiver output characteristic
+(ROC) curves were constructed from cross validation test set
+performances. Performances are reported on a per residue basis. Since
+the data sets were homology reduced based on SCOP, the performances
+shown correspond to what can be expected for novel protein sequences.
+</p>
+
+<p>For each of the three definitions of disorder described above, a
+data set was constructed and partitioned into five cross validation
+sets. We trained an ensemble of five artificial neural networks on each
+the three data sets. Figure&nbsp;1 shows the expected performance for
+these three predictors on novel sequences as estimated by cross
+validation. As can be seen, we are able to predict a large fraction of
+the missing coordinate residues with a very low error rate.
+</p>
+
+<p>The coils networks predict regions without regular secondary
+structure: it is a two state secondary structure prediction method.
+This neural network ensemble is capable of identifying approximately
+half of the negative examples, while discarding essentially no positive
+examples (see Figure&nbsp;1). Therefore this predictor is perhaps
+better thought of as a filter to remove false positive predictions made
+by the other networks.
+</p>
+
+<p>Separate networks were trained for predicting which of the loops
+have high B-factors ("hot loops"). The performance of these networks
+are shown in Figure&nbsp;1. Hot loops are predicted using these two
+network ensembles collectively. The overall performance of this
+composite predictor can be estimated from the individual performances
+of these ensembles as follows. Choosing a cutoff of 80% sensitivity for
+each ensemble corresponds to a sensitivity of 64% (80%*80%) for the
+composite predictor. At these cutoffs the rate of false positives are
+6.9% and 19% respectively, corresponding to 1.3% then combined. It
+follows that hot loops are very predictable. In contrast, the missing
+coordinates predictor has a higher (16%) rate of false positives at the
+same sensitivity. A possible explanation for this is that REMARK465 can
+be assigned to a residue for several reasons, disorder being only one
+of these. </p>
+
+<p class="figure">
+<img alt="Figure 2" src="paper_files/disembl_003.png">
+</p>
+<p class="caption">
+Comparison with PONDR. We tested the performance of our networks the data sets from Dunker et&nbsp;al (<a href="http://disorder.chem.wsu.edu/PONDR/PONDR.htm">http://disorder.chem.wsu.edu/PONDR/PONDR.htm</a>).
+Only the performance points for the various PONDR predictors reported
+at the web site are shown, as we do not have access to the raw PONDR
+predictions. Relative to these points, the REMARK465 predictor of
+DisEMBL, performs marginally better than PONDR.
+</p>
+
+<p>We compared DisEMBL to PONDR, refer to Figure&nbsp;2. The comparison
+to PONDR was severely hampered by the fact that access to raw PONDR
+predictions is restricted. Therefore we can currently only compare to
+the performance points stated on the official website of PONDRs
+developers. Since the VL-XT predictor is smoothing its predictions by a
+running average of 9 residues, we also applied this smoothing to our
+predictions. Relative to these points our predictor performs marginally
+better in predicting the same type of disorder. We only use smoothing
+in this comparison as the performance gain is a consequence of the
+design of this particular data set. Smoothing does not improve
+performance on our own data sets.
+</p>
+
+<h3>Complementarity of predictors</h3>
+
+<p>In order to investigate the relationships between the different
+disorder definitions we determined how correlated our predictors are.
+This was done by calculating the linear Pearson correlation
+coefficients for the predictions by the three predictors on a data set
+consisting of one sequence from each protein family in SCOP version
+1.61. The correlation between hot loops and coils is trivial since the
+data set used for training the hot loop predictor is a sub set of the
+one used for the coils network. The predictions of missing coordinates
+and coils are only weakly related (CC = 0.231), while the hot loops
+predictions show a stronger correlation to the REMARK465 networks (CC =
+0.455).
+</p>
+
+<p>Since we initially assumed that missing coordinates directly
+reflects protein disorder the correlation with the hot loops
+predictions support this alternative definition of disorder, it also
+shows that the definitions are complementary not redundant.
+</p>
+
+<p class="figure">
+<img alt="Figure 3" src="paper_files/disembl.png">
+</p>
+<p class="caption">Propensities for the amino acids to be disordered
+according to the three definitions used in this work (sorted by hot
+loop preference). This scale is directly reflecting what was in the
+data sets used for training, however it is only a first approximation
+of what the neural networks are using in predicting disorder. The coils
+scale is similar to the Russell/Linding propensity scale described in (<a href="#lin03nar">Linding et&nbsp;al., 2003</a>). Error bars correspond to the 25 and 75 percentiles as estimated by stochastic simulation.
+</p>
+
+<p>
+The relationship between the different predictors can also be seen in
+Figure&nbsp;3. The figure shows the per residue counts in the different
+data sets. In general hydrophobic residues are promoting order
+according to all three definitions of disorder. Disorder promoting
+residues include proline, lysine, serine, threonine and methionine. For
+lysine it can be seen that even though this residue is not observed
+much in coils it is found primarily in hot loops, the opposite is the
+case for proline. Methionine suffers a bias in the REMARK465 dataset
+for at least two reasons: 1) often the N-terminal methionine is cleaved
+off 2) some structures are solved using selenomethionine derivatives
+for phasing, which can lead to deletion of the residue in the PDB
+entry. The same bias is seen in <a href="#dun01jmgm">Dunker et&nbsp;al., 2001</a> Figure 10.
+</p>
+
+
+<h3>Comparing predictions and experiments</h3>
+
+<p class="figure">
+<img alt="Figure 4" src="paper_files/disembl_002.png">
+</p>
+<p class="caption">
+DisEMBL hot loop predictions mapped on the NMR mean structure of human
+translation initiation factor eIF1A (PDB:&nbsp;1D7Q, SWISS-PROT:&nbsp;<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P47813">P47813</a>).
+The predicted probabilities were with a colour scale going from blue to
+red, where red corresponds to the most likely disordered regions and
+blue to ordered regions. Both the manually assigned disordered regions
+score higher than the globular domain, in particular the N-terminal one
+(<a href="#bat00molcell">Battiste et&nbsp;al., 2000</a>).
+</p>
+
+<p>
+As mentioned NMR and CD data can provide insight on protein disorder.
+Since such data were not used during training, they provide good
+examples for validating our predictors. NMR parameters such as order
+vectors, chemical shifts within the "random coil window" and disordered
+residues as assigned by the authors, will likely provide the best data
+sets for training disorder predictors in the future. Chemical shifts
+are already being used for prediction of secondary structure and coils,
+<em>e.g.</em> in TALOS (<a href="#cor99jbnmr">Cornilescu et&nbsp;al., 1999</a>).
+Unfortunately, NMR data are rather scarce and only cover a subset of
+structure space, which is why we have not used such data for training
+predictors. However, it is interesting to notice that our predictions
+of disordered regions seem to agree with disorder determined by NMR. An
+example of this is Figure&nbsp;4, which shows predictions of hot loops
+mapped on the NMR structure of human translation factor eIF1A. </p>
+
+<p>
+Missing signals in the far UV of CD spectra indicate the absence of
+regular secondary structure. A fundamental problem in using CD data for
+assigning disorder is that the lack of regular secondary structure does
+not imply that the protein is disordered, merely that it is a "loopy
+protein". Another disadvantage of CD data is that they do not provide
+information on which residues are disordered. The same limitations
+apply to hydrodynamic measurements. We have therefore not used CD or
+hydrodynamic data in the training of our predictors. </p>
+
+<table>
+<tbody><tr><td colspan="3"><hr></td></tr>
+<tr>
+<th>Protein (acc number)</th>
+<th>DisEMBL hot loops<br>segments</th>
+<th>Protein<br>length</th>
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+<tr>
+<td>Histone H1.2 (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P15865">P15865</a>)</td>
+<td>1-39 110-218</td>
+<td>218</td>
+</tr>
+<tr>
+<td>Samatolliberin(GHRH) (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P42692">P42692</a>)</td>
+<td>1-4 28-45</td>
+<td>45</td>
+</tr>
+<tr>
+<td>Protamine (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P15340">P15340</a>)</td>
+<td>1-61 (full length)</td>
+<td>61</td>
+</tr>
+<tr>
+<td>CREB (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P15337">P15337</a>)</td>
+<td>1-10 100-170 330-341</td>
+<td>341</td>
+</tr>
+<tr>
+<td>30S Ribosomal Protein (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P02379">P02379</a>)</td>
+<td>1-70 (full length)</td>
+<td>70</td>
+</tr>
+<tr>
+<td>Prothymosin alpha (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P01252">P01252</a>)</td>
+<td>1-109 (full length)</td>
+<td>109</td>
+</tr>
+<tr>
+<td>cAMP-dependent PKI (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P04541">P04541</a>)</td>
+<td>1-20 26-34 50-75</td>
+<td>75</td>
+</tr>
+<tr>
+<td>Hirudin (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P01050">P01050</a>)</td>
+<td>1-13 42-65</td>
+<td>65</td>
+</tr>
+<tr><td colspan="3"><hr></td></tr>
+</tbody></table>
+<p class="caption">
+Hot loops predictions on proteins that are reported to be IDPs according to CD data (<a href="#tom02tibs">Tompa, 2002</a>, <a href="#uve02protsci">Uversky, 2002</a>, and <a href="#dun01jmgm">Dunker et&nbsp;al., 2001</a>).
+</p>
+
+<p>
+However, the lack of residue specific information allows us to make
+predictions of disordered segments within proteins shown to contain
+such segments by CD. A number of examples previously described in the
+literature as being disordered were analysed with DisEMBL
+(Table&nbsp;1). In all of these cases, we predict either all or large
+parts of the protein to be disordered. In the case of histone H1.2 the
+predictions are in agreement with what is known from experimental
+studies of the homologue histone H5 and other linker histones (<a href="#avi78ejb">Aviles et&nbsp;al., 1978</a>).
+CREB is another that has been intensively studied, we correctly predict
+the unstructured pKID domain (approx. residues 113-154) (<a href="#rad97cell">Radhakrishnan et&nbsp;al., 1997</a>, <a href="#wri99jmb">Wright and Dyson, 1999</a>, and <a href="#dem02nat">Demarest et&nbsp;al., 2002</a>).
+</p>
+
+
+<h2>Using DisEMBL</h2>
+
+<p>
+The DisEMBL prediction method is publicly accessible as a web server at <a href="http://dis.embl.de/">http://dis.embl.de</a> for predicting disorder in proteins. Although the GlobPlot server at <a href="http://globplot.embl.de/">http://globplot.embl.de</a>
+can also be used for predicting protein disorder, the two methods
+complement each other as they approach disorder prediction differently.
+GlobPlot is less accurate than DisEMBL in coils prediction, however it
+was designed as a visual inspection tool for finding both domain
+boundaries, repeats and unstructured regions. Furthermore, the GlobPlot
+algorithm is very simple and intuitive, which might appeal to some
+users.
+</p>
+
+<p class="figure">
+<img alt="Figure 5" src="paper_files/disembl_004.png">
+</p>
+<p class="caption">
+Sample output from the DisEMBL web server, showing predictions for Histone H1.2 (<a href="http://dis.embl.de/cgiDict.py?key=process&amp;SP_entry=P15865">P15865</a>).
+The green curve is the predictions for missing coordinates, red for the
+hot loop network and blue for coil. The horizontal lines correspond to
+the random expectation level for each predictor; for coils and hot
+loops the prior probabilities were used, while a neural network score
+of 0.5 is used for REMARK465. From this plot it is seen that the
+predictors agree on residues 1-39 and 110-218 as being disordered.
+</p>
+
+<p>
+The web interface is fairly straight forward to use, the user can paste a sequence or enter the SWISS-PROT/SWALL accession (<em>e.g.</em> P08630) or entry code (<em>e.g.</em>
+PRIO_HUMAN). The DisEMBL server fetches the sequence and description of
+the polypeptide from an ExPASy server using Biopython.org software. The
+probability of disorder is shown graphically, as illustrated at
+Figure&nbsp;5. The random expectation levels for the different
+predictors are shown on the graph as horizontal lines but should only
+be considered an absolute minimum.
+</p>
+
+<p>The user will normally not have to change the default parameters,
+but on line documentation of the different settings are provided at <a href="http://dis.embl.de/help.html">http://dis.embl.de/help.html</a>.
+If the query protein sequence is very long, &gt;1000 residues, the user
+can download the predictions and use a local graph/plotting tool such
+as Grace or OpenOffice.org to plot and zoom the data.
+</p>
+
+<p>Having identified the potential disordered regions, the user should
+now have a good basis for setting up expression vectors and/or
+comparing the data with obtained structural data. It is currently
+impossible to say which of the definitions of disorder is most
+appropriate for design of protein expression vectors. We thus strongly
+encourage feedback on successes and failures in using DisEMBL for
+expression and structural analysis of proteins.
+</p>
+
+<p>The web server only allows predictions on one sequence at a time, if
+bulk predictions are needed we supply DisEMBL as a pipeline software
+package. The pipeline consists of the same three neural networks
+implemented as one ANSI C code module, which reads sequence from STDIN
+and writes predictions to STDOUT. The pipeline interface is intended
+for the structural genomics initiatives. The pipeline can analyse in
+the order of 1 million residues/min on a 1GHz x86 PC. This allows for
+very large scale predictions, <em>e.g.</em> as part of a structure space scanning. DisEMBL is released as OSI (<a href="http://www.opensource.org/">http://www.opensource.org</a>) certified opensource software and can be downloaded from <a href="http://dis.embl.de/download.html">http://dis.embl.de/download.html</a>.
+</p>
+
+
+<h2>Conclusion</h2>
+
+<p>
+We have presented a method to predict disordered regions within protein
+sequences. Our method profits from predicting protein disorder
+according to multiple definitions, including the new concept of "hot
+loops". Furthermore, the method is highly accurate, predicting more
+than 60% of hot loops with less than 2% false positives. We anticipate
+that DisEMBL will be of great use to experimental biologists wishing to
+optimise constructs for expression and crystallisation, or who wish to
+identify features within a studied protein sequence. We expect further
+progress to come from a deeper understanding of disordered proteins,
+which will lead to more systematic definitions of the phenomenon.
+</p>
+
+
+<h2>Materials and Methods</h2>
+
+<p>
+The coils data set was constructed based on DSSP (<a href="#kab83biopol">Kabsch and Sander, 1983</a>) secondary structure assignments as described in <a href="http://dis.embl.de/html/lin03nar">Linding et&nbsp;al., 2003</a>.
+This data set only contains one chain from each SCOP superfamily
+according to SCOP&nbsp;1.59. Two different versions of this data set
+were used for training neural networks. One version simply consists of
+the "raw" labeling of residues as described above, while the other
+version is filtered to only include regions of at least 7 consecutive
+residues with the same labeling. The latter version of the data set
+consists of 1238 sequences with 132395 labeled residues, 75424 of which
+are labeled as coil.
+</p>
+
+<p>A second data set was constructed for discriminating between ordered
+and disordered loops. Loops were identified in a similar manner as in
+coil data set, only the Continuous DSSP (<a href="#and02struct">Andersen et&nbsp;al., 2002</a>)
+rather than DSSP was used for secondary structure assignment and
+SCOP&nbsp;1.61 was used for reducing the data set to one chain per
+family. As B-factors from different chains are not directly comparable,
+B-factors from regions of regular secondary structure were used for
+normalisation by establishing chain specific cutoffs for discriminating
+between ordered and disordered regions. Subsequently, all loop regions
+with B-factors below the median for secondary structure elements were
+labeled as ordered loops, while only those above the 90% fractile were
+considered to be disordered loops. This results in 1412 sequences
+containing only 795 residues labeled as being disordered.
+</p>
+
+<p>Finally, a data set was constructed for the prediction of missing
+coordinates (REMARK465). Like the B-factor data set, this set was
+reduced to include only one chain from each protein family in to SCOP
+version&nbsp;1.61 a total of 1547 sequences. </p>
+
+<p>
+To form separate test and training sets, each of these data sets were
+split into five cross-validation partitions. As the data sets have
+already been reduced to at most one sequence per SCOP family, sequence
+similarity within the data set does not present a problem. Note that
+the use of single representatives from SCOP families ensures that no
+sequence detectable homologues are in the data set. Cross-validation
+performance estimates are thus independent of how the data sets are
+partitioned. To ensure that the partitions were balanced in the sense
+that each contains roughly the same number of disordered residues, the
+sequences were first sorted according to their number of disordered
+residues and then assigned to the five cross-validation partitions in a
+round-robin scheme. </p>
+
+
+<h3>Neural network training</h3>
+
+<p>
+Artificial neural networks were trained on symmetric sequence windows
+centered at the position to be predicted. All neural networks were
+trained with a learning rate of 0.005. The size of these windows was
+systematically varied from 3 to 51 residues. For each window size the
+number of hidden units was varied in the range 5-50. The performance of
+every such combination was evaluated by five fold cross validation and
+best parameter combinations were selected based on ROC curves.
+</p>
+
+<p>The best cross-validation performance for the coil data set was
+obtained using the filtered version where only consistently labeled
+regions of at least 7 residues were considered. The optimal network
+architecture was a window size of 19 residues and 30 hidden units.
+Other networks with good performance all had similar network
+architectures and gave very similar predictions. No significant
+improvement in performance could thus be obtained by forming a larger
+ensemble of networks.
+</p>
+
+<p>Separate networks were trained for the task of discriminating
+between ordered and disordered hot loops. Possibly because of the small
+number of positive examples, networks with many hidden neurons
+performed no better than those with few. This was especially true when
+using large window sizes. The best performing ensemble of networks had
+a window size of 41 residues and only 5 hidden neurons.
+</p>
+
+<p>For prediction of missing coordinates (REMARK465) it was discovered
+that networks with a window size of 9 residues performed best at
+relatively low sensitivities while networks with a window size of 21
+performed better for higher sensitivities; for both window sizes, 30
+hidden units gave the best performance. An ensemble was thus formed
+consisting of two sets of five cross validation networks with window
+sizes of 9 and 21 residues respectively. This ensemble outperformed
+both the individual cross validation ensembles over the entire range of
+sensitivities.
+</p>
+
+
+<h3>Conversion of network output to probability scores</h3>
+
+<p>The coil and hot loops neural network ensembles, the score
+distributions of positive and negative test examples were estimated
+using Gaussian kernel density estimation. Based on these distributions
+a calibration curve for converting neural network output scores to
+probabilities was constructed as previously described (<a href="#jen02jmb">Jensen et&nbsp;al., 2002</a>).
+For coil prediction a prior probability of 43% (the composition of the
+training data set) was used while a prior probability of 20% was used
+in the case of hot loop prediction. As the resulting calibration curves
+were essentially linear, they were approximated by a least squares
+linear fit (corr. &gt;0.99).
+</p>
+
+
+<h3>Smoothing</h3>
+
+<p>
+We run a digital low-pass filter based on Savitzky-Golay (refer to <a href="#pre02book">Press et&nbsp;al., 2002</a>
+section 14.8) on the network output in order to smooth the curves. The
+filtering is performed by an external open source C module (sav_gol)
+from the TISEAN 2.1 (<a href="#heg99chaos">Hegger et&nbsp;al., 1999</a>) Nonlinear Time Series Analysis package (<a href="http://www.mpipks-dresden.mpg.de/%7Etisean/">http://www.mpipks-dresden.mpg.de/~tisean/</a>).
+The resulting smoothed functions are plotted using the DISLIN&nbsp;8.0
+package. DISLIN is distributed as platform specific binaries from <a href="http://www.linmpi.mpg.de/dislin/">http://www.linmpi.mpg.de/dislin/</a>.
+</p>
+
+
+<h3>Acknowledgments</h3>
+
+<p>
+This work was partly supported by EU grant QLRI-CT-2000-00127. All
+neural networks used for this study were trained using the HOW program
+by Prof. S�ren Brunak. Lars Juhl Jensen is funded by the
+Bundesministerium f�r Forschung und Bildung, BMBF-01-GG-9817. Thanks to
+Sophie Chabanis-Davidson and Sara Quirk for commenting on this
+manuscript. Finally we are deeply grateful to <a href="http://www.freebsd.org/">FreeBSD.org</a>, <a href="http://www.biopython.org/">(bio)</a><a href="http://www.python.org/">Python.org</a>, <a href="http://www.postgresql.org/">PostgreSQL.org</a>, <a href="http://www.debian.org/">Debian.org</a> and <a href="http://www.apache.org/">Apache.org</a> for fantastic open free software.
+</p>
+
+<h3>References</h3>
+
+<p class="reference"><a name="ack02biochem">
+Ackerman, M.&nbsp;S. and Shortle, D. (2002). Robustness of the
+long-range structure in denatured staphylococcal nuclease to changes in
+amino acid sequence. <em>Biochemistry</em>, 41:13791-13797.
+</a></p>
+
+<p class="reference"><a name="and02struct">
+Andersen, C.&nbsp;A.&nbsp;F., Palmer, A.&nbsp;G., Brunak, S., and Rost,
+B. (2002). Continuum secondary structure captures protein flexibility. <em>Structure</em>, 10:175-184.
+</a></p>
+
+<p class="reference"><a name="avi78ejb">
+Aviles, F.&nbsp;J., Chapman, G.&nbsp;E., Kneale, G.&nbsp;G.,
+Crane-Robinson, C., and Bradbury, E.&nbsp;M. (1978). The conformation
+of histone H5. Isolation and characterisation of the globular segment. <em>Eur. J. Biochem</em>, 88:363-371.
+</a></p>
+
+<p class="reference"><a name="bat03lan">
+Bates, G. (2003). Huntingtin aggregation and toxicity in Huntington's disease. <em>Lancet</em>, 361:1642-16424.
+</a></p>
+
+<p class="reference"><a name="bat00molcell">
+Battiste, J.&nbsp;L., Pestova, T.&nbsp;V., Hellen, C.&nbsp;U., and
+Wagner, G. (2000). The eIF1A solution structure reveals a large
+RNA-binding surface important for scanning function. <em>Mol. Cell</em>, 5:109-119.
+</a></p>
+
+
+<p class="reference"><a name="bre00nsb">
+Brenner, S.&nbsp;E. (2000). Target selection for structural genomics. <em>Nat. Struct. Biol.</em>, 7 Suppl:967-969.
+</a></p>
+
+<p class="reference"><a name="bro85pnas">
+Brooks, B. and Karplus, M. (1985). Normal modes for specific motions of
+macromolecules: application to the hinge-bending mode of lysozyme. <em>Proc. Natl. Acad. Sci. U.S.A.</em>, 82:4995-4999.
+</a></p>
+
+<p class="reference"><a name="cor99jbnmr">
+Cornilescu, G., Delaglio, F., and Bax, A. (1999). Protein backbone
+angle restraints from searching a database for chemical shift and
+sequence homology. <em>J. Biomol. NMR</em>, 13:289-302.
+</a></p>
+
+<p class="reference"><a name="ded02pnas">
+Dedmon, M.&nbsp;M., Patel, C.&nbsp;N., Young, G.&nbsp;B., and Pielak, G.&nbsp;J. (2002). FlgM gains structure in living cells. <em>Proc. Natl. Acad. Sci. U.S.A.</em>, 99:12681-12684.
+</a></p>
+
+<p class="reference"><a name="dem02nat">
+Demarest, S.&nbsp;J., Martinez-Yamout, M., Chung, J., Chen, H., Xu, W.,
+Dyson, H.&nbsp;J., Evans, R.&nbsp;M., and Wright, P.&nbsp;E. (2002).
+Mutual synergistic folding in recruitment of CBP/p300 by p160 nuclear
+receptor coactivators. <em>Nature</em>, 415:549-553.
+</a></p>
+
+<p class="reference"><a name="dun02biochem">
+Dunker, A.&nbsp;K., Brown, C.&nbsp;J., Lawson, J.&nbsp;D., Iakoucheva,
+L.&nbsp;M., and Obradovic, Z. (2002). Intrinsic disorder and protein
+function. <em>Biochemistry</em>, 41:6573-6582.
+</a></p>
+
+<p class="reference"><a name="dun98psb">
+Dunker, A.&nbsp;K., Garner, E., Guilliot, S., Romero, P., Albrecht, K.,
+Hart, J., Obradovic, Z., Kissinger, C., and Villafranca, J.&nbsp;E.
+(1998). Protein disorder and the evolution of molecular recognition:
+theory, predictions and observations. In <em>Proceedings of the Third Annual Pacific Symposium on Biocomputing</em>, pages 473-84, Hawaii. World Scientific.
+</a></p>
+
+<p class="reference"><a name="dun01jmgm">
+Dunker, A.&nbsp;K., Lawson, J.&nbsp;D., Brown, C.&nbsp;J., Williams,
+R.&nbsp;M., Romero, P., Oh, J.&nbsp;S., Oldfield, C.&nbsp;J., Campen,
+A.&nbsp;M., Ratliff, C.&nbsp;M., Hipps, K.&nbsp;W., Ausio, J., Nissen,
+M.&nbsp;S., Reeves, R., Kang, C., Kissinger, C.&nbsp;R., Bailey,
+R.&nbsp;W., Griswold, M.&nbsp;D., Chiu, W., Garner, E.&nbsp;C., and
+Obradovic, Z. (2001). Intrinsically disordered protein. <em>J. Mol. Graph Model.</em>, pages 26-59.
+</a></p>
+
+<p class="reference"><a name="eva02cosb">
+Evans, P.&nbsp;R. and Owen, D.&nbsp;J. (2002). Endocytosis and vesicle trafficking. <em>Curr. Opin. Struct. Biol.</em>, 12:814-821.
+</a></p>
+
+<p class="reference"><a name="gar98giswgi">
+Garner, E., Cannon, P., Romero, P., Obradovic, Z., and Dunker,
+A.&nbsp;K. (1998). Predicting disordered regions from amino acid
+sequence: Common themes despite differing structural characterization. <em>Genome Inform. Ser. Workshop Genome Inform.</em>, 9:201-213.
+</a></p>
+
+<p class="reference"><a name="gar99giswgi">
+Garner, E., Romero, P., Dunker, A.&nbsp;K., Brown, C., and Obradovic,
+Z. (1999). Predicting binding regions within disordered proteins. <em>Genome Inform. Ser. Workshop Genome Inform.</em>, 10:41-50.
+</a></p>
+
+<p class="reference"><a name="gun03tibs">
+Gunasekaran, K., Tsai, C., Kumar, S., Zanuy, D., and Nussinov, R.
+(2003). Extended disordered proteins: targeting function with less
+scaffold. <em>Trends Biochem. Sci.</em>, 28:81-85.
+</a></p>
+
+<p class="reference"><a name="heg99chaos">
+Hegger, R., Kantz, H., and Schreiber, T. (1999). Practical implementation of nonlinear time series methods: The tisean package. <em>CHAOS</em>, 9.
+</a></p>
+
+<p class="reference"><a name="jen02jmb">
+Jensen, L.&nbsp;J., Gupta, R., Blom, N., Devos, D., Tamames, J.,
+Kesmir, C., Nielsen, H., Stærfeldt, H.&nbsp;H., Rapacki, K., Workman,
+C., Andersen, C. A.&nbsp;F., Knudsen, S., Krogh, A., Valencia, A., and
+Brunak, S. (2002). Prediction of human protein function from
+post-translational modifications and localization features. <em>J. Mol. Biol.</em>, 319:1257-1265.
+</a></p>
+
+<p class="reference"><a name="kab83biopol">
+Kabsch, W. and Sander, C. (1983). Dictionary of protein secondary
+structure: pattern recognition of hydrogen-bonded and geometrical
+features. <em>Biopolymers</em>, 22:2577-2637.
+</a></p>
+
+<p class="reference"><a name="kap03jmn">
+Kaplan, B., Ratner, V., and Haas, E. (2003). Alpha-synuclein: Its biological function and role in neurodegenerative diseases. <em>J. Mol. Neurosci.</em>, 20:83-92.
+</a></p>
+
+<p class="reference"><a name="kle02sci">
+Klein-Seetharaman, J., Oikawa, M., Grimshaw, S.&nbsp;B., Wirmer, J.,
+Duchardt, E., Ueda, T., Imoto, T., Smith, L.&nbsp;J., Dobson,
+C.&nbsp;M., and Schwalbe, H. (2002). Long-range interactions within a
+nonnative protein. <em>Science</em>, 295:1719-1722.
+</a></p>
+
+<p class="reference"><a name="li00giswgi">
+Li, X., Obradovic, Z., Brown, C.&nbsp;J., Garner, E.&nbsp;C., and
+Dunker, A.&nbsp;K. (2000). Comparing predictors of disordered protein. <em>Genome Inform. Ser. Workshop Genome Inform.</em>, 11:172-184.
+</a></p>
+
+<p class="reference"><a name="lin03nar">
+Linding, R., Russell, R.&nbsp;B., Neduva, V., and Gibson, T.&nbsp;J.
+(2003). GlobPlot: exploring protein sequences for globularity and
+disorder. <em>Nucleic Acid Res.</em>, 31:3701-3708.
+</a></p>
+
+<p class="reference"><a name="liu02jmb">
+Liu, J., Tan, H., and Rost, B. (2002). Loopy proteins appear conserved in evolution. <em>J. Mol. Biol.</em>, 322:53-64.
+</a></p>
+
+<p class="reference"><a name="pla01nsb">
+Plaxco, K.&nbsp;W. and Gross, M. (2001). Unfolded, yes, but random? never! <em>Nat. Struct. Biol.</em>, 8:659-660.
+</a></p>
+
+<p class="reference"><a name="pre02book">
+Press, W.&nbsp;H., Teukolsky, S.&nbsp;A., Vetterling, W.&nbsp;T., and Flannery, B.&nbsp;P. (2002). <em>Numerical Recipes in C++ The Art of Scientific Computing</em>. Cambridge University Press, second edition.
+</a></p>
+
+<p class="reference"><a name="pro00bioinf">
+Promponas, V.&nbsp;J., Enright, A.&nbsp;J., Tsoka, S., Kreil,
+D.&nbsp;P., Leroy, C., Hamodrakas, S., Sander, C., and Ouzounis,
+C.&nbsp;A. (2000). CAST: an iterative algorithm for the complexity
+analysis of sequence tracts. <em>Bioinformatics</em>, 16:915-922.
+</a></p>
+
+<p class="reference"><a name="pun03nar">
+Puntervoll, P., Linding, R., Gemund, C., Chabanis-Davidson, S.,
+Mattingsdal, M., Cameron, S., Martin, D.&nbsp;M., Ausiello, G.,
+Brannetti, B., Costantini, A., Ferre, F., Maselli, V., Via, A.,
+Cesareni, G., Diella, F., Superti-Furga, G., Wyrwicz, L., Ramu, C.,
+McGuigan, C., Gudavalli, R., Letunic, I., Bork, P., Rychlewski, L.,
+Kuster, B., Helmer-Citterich, M., Hunter, W.&nbsp;N., Aasland, R., and
+Gibson, T.&nbsp;J. (2003). ELM server: a new resource for investigating
+short functional sites in modular eukaryotic proteins. <em>Nucleic Acids Res.</em>, 31:3625-3630.
+</a></p>
+
+<p class="reference"><a name="rad97cell">
+Radhakrishnan, I., Perez-Alvarado, G.&nbsp;C., Parker, D., Dyson,
+H.&nbsp;J., Montminy, M.&nbsp;R., and Wright, P.&nbsp;E. (1997).
+Solution structure of the KIX domain of CBP bound to the
+transactivation domain of CREB: a model for activator:coactivator
+interactions. <em>Cell</em>, 91:741-752.
+</a></p>
+
+<p class="reference"><a name="rom97icnn">
+Romero, P., Obradovic, Z., Kissinger, C.&nbsp;R., Villafranca,
+J.&nbsp;E., and Dunker, A.&nbsp;K. (1997). Identifying disordered
+proteins from amino acid sequences. <em>Proc. IEEE Int. Conf. Neural Networks</em>, 1:90-95.
+</a></p>
+
+<p class="reference"><a name="saq94proteng">
+Saqi, M.&nbsp;A. and Sternberg, M.&nbsp;J. (1994). Identification of
+sequence motifs from a set of proteins with related function. <em>Protein Eng.</em>, 7:165-171.
+</a></p>
+
+<p class="reference"><a name="sch94jbc">
+Schweers, O., Schonbrunn-Hanebeck, E., Marx, A., and Mandelkow, E.
+(1994). Structural studies of tau protein and Alzheimer paired helical
+filaments show no evidence for beta-structure. <em>J. Biol. Chem.</em>, 269:24290-24297.
+</a></p>
+
+<p class="reference"><a name="sho01sci">
+Shortle, D. and Ackerman, M.&nbsp;S. (2001). Persistence of native-like topology in a denatured protein in 8 M urea. <em>Science</em>, 293:487-489.
+</a></p>
+
+<p class="reference"><a name="smi03protsci">
+Smith, D.&nbsp;K., Radivojac, P., Obradovic, Z., Dunker, A.&nbsp;K.,
+and Zhu, G. (2003). Improved amino acid flexibility parameters. <em>Protein Sci.</em>, 12:1060-1072.
+</a></p>
+
+<p class="reference"><a name="smy01biopol">
+Smyth, E., Syme, C.&nbsp;D., Blanch, E.&nbsp;W., Hecht, L., Vasak, M.,
+and Barron, L.&nbsp;D. (2001). Solution structure of native proteins
+with irregular folds from Raman optical activity. <em>Biopolymers</em>, 58:138-151.
+</a></p>
+
+<p class="reference"><a name="tom02tibs">
+Tompa, P. (2002). Intrinsically unstructured proteins. <em>Trends Biochem. Sci.</em>, 27:527-533.
+</a></p>
+
+<p class="reference"><a name="uve02protsci">
+Uversky, V.&nbsp;N. (2002). Natively unfolded proteins: a point where biology waits for physics. <em>Protein Sci.</em>, 11:739-756.
+</a></p>
+
+<p class="reference"><a name="ver03pnas">
+Verkhivker, G.&nbsp;M., Bouzida, D., Gehlhaar, D.&nbsp;K., Rejto,
+P.&nbsp;A., Freer, S.&nbsp;T., and Rose, P.&nbsp;W. (2003). Simulating
+disorder-order transitions in molecular recognition of unstructured
+proteins: where folding meets binding. <em>Proc. Natl. Acad. Sci. U.S.A.</em>, 100:5148-5153.
+</a></p>
+
+<p class="reference"><a name="vih94proteins">
+Vihinen, M., Torkkila, E., and Riikonen, P. (1994). Accuracy of protein flexibility predictions. <em>Proteins</em>, 19:141-149.
+</a></p>
+
+<p class="reference"><a name="woo94cac">
+Wootton, J.&nbsp;C. (1994). Non-globular domains in protein sequences: automated segmentation using complexity measures. <em>Comput. Chem.</em>, 18:269-285.
+</a></p>
+
+<p class="reference"><a name="wri99jmb">
+Wright, P.&nbsp;E. and Dyson, H.&nbsp;J. (1999). Intrinsically
+unstructured proteins: Re-assessing the protein structure-function
+paradigm. <em>J. Mol. Biol.</em>, 293:321-331.
+</a></p>
+
+<p class="reference"><a name="zoe02jmb">
+Zoete, V., Michielin, O., and Karplus, M. (2002). Relation between
+sequence and structure of HIV-1 protease inhibitor complexes: a model
+system for the analysis of protein flexibility. <em>J. Mol. Biol.</em>, pages 21-52.
+</a></p>
+
+<p class="footer">
+<a href="http://validator.w3.org/check/referer"><img alt="Valid HTML 4.01!" src="paper_files/vhtml.png"></a>
+<a href="http://jigsaw.w3.org/css-validator/check/referer"><img alt="Valid CSS!" src="paper_files/vcss.png"></a>
+</p>
+
+
+</body></html>

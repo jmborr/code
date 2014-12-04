@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.47)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>APPENDIX II - Alphabetical list of scanps commands</TITLE>
+<META NAME="description" CONTENT="APPENDIX II - Alphabetical list of scanps commands">
+<META NAME="keywords" CONTENT="scanps_manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="scanps_manual.css">
+
+<LINK REL="next" HREF="node32.html">
+<LINK REL="previous" HREF="node30.html">
+<LINK REL="up" HREF="scanps_manual.html">
+<LINK REL="next" HREF="node32.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html359"
+  HREF="node32.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html357"
+  HREF="scanps_manual.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html351"
+  HREF="node30.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html360"
+  HREF="node32.html">About this document ...</A>
+<B> Up:</B> <A NAME="tex2html358"
+  HREF="scanps_manual.html">scanps_manual</A>
+<B> Previous:</B> <A NAME="tex2html352"
+  HREF="node30.html">Plans for additions -</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION000110000000000000000">
+APPENDIX II - Alphabetical list of scanps commands</A>
+</H1>
+
+<P>
+This section is simply a sorted and extended version of the
+scanps_alias.dat file.  New commands may from time to time get added
+to that file, so look there if something does not makes sense.
+
+<P>
+<PRE>
+APPLY_INDEX     apply_index	
+
+Flag when creating database in mode 99 if =1 then the characters used
+to represent the amino acids in the binary sequence database are
+converted to allow fast indexing of the pairscore matrix.  This is the
+default.  If you use a lot of different pairscore matrices with
+different index strings, then set this to zero.
+
+APRINT_TO_THRESHOLD aprint_to_threshold aptt  
+
+Flag to specify if alignments will be printed down to the probability
+threshold defined by PROBCUT.
+
+AUTO_CORNER	auto_corner	# Obsolete
+
+BDB_ROOT	bdb_root	bdb     
+
+Name of root name for binary database files - e.g. sprot would mean
+there is a file called sprot.bix and sprot.bsq.
+
+BLOCK_FILE_OUT block_file_out  bfo 
+
+Name for a file to contain multiple alignment output in AMPS block file format.
+
+CALEB_LPLBUCKETWIDTH buckwidth  # logprodlen bucket width
+CALEB_MINBUCK   minbuck         # minimum number needed for a stats bucket.
+CALEB_MINRANGE  minrange        # minimum number of buckets needed for fitting.
+CALEB_PRINT     caleb_print     # print out the caleb stats files.  1 = yes, 0 = no.
+
+Options related to the Webber and Barton on-the-fly statistics.
+
+CODON_FILE	codon_file	#Translation table for DNA to Protein
+
+COMPLEMENT_QUERY comp_query	cq # scan with complement of DNA query	
+
+CUT_CONSTANT	cut_constant	# Obsolete
+CUT_CORNERS	cut_corners	# Obsolete
+
+DB_DIR		db_dir		
+
+Directory for storing database files.
+
+DB_FILE		db_file 	d	
+
+Sequence database filename - name for file that is not a binary database file.
+
+DB_FORMAT	DB_F		db_format	dbf	 
+
+As for QSEQ_FORMAT - the format of the database sequence.
+
+DO_SORT	     	do_sort	        # Obsolete.
+
+DO_STATS	do_stats	
+
+This should always be set to 2.
+
+DUMP_STATS      dump_stats      # Obsolete.
+
+EPB_PEN		epb_pen		# Obsolete.
+EPL_PEN		epl_pen		# Obsolete.
+EPR_PEN		epr_pen		# Obsolete.
+EPT_PEN		ept_pen		# Obsolete.
+
+EXTRACT_FILE	extract_file	efile	# Obsolete.
+EXTRACT_SEQ	extract_seq	eseq	# Obsolete.
+EXTRACT_SEQ_FORMAT	extract_seq_format	# Obsolete.
+
+FAST            fast            # Obsolete.
+FIND_REPEATS	find_repeats	# Obsolete.
+
+FIT_FILE	fit_file	# Obsolete.
+FIT_TYPE        fit_type        # Obsolete.
+
+FRAG_FILE_FORMAT frag_file_format fff 
+
+Format of the frag file optionally output for a profile alignment 0
+for PIR 1 for FASTA.
+
+FRAG_FILE_OUT frag_file_out  ffo # the name of the frag file to output
+
+FSE_PEN		fse_pen		# Obsolete.
+FS_PEN		fs_pen	FSC_PEN	fsc_pen	
+
+Penalty for frame shift creation in DNA vs Protein modes.
+
+GAP_CHARACTER	GAP_CHAR	gap_character	gap_char
+
+Character used to show a gap.
+
+GENERAL_DIR	gen_dir		
+
+Directory to store miscellaneous information in - e.g. the codon.dat file.
+
+LD_PEN		ld_pen	e_pen	E_PEN		
+
+Length dependent (extension) gap penalty
+
+LICENSE_DIR     license_dir     # Obsolete.
+
+LI_PEN		li_pen	c_pen	C_PEN
+
+Length independent (creation) gap penalty
+
+LOG_SCORES	log_scores	lns	# Obsolete.
+
+MATRIX_DIR	matrix_dir	md 
+
+Directory that contains pairscore matrices.
+
+MATRIX_FILE	matrix_file m	
+
+Name of pairscore matrix file.
+
+MATRIX_FORMAT	matrix_format	mf	
+
+Format of matrix file =0 for PIR =1 for NCBI/BLAST
+
+MAX_AOUT	max_aout	maout	
+
+Max number of alignments to output - works in conjunction with -aptt option.
+
+MAX_BLOC_SEQ	max_bloc_seq	max_blc_seq	# Not used.
+
+MAX_ID_LEN	max_id_len	
+
+Maximum length for sequence identifiers
+
+MAX_NOUT	max_nout	mnout	
+
+Max number of sequences to output in score list (works with -nptt).
+
+MAX_NSEQ	max_nseq	
+
+Maximum number of sequences allowed in program - this must be bigger than the database size.
+
+MAX_SEQ_LEN	max_seq_len	
+
+Max allowed length for an amino acid sequence.  In most compiled programs this has
+a precompiled limit.  If the program is compiled without MMX/SSE support or parallel
+processing support, then this variable can be set.
+
+MAX_TITLE_LEN	max_title_len	#Maximum length for sequence titles
+
+MIN_ASCORE	min_ascore	# Obsolete.
+
+MIN_LEN		min_len		# Minimum length allowed for an alignment
+
+MIN_NSTATS	min_nstats	# Obsolete.
+
+MIN_SCORE	min_score	# Minimum score required for score list to be output
+
+MIXED_MODE mixed_mode mm        # 
+
+When set to 1 and mode 202 is active, first iteration is mode 202
+others are mode 200.
+
+MM_LD_PEN  mm_ld_pen  mmpen     
+
+Length dependent penalty to use in MIXED_MODE on iterations 1-N
+
+MODE		mode
+
+Specify type of scan or processing - see manual above.
+
+
+MULTIPLE_OUTPUT_LENGTH	multiple_output_length	mol 
+
+Output length for multiple alignments
+
+NCHUNK nchunk 
+
+MPI chunk size - number of sequences to send to each processor in each
+parallel chunk.
+
+NITER		niter
+
+Number of iterations to do.
+
+NPRINT_TO_THRESHOLD nprint_to_threshold nptt  
+
+If 1 then output is down to probcut threshold if 0 then MAX_NOUT is
+used
+
+NRANS		nrans		# Obsolete.
+
+OSEQ_FILE	oseq_file	# Obsolete.
+
+OUTPUT_LENGTH	output_length	out_len	OUT_LEN 
+
+Output length for pairwise alignments.
+
+PCUT		pcut		# Obsolete.
+
+PEN_FACTOR pen_factor penf
+
+Factor to modify observed gap penalties in modes 210/212
+
+PIDTHRESH pidthresh pidt        
+
+percentage identity threshold for inclusion in profile.
+
+POSWGTFAC poswgtfac pwf		# profile position specific weighting factor
+
+PRECISION	precision 	precis	PRECIS	
+
+Precision - all floats multiplied by this number.  Usually 100.
+
+PRED_FILE	pred_file	# Obsolete.
+
+PRINT_ALIGN	print_align	# Obsolete.
+
+PRINT_BLOCK_FILE print_block_file pbf 
+
+If 1 then will print an AMPS block file for the multiple alignment.
+
+PRINT_FRAG_FILE print_frag_file pff 
+
+If 1 then will print a file of seq fragments in format.  See manual.
+
+PRINT_FRQ_TABS  print_frq_tabs  
+
+Print out the frequency tables in an iterated search.
+
+PRINT_PROFILES  print_profiles  
+
+Print out the lookup tables in iterated search.
+
+PROBCUT	        probcut         eval 
+
+Probability or eval cutoff for do_stats 1 or 2.
+
+PROBCUT2	probcut2         eval2 
+
+Probability or eval cutoff for inclusion in profile.
+
+PROB_TYPE prob_type             
+
+prob type 0=probs 1 =oldevals 2 =newevals - only prob_type 2 is tested.
+
+PROFILE_WEIGHT_METHOD profile_weight_method pwm 
+
+0 for original weighting 1 for HH.
+
+QBLC_FILE	qblc_file	QBLC	# Obsolete.
+
+QBLC_FORMAT	QBLC_F		qblc_format	# Obsolete.
+
+QSEQ_FILE	qseq_file	QSEQ	qseq	s	S
+
+Query sequence file.
+
+QSEQ_FORMAT	QSEQ_F		qseq_format	qsf	 
+
+0 = PIR format, 1 = FASTA format
+
+READ_PRED	read_pred 	# Obsolete.
+ROBSIM		robsim 		# Obsolete.
+RUN_SW_MIN	run_sw_min	# Threshold required before NALL algorithm runs
+
+SAVE_PROFILES	save_profiles	# Obsolete.
+SCAN		scan		# Obsolete.
+SEC_FILE	sec_file	# Obsolete.
+SHOW_BLURB      show_blurb      
+
+If set to 0 then no info is printed to output file.
+
+SHOW_IDENT_WIDTH	show_ident_width	siw	
+
+The width of the ident string to output.
+
+SHOW_LEN	show_len	lens	# Obsolete.
+
+SHOW_PMATRIX 	show_pmatrix	spm	
+
+Print pairscore matrix to output file (requires SHOW_BLURB).
+
+SHOW_TITLES	show_titles	titles	
+
+Print titles in output.
+
+SHOW_TITLES_WIDTH	show_titles_width	stw
+
+The width of the title string to output.
+
+SPECIAL		special		# Obsolete.
+
+STDERR		stderr		# redefinition of stderr
+STDIN		stdin		# redefinition of stdin
+STDOUT		stdout		# redefinition of stdout
+
+STOP_WEIGHT	stop_weight	sw  # 
+
+Weight for matching amino acid to STOP codon (MODE 22).
+
+TEST #Test - no alias
+
+TIME		time		# Set to 1 to record CPU times
+
+TOP_CUTFRAC     top_cutfrac     # Obsolete.
+TOP_ONLY	top_only	
+
+1 for only top scoring alignment in each pair. 0 for all alignments
+down to probcut.
+
+USE_GAPDEFS     use_gapdefs     ugd  
+
+if = 1 then use scanps_Gapdefs.dat values if posssible
+
+VERBOSE		verbose		
+
+If &gt;=1 then print various messages as program runs.
+
+VINGRON_FILE	vingron_file	# Obsolete.
+</PRE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+Geoff Barton (GJB)
+2002-07-23
+</ADDRESS>
+</BODY>
+</HTML>

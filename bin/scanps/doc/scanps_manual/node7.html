@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.47)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Step-by-step installation</TITLE>
+<META NAME="description" CONTENT="Step-by-step installation">
+<META NAME="keywords" CONTENT="scanps_manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="scanps_manual.css">
+
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node5.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html103"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html101"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html97"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html104"
+  HREF="node8.html">Building SCANPS Databases</A>
+<B> Up:</B> <A NAME="tex2html102"
+  HREF="node5.html">Installing SCANPS</A>
+<B> Previous:</B> <A NAME="tex2html98"
+  HREF="node6.html">Computer requirements</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00052000000000000000">
+Step-by-step installation</A>
+</H2>
+
+<P>
+
+<OL>
+<LI>Unpack the scanps distribution into a directory.  Assuming we do
+this in /usr/local then:
+
+<P>
+<PRE>
+tar zxf scanps_2.3.9.tar.gz
+</PRE>
+
+<P>
+will create a directory structure like this:
+
+<P>
+<PRE>
+/usr/local/scanps_2.3.9
+/usr/local/scanps_2.3.9/doc      (Documentation)
+/usr/local/scanps_2.3.9/bin      (Executables for scanps)
+/usr/local/scanps_2.3.9/dat      (Configuration and data files for scanps)
+/usr/local/scanps_2.3.9/mat      (Pairscore matrix files - e.g. BLOSUM)
+/usr/local/scanps_2.3.9/examples (Example output discussed in manual)
+/usr/local/scanps_2.3.9/db       (Example swissprot database files)
+</PRE>
+
+<P>
+the binary directory contains a README file that explains what the
+different binaries are for.  You should provide a link from your
+normal bin directory to the appropriate binary for your system.  For
+example if you normally put local binaries in /usr/local/bin:
+
+<P>
+<PRE>
+cd /usr/local/bin
+ln -s /usr/local/scanps_2.3.9/bin/xpscanps_16K scanps
+</PRE>
+
+<P>
+will put the standard MMX and SSE scanps for Linux in your path.
+
+<P>
+</LI>
+<LI>Configure the dat/scanps_defaults.dat file.  Find the following lines in the file:
+
+<P>
+<PRE>
+MATRIX_DIR  /usr/local/scanps/mat/
+GENERAL_DIR /usr/local/scanps/dat/
+DB_DIR      /usr/local/scanps/db/
+</PRE>
+
+<P>
+edit the lines MATRIX_DIR and GENERAL_DIR to specify the ``mat'' and
+``dat'' subdirectories of the scanps distribution.  edit the DB_DIR
+line to point at the directory where you will put scanps database
+files that you will search against.  There is an example SWISS-PROT
+database in the directory scanps/db for testing, but you should build
+your own databases before using scanps for real scans.  For speed, the database
+directory should be on a disk local to to the computer on which you
+will run scanps.
+
+<P>
+</LI>
+<LI>Set the SCANPSDIR environment variable to point at the
+scanps/dat directory.  If you use the c-shell then type:
+
+<P>
+<PRE>
+setenv SCANPSDIR /usr/local/scanps/dat/
+</PRE>
+
+<P>
+if you use the bash shell, then do:
+
+<P>
+<PRE>
+set SCANPSDIR=/usr/local/scanps/dat/
+</PRE>
+
+<P>
+</LI>
+<LI>Type /usr/local/bin/scanps (or whatever the path to scanps is
+that you have defined) and you should see something like:
+
+<P>
+<PRE>
+/usr/local/bin/scanps
+---------------------------------------------------------------------
+SCANPS Version: 2.3.9 (Wed Jul 17 14:02:27 BST 2002)
+Authors: GJ Barton, SMJ Searle, C. Webber:  University of Dundee and EMBL-EBI
+---------------------------------------------------------------------
+See scanps_manual for FULL information.
+Normal scans:
+MODE  200:  Protein vs protein with iteration and simple gaps.
+MODE  202:  Protein vs protein with iteration and affine gaps.
+
+Experimental methods:
+MODE  210:  Protein vs protein with iteration and variable simple gaps.
+MODE  212:  Protein vs protein with iteration and variable affine gaps.
+
+MODE 99:  Build a scanps database - see scanps_manual.
+
+Assuming SCANPS has been installed correctly, the following should work...
+
+MODE 200 scan with FASTA format file query.seq against SwissProt
+scanps -s query.seq -qseq_format 1 -bdb swissprot &gt; logfile
+
+To scan a fasta format database in any mode change -bdb swissprot to:
+-d swissprot.fa -db_format 1
+
+Common options - for full list, see scanps_manual
+Change pairscore matrix from default to another matrix, e.g. PAM100
+Add:  -m PAM100 to command line
+Change gap penalties - e.g. to length dependent of 9 and creation of 13 
+Add:  -ugd 0 -ld_pen 9 -li_pen 13
+
+---------------------------------------------------------------------
+SCANPS Version: 2.3.9 (Wed Jul 17 14:02:27 BST 2002)
+Authors: GJ Barton, SMJ Searle, C. Webber:  University of Dundee and EMBL-EBI 
+---------------------------------------------------------------------
+</PRE>
+
+<P>
+Assuming you have set the DB_DIR line in
+scanps/dat/scanps_defaults.dat to point at the scanps/db directory,
+then you should now be able to run a test of SCANPS.
+
+<P>
+<PRE>
+cd /usr/local/scanps/examples  (or wherever you have put scanps)
+/usr/local/bin/scanps -s test.fa -bdb sprot &gt; mytest.log
+</PRE>
+
+<P>
+This will take all the default values for a search, output options etc
+and put the results in the file `mytest.log'.  You can look at this
+output file and compare it to the file `test.log' in the same
+directory.  As a quick check of your SCANPS installation, you can
+`diff' the two files  There should only be minor differences similar
+to those shown below:
+
+<P>
+<PRE>
+cd /usr/local/scanps/examples
+diff test.log mytest.log
+1c1
+&lt; # SCANPS Scan:    Tue Jul 23 10:43:05 2002
+---
+&gt; # SCANPS Scan:    Tue Jul 23 10:14:46 2002
+1283c1283
+&lt; # Scan Completed at: Tue Jul 23 10:43:05 2002
+---
+&gt; # Scan Completed at: Tue Jul 23 10:14:47 2002
+1287,1291c1287,1291
+&lt; # Load database:                       0.6     0.6     0.7     0.7
+&lt; # Scan database:                       9.3     9.9     9.3    10.0
+&lt; # Output scores:                       0.5    10.3     0.5    10.4
+&lt; # Generate and write alignments:       0.3    10.7     0.3    10.8
+&lt; # Millions of cell updates/sec in scan (CPU): 323.68 (Elapsed): 323.68
+---
+&gt; # Load database:                       1.2     1.2     3.5     3.5
+&gt; # Scan database:                       9.7    10.8    10.8    14.3
+&gt; # Output scores:                       0.8    11.6     1.0    15.3
+&gt; # Generate and write alignments:       0.4    12.0     0.6    15.9
+&gt; # Millions of cell updates/sec in scan (CPU): 310.33 (Elapsed): 278.72
+</PRE>
+</LI>
+</OL>
+
+<P>
+If you get the above output or similar, then all is happiness. Now
+lets go through some of the different scanps options, examine the
+output in more detail and how to control what you see in the output
+file.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html103"
+  HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html101"
+  HREF="node5.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html97"
+  HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html104"
+  HREF="node8.html">Building SCANPS Databases</A>
+<B> Up:</B> <A NAME="tex2html102"
+  HREF="node5.html">Installing SCANPS</A>
+<B> Previous:</B> <A NAME="tex2html98"
+  HREF="node6.html">Computer requirements</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+Geoff Barton (GJB)
+2002-07-23
+</ADDRESS>
+</BODY>
+</HTML>

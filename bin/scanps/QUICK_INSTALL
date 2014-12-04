@@ -1,0 +1,127 @@
+
+SCANPS Installation for Experts
+
+To install:
+
+When you unpack the scanps.tar file it will create a directory called 
+scanps with subdirectories bin, mat and dat.
+
+scanps/bin  has the executable - bin/scanps
+scaps/dat   has important configuration files - more below
+scanps/mat  contains pairscore matrix files
+scanps/db   contains an example database 
+scanps/examples contains the example query sequences and results discussed
+                in the manual.
+
+You should  edit scanps/dat/scanps_defaults.dat and change the lines
+
+DB_DIR  to point at the direcotry where you will store the scanps 
+        binary databases
+
+MATRIX_DIR to point at the scanps/mat directory
+
+and 
+
+GENERAL_DIR to point at the scanps/dat directory.
+
+(In fact, none of the above is strictly necessary because you can 
+also specify these values on the command line.  Still, it makes the 
+installation easier to use if you do it this way.)
+
+Before running the program, you must set the environment variable:
+
+SCANPSDIR  to point at the scanps/dat  directory.
+
+Make a link from your normal executable directory (e.g. /usr/local/bin) to
+the appropriate binary of scanps in the scanps/bin directory (see
+the README file there for some help).
+
+Now you can run scanps. Assuming the binary is in your path and you have 
+set the SCANPSDIR environment variable, then you can do the following 
+things.
+
+scanps -s test.fa -d mydb.fa 
+
+will search the fasta format sequence file 'test.fa' against the fasta
+formatted database file 'mydb.fa' using the defaults in the
+scanps_defaults.dat file.  NOTE that the scanps statistics will get upset
+if you give it a small database - typically, a minimum of 10,000 sequences 
+is needed with the default settings.
+
+The defaults are:
+
+1. no iterations.
+2. mode 202 (affine gap search)
+3. print score list and pairwise alignments down to a threshold of E=20
+4. print multiple alignment.
+
+Some things to try - but DO NOT DO THIS for production runs with a
+fasta formatted database file -  are:
+
+1. To change the output threshold to 10 add:  
+   -probcut 10.
+2. To suppress the printing of pairwise alignments do:
+   -aptt 0 -max_aout 0
+3. To print first 300 scores rather than down to thresold:
+   -nptt 0 -max_nout 300
+4. To scan with 10 iterations:
+   -niter 10
+5. To change the scanning option to non-affine (faster).
+   -mode 200 -ld_pen 6
+
+The full list of scanps commands, and their aliases is given in the file:
+
+dat/scanps_alias.dat
+
+each entry in that file has the full command name in CAPITALS followed by 
+an arbitrary number of aliases for the command.  So, aptt as used above is 
+an alias for APRINT_TO_THRESHOLD.
+
+The commands and example are explained in the scanps_manual.
+
+BUILDING THE BINARY DATABASES FOR SCANPS
+----------------------------------------
+
+Although you can scan fasta formatted files, for production it is much 
+more efficient to have the pre-built binary databases.  These load faster 
+and are pre-indexed for more time savings.  Importantly, they are also 
+sorted from longest to shortest sequence, this has major speed 
+implications for the MMX and MPI versions of the program.
+
+Assuming we have a database file called swall.fa, just do:
+
+scanps -mode 99 -d swall.fa -bdb swall
+
+The -d specifies the fasta formatted database you are reading.
+The -bdb stands for binary database prefix.  This will build two files:
+
+swall.bix   (index file)
+swall.bsq   (binary sequence file)
+
+in the directory you have defined as DB_DIR in the dat/scanps_defaults.dat 
+file.
+
+You can override any command in the scanps_defaults.dat file by putting it 
+on the command line:
+
+So:
+
+scanps -mode 99 -db_dir /db/junk/ -d swall.fa -bdb junk_database
+
+Would create the files called:
+
+junk_database.bix
+junk_database.bsq
+
+in the /db/junk directory.
+
+Incidentally - the original file source of the database is stored in the
+binary database and output with each scanps run, so you can see where the 
+data came from even if you are perverse enough to rename it when you build 
+the scanps databases.
+
+That should be enough to get going - if not, read the manual!  If really stuck
+send me an email.
+
+Geoff Barton (geoff@compbio.dundee.ac.uk)
+

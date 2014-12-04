@@ -1,0 +1,51 @@
+#
+# makefile for fasta3, fasta3_t.  Use makefile.pvm for pvcompxx.
+#
+# On the version of linux that I use, MININT is defined and causes a warning
+# as dropnfa.c is compiled.  Unfortunately, using the Linux definition of
+# MININT causes the code to break. Do not change the MININT definition
+# in dropnfa.c  (wrp 3/19/1998)
+#
+# works with pthreads on RedHat 5.1,5.2
+# for RedHat 6.0, try -DLINUX6
+# to avoid the failure message: "cannot allocate diagonal arrays", try
+# -DALLOCN0 (ALLOCN-zero)
+#
+# for DEC/Compaq Alpha/LINUX, use gcc -mieee -g to avoid buggy compilers
+
+CC= gcc -g -O3
+#CC= gcc -g -DDEBUG
+#CC=/opt/parasoft/bin.linux2/insure -g -DDEBUG
+
+# this file works for x86 LINUX
+
+# standard options
+CFLAGS= -DLINUX6 -DUNIX -DTIMES -DHZ=100 -DBIGMEM -DSFCHAR="':'" -c -DMAX_WORKERS=2 -DTHR_EXIT=pthread_exit -DPROGRESS -DFASTA_HOST='"wrpx00.bioch.virginia.edu/fasta/cgi"' -DUSE_MMAP -D_REENTRANT -I/usr/include/mysql -DMYSQL_DB -D_FILE_OFFSET_BITS=64 -DUSE_FSEEKO -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DHAS_INTTYPES -DGAP_OPEN -DSAMP_STATS
+
+# use options below for superfamily validations
+#CFLAGS= -DLINUX6 -DUNIX -DTIMES -DHZ=100 -DBIGMEM -DSFCHAR="'|'" -c -DMAX_WORKERS=2 -DTHR_EXIT=pthread_exit -DPROGRESS -DSUPERFAMNUM -DUSE_MMAP -D_REENTRANT -DGAP_OPEN
+
+# -I/usr/local/include/mysql -DMYSQL_DB 
+#
+#(for mySQL databases)  (also requires change to Makefile34.common)
+
+#LIB_M = -lm
+LIB_M = -L/usr/lib/mysql -lmysqlclient -lm
+# for mySQL databases
+
+HFLAGS= -o
+NFLAGS= -o
+
+# for Linux
+THR_SUBS = pthr_subs2
+THR_LIBS = -lpthread
+THR_CC =
+
+XDIR = /seqprg/bin
+
+
+# renamed (fasta34)  programs
+include Makefile34m.common_sql
+# conventional (fasta3) names
+# include Makefile.common
+

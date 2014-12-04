@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.47)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Standard SCANPS search</TITLE>
+<META NAME="description" CONTENT="Standard SCANPS search">
+<META NAME="keywords" CONTENT="scanps_manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="scanps_manual.css">
+
+<LINK REL="next" HREF="node16.html">
+<LINK REL="previous" HREF="node9.html">
+<LINK REL="up" HREF="node9.html">
+<LINK REL="next" HREF="node11.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html142"
+  HREF="node11.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html140"
+  HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html134"
+  HREF="node9.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html143"
+  HREF="node11.html">Output preamble</A>
+<B> Up:</B> <A NAME="tex2html141"
+  HREF="node9.html">Running SCANPS</A>
+<B> Previous:</B> <A NAME="tex2html135"
+  HREF="node9.html">Running SCANPS</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00071000000000000000">
+Standard SCANPS search</A>
+</H2>
+
+<P>
+SCANPS has different modes, that implement different types of search.
+In the current distribution, there are four MODES which have the
+numbers - 200, 202, 212 and 210.  We will concentrate on MODES 200 and
+202 which are the most commonly used.  MODE 200 searches a protein
+sequence against a protein sequence database, either with or without
+iteration and with simple, length-dependent gap-penalties.  MODE 202
+does the same, but with a more complicated gap-penalty model that has
+a creation and extension penalty.  MODE 200 is the fastest, MODE 202
+will typically be more sensitive and give longer alignments.
+
+<P>
+The command:
+
+<P>
+<PRE>
+scanps -mode 200 -s test.fa -probcut 30 -bdb sprot.fas
+</PRE>
+
+<P>
+produced the output in the file: test_200_probcut30.log.  The output
+has a number of sections, the <EM>preamble</EM> the <EM>score list</EM>, the
+<EM>pairwise alignments</EM>, the <EM>multiple alignment</EM> and the <EM>trailer</EM>.  The sections are exaplained below:
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL>
+<LI><A NAME="tex2html144"
+  HREF="node11.html">Output preamble</A>
+<LI><A NAME="tex2html145"
+  HREF="node12.html">Score list</A>
+<LI><A NAME="tex2html146"
+  HREF="node13.html">Pairwise Alignments</A>
+<LI><A NAME="tex2html147"
+  HREF="node14.html">Multiple Alignment Output</A>
+<LI><A NAME="tex2html148"
+  HREF="node15.html">Trailer</A>
+</UL>
+<!--End of Table of Child-Links-->
+<BR><HR>
+<ADDRESS>
+Geoff Barton (GJB)
+2002-07-23
+</ADDRESS>
+</BODY>
+</HTML>

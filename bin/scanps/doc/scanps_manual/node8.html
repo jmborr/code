@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.47)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Building SCANPS Databases</TITLE>
+<META NAME="description" CONTENT="Building SCANPS Databases">
+<META NAME="keywords" CONTENT="scanps_manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="scanps_manual.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="scanps_manual.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html113"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html111"
+  HREF="scanps_manual.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html105"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html114"
+  HREF="node9.html">Running SCANPS</A>
+<B> Up:</B> <A NAME="tex2html112"
+  HREF="scanps_manual.html">scanps_manual</A>
+<B> Previous:</B> <A NAME="tex2html106"
+  HREF="node7.html">Step-by-step installation</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00060000000000000000">
+Building SCANPS Databases</A>
+</H1>
+
+<P>
+Although SCANPS will read a normal FASTA
+formatted sequence file as the database to search, it runs more
+efficiently if you first build its own binary database files.  This is
+particularly important for the MMX/SSE versions of the program.
+SCANPS is used to build its own databases.  For example:
+
+<P>
+<PRE>
+scanps -mode 99 -d trembl.fa -bdb trembl
+</PRE>
+
+<P>
+will take a FASTA formatted sequence database file called ``trembl.fa''
+and create the SCANPS binary database and index files ``trembl.bix''
+and ``trembl.bsq'' in the directory /db/scanps (or whatever you
+specified in the scanps_defaults.dat file above.
+
+<P>
+Once you have your binary database file and a sequence you want to
+scan you specify the two on the command line - e.g.:
+
+<P>
+<PRE>
+scanps -s test.fa -bdb trembl &gt; test_trembl.log
+</PRE>
+
+<P>
+the output of the scan is written to standard output which in this
+case is redirected to the file test_trembl.log.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Geoff Barton (GJB)
+2002-07-23
+</ADDRESS>
+</BODY>
+</HTML>

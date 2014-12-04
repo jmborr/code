@@ -1,0 +1,18 @@
+@map color 0 to (255, 255, 255), "white"
+@map color 1 to (0, 0, 0), "black"
+@map color 2 to (80,80,80), "grey9"
+@map color 3 to (94,94,94), "grey8"
+@map color 4 to (108,108,108), "grey7"
+@map color 5 to (122,122,122), "grey6"
+@map color 6 to (136,136,136), "grey5"
+@map color 7 to (150,150,150), "grey4"
+@map color 8 to (180,180,180), "grey3"
+@map color 9 to (195,195,195), "grey2"
+@map color 10 to (225,225,225), "grey1"
+@map color 11 to (255, 255, 255), "grey0"
+@map color 12 to (255, 0, 0), "red"
+@map color 13 to (0, 255, 0), "green"
+@map color 14 to (0, 0, 255), "blue"
+@map color 15 to (255, 255, 0), "yellow"
+
+

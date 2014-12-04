@@ -1,0 +1,46 @@
+# Parse_PSI
+
+This is a basically a fix for blast versions greater than 2.0.3
+
+This little script allows parsing of psiblast report files
+to extract the embedded sequence alignment, and write out
+in different formats. The fasta format alignment can then
+be viewed in Jalview et. al.
+
+change_header will convert the perl headers if you need it
+
+parse_psi -help  : help
+parse_psi -degap : remove all gaps in alignment and print as
+	           a fasta format file
+parse_psi -ungap : remove gaps in query sequence, and those
+                   below the gap in the query sequence, print
+                   as fasta format
+parse_psi -gap   : print alignment with gaps in fasta format
+parse_psi -freq  : print frequency profile needed for Jnet 
+
+Usage:
+
+parse_psi -freq file.blast > file.freq
+
+
+BLAST Notes for use with Jnet:
+------------------------------
+For success with parse_psi, run psiblast with following parameters:
+./blastpgp -Q test.pssm -m6 -d ./pdb -b20000 -a5 -j3 -i test.seq > ! test.blast
+
+            ^            ^        ^      ^    ^   ^    
+        pssm file        1        2      3    4   5   
+
+1 - *needed* this prints the alignments in the right format for Jnet
+2 - database
+3 - needs to be a big number so that blast prints all the available 
+    sequences in the alignment in the right format
+4 - number of processors
+5 - iterations
+
+getpssm now works with the -Q option in psiblast to get the
+pssm file needed for Jnet:
+
+getpssm test.pssm > test.pssm.jnet
+
+

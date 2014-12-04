@@ -1,0 +1,21 @@
+VERSION 2.3.11
+SCANPS
+
+This directory contains the distribution of SCANPS, a program for
+fast and sensitive protein sequence database searching. 
+
+For full details, see the scanps documentation in one of the following:
+
+doc/scanps_manual.ps
+    scanps_manual.pdf
+    scanps_manual/scanps_manual.html
+
+Try SCANPS web servers either at the EBI (http://www.ebi.ac.uk) or at Dundee
+(http://www.compbio.dundee.ac.uk).
+
+SCANPS was written by Geoff Barton, with significant contributions by
+Caleb Webber (local alignment statistics) and Steve Searle (MMX/SSE 
+parallel code).
+
+
+G. J. Barton, University of Dundee, 28th October 2004. 

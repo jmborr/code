@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+open(IN, "$ARGV[0]");
+
+while (<IN>){
+    if (/^           A  R  N  D  C  Q  E/){
+	while (($line =<IN>)!= /^\n/){
+	    (@pssm)=split (" ",$line);
+	    for ($i=2; $i < 22; $i++){	
+		$out=1/(1+(exp(-$pssm[$i])));
+		printf ("%2.8f ", $out);
+		$xsum=$xsum+$pssm[$i];
+	    }
+	    print "\n";
+	    undef @pssm;
+	}
+    }
+}
+if ($xsum == 0){
+    print STDERR "ERROR: $ARGV[0] PROFILE CONTAINS NO USEFUL DATA!\n EXIT\n";
+}
+

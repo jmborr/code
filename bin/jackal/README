@@ -1,0 +1,7 @@
+for installation and document, go to
+
+doc/Jackmanual
+
+if the program asks you for the key, the key is: XIANG2002. the key should be put in 
+the line of "key:" in the file jackal.dir. consult the manual about jackal.dir file, which
+is used to instruct the program to find pdb and library directories and also validate the key.

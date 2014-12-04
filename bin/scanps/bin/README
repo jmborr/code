@@ -1,0 +1,24 @@
+Binaries for SCANPS compiled with different options.
+Those starting with xp include explicit assembly code for MMX and where
+possible SSE instructions.
+
+xpscanps_16K	Compiled for Pentium III architecture.  This should also work
+                OK on other architectures such as the Athlon.  I have only
+                tested it on PIII and AthlonXP.
+
+xpscanps_16K_P4 Compiled for Pentium IV (I have not tested this binary as
+                I do not have  PIV machine running Linux - if you do try it
+                please give me some performance figures for comparing
+                hahu.fa to the supplied sprot database (ie the output file)).
+
+
+If you have problems with any of the above binaries on the architecture for
+which they have been compiled, let me know (geoff@compbio.dundee.ac.uk).  If
+you don't have one of the supported architectures, then try the binaries below.
+They lack MMX/SSE support.
+
+uscanps_16K and scanps_16K_p4  are similarly compiled,
+but lack the MMX and SSE support.
+
+Geoff Barton  July 2002.
+

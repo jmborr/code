@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.47)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Controlling the scan</TITLE>
+<META NAME="description" CONTENT="Controlling the scan">
+<META NAME="keywords" CONTENT="scanps_manual">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2K.1beta">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="scanps_manual.css">
+
+<LINK REL="next" HREF="node26.html">
+<LINK REL="previous" HREF="node24.html">
+<LINK REL="up" HREF="node19.html">
+<LINK REL="next" HREF="node26.html">
+</HEAD>
+
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html301"
+  HREF="node26.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="file:/usr/share/latex2html/icons/next.png"></A> 
+<A NAME="tex2html299"
+  HREF="node19.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="file:/usr/share/latex2html/icons/up.png"></A> 
+<A NAME="tex2html293"
+  HREF="node24.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="file:/usr/share/latex2html/icons/prev.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html302"
+  HREF="node26.html">Commands to help find</A>
+<B> Up:</B> <A NAME="tex2html300"
+  HREF="node19.html">Getting more from SCANPS</A>
+<B> Previous:</B> <A NAME="tex2html294"
+  HREF="node24.html">Command line switches</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H2><A NAME="SECTION00085000000000000000">
+Controlling the scan</A>
+</H2>
+
+<P>
+SCANPS has a series of different MODEs.  Each mode does a different
+job.  Note that not all of the modes shown here are in Version 2.3.9,
+but are discussed for the sake of completeness (they may come back in
+future releases).
+
+<P>
+<PRE>
+MODE 0	Scan protein sequence against protein sequence database
+	with simple gap penalty.  Default and fastest method.
+MODE 2	As for MODE 1, but with Affine gaps.
+MODE 20 DNA vs protein database with frameshifts (simple gaps).
+MODE 22 DNA vs protein database scan with frameshifts (affine gaps).
+MODE 99 Build scanps binary database files from FASTA or PIR format files.
+MODE 100 Extract sequences from database (reads output of earlier scan).
+
+In Version 2.3.2 two new modes are introduced:
+
+MODE 200 is like MODE 0 but does iterative searching.
+MODE 202 is like MODE 2 but does iterative searching.
+
+MODES 200 and 202 will replace MODE 0 and 2 in a future release of SCANPS.
+</PRE>
+
+<P>
+There are a variety of controlling commands that affect the scan and
+the output.  By default, all results are printed to stdout.  You can 
+override this by using the STDOUT command to specify a different file for 
+output.  STDERR can also be redefined.
+
+<P>
+Commands affecting the scan - look in the file scanps_alias.dat to see
+alternative names for these commands and see APPENDIX II for a full list 
+of commands:
+
+<P>
+<PRE>
+QSEQ_FILE  	is the query sequence file
+qseq_format 	defines the format (0 for pir, 1 for fasta)
+bdb_root	defines the root name of the binary database to search
+ld_pen		length dependent gap-penalty
+li_pen		length independent gap-penalty
+matrix_file	pairscore matrix file (e.g. Dayhoff, BLOSUM etc )
+use_gapdefs	set to 1 to enable the gap defaults in scanps_gapdefs.dat
+                set to 0 to allow the values of ld_pen and li_pen to work.
+</PRE>
+
+<P>
+See the full list in APPENDIX II for other valid commands.
+
+<P>
+<BR><HR>
+<ADDRESS>
+Geoff Barton (GJB)
+2002-07-23
+</ADDRESS>
+</BODY>
+</HTML>
