@@ -1,3 +1,0 @@
-#!/bin/bash
-
-scp -Cr jmborr@titan.ccs.ornl.gov:$1 $2

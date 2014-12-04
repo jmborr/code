@@ -1,2 +1,0 @@
-#!/bin/bash
-scp jbq@analysis.sns.gov:$1 $2

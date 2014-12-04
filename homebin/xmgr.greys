@@ -1,3 +1,0 @@
-#!/bin/sh
-
-xmgrace -maxsets 50 -maxcolors 27 -pexec "cmap 17,80,80,80" -pexec "cmap 18,94,94,94" -pexec "cmap 19,108,108,108" -pexec "cmap 20,122,122,122" -pexec "cmap 21,136,136,136" -pexec "cmap 22,150,150,150" -pexec "cmap 23,180,180,180" -pexec "cmap 24,195,195,195" -pexec "cmap 25,210,210,210" -pexec "cmap 26,225,225,225"

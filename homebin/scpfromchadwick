@@ -1,2 +1,0 @@
-#!/bin/bash
-scp jbq@chadwick.sns.gov:$1 $2
