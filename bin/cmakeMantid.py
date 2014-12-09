@@ -11,6 +11,7 @@ parser.add_argument('--cleanbuild', default=False, help='Remove all contents in 
 parser.add_argument('--ncore', default=7, help='Default: 7')
 parser.add_argument('--target', default='all', help='either of "all", "doc", "doctest". Default: "all"')
 parser.add_argument('--doctest', default=None, help='doctest a particular algorithm or fitfuncion')
+parser.add_argument('--popmsg', default='True', help='Popup a finish job at the end? Default=True')
 args=parser.parse_args()
 
 rootd=os.environ['HOME']+'/repositories/mantidproject/build'
@@ -23,7 +24,7 @@ cd _ROOTD_/__BUILDDIR__
 
 _MAKETARGET_
 
-popwindow.py 0s "finished building _TARGET_ in Mantid"
+__POPMSG__
 
 ############ B U I L D I N G   S C R I P T    F I N I S H E D ###########
 '''
@@ -72,9 +73,14 @@ else:
     print 'target not recognized. Nothing to do'
     sys.exit(1)
 
-
 script=script.replace('__NCORE__', str(args.ncore))
+
+
+popmsg='popwindow.py 0s "finished building _TARGET_ in Mantid"'
+if args.popmsg.lower() in ('false', 'no', 'n', '0'):
+    popmsg=''
+script=script.replace('__POPMSG__', popmsg)
 
 ############ S T A R T I N G    B U I L D I N G   S C R I P T  ###########
 print script
-os.system(script)
+#os.system(script)

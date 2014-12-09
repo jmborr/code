@@ -5,15 +5,6 @@
 # Ignore text editor (e.g. emacs) autosave files
 *~
 
-# Ignore CMake generated files (if someone does an in-source build)
-CMakeCache.txt
-CMakeFiles
-Makefile
-cmake_install.cmake
-install_manifest.txt
-
-
-
 # Compiled Object files
 *.slo
 *.lo
