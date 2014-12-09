@@ -83,4 +83,4 @@ script=script.replace('__POPMSG__', popmsg)
 
 ############ S T A R T I N G    B U I L D I N G   S C R I P T  ###########
 print script
-#os.system(script)
+os.system(script)
