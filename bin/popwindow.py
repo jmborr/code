@@ -3,6 +3,7 @@
 import sys
 import os
 import argparse
+import socket
 from Tkinter import *
 from pdb import set_trace as tr
 
@@ -31,6 +32,6 @@ args=parser.parse_args()
 if args.sleep: os.system('sleep %s'%args.sleep)
 root = Tk()
 root.geometry("%dx%d%+d%+d" % (600, 400, 0, 0))
-app = App(root, args.message)
+app = App(root, socket.gethostname()+':\n\n'+args.message)
 root.mainloop()
 
