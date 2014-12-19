@@ -26,7 +26,7 @@ def distFromStrings(v1,v2):
     [x2,y2,z2]=v2.split() ; x2=float(x2) ; y2=float(y2) ; z2=float(z2)
     return sqrt( (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1) + (z2-z1)*(z2-z1) )
 
-def insertBfact(pdbin,blist,byres=False):
+def insertBfact(pdbin,blist,byres=False, rescale=False):
     """redefine the Bfactors according to list of numbers"""
     buf=''; bmin=min(blist);  f=100./(max(blist)-bmin)
     pin=open(pdbin); l=pin.readline().strip(); n=0
@@ -34,15 +34,17 @@ def insertBfact(pdbin,blist,byres=False):
     while l:
         if len(l)<66: l+=' '*(66-len(l)) #pad blank spaces
         if l[:5]=='ATOM ':
+            bf=blist[n]
+            if rescale: bf=f*(blist[n]-bmin)
             if byres:
                 curr = l[22:26]
                 if not prev: prev = curr
-                buf+=l[:60]+'%6.2f'%(f*(blist[n]-bmin),)+l[66:]+'\n'
+                buf+=l[:60]+'%6.2f'%(bf,)+l[66:]+'\n'
                 if curr != prev:
                     prev = curr
                     n+=1
             else:
-                buf+=l[:60]+'%6.2f'%(f*(blist[n]-bmin),)+l[66:]+'\n'
+                buf+=l[:60]+'%6.2f'%(bf,)+l[66:]+'\n'
                 n+=1
         else:
             buf+=l+'\n'
