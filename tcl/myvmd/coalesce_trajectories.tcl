@@ -8,9 +8,12 @@ set indcdfile1 "equil.1.dcd"
 set indcdfile2 "equil.2.dcd"
 set indcdfile3 "equil.3.dcd"
 set outdcdfile "equil.dcd"
-# It could be each loaded file will add one unwanted conformation at the beginning of the trajectory
-# Plus, the PDB file will also add and unwanted conformation. Hence the 5004 below, instead of 5000
-set begframe 5004
+
+# The PDB file adds one unwanted conformation
+set begframe 1
+# Filter out the first N conformations
+set filtered  0
+set begframe [expr {$begframe+$filtered}]
 # -1 signal last frame
 set endframe -1
 
