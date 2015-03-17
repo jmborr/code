@@ -1,4 +1,5 @@
 # Fittrajectory to selected frame by RMSD transformation
+# Use as: vmd -dispdev win -eofexit -e rms2first.tcl
 
 # Call the RMSD trajectory tool
 ::rmsdtt::rmsdtt

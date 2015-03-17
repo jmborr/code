@@ -314,8 +314,6 @@ def II(frames,b,QQ,nsampling=10,nt=100,dt=1,
        d_{i,j} = |r_i(t0)-r_j(t0+t)|
        II = sum_i b_i * sin(Q*d_{i,j})/(Q*d_{i,j}) / len(b)"""
 
-    from MDAnalysis.analysis.distances import self_distance_array
-
     nQ = len(QQ)
     nat = len(b)
     nfr = len(frames)
