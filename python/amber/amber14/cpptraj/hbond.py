@@ -27,10 +27,19 @@ class Atom(object):
     
 class Bond(object):
     '''Hydrogen bond class'''
-    def __init__(self):
+    def __init__(self,other=None):
         self.acceptor=Atom(type='Acceptor')
         self.donorH=Atom(type='DonorH')
         self.donor=Atom(type='Donor')
+        if other:
+            if isinstance(other,basestring):
+                acceptorstring=other.split('-')[0]
+                self.acceptor=Atom(acceptorstring,type='Acceptor')
+                donorstring=other.split('-')[1]
+                self.donor=Atom(donorstring,type='Donor')
+                donorhname=other.split('-')[2]
+                donorhstring='{0}_{1}@{2}'.format(self.donor.resname,self.donor.resn,donorhname)
+                self.donorH=Atom(donorhstring,type='DonorH')
 
     def __repr__(self):
         return '{0}-{1}-{2}'.format(self.acceptor, self.donor, self.donorH.atomname)
@@ -40,7 +49,10 @@ class Bond(object):
         return (isinstance(other, self.__class__) and self.__dict__ == other.__dict__)
 
 class AvgInfo(object):
-    '''The average info stored in the output average file after running hbond'''
+    '''The average info stored in the output average file after running hbond
+Example line of the output average file after running hbond:
+WAT_255@O           LYS_2@H       LYS_2@N     4321       0.4321       2.8947     161.7508
+'''
     def __init__(self, other=None):
         self.bond=Bond()
         self.frames=None
@@ -70,7 +82,12 @@ class AvgInfo(object):
         return '{0:13}{1:>14}{2:>14}{3:9d}       {4:6.4f}       {5:6.4f}     {6:8.4f}'.format(acc,dh,d,fm,fr,ad,aa)
 
 class AvgInfoFile(object):
-    '''list of AvgInfo objects plus header file'''
+    '''list of AvgInfo objects plus header file
+Example first lines of the output average file after running hbond:
+#Acceptor            DonorH         Donor   Frames         Frac      AvgDist       AvgAng
+WAT_255@O           LYS_2@H       LYS_2@N     4321       0.4321       2.8947     161.7508
+WAT_311@O         LYS_164@H     LYS_164@N     3733       0.3733       2.8668     155.3671
+'''
     def __init__(self,other=None):
         self.header=None
         self.records=[]
