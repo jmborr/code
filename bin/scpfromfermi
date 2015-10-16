@@ -1,0 +1,2 @@
+#!/bin/bash
+scp jbq@fermi.ornl.gov:$1 $2

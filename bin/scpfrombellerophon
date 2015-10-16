@@ -1,0 +1,2 @@
+#!/bin/bash
+scp jbq@bellerophon.ornl.gov:$1 $2
