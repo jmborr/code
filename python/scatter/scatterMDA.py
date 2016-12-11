@@ -326,7 +326,6 @@ def IC(frames,b,QQ,nsampling=200,nt=100,dt=1,
         t += dt
     return {'buf':buf,'sf':sf,'ts':np.array(ts)}
 
-
 def II(frames,b,QQ,nsampling=200,nt=100,dt=1,begt=0,c1=np.empty(0),
        comment='# intermediate incoherent scattering factor\n'):
     """Intermediate incoherent scattering function
@@ -428,6 +427,81 @@ def II(frames,b,QQ,nsampling=200,nt=100,dt=1,begt=0,c1=np.empty(0),
     results = {'buf':buf,'sf':sf,'ts':np.array(ts)}
     if isc1:
         results.update({'sfYY':sfYY, 'sfYN':sfYN, 'sfNY':sfNY, 'sfNN':sfNN})
+    return results
+
+def IIv2(frames,b,QQ,c1,nsampling=200,nt=100,dt=1,begt=0,
+       comment='# intermediate incoherent scattering factor\n'):
+    """Intermediate incoherent scattering function
+    Calculations:
+      d_i = |r_i(t0)-r_(t0+t)|
+      II = sum_i b_i * sin(Q*d_i)/(Q*d_i) / len(b)
+      sin(Q*d_i)/(Q*d_i) denotes average over all orientations of Q-vector
+    Arguments:
+      frames: numpy.array with shape=(#frames,#atoms,3)
+      b: numpy.array of incoherent scattering lenghts
+      QQ: numpy.array list of Q values
+      nsampling: number of t0's for a given t
+      nt: number of t's
+      dt: spacing between consecutive t's, in number of frames
+      begt: smallest starting time lapse, in number of
+            frames. Biggest time lapse = begt+nt*dt
+      c1: correlation array of shape (#frames, #atoms). Will multiply each
+          self-interference term by c1(t0)*c1(to+dt)*..*c1(t0+t+dt)
+    Returns:
+      Dictionary containing the following keys:
+        buf: string containing II(Q,t)
+        sf: II(Q,t) numpy array of shape (1+nt, nQ)
+        ts: list of times t where II(Q,t) is calculated
+    """
+    nQ = len(QQ)
+    nat = len(b)
+    nfr = len(frames)
+    bb = b*b # square of the incoherent scattering lengths
+    it = 0   #current number of evaluated t's
+    t = begt #time difference between t0 and t0+t
+    buf= comment
+    buf+='# Q-values=%s' % ' '.join( [str(Q) for Q in QQ] )+'\n'
+    buf+='# time(psec) Q-values(A^(-1))\n'
+    sf = np.zeros((1+nt)*nQ).reshape(1+nt,nQ) # stores II(t,Q)
+    ## Now cycle over all target time lapses (+1 for t=0)
+    ts=[] # list of times
+    while it < 1+nt:
+        s_ii = np.zeros(nQ*nat).reshape(nQ,nat)
+        delta = max(1,int((nfr-t)/nsampling ))#separation between t0's
+        # isp is number of contributing sampled t0 time points for each atom
+        isp = np.zeros(nat)
+        ## Now cycle over the sampling t0 points
+        t0 = 1  #initialize the time point
+        while t0+t < nfr:
+            dii = frames[t0] - frames[t0+t]
+            dii *= dii
+            #dii distance traveled by each atom in the lapse t0 to to+t
+            dii = np.sqrt(dii.sum(axis=1)) #sum over x, y,a nd z
+            # c is the product of elementary correlations
+            c = np.prod(c1[t0:t0+t+1,],axis=0) # shape = (natoms,)
+            for iQ in range(nQ):
+                arg = QQ[iQ]*dii
+                #avoid sin(arg)/arg trouble when arg goes to zero
+                arg[np.where(arg<co)]=co
+                selfInterference = np.sin(arg)/arg # shape=(natoms,)
+                s_ii[iQ] += selfInterference * c
+            isp += c
+            t0 += delta #jump to next t0
+        # if there are components i for which isp[i] is zero, then
+        # s_ii[i]/isp[i] returns zero because of the previous np.seterr
+        for i in range(nat):
+            if isp[i]>0:
+                s_ii[:,i] *= bb[i]/isp[i]  # Normalize by number of sample t0 points (isp)
+            else:
+                s_ii[:,i] = 0.0
+        s_ii = s_ii.sum(axis=1) # Incoherent means sum, i.e., no interferece
+        sf[it] = s_ii # stores II(t,Q) for the current t
+        ts.append(t)
+        s = write_from_numpy(None,s_ii,ncols=nQ,format=' %10.7f')
+        buf+=' %6.3f %s'%(t,s) # write additional I(t,Q) line to buffer
+        it += 1 # next time t count
+        t += dt # next time t
+    results = {'buf':buf,'sf':sf,'ts':np.array(ts)}
     return results
 
 def saveIISassenaFormat(II, QQ, filename):
