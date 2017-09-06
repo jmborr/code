@@ -1,1 +1,0 @@
-/gpfs1/active/jose/code/python/secondary/ss2seqdat.py

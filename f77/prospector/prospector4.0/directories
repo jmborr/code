@@ -1,6 +1,0 @@
-c	=================================
-c	directories
-	common/namesize/nsize		
-	character*255 home,templatedat
-	common/home/nhome,home
-c	=================================
