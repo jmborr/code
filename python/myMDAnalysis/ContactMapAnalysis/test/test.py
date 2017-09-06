@@ -18,14 +18,14 @@ def ContactMap(*kargs,**kwargs):
         #variables defining the ContactMapProtocol
         rowSelection = kwargs['rowSelection'] #protein residues
         colSelection = rowSelection           #self-contact map
-        cutOff=float( kwargs['cutOff'] )      #atomic cutOff
-        pargs = {'rowSelection':rowSelection,'colSelection':colSelection,'cutOff':cutOff,'byres':True}
+        cut_off=float( kwargs['cut_off'] )      #atomic cut_off
+        pargs = {'rowSelection':rowSelection,'colSelection':colSelection,'cut_off':cut_off,'byres':True}
         protocol = CMAPI.ContactMapProtocol(**pargs)
         #generate the ContactMapList with the trajectory and protocol
         PSFile = kwargs['PSFile']      #topology
         trajfile = kwargs['trajfile']  #trajectory
         cml = CMAPI.GenerateContactMapList(PSFile,trajfile,protocol) #contactMapList
-        cml.saveToFile(kwargs['outf'],fmt='HDF5') #save to file in HDF5 format 
+        cml.save_to_file(kwargs['outf'], fmt='HDF5') #save to file in HDF5 format
     elif JOB == 'number of atomic contacts':
         """calculate number of protein-protein contacts for each frame"""
         cml = CMA.ContactMapList()
