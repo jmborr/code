@@ -1,6 +1,9 @@
+from __future__ import print_function
+
 import numpy as np
 from math import pi
 import h5py
+from tqdm import tqdm
 from pdb import set_trace as tr
 
 co = 0.001 #cut-off for small values
@@ -304,7 +307,7 @@ def IC(frames,b,QQ,nsampling=200,nt=100,dt=1,
         delta = max(1,int((nfr-t)/nsampling ))#separation between t0's
         isp = 0 #actual number of sampled t0 time points (isp<=nsampling)
         t0 = 1  #initialize the time point
-        print 'it=%d t=%d'%(it,t)
+        #print 'it=%d t=%d'%(it,t)
         while t0+t < nfr: #cycle over all t0's
             #print 'it=%d t=%d isp=%d t0=%d'%(it,t,isp,t0)
             fi = frames[t0]
@@ -360,7 +363,6 @@ def II(frames,b,QQ,nsampling=200,nt=100,dt=1,begt=0,c1=np.empty(0),
     nat = len(b)
     nfr = len(frames)
     bb = b*b # square of the incoherent scattering lengths
-    it = 0   #current number of evaluated t's
     t = begt #time difference between t0 and t0+t
     buf= comment
     buf+='# Q-values=%s' % ' '.join( [str(Q) for Q in QQ] )+'\n'
@@ -373,7 +375,7 @@ def II(frames,b,QQ,nsampling=200,nt=100,dt=1,begt=0,c1=np.empty(0),
         sfNN = np.zeros((1+nt)*nQ).reshape(1+nt,nQ)
     ## Now cycle over all target time lapses (+1 for t=0)
     ts=[] # list of times
-    while it < 1+nt:
+    for it in tqdm(range(0, 1+nt)):  # current number of evaluated t's
         s_ii = np.zeros(nQ*nat).reshape(nQ,nat)
         if isc1:
             s_iiYY = np.zeros(nQ*nat).reshape(nQ,nat)
@@ -422,7 +424,6 @@ def II(frames,b,QQ,nsampling=200,nt=100,dt=1,begt=0,c1=np.empty(0),
         ts.append(t)
         s = write_from_numpy(None,s_ii,ncols=nQ,format=' %10.7f')
         buf+=' %6.3f %s'%(t,s) # write additional I(t,Q) line to buffer
-        it += 1 # next time t count
         t += dt # next time t
     results = {'buf':buf,'sf':sf,'ts':np.array(ts)}
     if isc1:

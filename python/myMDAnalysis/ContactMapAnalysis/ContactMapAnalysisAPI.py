@@ -1,5 +1,6 @@
 from __future__ import print_function
 
+from tqdm import tqdm
 import numpy as np
 import sys
 from tqdm import tqdm
@@ -183,7 +184,7 @@ def GenerateContactMapList(PSF_file, traj_file, protocol, start_frame=0, end_fra
 
 
 
-def solvent_bound(a_universe, solute, solvent, cut_off,
+def solvent_bound(a_universe, solute, solvent, cut_off, box=None,
                   start_frame=0, end_frame=None, step=1):
     """
     Generator to read a trajectory, and for certain frames find
@@ -202,7 +203,7 @@ def solvent_bound(a_universe, solute, solvent, cut_off,
     solute_group = a_universe.selectAtoms(solute)
     solvent_group = a_universe.selectAtoms(solvent)
     for _ in a_universe.trajectory[start_frame:end_frame:step]:
-        solute_tree = AtomNeighborSearch(solute_group)  # KDE-tree object
+        solute_tree = AtomNeighborSearch(solute_group, box=box) # KDE-tree
         yield solute_tree.search(solvent_group, cut_off, level='A')
 
 
@@ -228,7 +229,9 @@ def solvent_bound_flag(a_universe, solvent, solute, cut_off,
     solvent_group = a_universe.select_atoms(solvent)
     solute_group = a_universe.select_atoms(solute)
     flags = [[] for _ in range(len(solvent_group))]
-    for _ in a_universe.trajectory[start_frame:end_frame:step]:
+    nframe = int((end_frame - start_frame)/step)
+    for _ in tqdm(a_universe.trajectory[start_frame:end_frame:step],
+                  total=nframe):
         # creating the tree is costly. Done once for each frame
 #        tree = AtomNeighborSearch(solvent_group,
 #                                  box=a_universe.dimensions).kdtree
