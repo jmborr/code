@@ -25,8 +25,8 @@ class App:
         print 'Don\'t tickle me!'
 
 parser = argparse.ArgumentParser(description='Pops a window with a message')
-parser.add_argument('sleep',help='argument to Unix sleep command, for a delayed message')
 parser.add_argument('message',help='Quote message if it contains more than one word')
+parser.add_argument('--sleep',default=0.0, help='argument to Unix sleep command, for a delayed message')
 
 args=parser.parse_args()
 if args.sleep: os.system('sleep %s'%args.sleep)
